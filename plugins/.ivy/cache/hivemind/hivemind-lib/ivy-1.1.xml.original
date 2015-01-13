@@ -1,0 +1,13 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>hivemind</groupId>
+  <artifactId>hivemind-lib</artifactId>
+  <version>1.1</version>
+  <dependencies>
+    <dependency>
+      <groupId>hivemind</groupId>
+      <artifactId>hivemind</artifactId>
+      <version>1.1</version>
+    </dependency>
+  </dependencies>
+</project>

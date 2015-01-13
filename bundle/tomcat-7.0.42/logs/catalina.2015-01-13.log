@@ -1,0 +1,166 @@
+Jan 13, 2015 4:05:44 AM org.apache.catalina.core.StandardServer await
+INFO: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+Jan 13, 2015 4:05:44 AM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-8080"]
+Jan 13, 2015 4:05:44 AM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Jan 13, 2015 4:05:44 AM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Jan 13, 2015 4:05:48 AM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [] appears to have started a thread named [org.python.google.common.base.internal.Finalizer] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 4:05:48 AM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [] appears to have started a thread named [ReferenceReaper] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 4:05:52 AM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-8080"]
+Jan 13, 2015 4:05:52 AM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Jan 13, 2015 4:05:52 AM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-8080"]
+Jan 13, 2015 4:05:52 AM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
+Jan 13, 2015 4:17:18 AM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.7.0_51\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\Perl64\site\bin;C:\Perl64\bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\nodejs\;C:\Perl64\site\bin;C:\Perl64\bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\nodejs\;e:\xampp\perl\site\bin;x:\xampp\perl\bin;e:\xampp\php;e:\xampp\php\pear;e:\xampp\php\pear\symfony;e:\xampp\mysql\bin;C:\Program Files\PostgreSQL\9.1\bin;C:\Program Files\apache-ant-1.7.1\bin;E:\np\Python27;E:\np\Python27\Tools\Scripts;E:\apache-maven-3.2.1/bin;C:\Program Files (x86)\SSH Communications Security\SSH Secure Shell;C:\Program Files\Java\jdk1.7.0\bin;C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\bin;C:\Users\doraraj\AppData\Roaming\npm;C:\pgsql931\bin;.
+Jan 13, 2015 4:17:19 AM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+Jan 13, 2015 4:17:19 AM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Jan 13, 2015 4:17:19 AM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 985 ms
+Jan 13, 2015 4:17:19 AM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Jan 13, 2015 4:17:19 AM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.42
+Jan 13, 2015 4:17:19 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deploying configuration descriptor E:\ocmsLR\bundle\tomcat-7.0.42\conf\Catalina\localhost\ocms-portlet.xml
+Jan 13, 2015 4:17:19 AM org.apache.catalina.startup.HostConfig deployDescriptor
+WARNING: A docBase E:\ocmsLR\bundle\tomcat-7.0.42\webapps\ocms-portlet inside the host appBase has been specified, and will be ignored
+Jan 13, 2015 4:17:19 AM org.apache.catalina.startup.SetContextPropertiesRule begin
+WARNING: [SetContextPropertiesRule]{Context} Setting property 'source' to 'org.eclipse.jst.jee.server:ocms-portlet' did not find a matching property.
+Jan 13, 2015 4:17:22 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deploying configuration descriptor E:\ocmsLR\bundle\tomcat-7.0.42\conf\Catalina\localhost\ROOT.xml
+Jan 13, 2015 4:18:50 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory E:\ocmsLR\bundle\tomcat-7.0.42\webapps\calendar-portlet
+Jan 13, 2015 4:18:52 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory E:\ocmsLR\bundle\tomcat-7.0.42\webapps\kaleo-web
+Jan 13, 2015 4:18:57 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory E:\ocmsLR\bundle\tomcat-7.0.42\webapps\marketplace-portlet
+Jan 13, 2015 4:19:09 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory E:\ocmsLR\bundle\tomcat-7.0.42\webapps\notifications-portlet
+Jan 13, 2015 4:19:11 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory E:\ocmsLR\bundle\tomcat-7.0.42\webapps\opensocial-portlet
+Jan 13, 2015 4:19:18 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory E:\ocmsLR\bundle\tomcat-7.0.42\webapps\resources-importer-web
+Jan 13, 2015 4:19:19 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory E:\ocmsLR\bundle\tomcat-7.0.42\webapps\sync-web
+Jan 13, 2015 4:19:20 AM org.apache.shindig.config.JsonContainerConfig loadContainers
+INFO: Loading resources from: containers/default/container.js
+Jan 13, 2015 4:19:20 AM org.apache.shindig.config.JsonContainerConfig loadResources
+INFO: Reading container config: containers/default/container.js
+Jan 13, 2015 4:19:20 AM org.apache.shindig.gadgets.features.FeatureRegistry register
+INFO: Loading resources from: res:features-extras/features.txt
+Jan 13, 2015 4:19:20 AM org.apache.shindig.common.xml.XmlUtil <clinit>
+INFO: Reusing document builders
+Jan 13, 2015 4:19:21 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory E:\ocmsLR\bundle\tomcat-7.0.42\webapps\web-form-portlet
+Jan 13, 2015 4:19:24 AM org.apache.shindig.gadgets.features.FeatureRegistry register
+INFO: Loading resources from: res:features/features.txt
+Jan 13, 2015 4:19:24 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory E:\ocmsLR\bundle\tomcat-7.0.42\webapps\welcome-theme
+Jan 13, 2015 4:19:26 AM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+Jan 13, 2015 4:19:26 AM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Jan 13, 2015 4:19:26 AM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 126846 ms
+Jan 13, 2015 4:19:40 AM org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+INFO: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@59f3d848
+Jan 13, 2015 4:19:40 AM org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+INFO: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@59f3d848
+Jan 13, 2015 4:19:40 AM org.apache.shindig.gadgets.oauth.OAuthModule$OAuthCrypterProvider <init>
+INFO: Using random key for OAuth client-side state encryption
+Jan 13, 2015 6:17:40 AM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.7.0_51\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:\Perl64\site\bin;C:\Perl64\bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\nodejs\;C:\Perl64\site\bin;C:\Perl64\bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;C:\Program Files\nodejs\;e:\xampp\perl\site\bin;x:\xampp\perl\bin;e:\xampp\php;e:\xampp\php\pear;e:\xampp\php\pear\symfony;e:\xampp\mysql\bin;C:\Program Files\PostgreSQL\9.1\bin;C:\Program Files\apache-ant-1.7.1\bin;E:\np\Python27;E:\np\Python27\Tools\Scripts;E:\apache-maven-3.2.1/bin;C:\Program Files (x86)\SSH Communications Security\SSH Secure Shell;C:\Program Files\Java\jdk1.7.0\bin;C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC\bin;C:\Users\doraraj\AppData\Roaming\npm;C:\pgsql931\bin;.
+Jan 13, 2015 6:17:40 AM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+Jan 13, 2015 6:17:40 AM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Jan 13, 2015 6:17:40 AM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 1246 ms
+Jan 13, 2015 6:17:40 AM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Jan 13, 2015 6:17:40 AM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.42
+Jan 13, 2015 6:17:40 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deploying configuration descriptor E:\ocmsLR\bundle\tomcat-7.0.42\conf\Catalina\localhost\ocms-portlet.xml
+Jan 13, 2015 6:17:40 AM org.apache.catalina.startup.HostConfig deployDescriptor
+WARNING: A docBase E:\ocmsLR\bundle\tomcat-7.0.42\webapps\ocms-portlet inside the host appBase has been specified, and will be ignored
+Jan 13, 2015 6:17:40 AM org.apache.catalina.startup.SetContextPropertiesRule begin
+WARNING: [SetContextPropertiesRule]{Context} Setting property 'source' to 'org.eclipse.jst.jee.server:ocms-portlet' did not find a matching property.
+Jan 13, 2015 6:17:48 AM org.apache.catalina.startup.HostConfig deployDescriptor
+INFO: Deploying configuration descriptor E:\ocmsLR\bundle\tomcat-7.0.42\conf\Catalina\localhost\ROOT.xml
+Jan 13, 2015 6:20:11 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory E:\ocmsLR\bundle\tomcat-7.0.42\webapps\calendar-portlet
+Jan 13, 2015 6:20:17 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory E:\ocmsLR\bundle\tomcat-7.0.42\webapps\kaleo-web
+Jan 13, 2015 6:20:28 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory E:\ocmsLR\bundle\tomcat-7.0.42\webapps\marketplace-portlet
+Jan 13, 2015 6:20:46 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory E:\ocmsLR\bundle\tomcat-7.0.42\webapps\notifications-portlet
+Jan 13, 2015 6:20:50 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory E:\ocmsLR\bundle\tomcat-7.0.42\webapps\opensocial-portlet
+Jan 13, 2015 6:21:02 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory E:\ocmsLR\bundle\tomcat-7.0.42\webapps\resources-importer-web
+Jan 13, 2015 6:21:03 AM org.apache.shindig.config.JsonContainerConfig loadContainers
+INFO: Loading resources from: containers/default/container.js
+Jan 13, 2015 6:21:03 AM org.apache.shindig.config.JsonContainerConfig loadResources
+INFO: Reading container config: containers/default/container.js
+Jan 13, 2015 6:21:03 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory E:\ocmsLR\bundle\tomcat-7.0.42\webapps\sync-web
+Jan 13, 2015 6:21:03 AM org.apache.shindig.gadgets.features.FeatureRegistry register
+INFO: Loading resources from: res:features-extras/features.txt
+Jan 13, 2015 6:21:03 AM org.apache.shindig.common.xml.XmlUtil <clinit>
+INFO: Reusing document builders
+Jan 13, 2015 6:21:06 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory E:\ocmsLR\bundle\tomcat-7.0.42\webapps\web-form-portlet
+Jan 13, 2015 6:21:07 AM org.apache.shindig.gadgets.features.FeatureRegistry register
+INFO: Loading resources from: res:features/features.txt
+Jan 13, 2015 6:21:09 AM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory E:\ocmsLR\bundle\tomcat-7.0.42\webapps\welcome-theme
+Jan 13, 2015 6:21:14 AM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+Jan 13, 2015 6:21:14 AM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Jan 13, 2015 6:21:14 AM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 213375 ms
+Jan 13, 2015 6:21:15 AM org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+INFO: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@db0ecec
+Jan 13, 2015 6:21:15 AM org.apache.shindig.gadgets.servlet.CajaContentRewriter <init>
+INFO: Cajoled cache createdorg.apache.shindig.common.cache.ehcache.EhConfiguredCache@db0ecec
+Jan 13, 2015 6:21:15 AM org.apache.shindig.gadgets.oauth.OAuthModule$OAuthCrypterProvider <init>
+INFO: Using random key for OAuth client-side state encryption
+Jan 13, 2015 6:57:14 AM org.apache.catalina.core.StandardServer await
+INFO: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+Jan 13, 2015 6:57:14 AM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-8080"]
+Jan 13, 2015 6:57:14 AM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Jan 13, 2015 6:57:14 AM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+Jan 13, 2015 6:57:20 AM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [] appears to have started a thread named [org.python.google.common.base.internal.Finalizer] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 6:57:20 AM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [] is still processing a request that has yet to finish. This is very likely to create a memory leak. You can control the time allowed for requests to finish by using the unloadDelay attribute of the standard Context implementation.
+Jan 13, 2015 6:57:20 AM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [] is still processing a request that has yet to finish. This is very likely to create a memory leak. You can control the time allowed for requests to finish by using the unloadDelay attribute of the standard Context implementation.
+Jan 13, 2015 6:57:20 AM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [] appears to have started a thread named [Thread-42] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 6:57:20 AM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [] appears to have started a thread named [Thread-43] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 6:57:25 AM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-8080"]
+Jan 13, 2015 6:57:25 AM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Jan 13, 2015 6:57:25 AM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-8080"]
+Jan 13, 2015 6:57:25 AM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]

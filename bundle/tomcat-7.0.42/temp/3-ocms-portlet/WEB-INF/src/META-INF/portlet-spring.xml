@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.ocms.course.service.CourseLocalService" class="com.ocms.course.service.impl.CourseLocalServiceImpl" />
+	<bean id="com.ocms.course.service.CourseService" class="com.ocms.course.service.impl.CourseServiceImpl" />
+	<bean id="com.ocms.course.service.persistence.CoursePersistence" class="com.ocms.course.service.persistence.CoursePersistenceImpl" parent="basePersistence" />
+	<bean id="com.ocms.course.service.CourseSeriesLocalService" class="com.ocms.course.service.impl.CourseSeriesLocalServiceImpl" />
+	<bean id="com.ocms.course.service.CourseSeriesService" class="com.ocms.course.service.impl.CourseSeriesServiceImpl" />
+	<bean id="com.ocms.course.service.persistence.CourseSeriesPersistence" class="com.ocms.course.service.persistence.CourseSeriesPersistenceImpl" parent="basePersistence" />
+	<bean id="com.ocms.course.service.LocationLocalService" class="com.ocms.course.service.impl.LocationLocalServiceImpl" />
+	<bean id="com.ocms.course.service.LocationService" class="com.ocms.course.service.impl.LocationServiceImpl" />
+	<bean id="com.ocms.course.service.persistence.LocationPersistence" class="com.ocms.course.service.persistence.LocationPersistenceImpl" parent="basePersistence" />
+</beans>

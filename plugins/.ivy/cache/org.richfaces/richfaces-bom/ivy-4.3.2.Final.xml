@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
+	<info organisation="org.richfaces"
+		module="richfaces-bom"
+		revision="4.3.2.Final"
+		status="release"
+		publication="20130514062921"
+	>
+		<license name="GNU Lesser General Public License, Version 2.1" url="http://www.gnu.org/licenses/lgpl-2.1.txt" />
+		<description homepage="http://richfaces.org">
+		The RichFaces &quot;Bill of Materials&quot;. This defines all runtime dependency
+        versions for RichFaces.
+		</description>
+		<m:properties__version.rewrite>1.0.4.Final</m:properties__version.rewrite>
+		<m:dependency.management__org.richfaces.ui.common__richfaces-ui-common-api__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.common__richfaces-ui-common-api__version>
+		<m:dependency.management__net.sourceforge.cssparser__cssparser__version>0.9.5</m:dependency.management__net.sourceforge.cssparser__cssparser__version>
+		<m:dependency.management__org.richfaces.ui.core__richfaces-ui-core-api__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.core__richfaces-ui-core-api__version>
+		<m:properties__maven.min.version>3.0</m:properties__maven.min.version>
+		<m:properties__version.el-api>1.0</m:properties__version.el-api>
+		<m:dependency.management__org.richfaces.ui.dnd__richfaces-ui-dnd-api__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.dnd__richfaces-ui-dnd-api__version>
+		<m:dependency.management__org.richfaces.ui.input__richfaces-ui-input-api__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.input__richfaces-ui-input-api__version>
+		<m:dependency.management__org.richfaces.ui.validator__richfaces-ui-validator-ui__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.validator__richfaces-ui-validator-ui__version>
+		<m:dependency.management__javax.servlet.jsp__jsp-api__version>2.1</m:dependency.management__javax.servlet.jsp__jsp-api__version>
+		<m:dependency.management__javax.servlet__javax.servlet-api__version>3.0.1</m:dependency.management__javax.servlet__javax.servlet-api__version>
+		<m:properties__version.org.jboss.spec.javax.servlet.jboss-servlet-api_3.0_spec>1.0.0.Final</m:properties__version.org.jboss.spec.javax.servlet.jboss-servlet-api_3.0_spec>
+		<m:dependency.management__org.richfaces.ui__richfaces-components-api__version>4.3.2.Final</m:dependency.management__org.richfaces.ui__richfaces-components-api__version>
+		<m:properties__version.com.sun.faces.jsf-api>2.1.0</m:properties__version.com.sun.faces.jsf-api>
+		<m:properties__version.javax.faces-api>2.1</m:properties__version.javax.faces-api>
+		<m:dependency.management__com.sun.faces__jsf-api__version>2.1.0</m:dependency.management__com.sun.faces__jsf-api__version>
+		<m:properties__version.jms-api>1.1-rev-1</m:properties__version.jms-api>
+		<m:dependency.management__org.atmosphere__atmosphere-runtime__version>1.0.10</m:dependency.management__org.atmosphere__atmosphere-runtime__version>
+		<m:dependency.management__org.apache.myfaces.core__myfaces-api__version>2.1.10</m:dependency.management__org.apache.myfaces.core__myfaces-api__version>
+		<m:dependency.management__org.richfaces.core__richfaces-core-api__version>4.3.2.Final</m:dependency.management__org.richfaces.core__richfaces-core-api__version>
+		<m:dependency.management__org.richfaces.ui.misc__richfaces-ui-misc-ui__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.misc__richfaces-ui-misc-ui__version>
+		<m:properties__version.oscache>2.3</m:properties__version.oscache>
+		<m:properties__version.jbosscache>3.2.5.GA</m:properties__version.jbosscache>
+		<m:properties__version.google-guava>13.0.1</m:properties__version.google-guava>
+		<m:dependency.management__com.sun.faces__jsf-impl__version>2.1.19-jbossorg-1</m:dependency.management__com.sun.faces__jsf-impl__version>
+		<m:properties__version.atmosphere>1.0.10</m:properties__version.atmosphere>
+		<m:properties__version.org.apache.myfaces.core.myfaces-impl>2.1.10</m:properties__version.org.apache.myfaces.core.myfaces-impl>
+		<m:dependency.management__org.jboss.cache__jbosscache-core__version>3.2.5.GA</m:dependency.management__org.jboss.cache__jbosscache-core__version>
+		<m:dependency.management__org.richfaces.ui.common__richfaces-ui-common-ui__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.common__richfaces-ui-common-ui__version>
+		<m:dependency.management__javax.el__el-api__version>1.0</m:dependency.management__javax.el__el-api__version>
+		<m:properties__version.jsp-api>2.1</m:properties__version.jsp-api>
+		<m:dependency.management__org.jboss.spec.javax.servlet__jboss-servlet-api_3.0_spec__version>1.0.0.Final</m:dependency.management__org.jboss.spec.javax.servlet__jboss-servlet-api_3.0_spec__version>
+		<m:dependency.management__org.apache.myfaces.core__myfaces-impl__version>2.1.10</m:dependency.management__org.apache.myfaces.core__myfaces-impl__version>
+		<m:dependency.management__opensymphony__oscache__version>2.3</m:dependency.management__opensymphony__oscache__version>
+		<m:dependency.management__org.richfaces.ui__static-resources__version>4.3.2.Final</m:dependency.management__org.richfaces.ui__static-resources__version>
+		<m:dependency.management__javax.servlet.jsp.jstl__jstl-api__version>1.2</m:dependency.management__javax.servlet.jsp.jstl__jstl-api__version>
+		<m:properties__version.ehcache>1.6.0</m:properties__version.ehcache>
+		<m:dependency.management__org.richfaces.ui.iteration__richfaces-ui-iteration-api__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.iteration__richfaces-ui-iteration-api__version>
+		<m:dependency.management__net.sf.ehcache__ehcache__version>1.6.0</m:dependency.management__net.sf.ehcache__ehcache__version>
+		<m:properties__version.org.jboss.javax.faces.jsf-impl>2.1.19-jbossorg-1</m:properties__version.org.jboss.javax.faces.jsf-impl>
+		<m:dependency.management__org.jboss.spec.javax.faces__jboss-jsf-api_2.1_spec__version>2.0.7.Final</m:dependency.management__org.jboss.spec.javax.faces__jboss-jsf-api_2.1_spec__version>
+		<m:dependency.management__org.richfaces.ui.core__richfaces-ui-core-ui__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.core__richfaces-ui-core-ui__version>
+		<m:dependency.management__javax.faces__javax.faces-api__version>2.1</m:dependency.management__javax.faces__javax.faces-api__version>
+		<m:dependency.management__org.richfaces.ui.output__richfaces-ui-output-api__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.output__richfaces-ui-output-api__version>
+		<m:properties__version.org.glassfish.javax.faces>2.1.19</m:properties__version.org.glassfish.javax.faces>
+		<m:dependency.management__org.richfaces.ui.iteration__richfaces-ui-iteration-ui__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.iteration__richfaces-ui-iteration-ui__version>
+		<m:dependency.management__org.glassfish__javax.faces__version>2.1.19</m:dependency.management__org.glassfish__javax.faces__version>
+		<m:properties__jboss.snapshots.repo.url>https://repository.jboss.org/nexus/content/repositories/snapshots/</m:properties__jboss.snapshots.repo.url>
+		<m:properties__version.org.jboss.spec.javax.faces.jboss-jsf-api_2.1_spec>2.0.7.Final</m:properties__version.org.jboss.spec.javax.faces.jboss-jsf-api_2.1_spec>
+		<m:dependency.management__javax.jms__jms-api__version>1.1-rev-1</m:dependency.management__javax.jms__jms-api__version>
+		<m:dependency.management__org.ocpsoft.rewrite__rewrite-integration-cdi__version>1.0.4.Final</m:dependency.management__org.ocpsoft.rewrite__rewrite-integration-cdi__version>
+		<m:properties__jboss.releases.repo.url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</m:properties__jboss.releases.repo.url>
+		<m:dependency.management__org.ocpsoft.rewrite__rewrite-servlet__version>1.0.4.Final</m:dependency.management__org.ocpsoft.rewrite__rewrite-servlet__version>
+		<m:properties__version.org.apache.myfaces.core.myfaces-api>2.1.10</m:properties__version.org.apache.myfaces.core.myfaces-api>
+		<m:dependency.management__org.richfaces.ui.output__richfaces-ui-output-ui__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.output__richfaces-ui-output-ui__version>
+		<m:maven.plugins>org.apache.maven.plugins__maven-install-plugin__2.3.1|org.apache.maven.plugins__maven-deploy-plugin__2.5|org.apache.maven.plugins__maven-clean-plugin__2.4.1</m:maven.plugins>
+		<m:properties__version.richfaces>4.3.2.Final</m:properties__version.richfaces>
+		<m:dependency.management__javax.validation__validation-api__version>1.0.0.GA</m:dependency.management__javax.validation__validation-api__version>
+		<m:properties__version.cssparser>0.9.5</m:properties__version.cssparser>
+		<m:dependency.management__org.richfaces.core__richfaces-core-impl__version>4.3.2.Final</m:dependency.management__org.richfaces.core__richfaces-core-impl__version>
+		<m:properties__version.validation-api>1.0.0.GA</m:properties__version.validation-api>
+		<m:properties__version.jstl-api>1.2</m:properties__version.jstl-api>
+		<m:dependency.management__org.richfaces.ui.input__richfaces-ui-input-ui__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.input__richfaces-ui-input-ui__version>
+		<m:dependency.management__org.richfaces.ui.dnd__richfaces-ui-dnd-ui__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.dnd__richfaces-ui-dnd-ui__version>
+		<m:properties__version.servlet-api>3.0.1</m:properties__version.servlet-api>
+		<m:dependency.management__com.google.guava__guava__version>13.0.1</m:dependency.management__com.google.guava__guava__version>
+		<m:dependency.management__org.richfaces.ui.validator__richfaces-ui-validator-api__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.validator__richfaces-ui-validator-api__version>
+		<m:dependency.management__org.richfaces.ui__richfaces-components-ui__version>4.3.2.Final</m:dependency.management__org.richfaces.ui__richfaces-components-ui__version>
+	</info>
+	<configurations>
+		<conf name="default" visibility="public" description="runtime dependencies and master artifact can be used with this conf" extends="runtime,master"/>
+		<conf name="master" visibility="public" description="contains only the artifact published by this module itself, with no transitive dependencies"/>
+		<conf name="compile" visibility="public" description="this is the default scope, used if none is specified. Compile dependencies are available in all classpaths."/>
+		<conf name="provided" visibility="public" description="this is much like compile, but indicates you expect the JDK or a container to provide it. It is only available on the compilation classpath, and is not transitive."/>
+		<conf name="runtime" visibility="public" description="this scope indicates that the dependency is not required for compilation, but is for execution. It is in the runtime and test classpaths, but not the compile classpath." extends="compile"/>
+		<conf name="test" visibility="private" description="this scope indicates that the dependency is not required for normal use of the application, and is only available for the test compilation and execution phases." extends="runtime"/>
+		<conf name="system" visibility="public" description="this scope is similar to provided except that you have to provide the JAR which contains it explicitly. The artifact is always available and is not looked up in a repository."/>
+		<conf name="sources" visibility="public" description="this configuration contains the source artifact of this module, if any."/>
+		<conf name="javadoc" visibility="public" description="this configuration contains the javadoc artifact of this module, if any."/>
+		<conf name="optional" visibility="public" description="contains all optional dependencies"/>
+	</configurations>
+	<publications>
+	</publications>
+</ivy-module>

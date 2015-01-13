@@ -1,0 +1,13 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>javassist</groupId>
+  <artifactId>javassist</artifactId>
+  <name>javassist</name>
+  <version>3.0</version>
+  <distributionManagement>
+    <relocation>
+      <groupId>jboss</groupId>
+      <artifactId>javassist</artifactId>
+    </relocation>
+  </distributionManagement>
+</project>

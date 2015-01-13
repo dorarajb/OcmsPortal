@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="com.liferay"
+		module="mongodb-hook"
+		revision="working@terry-PC"
+		conf="default"
+		confs="default"
+		date="20131008163903"/>
+	<dependencies>
+		<module organisation="org.mongodb" name="mongo-java-driver">
+			<revision name="2.1" status="release" pubdate="20100820031903" resolver="maven2" artresolver="default" homepage="http://mongodb.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="0">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="2613" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\org.mongodb\mongo-java-driver\ivy-2.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/mongodb/mongo-java-driver/2.1/mongo-java-driver-2.1.pom"/>
+				<caller organisation="com.liferay" name="mongodb-hook" conf="default" rev="2.1" rev-constraint-default="2.1" rev-constraint-dynamic="2.1" callerrev="working@terry-PC"/>
+				<artifacts>
+					<artifact name="mongo-java-driver" type="jar" ext="jar" status="no" details="" size="210299" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\org.mongodb\mongo-java-driver\jars\mongo-java-driver-2.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/mongodb/mongo-java-driver/2.1/mongo-java-driver-2.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

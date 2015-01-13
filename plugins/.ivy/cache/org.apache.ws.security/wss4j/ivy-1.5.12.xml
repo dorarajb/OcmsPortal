@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
+	<info organisation="org.apache.ws.security"
+		module="wss4j"
+		revision="1.5.12"
+		status="release"
+		publication="20110817014937"
+	>
+		<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt" />
+		<description homepage="http://ws.apache.org/wss4j/">
+		Apache WSS4J is an implementation of the Web Services Security
+        (WS-Security) being developed at OASIS Web Services Security TC.
+        WSS4J is a primarily a Java library that can be used to sign and
+        verify SOAP Messages with WS-Security information. WSS4J will
+        use Apache Axis and Apache XML-Security projects and will be
+        interoperable with JAX-RPC based server/clients and .NET
+        server/clients.
+		</description>
+		<m:properties__bcprov.jdk14.version>1.46</m:properties__bcprov.jdk14.version>
+		<m:properties__xml.apis.version>1.3.04</m:properties__xml.apis.version>
+		<m:properties__xmlsec.version>1.4.5</m:properties__xmlsec.version>
+		<m:properties__commons.logging.version>1.1</m:properties__commons.logging.version>
+		<m:properties__junit.version>3.8.1</m:properties__junit.version>
+		<m:properties__xerces.version>2.9.1</m:properties__xerces.version>
+		<m:properties__xalan.version>2.7.1</m:properties__xalan.version>
+		<m:properties__bcprov.jdk15.version>1.46</m:properties__bcprov.jdk15.version>
+		<m:maven.plugins>org.apache.maven.plugins__maven-pmd-plugin__2.5|org.apache.felix__maven-bundle-plugin__1.4.3|null__maven-remote-resources-plugin__1.0</m:maven.plugins>
+		<m:properties__axis.version>1.4</m:properties__axis.version>
+		<m:properties__opensaml.version>1.1</m:properties__opensaml.version>
+	</info>
+	<configurations>
+		<conf name="default" visibility="public" description="runtime dependencies and master artifact can be used with this conf" extends="runtime,master"/>
+		<conf name="master" visibility="public" description="contains only the artifact published by this module itself, with no transitive dependencies"/>
+		<conf name="compile" visibility="public" description="this is the default scope, used if none is specified. Compile dependencies are available in all classpaths."/>
+		<conf name="provided" visibility="public" description="this is much like compile, but indicates you expect the JDK or a container to provide it. It is only available on the compilation classpath, and is not transitive."/>
+		<conf name="runtime" visibility="public" description="this scope indicates that the dependency is not required for compilation, but is for execution. It is in the runtime and test classpaths, but not the compile classpath." extends="compile"/>
+		<conf name="test" visibility="private" description="this scope indicates that the dependency is not required for normal use of the application, and is only available for the test compilation and execution phases." extends="runtime"/>
+		<conf name="system" visibility="public" description="this scope is similar to provided except that you have to provide the JAR which contains it explicitly. The artifact is always available and is not looked up in a repository."/>
+		<conf name="sources" visibility="public" description="this configuration contains the source artifact of this module, if any."/>
+		<conf name="javadoc" visibility="public" description="this configuration contains the javadoc artifact of this module, if any."/>
+		<conf name="optional" visibility="public" description="contains all optional dependencies"/>
+	</configurations>
+	<publications>
+		<artifact name="wss4j" type="bundle" ext="jar" conf="master"/>
+		<artifact name="wss4j" type="source" ext="jar" conf="sources" m:classifier="sources"/>
+		<artifact name="wss4j" type="javadoc" ext="jar" conf="javadoc" m:classifier="javadoc"/>
+	</publications>
+	<dependencies>
+		<dependency org="commons-logging" name="commons-logging" rev="1.1" force="true" conf="compile->compile(*),master(*);runtime->runtime(*)"/>
+		<dependency org="commons-discovery" name="commons-discovery" rev="0.2" force="true" conf="test->runtime(*),master(*)"/>
+		<dependency org="commons-codec" name="commons-codec" rev="1.3" force="true" conf="test->runtime(*),master(*)"/>
+		<dependency org="org.apache.santuario" name="xmlsec" rev="1.4.5" force="true" conf="compile->compile(*),master(*);runtime->runtime(*)"/>
+		<dependency org="xalan" name="xalan" rev="2.7.1" force="true" conf="compile->compile(*),master(*);runtime->runtime(*)"/>
+		<dependency org="xerces" name="xercesImpl" rev="2.9.1" force="true" conf="provided->compile(*),provided(*),runtime(*),master(*)"/>
+		<dependency org="xml-apis" name="xml-apis" rev="1.3.04" force="true" conf="provided->compile(*),provided(*),runtime(*),master(*)"/>
+		<dependency org="junit" name="junit" rev="3.8.1" force="true" conf="test->runtime(*),master(*)"/>
+		<dependency org="org.opensaml" name="opensaml" rev="1.1" force="true" conf="provided->compile(*),provided(*),runtime(*),master(*)"/>
+		<dependency org="org.apache.axis" name="axis" rev="1.4" force="true" conf="provided->compile(*),provided(*),runtime(*),master(*)"/>
+		<dependency org="org.apache.axis" name="axis-ant" rev="1.4" force="true" conf="provided->compile(*),provided(*),runtime(*),master(*)"/>
+		<dependency org="org.apache.axis" name="axis-jaxrpc" rev="1.4" force="true" conf="provided->compile(*),provided(*),runtime(*),master(*)"/>
+		<dependency org="org.apache.axis" name="axis-saaj" rev="1.4" force="true" conf="provided->compile(*),provided(*),runtime(*),master(*)"/>
+	</dependencies>
+</ivy-module>

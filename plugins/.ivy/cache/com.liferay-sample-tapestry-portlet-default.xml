@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="com.liferay"
+		module="sample-tapestry-portlet"
+		revision="working@terry-PC"
+		conf="default"
+		confs="default"
+		date="20131121141810"/>
+	<dependencies>
+		<module organisation="org.apache.tapestry" name="tapestry-portlet">
+			<revision name="4.1" status="release" pubdate="20060729025904" resolver="maven2" artresolver="default" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="7">
+				<metadata-artifact status="no" details="" size="8712" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\org.apache.tapestry\tapestry-portlet\ivy-4.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/apache/tapestry/tapestry-portlet/4.1/tapestry-portlet-4.1.pom"/>
+				<caller organisation="com.liferay" name="sample-tapestry-portlet" conf="default" rev="4.1" rev-constraint-default="4.1" rev-constraint-dynamic="4.1" callerrev="working@terry-PC"/>
+				<artifacts>
+					<artifact name="tapestry-portlet" type="jar" ext="jar" status="no" details="" size="61136" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\org.apache.tapestry\tapestry-portlet\jars\tapestry-portlet-4.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/apache/tapestry/tapestry-portlet/4.1/tapestry-portlet-4.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.tapestry" name="tapestry-contrib">
+			<revision name="4.1" status="release" pubdate="20060729025810" resolver="maven2" artresolver="default" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="5">
+				<metadata-artifact status="no" details="" size="8707" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\org.apache.tapestry\tapestry-contrib\ivy-4.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/apache/tapestry/tapestry-contrib/4.1/tapestry-contrib-4.1.pom"/>
+				<caller organisation="com.liferay" name="sample-tapestry-portlet" conf="default" rev="4.1" rev-constraint-default="4.1" rev-constraint-dynamic="4.1" callerrev="working@terry-PC"/>
+				<artifacts>
+					<artifact name="tapestry-contrib" type="jar" ext="jar" status="no" details="" size="315152" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\org.apache.tapestry\tapestry-contrib\jars\tapestry-contrib-4.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/apache/tapestry/tapestry-contrib/4.1/tapestry-contrib-4.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.tapestry" name="tapestry-annotations">
+			<revision name="4.1" status="release" pubdate="20060729025844" resolver="maven2" artresolver="default" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="4">
+				<metadata-artifact status="no" details="" size="8617" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\org.apache.tapestry\tapestry-annotations\ivy-4.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/apache/tapestry/tapestry-annotations/4.1/tapestry-annotations-4.1.pom"/>
+				<caller organisation="com.liferay" name="sample-tapestry-portlet" conf="default" rev="4.1" rev-constraint-default="4.1" rev-constraint-dynamic="4.1" callerrev="working@terry-PC"/>
+				<artifacts>
+					<artifact name="tapestry-annotations" type="jar" ext="jar" status="no" details="" size="43969" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\org.apache.tapestry\tapestry-annotations\jars\tapestry-annotations-4.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/apache/tapestry/tapestry-annotations/4.1/tapestry-annotations-4.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.tapestry" name="tapestry-framework">
+			<revision name="4.1" status="release" pubdate="20060729025654" resolver="maven2" artresolver="default" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="6">
+				<metadata-artifact status="no" details="" size="10059" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\org.apache.tapestry\tapestry-framework\ivy-4.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/apache/tapestry/tapestry-framework/4.1/tapestry-framework-4.1.pom"/>
+				<caller organisation="com.liferay" name="sample-tapestry-portlet" conf="default" rev="4.1" rev-constraint-default="4.1" rev-constraint-dynamic="4.1" callerrev="working@terry-PC"/>
+				<artifacts>
+					<artifact name="tapestry-framework" type="jar" ext="jar" status="no" details="" size="2194465" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\org.apache.tapestry\tapestry-framework\jars\tapestry-framework-4.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/apache/tapestry/tapestry-framework/4.1/tapestry-framework-4.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="ognl" name="ognl">
+			<revision name="2.6.7" status="release" pubdate="20051109062046" resolver="maven2" artresolver="default" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="3">
+				<metadata-artifact status="no" details="" size="2199" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\ognl\ognl\ivy-2.6.7.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/ognl/ognl/2.6.7/ognl-2.6.7.pom"/>
+				<caller organisation="com.liferay" name="sample-tapestry-portlet" conf="default" rev="2.6.7" rev-constraint-default="2.6.7" rev-constraint-dynamic="2.6.7" callerrev="working@terry-PC"/>
+				<artifacts>
+					<artifact name="ognl" type="jar" ext="jar" status="no" details="" size="166319" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\ognl\ognl\jars\ognl-2.6.7.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/ognl/ognl/2.6.7/ognl-2.6.7.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="javassist" name="javassist">
+			<revision name="3.0" status="release" pubdate="20060213202320" resolver="maven2" artresolver="default" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="2">
+				<metadata-artifact status="no" details="" size="2409" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\javassist\javassist\ivy-3.0.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/javassist/javassist/3.0/javassist-3.0.pom"/>
+				<caller organisation="com.liferay" name="sample-tapestry-portlet" conf="default" rev="3.0" rev-constraint-default="3.0" rev-constraint-dynamic="3.0" callerrev="working@terry-PC"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="hivemind" name="hivemind-lib">
+			<revision name="1.1" status="release" pubdate="20060214021904" resolver="maven2" artresolver="default" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="1">
+				<metadata-artifact status="no" details="" size="2380" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\hivemind\hivemind-lib\ivy-1.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/hivemind/hivemind-lib/1.1/hivemind-lib-1.1.pom"/>
+				<caller organisation="com.liferay" name="sample-tapestry-portlet" conf="default" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="working@terry-PC"/>
+				<artifacts>
+					<artifact name="hivemind-lib" type="jar" ext="jar" status="no" details="" size="74662" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\hivemind\hivemind-lib\jars\hivemind-lib-1.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/hivemind/hivemind-lib/1.1/hivemind-lib-1.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="hivemind" name="hivemind">
+			<revision name="1.1" status="release" pubdate="20060214021903" resolver="maven2" artresolver="default" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="0">
+				<metadata-artifact status="no" details="" size="2634" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\hivemind\hivemind\ivy-1.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/hivemind/hivemind/1.1/hivemind-1.1.pom"/>
+				<caller organisation="com.liferay" name="sample-tapestry-portlet" conf="default" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="working@terry-PC"/>
+				<artifacts>
+					<artifact name="hivemind" type="jar" ext="jar" status="no" details="" size="387802" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\hivemind\hivemind\jars\hivemind-1.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/hivemind/hivemind/1.1/hivemind-1.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

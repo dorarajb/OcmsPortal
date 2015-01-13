@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="com.liferay"
+		module="wsrp-portlet"
+		revision="working@terry-PC"
+		conf="default"
+		confs="default"
+		date="20131121142018"/>
+	<dependencies>
+		<module organisation="org.apache.ws.security" name="wss4j">
+			<revision name="1.5.12" status="release" pubdate="20110817014937" resolver="maven2" artresolver="default" homepage="http://ws.apache.org/wss4j/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="0">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="5651" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\org.apache.ws.security\wss4j\ivy-1.5.12.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/apache/ws/security/wss4j/1.5.12/wss4j-1.5.12.pom"/>
+				<caller organisation="com.liferay" name="wsrp-portlet" conf="default" rev="1.5.12" rev-constraint-default="1.5.12" rev-constraint-dynamic="1.5.12" callerrev="working@terry-PC"/>
+				<artifacts>
+					<artifact name="wss4j" type="bundle" ext="jar" status="no" details="" size="337532" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\org.apache.ws.security\wss4j\bundles\wss4j-1.5.12.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/apache/ws/security/wss4j/1.5.12/wss4j-1.5.12.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

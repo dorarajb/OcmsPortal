@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="com.liferay"
+		module="wurfl-web"
+		revision="working@terry-PC"
+		conf="default"
+		confs="default"
+		date="20131008164112"/>
+	<dependencies>
+		<module organisation="net.sourceforge.wurfl" name="wurfl">
+			<revision name="1.3.1.1" status="release" pubdate="20110824233337" resolver="maven2" artresolver="default" homepage="http://dev.wurflpro.com/projects/wurfl-api" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="0">
+				<license name="GNU AFFERO GENERAL PUBLIC LICENSE, version 3" url="http://www.gnu.org/licenses/agpl.txt"/>
+				<metadata-artifact status="no" details="" size="4878" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\net.sourceforge.wurfl\wurfl\ivy-1.3.1.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/net/sourceforge/wurfl/wurfl/1.3.1.1/wurfl-1.3.1.1.pom"/>
+				<caller organisation="com.liferay" name="wurfl-web" conf="default" rev="1.3.1.1" rev-constraint-default="1.3.1.1" rev-constraint-dynamic="1.3.1.1" callerrev="working@terry-PC"/>
+				<artifacts>
+					<artifact name="wurfl" type="jar" ext="jar" status="no" details="" size="204231" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\net.sourceforge.wurfl\wurfl\jars\wurfl-1.3.1.1.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/net/sourceforge/wurfl/wurfl/1.3.1.1/wurfl-1.3.1.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

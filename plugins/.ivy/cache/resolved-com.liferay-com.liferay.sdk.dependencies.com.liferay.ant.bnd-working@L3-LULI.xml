@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd">
+	<info organisation="com.liferay" module="com.liferay.sdk.dependencies.com.liferay.ant.bnd" revision="working@L3-LULI" status="integration" publication="20140813163306">
+		<extends extendType="configurations,description,info" location="D:/test run/project-validation/liferay-plugins-sdk-7.0-ce-m1-20140820241612512/liferay-plugins-sdk-7.0/ivy.xml" module="com.liferay.sdk" organisation="com.liferay" revision="latest.integration"/>
+	</info>
+
+	<dependencies defaultconf="default">
+		<dependency name="com.liferay.ant.bnd" org="com.liferay" rev="1.0.0-SNAPSHOT"/>
+	</dependencies>
+</ivy-module>

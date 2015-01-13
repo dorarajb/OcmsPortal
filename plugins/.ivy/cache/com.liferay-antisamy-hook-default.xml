@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="com.liferay"
+		module="antisamy-hook"
+		revision="working@terry-PC"
+		conf="default"
+		confs="default"
+		date="20131008163857"/>
+	<dependencies>
+		<module organisation="org.owasp.antisamy" name="antisamy">
+			<revision name="1.4.4" status="release" pubdate="20110307072111" resolver="maven2" artresolver="default" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="0">
+				<metadata-artifact status="no" details="" size="3809" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\org.owasp.antisamy\antisamy\ivy-1.4.4.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/owasp/antisamy/antisamy/1.4.4/antisamy-1.4.4.pom"/>
+				<caller organisation="com.liferay" name="antisamy-hook" conf="default" rev="1.4.4" rev-constraint-default="1.4.4" rev-constraint-dynamic="1.4.4" callerrev="working@terry-PC"/>
+				<artifacts>
+					<artifact name="antisamy" type="jar" ext="jar" status="no" details="" size="71709" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\org.owasp.antisamy\antisamy\jars\antisamy-1.4.4.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/owasp/antisamy/antisamy/1.4.4/antisamy-1.4.4.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.xmlgraphics" name="batik-css">
+			<revision name="1.7" status="release" pubdate="20080109184305" resolver="maven2" artresolver="default" homepage="http://xmlgraphics.apache.org/batik/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="1">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="2965" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\org.apache.xmlgraphics\batik-css\ivy-1.7.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/apache/xmlgraphics/batik-css/1.7/batik-css-1.7.pom"/>
+				<caller organisation="com.liferay" name="antisamy-hook" conf="default" rev="1.7" rev-constraint-default="1.7" rev-constraint-dynamic="1.7" callerrev="working@terry-PC"/>
+				<artifacts>
+					<artifact name="batik-css" type="jar" ext="jar" status="no" details="" size="310919" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\org.apache.xmlgraphics\batik-css\jars\batik-css-1.7.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/apache/xmlgraphics/batik-css/1.7/batik-css-1.7.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="xml-apis" name="xml-apis-ext">
+			<revision name="1.3.04" status="release" pubdate="20061222213752" resolver="maven2" artresolver="default" homepage="http://xml.apache.org/commons/components/external/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="3">
+				<metadata-artifact status="no" details="" size="2855" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\xml-apis\xml-apis-ext\ivy-1.3.04.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/xml-apis/xml-apis-ext/1.3.04/xml-apis-ext-1.3.04.pom"/>
+				<caller organisation="com.liferay" name="antisamy-hook" conf="default" rev="1.3.04" rev-constraint-default="1.3.04" rev-constraint-dynamic="1.3.04" callerrev="working@terry-PC"/>
+				<artifacts>
+					<artifact name="xml-apis-ext" type="jar" ext="jar" status="no" details="" size="85686" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\xml-apis\xml-apis-ext\jars\xml-apis-ext-1.3.04.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/xml-apis/xml-apis-ext/1.3.04/xml-apis-ext-1.3.04.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.xmlgraphics" name="batik-util">
+			<revision name="1.7" status="release" pubdate="20080109184304" resolver="maven2" artresolver="default" homepage="http://xmlgraphics.apache.org/batik/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="2">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="no" details="" size="2379" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\org.apache.xmlgraphics\batik-util\ivy-1.7.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/apache/xmlgraphics/batik-util/1.7/batik-util-1.7.pom"/>
+				<caller organisation="com.liferay" name="antisamy-hook" conf="default" rev="1.7" rev-constraint-default="1.7" rev-constraint-dynamic="1.7" callerrev="working@terry-PC"/>
+				<artifacts>
+					<artifact name="batik-util" type="jar" ext="jar" status="no" details="" size="128286" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\org.apache.xmlgraphics\batik-util\jars\batik-util-1.7.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/apache/xmlgraphics/batik-util/1.7/batik-util-1.7.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

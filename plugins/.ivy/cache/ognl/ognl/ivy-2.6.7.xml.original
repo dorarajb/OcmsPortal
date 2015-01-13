@@ -1,0 +1,41 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>ognl</groupId>
+  <artifactId>ognl</artifactId>
+  <version>2.6.7</version>
+<!--   THESE DEPENDENCIES WILL BE COMMENTED UNTIL THEY HAVE THEIR OWN POMS
+  <dependencies>
+    <dependency>
+      <groupId>ant-contrib</groupId>
+      <artifactId>ant-contrib</artifactId>
+      <version>0.3</version>
+    </dependency>
+    <dependency>
+      <groupId>javacc</groupId>
+      <artifactId>javacc</artifactId>
+      <version>2.1</version>
+    </dependency>
+    <dependency>
+      <groupId>docbook-xml</groupId>
+      <artifactId>docbook-xml</artifactId>
+      <version>4.2</version>
+    </dependency>
+    <dependency>
+      <groupId>docbook-xsl</groupId>
+      <artifactId>docbook-xsl</artifactId>
+      <version>1.65.0</version>
+    </dependency>
+    <dependency>
+      <groupId>javassist</groupId>
+      <artifactId>javassist</artifactId>
+      <version>2.6.0</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+-->
+</project>

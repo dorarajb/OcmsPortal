@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="com.liferay"
+		module="sample-dao-portlet"
+		revision="working@terry-PC"
+		conf="default"
+		confs="default"
+		date="20140108140304"/>
+	<dependencies>
+		<module organisation="mysql" name="mysql-connector-java">
+			<revision name="5.0.7" status="release" pubdate="20071006035225" resolver="maven2" artresolver="default" homepage="http://dev.mysql.com/usingmysql/java/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="1">
+				<license name="The GNU General Public License, Version 2" url="http://www.gnu.org/licenses/gpl.txt"/>
+				<metadata-artifact status="no" details="" size="2415" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\mysql\mysql-connector-java\ivy-5.0.7.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/mysql/mysql-connector-java/5.0.7/mysql-connector-java-5.0.7.pom"/>
+				<caller organisation="com.liferay" name="sample-dao-portlet" conf="default" rev="5.0.7" rev-constraint-default="5.0.7" rev-constraint-dynamic="5.0.7" callerrev="working@terry-PC"/>
+				<artifacts>
+					<artifact name="mysql-connector-java" type="jar" ext="jar" status="no" details="" size="536609" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\mysql\mysql-connector-java\jars\mysql-connector-java-5.0.7.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/mysql/mysql-connector-java/5.0.7/mysql-connector-java-5.0.7.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="c3p0" name="c3p0">
+			<revision name="0.9.0.4" status="release" pubdate="20060510102522" resolver="maven2" artresolver="default" homepage="http://c3p0.sourceforge.net" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="0">
+				<license name="GNU LESSER GENERAL PUBLIC LICENSE" url="http://www.gnu.org/licenses/lgpl.txt"/>
+				<metadata-artifact status="no" details="" size="2602" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\c3p0\c3p0\ivy-0.9.0.4.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/c3p0/c3p0/0.9.0.4/c3p0-0.9.0.4.pom"/>
+				<caller organisation="com.liferay" name="sample-dao-portlet" conf="default" rev="0.9.0.4" rev-constraint-default="0.9.0.4" rev-constraint-dynamic="0.9.0.4" callerrev="working@terry-PC"/>
+				<artifacts>
+					<artifact name="c3p0" type="jar" ext="jar" status="no" details="" size="490136" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\c3p0\c3p0\jars\c3p0-0.9.0.4.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/c3p0/c3p0/0.9.0.4/c3p0-0.9.0.4.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

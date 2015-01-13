@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
+	<info organisation="org.richfaces.core"
+		module="richfaces-core-api"
+		revision="4.3.2.Final"
+		status="release"
+		publication="20130514062954"
+	>
+		<description homepage="">
+		The RichFaces Core API.
+		</description>
+		<m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-depchain__version>2.0.0-beta-3</m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-depchain__version>
+		<m:dependency.management__org.apache.maven__maven-core__version>3.0.4</m:dependency.management__org.apache.maven__maven-core__version>
+		<m:dependency.management__com.google.inject.extensions__guice-multibindings__version>3.0</m:dependency.management__com.google.inject.extensions__guice-multibindings__version>
+		<m:properties__version.hsqldb>2.0.0</m:properties__version.hsqldb>
+		<m:properties__version.xmlunit>1.2</m:properties__version.xmlunit>
+		<m:dependency.management__org.jboss.arquillian.container__arquillian-container-test-spi__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.container__arquillian-container-test-spi__version>
+		<m:properties__version.javadoc.plugin>2.8</m:properties__version.javadoc.plugin>
+		<m:dependency.management__org.richfaces.ui.input__richfaces-ui-input-api__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.input__richfaces-ui-input-api__version>
+		<m:dependency.management__org.jboss.arquillian.protocol__arquillian-protocol-jmx__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.protocol__arquillian-protocol-jmx__version>
+		<m:properties__arquillian.richfaces.servletContainerSetup>false</m:properties__arquillian.richfaces.servletContainerSetup>
+		<m:properties__version.google-javaparser>1.0.1</m:properties__version.google-javaparser>
+		<m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-spi__version>2.0.0-beta-3</m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-spi__version>
+		<m:dependency.management__org.jboss.test-jsf__jsf-test-scriptunit__version>1.1.6</m:dependency.management__org.jboss.test-jsf__jsf-test-scriptunit__version>
+		<m:dependency.management__org.hsqldb__hsqldb-j5__version>2.0.0</m:dependency.management__org.hsqldb__hsqldb-j5__version>
+		<m:properties__version.jdepend.plugin>2.0-beta-2</m:properties__version.jdepend.plugin>
+		<m:dependency.management__com.sun.faces__jsf-api__version>2.1.0</m:dependency.management__com.sun.faces__jsf-api__version>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-selenium__version>1.1.0.Final</m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-selenium__version>
+		<m:dependency.management__org.jboss.test-jsf__jsf-test-jetty__version>1.1.6</m:dependency.management__org.jboss.test-jsf__jsf-test-jetty__version>
+		<m:dependency.management__org.jboss.arquillian.testenricher__arquillian-testenricher-cdi__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.testenricher__arquillian-testenricher-cdi__version>
+		<m:dependency.management__org.jboss.arquillian.testng__arquillian-testng-container__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.testng__arquillian-testng-container__version>
+		<m:properties__version.javancss.plugin>2.0</m:properties__version.javancss.plugin>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-support__version>2.25.0</m:dependency.management__org.seleniumhq.selenium__selenium-support__version>
+		<m:properties__jdk.min.version>${maven.compiler.source}</m:properties__jdk.min.version>
+		<m:dependency.management__org.reflections__reflections__exclusion_0>com.google.collections__google-collections</m:dependency.management__org.reflections__reflections__exclusion_0>
+		<m:properties__version.tomee15>1.5.1</m:properties__version.tomee15>
+		<m:dependency.management__org.jboss.shrinkwrap__shrinkwrap-api-nio2__version>1.1.2</m:dependency.management__org.jboss.shrinkwrap__shrinkwrap-api-nio2__version>
+		<m:dependency.management__org.jboss.as__jboss-as-arquillian-container-remote__version>7.1.1.Final</m:dependency.management__org.jboss.as__jboss-as-arquillian-container-remote__version>
+		<m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-api-javaee__version>2.0.0-alpha-3</m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-api-javaee__version>
+		<m:properties__version.clean.plugin>2.4.1</m:properties__version.clean.plugin>
+		<m:dependency.management__org.hornetq__hornetq-core__version>2.2.7.Final</m:dependency.management__org.hornetq__hornetq-core__version>
+		<m:properties__version.buildnumber.plugin>1.0</m:properties__version.buildnumber.plugin>
+		<m:properties__version.arquillian.core>1.0.3.Final</m:properties__version.arquillian.core>
+		<m:dependency.management__org.sonatype.sisu.inject__guice-multibindings__exclusion_0>com.google.inject__guice</m:dependency.management__org.sonatype.sisu.inject__guice-multibindings__exclusion_0>
+		<m:properties__maven.compiler.argument.target>${maven.compiler.target}</m:properties__maven.compiler.argument.target>
+		<m:properties__version.xsom>20081112</m:properties__version.xsom>
+		<m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-api__version>1.0.0-beta-7</m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-api__version>
+		<m:dependency.management__org.jboss.test-jsf__htmlunit-client__version>1.1.6</m:dependency.management__org.jboss.test-jsf__htmlunit-client__version>
+		<m:dependency.management__com.google.inject__guice__version>3.0</m:dependency.management__com.google.inject__guice__version>
+		<m:properties__useReleaseProfile>false</m:properties__useReleaseProfile>
+		<m:dependency.management__org.easymock__easymockclassextension__version>2.5.2</m:dependency.management__org.easymock__easymockclassextension__version>
+		<m:dependency.management__org.apache.myfaces.core__myfaces-impl__version>2.1.10</m:dependency.management__org.apache.myfaces.core__myfaces-impl__version>
+		<m:properties__version.hibernate-entitymanager>4.0.0.Final</m:properties__version.hibernate-entitymanager>
+		<m:dependency.management__org.jboss.arquillian.testng__arquillian-testng-core__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.testng__arquillian-testng-core__version>
+		<m:dependency.management__org.richfaces.ui.iteration__richfaces-ui-iteration-api__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.iteration__richfaces-ui-iteration-api__version>
+		<m:properties__version.vdl-doc>3</m:properties__version.vdl-doc>
+		<m:properties__version.clover2.plugin>3.0.2</m:properties__version.clover2.plugin>
+		<m:properties__version.jar.plugin>2.3.1</m:properties__version.jar.plugin>
+		<m:dependency.management__org.jboss.spec.javax.faces__jboss-jsf-api_2.1_spec__version>2.0.7.Final</m:dependency.management__org.jboss.spec.javax.faces__jboss-jsf-api_2.1_spec__version>
+		<m:dependency.management__org.jboss.arquillian.test__arquillian-test-impl-base__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.test__arquillian-test-impl-base__version>
+		<m:dependency.management__org.jboss.netty__netty__version>3.2.5.Final</m:dependency.management__org.jboss.netty__netty__version>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-spi__version>1.1.0.Final</m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-spi__version>
+		<m:dependency.management__com.google.inject.extensions__guice-grapher__version>3.0</m:dependency.management__com.google.inject.extensions__guice-grapher__version>
+		<m:properties__maven.compiler.argument.source>${maven.compiler.source}</m:properties__maven.compiler.argument.source>
+		<m:dependency.management__org.freemarker__freemarker__version>2.3.9</m:dependency.management__org.freemarker__freemarker__version>
+		<m:dependency.management__org.jboss.shrinkwrap__shrinkwrap-spi__version>1.0.1</m:dependency.management__org.jboss.shrinkwrap__shrinkwrap-spi__version>
+		<m:dependency.management__org.jboss.arquillian.core__arquillian-core-impl-base__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.core__arquillian-core-impl-base__version>
+		<m:properties__version.checkstyle.plugin>2.5</m:properties__version.checkstyle.plugin>
+		<m:maven.plugins>org.apache.maven.plugins__maven-enforcer-plugin__null|org.apache.maven.plugins__maven-source-plugin__null|org.apache.maven.plugins__maven-enforcer-plugin__null|org.apache.maven.plugins__maven-source-plugin__null|org.apache.maven.plugins__maven-release-plugin__null|org.apache.maven.plugins__maven-enforcer-plugin__null|org.apache.maven.plugins__maven-source-plugin__null|org.apache.maven.plugins__maven-enforcer-plugin__null|org.apache.maven.plugins__maven-source-plugin__null|org.apache.maven.plugins__maven-release-plugin__null|org.apache.maven.plugins__maven-release-plugin__null|org.apache.maven.plugins__maven-enforcer-plugin__null|org.apache.maven.plugins__maven-source-plugin__null|org.apache.maven.plugins__maven-enforcer-plugin__null|org.apache.maven.plugins__maven-source-plugin__null|org.apache.maven.plugins__maven-release-plugin__null|org.apache.maven.plugins__maven-enforcer-plugin__null|org.apache.maven.plugins__maven-source-plugin__null|org.apache.maven.plugins__maven-enforcer-plugin__null|org.apache.maven.plugins__maven-source-plugin__null|org.apache.maven.plugins__maven-release-plugin__null|org.apache.maven.plugins__maven-release-plugin__null|org.apache.maven.plugins__maven-enforcer-plugin__null|org.apache.maven.plugins__maven-source-plugin__null|org.apache.maven.plugins__maven-enforcer-plugin__null|org.apache.maven.plugins__maven-source-plugin__null|org.apache.maven.plugins__maven-release-plugin__null|org.apache.maven.plugins__maven-enforcer-plugin__null|org.apache.maven.plugins__maven-source-plugin__null|org.apache.maven.plugins__maven-enforcer-plugin__null|org.apache.maven.plugins__maven-source-plugin__null|org.apache.maven.plugins__maven-release-plugin__null|org.apache.maven.plugins__maven-release-plugin__null|org.apache.maven.plugins__maven-enforcer-plugin__null|org.apache.maven.plugins__maven-source-plugin__null|org.apache.maven.plugins__maven-enforcer-plugin__null|org.apache.maven.plugins__maven-source-plugin__null|org.apache.maven.plugins__maven-release-plugin__null|org.apache.maven.plugins__maven-enforcer-plugin__null|org.apache.maven.plugins__maven-source-plugin__null|org.apache.maven.plugins__maven-enforcer-plugin__null|org.apache.maven.plugins__maven-source-plugin__null|org.apache.maven.plugins__maven-release-plugin__null|org.apache.maven.plugins__maven-release-plugin__null|null__maven-checkstyle-plugin__null</m:maven.plugins>
+		<m:properties__version.jboss-el>1.0_02.CR6</m:properties__version.jboss-el>
+		<m:properties__version.modello.plugin>1.0.2</m:properties__version.modello.plugin>
+		<m:properties__version.richfaces>4.3.2.Final</m:properties__version.richfaces>
+		<m:dependency.management__org.apache.httpcomponents__httpcore__version>4.2.1</m:dependency.management__org.apache.httpcomponents__httpcore__version>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-impl__version>1.1.0.Final</m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-impl__version>
+		<m:dependency.management__javax.validation__validation-api__version>1.0.0.GA</m:dependency.management__javax.validation__validation-api__version>
+		<m:dependency.management__org.jboss.arquillian.test__arquillian-test-api__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.test__arquillian-test-api__version>
+		<m:dependency.management__org.richfaces.cdk__xinclude__version>4.3.1.Final</m:dependency.management__org.richfaces.cdk__xinclude__version>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-firefox-driver__version>2.25.0</m:dependency.management__org.seleniumhq.selenium__selenium-firefox-driver__version>
+		<m:dependency.management__org.richfaces.core__richfaces-core-impl__version>4.3.2.Final</m:dependency.management__org.richfaces.core__richfaces-core-impl__version>
+		<m:dependency.management__com.sun.xsom__xsom__version>20081112</m:dependency.management__com.sun.xsom__xsom__version>
+		<m:dependency.management__org.richfaces.cdk__attributes__version>4.3.1.Final</m:dependency.management__org.richfaces.cdk__attributes__version>
+		<m:properties__version.openjpa>2.1.1</m:properties__version.openjpa>
+		<m:properties__version.xerces>2.9.1</m:properties__version.xerces>
+		<m:dependency.management__org.richfaces.ui.input__richfaces-ui-input-ui__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.input__richfaces-ui-input-ui__version>
+		<m:dependency.management__org.jboss.as__jboss-as-arquillian-container-managed__scope>test</m:dependency.management__org.jboss.as__jboss-as-arquillian-container-managed__scope>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-warp-api__version>1.0.0.Alpha2</m:dependency.management__org.jboss.arquillian.extension__arquillian-warp-api__version>
+		<m:dependency.management__commons-io__commons-io__version>2.1</m:dependency.management__commons-io__commons-io__version>
+		<m:dependency.management__org.richfaces.ui__richfaces-components-ui__version>4.3.2.Final</m:dependency.management__org.richfaces.ui__richfaces-components-ui__version>
+		<m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-impl-jboss__version>2.0.0-alpha-3</m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-impl-jboss__version>
+		<m:dependency.management__com.beust__jcommander__version>1.20</m:dependency.management__com.beust__jcommander__version>
+		<m:properties__version.selenium>2.31.0</m:properties__version.selenium>
+		<m:properties__project.reporting.outputEncoding>UTF-8</m:properties__project.reporting.outputEncoding>
+		<m:properties__version.guice.plugin>2.2.0</m:properties__version.guice.plugin>
+		<m:properties__maven.compiler.target>1.6</m:properties__maven.compiler.target>
+		<m:properties__version.resources.plugin>2.5</m:properties__version.resources.plugin>
+		<m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-depchain__version>2.0.0-alpha-3</m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-depchain__version>
+		<m:properties__version.shrinkwrap.resolver>2.0.0-beta-3</m:properties__version.shrinkwrap.resolver>
+		<m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-api-base__version>2.0.0-alpha-3</m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-api-base__version>
+		<m:properties__version.assembly.plugin>2.2.1</m:properties__version.assembly.plugin>
+		<m:dependency.management__org.richfaces.cdk__annotations__version>4.3.1.Final</m:dependency.management__org.richfaces.cdk__annotations__version>
+		<m:properties__version.invoker.plugin>1.3</m:properties__version.invoker.plugin>
+		<m:dependency.management__org.easymock__easymock__version>2.5.2</m:dependency.management__org.easymock__easymock__version>
+		<m:properties__version.taglist.plugin>2.4</m:properties__version.taglist.plugin>
+		<m:dependency.management__org.apache.maven.shared__file-management__version>1.2.1</m:dependency.management__org.apache.maven.shared__file-management__version>
+		<m:properties__version.pmd.plugin>2.5</m:properties__version.pmd.plugin>
+		<m:properties__version.compiler.plugin>2.3.2</m:properties__version.compiler.plugin>
+		<m:dependency.management__org.atmosphere__atmosphere-runtime__version>1.0.10</m:dependency.management__org.atmosphere__atmosphere-runtime__version>
+		<m:properties__version.shrinkwrap>1.1.2</m:properties__version.shrinkwrap>
+		<m:dependency.management__org.jboss.arquillian.junit__arquillian-junit-container__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.junit__arquillian-junit-container__version>
+		<m:dependency.management__org.codehaus.plexus__plexus-utils__version>1.5.15</m:dependency.management__org.codehaus.plexus__plexus-utils__version>
+		<m:dependency.management__commons-logging__commons-logging__version>1.1.1</m:dependency.management__commons-logging__commons-logging__version>
+		<m:dependency.management__org.richfaces.build.resources__faces-vdl-documentation__version>3</m:dependency.management__org.richfaces.build.resources__faces-vdl-documentation__version>
+		<m:dependency.management__org.apache.httpcomponents__httpclient__version>4.2.1</m:dependency.management__org.apache.httpcomponents__httpclient__version>
+		<m:properties__version.cdk>4.3.1.Final</m:properties__version.cdk>
+		<m:properties__version.shrinkwrap.descriptors>2.0.0-alpha-3</m:properties__version.shrinkwrap.descriptors>
+		<m:properties__version.yuicompressor>2.3.6</m:properties__version.yuicompressor>
+		<m:properties__version.tomcat6>6.0.35</m:properties__version.tomcat6>
+		<m:properties__version.tomcat7>7.0.26</m:properties__version.tomcat7>
+		<m:properties__version.site.plugin>3.0-beta-3</m:properties__version.site.plugin>
+		<m:dependency.management__org.richfaces.ui__static-resources__version>4.3.2.Final</m:dependency.management__org.richfaces.ui__static-resources__version>
+		<m:dependency.management__opensymphony__oscache__version>2.3</m:dependency.management__opensymphony__oscache__version>
+		<m:dependency.management__org.hornetq__hornetq-logging__version>2.2.7.Final</m:dependency.management__org.hornetq__hornetq-logging__version>
+		<m:dependency.management__com.googlecode.functional-collections__functional-collections__exclusion_0>com.google.collections__google-collections</m:dependency.management__com.googlecode.functional-collections__functional-collections__exclusion_0>
+		<m:dependency.management__org.jboss.arquillian.junit__arquillian-junit-standalone__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.junit__arquillian-junit-standalone__version>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-android-driver__version>2.25.0</m:dependency.management__org.seleniumhq.selenium__selenium-android-driver__version>
+		<m:properties__version.cdi-api>1.0-SP4</m:properties__version.cdi-api>
+		<m:properties__version.ejb.plugin>2.2.1</m:properties__version.ejb.plugin>
+		<m:properties__version.gpg.plugin>1.4</m:properties__version.gpg.plugin>
+		<m:dependency.management__org.richfaces.ui.core__richfaces-ui-core-ui__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.core__richfaces-ui-core-ui__version>
+		<m:properties__version.arquillian.warp>1.0.0.Alpha2</m:properties__version.arquillian.warp>
+		<m:properties__version.plexus-velocity>1.1.2</m:properties__version.plexus-velocity>
+		<m:dependency.management__javax.faces__javax.faces-api__version>2.1</m:dependency.management__javax.faces__javax.faces-api__version>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-selenium-server__version>1.1.0.Final</m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-selenium-server__version>
+		<m:properties__version.arquillian.drone>1.1.0.Final</m:properties__version.arquillian.drone>
+		<m:dependency.management__org.glassfish__javax.faces__version>2.1.19</m:dependency.management__org.glassfish__javax.faces__version>
+		<m:dependency.management__xmlunit__xmlunit__version>1.2</m:dependency.management__xmlunit__xmlunit__version>
+		<m:dependency.management__javax.xml.bind__jaxb-api__version>2.2</m:dependency.management__javax.xml.bind__jaxb-api__version>
+		<m:properties__jboss.snapshots.repo.url>https://repository.jboss.org/nexus/content/repositories/snapshots/</m:properties__jboss.snapshots.repo.url>
+		<m:properties__arguments>-Pjboss-release</m:properties__arguments>
+		<m:dependency.management__org.jboss.arquillian.config__arquillian-config-spi__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.config__arquillian-config-spi__version>
+		<m:dependency.management__javax.jms__jms-api__version>1.1-rev-1</m:dependency.management__javax.jms__jms-api__version>
+		<m:dependency.management__org.ocpsoft.rewrite__rewrite-integration-cdi__version>1.0.4.Final</m:dependency.management__org.ocpsoft.rewrite__rewrite-integration-cdi__version>
+		<m:properties__version.dom4j>1.6.1</m:properties__version.dom4j>
+		<m:properties__version.gmaven.plugin>1.0</m:properties__version.gmaven.plugin>
+		<m:dependency.management__org.jboss.arquillian.core__arquillian-core-api__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.core__arquillian-core-api__version>
+		<m:properties__version.junit>4.8.2</m:properties__version.junit>
+		<m:properties__version.easymock>2.5.2</m:properties__version.easymock>
+		<m:properties__version.commons-codec>1.6</m:properties__version.commons-codec>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-remote-driver__version>2.25.0</m:dependency.management__org.seleniumhq.selenium__selenium-remote-driver__version>
+		<m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-impl-maven-archive__version>2.0.0-beta-3</m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-impl-maven-archive__version>
+		<m:properties__version.richfaces-checkstyle>5</m:properties__version.richfaces-checkstyle>
+		<m:properties__version.source.plugin>2.1.2</m:properties__version.source.plugin>
+		<m:properties__version.maven-core>3.0.4</m:properties__version.maven-core>
+		<m:dependency.management__org.jboss.as__jboss-as-controller-client__version>7.1.1.Final</m:dependency.management__org.jboss.as__jboss-as-controller-client__version>
+		<m:dependency.management__org.jboss.shrinkwrap__shrinkwrap-impl-base__version>1.0.1</m:dependency.management__org.jboss.shrinkwrap__shrinkwrap-impl-base__version>
+		<m:properties__arquillian.drone.reusable>false</m:properties__arquillian.drone.reusable>
+		<m:properties__version.jboss-javaee>3.0.1.Final</m:properties__version.jboss-javaee>
+		<m:dependency.management__org.jboss.arquillian.testenricher__arquillian-testenricher-initialcontext__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.testenricher__arquillian-testenricher-initialcontext__version>
+		<m:dependency.management__org.jboss.arquillian.graphene__graphene-webdriver__version>2.0.0.Alpha3</m:dependency.management__org.jboss.arquillian.graphene__graphene-webdriver__version>
+		<m:properties__version.surefire.plugin>2.11</m:properties__version.surefire.plugin>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-api__version>1.1.0.Final</m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-api__version>
+		<m:dependency.management__com.sun.el__el-ri__version>1.0</m:dependency.management__com.sun.el__el-ri__version>
+		<m:dependency.management__org.apache.maven__maven-archiver__version>2.4</m:dependency.management__org.apache.maven__maven-archiver__version>
+		<m:properties__version.xml.plugin>1.0</m:properties__version.xml.plugin>
+		<m:properties__arquillian.launch.jbossas71>false</m:properties__arquillian.launch.jbossas71>
+		<m:dependency.management__org.richfaces.ui.dnd__richfaces-ui-dnd-ui__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.dnd__richfaces-ui-dnd-ui__version>
+		<m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-api-maven-archive__version>2.0.0-beta-3</m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-api-maven-archive__version>
+		<m:properties__version.jaxb>2.2</m:properties__version.jaxb>
+		<m:dependency.management__com.sun.xml.bind__jaxb-impl__version>2.2</m:dependency.management__com.sun.xml.bind__jaxb-impl__version>
+		<m:dependency.management__org.richfaces.ui.common__richfaces-ui-common-api__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.common__richfaces-ui-common-api__version>
+		<m:properties__version.cobertura.plugin>2.5</m:properties__version.cobertura.plugin>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-iphone-driver__version>2.25.0</m:dependency.management__org.seleniumhq.selenium__selenium-iphone-driver__version>
+		<m:properties__version.google-functional-collections>1.1.7</m:properties__version.google-functional-collections>
+		<m:properties__version.arquillian.graphene>2.0.0.Alpha3</m:properties__version.arquillian.graphene>
+		<m:dependency.management__org.jboss.arquillian.container__arquillian-container-test-api__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.container__arquillian-container-test-api__version>
+		<m:dependency.management__dom4j__dom4j__version>1.6.1</m:dependency.management__dom4j__dom4j__version>
+		<m:dependency.management__org.richfaces.cdk__generator__version>4.3.1.Final</m:dependency.management__org.richfaces.cdk__generator__version>
+		<m:properties__maven.min.version>3.0</m:properties__maven.min.version>
+		<m:properties__version.netty>3.2.5.Final</m:properties__version.netty>
+		<m:dependency.management__org.richfaces.ui.dnd__richfaces-ui-dnd-api__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.dnd__richfaces-ui-dnd-api__version>
+		<m:dependency.management__org.hibernate__hibernate-entitymanager__version>4.0.0.Final</m:dependency.management__org.hibernate__hibernate-entitymanager__version>
+		<m:dependency.management__org.apache.openjpa__openjpa__version>2.1.1</m:dependency.management__org.apache.openjpa__openjpa__version>
+		<m:dependency.management__org.richfaces.ui.validator__richfaces-ui-validator-ui__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.validator__richfaces-ui-validator-ui__version>
+		<m:dependency.management__org.codehaus.plexus__plexus-velocity__version>1.1.2</m:dependency.management__org.codehaus.plexus__plexus-velocity__version>
+		<m:dependency.management__org.jboss.arquillian.config__arquillian-config-api__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.config__arquillian-config-api__version>
+		<m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-api-maven__version>1.0.0-beta-7</m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-api-maven__version>
+		<m:dependency.management__com.google.inject.extensions__guice-assistedinject__version>3.0</m:dependency.management__com.google.inject.extensions__guice-assistedinject__version>
+		<m:dependency.management__org.apache.myfaces.core__myfaces-api__version>2.1.10</m:dependency.management__org.apache.myfaces.core__myfaces-api__version>
+		<m:dependency.management__org.richfaces.core__richfaces-core-api__version>4.3.2.Final</m:dependency.management__org.richfaces.core__richfaces-core-api__version>
+		<m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-impl-maven__version>1.0.0-beta-7</m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-impl-maven__version>
+		<m:dependency.management__com.opera__operadriver__version>1.1</m:dependency.management__com.opera__operadriver__version>
+		<m:properties__version.bundle.plugin>2.3.5</m:properties__version.bundle.plugin>
+		<m:dependency.management__org.apache.maven__maven-artifact__version>3.0.4</m:dependency.management__org.apache.maven__maven-artifact__version>
+		<m:properties__version.idea.plugin>2.2</m:properties__version.idea.plugin>
+		<m:properties__version.weld>1.1.4.Final</m:properties__version.weld>
+		<m:dependency.management__com.sun.faces__jsf-impl__version>2.1.19-jbossorg-1</m:dependency.management__com.sun.faces__jsf-impl__version>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-warp__version>1.0.0.Alpha2</m:dependency.management__org.jboss.arquillian.extension__arquillian-warp__version>
+		<m:properties__version.jacoco.plugin>0.5.5.201112152213</m:properties__version.jacoco.plugin>
+		<m:properties__version.apt.plugin>1.0-alpha-4</m:properties__version.apt.plugin>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-api__version>2.25.0</m:dependency.management__org.seleniumhq.selenium__selenium-api__version>
+		<m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-impl-javaee__version>2.0.0-alpha-3</m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-impl-javaee__version>
+		<m:dependency.management__org.jboss.cache__jbosscache-core__version>3.2.5.GA</m:dependency.management__org.jboss.cache__jbosscache-core__version>
+		<m:dependency.management__org.hornetq__hornetq-jms__version>2.2.7.Final</m:dependency.management__org.hornetq__hornetq-jms__version>
+		<m:properties__version.jrebel.plugin>1.1.3</m:properties__version.jrebel.plugin>
+		<m:properties__arquillian.richfaces.jsfImplementation>org.glassfish:javax.faces</m:properties__arquillian.richfaces.jsfImplementation>
+		<m:dependency.management__org.sonatype.sisu.inject__guice-multibindings__version>3.1.0</m:dependency.management__org.sonatype.sisu.inject__guice-multibindings__version>
+		<m:dependency.management__javax.el__el-api__version>1.0</m:dependency.management__javax.el__el-api__version>
+		<m:dependency.management__org.jboss.spec.javax.servlet__jboss-servlet-api_3.0_spec__version>1.0.0.Final</m:dependency.management__org.jboss.spec.javax.servlet__jboss-servlet-api_3.0_spec__version>
+		<m:properties__arquillian.launch.glassfish31>false</m:properties__arquillian.launch.glassfish31>
+		<m:dependency.management__org.jboss.as__jboss-as-arquillian-container-managed__version>7.1.1.Final</m:dependency.management__org.jboss.as__jboss-as-arquillian-container-managed__version>
+		<m:properties__version.shade-transformers>8</m:properties__version.shade-transformers>
+		<m:properties__version.freemarker>2.3.9</m:properties__version.freemarker>
+		<m:dependency.management__com.yahoo.platform.yui__yuicompressor__version>2.3.6</m:dependency.management__com.yahoo.platform.yui__yuicompressor__version>
+		<m:dependency.management__org.jboss.spec__jboss-javaee-6.0__version>3.0.1.Final</m:dependency.management__org.jboss.spec__jboss-javaee-6.0__version>
+		<m:dependency.management__org.apache.maven__maven-model__version>3.0.4</m:dependency.management__org.apache.maven__maven-model__version>
+		<m:properties__version.reflections>0.9.5</m:properties__version.reflections>
+		<m:properties__version.pir.plugin>2.2</m:properties__version.pir.plugin>
+		<m:properties__targetJdk>${maven.compiler.target}</m:properties__targetJdk>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-htmlunit-driver__version>2.25.0</m:dependency.management__org.seleniumhq.selenium__selenium-htmlunit-driver__version>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-warp-spi__version>1.0.0.Alpha2</m:dependency.management__org.jboss.arquillian.extension__arquillian-warp-spi__version>
+		<m:properties__version.buildhelper.plugin>1.5</m:properties__version.buildhelper.plugin>
+		<m:properties__version.injection.plugin>1.0.2</m:properties__version.injection.plugin>
+		<m:properties__version.sun-el>1.0</m:properties__version.sun-el>
+		<m:dependency.management__org.richfaces.ui.iteration__richfaces-ui-iteration-ui__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.iteration__richfaces-ui-iteration-ui__version>
+		<m:properties__version.jpa-api>2.0-cr-1</m:properties__version.jpa-api>
+		<m:properties__version.slf4j>1.6.1</m:properties__version.slf4j>
+		<m:dependency.management__junit__junit__version>4.8.2</m:dependency.management__junit__junit__version>
+		<m:dependency.management__org.jboss.spec__jboss-javaee-web-6.0__version>3.0.1.Final</m:dependency.management__org.jboss.spec__jboss-javaee-web-6.0__version>
+		<m:properties__version.jxr.plugin>2.2</m:properties__version.jxr.plugin>
+		<m:dependency.management__org.richfaces.ui.output__richfaces-ui-output-ui__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.output__richfaces-ui-output-ui__version>
+		<m:properties__version.httpclient>4.2.1</m:properties__version.httpclient>
+		<m:properties__version.hibernate-validator>4.2.0.Final</m:properties__version.hibernate-validator>
+		<m:properties__version.sonar.plugin>1.0-beta-1</m:properties__version.sonar.plugin>
+		<m:properties__version.jboss-as7>7.1.1.Final</m:properties__version.jboss-as7>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-webdriver-depchain__version>1.1.0.Final</m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-webdriver-depchain__version>
+		<m:dependency.management__org.slf4j__slf4j-simple__version>1.6.1</m:dependency.management__org.slf4j__slf4j-simple__version>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-java__version>2.25.0</m:dependency.management__org.seleniumhq.selenium__selenium-java__version>
+		<m:dependency.management__org.jboss.arquillian.testenricher__arquillian-testenricher-ejb__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.testenricher__arquillian-testenricher-ejb__version>
+		<m:dependency.management__net.sf.saxon__saxon__version>8.7</m:dependency.management__net.sf.saxon__saxon__version>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-server__version>2.25.0</m:dependency.management__org.seleniumhq.selenium__selenium-server__version>
+		<m:dependency.management__org.reflections__reflections__version>0.9.5</m:dependency.management__org.reflections__reflections__version>
+		<m:dependency.management__org.sonatype.sisu__sisu-guice__version>3.1.0</m:dependency.management__org.sonatype.sisu__sisu-guice__version>
+		<m:properties__version.deploy.plugin>2.5</m:properties__version.deploy.plugin>
+		<m:properties__version.google-guice>3.0</m:properties__version.google-guice>
+		<m:dependency.management__org.richfaces.cdk__commons__version>4.3.1.Final</m:dependency.management__org.richfaces.cdk__commons__version>
+		<m:properties__version.saxon>8.7</m:properties__version.saxon>
+		<m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-maven-plugin__version>2.0.0-beta-3</m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-maven-plugin__version>
+		<m:properties__version.findbugs.plugin>2.2</m:properties__version.findbugs.plugin>
+		<m:properties__version.antrun.plugin>1.6</m:properties__version.antrun.plugin>
+		<m:dependency.management__org.jboss.arquillian.junit__arquillian-junit-core__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.junit__arquillian-junit-core__version>
+		<m:dependency.management__net.sourceforge.cssparser__cssparser__version>0.9.5</m:dependency.management__net.sourceforge.cssparser__cssparser__version>
+		<m:properties__version.install.plugin>2.3.1</m:properties__version.install.plugin>
+		<m:dependency.management__xerces__xercesImpl__version>2.9.1</m:dependency.management__xerces__xercesImpl__version>
+		<m:dependency.management__org.richfaces.test__richfaces-arquillian__version>4.3.2.Final</m:dependency.management__org.richfaces.test__richfaces-arquillian__version>
+		<m:properties__arquillian.drone.browser>htmlUnit</m:properties__arquillian.drone.browser>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-warp-jsf__version>1.0.0.Alpha2</m:dependency.management__org.jboss.arquillian.extension__arquillian-warp-jsf__version>
+		<m:properties__version.jcommander>1.20</m:properties__version.jcommander>
+		<m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-api-jboss__version>2.0.0-alpha-3</m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-api-jboss__version>
+		<m:properties__version.ear.plugin>2.4.2</m:properties__version.ear.plugin>
+		<m:properties__version.javax.inject>1</m:properties__version.javax.inject>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-warp-impl__version>1.0.0.Alpha2</m:dependency.management__org.jboss.arquillian.extension__arquillian-warp-impl__version>
+		<m:dependency.management__org.richfaces.ui.core__richfaces-ui-core-api__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.core__richfaces-ui-core-api__version>
+		<m:dependency.management__org.jboss.el__jboss-el__version>1.0_02.CR6</m:dependency.management__org.jboss.el__jboss-el__version>
+		<m:dependency.management__org.mockito__mockito-all__version>1.8.5</m:dependency.management__org.mockito__mockito-all__version>
+		<m:properties__arquillian.launch.tomee15>false</m:properties__arquillian.launch.tomee15>
+		<m:dependency.management__javax.servlet.jsp__jsp-api__version>2.1</m:dependency.management__javax.servlet.jsp__jsp-api__version>
+		<m:dependency.management__org.slf4j__slf4j-api__version>1.6.1</m:dependency.management__org.slf4j__slf4j-api__version>
+		<m:dependency.management__javax.servlet__javax.servlet-api__version>3.0.1</m:dependency.management__javax.servlet__javax.servlet-api__version>
+		<m:dependency.management__org.richfaces.ui__richfaces-components-api__version>4.3.2.Final</m:dependency.management__org.richfaces.ui__richfaces-components-api__version>
+		<m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-maven-plugin__scope>runtime</m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-maven-plugin__scope>
+		<m:properties__version.plexus-utils>1.5.15</m:properties__version.plexus-utils>
+		<m:dependency.management__xerces__xercesImpl__exclusion_0>xml-apis__xml-apis</m:dependency.management__xerces__xercesImpl__exclusion_0>
+		<m:properties__version.commons-logging>1.1.1</m:properties__version.commons-logging>
+		<m:dependency.management__org.richfaces.ui.misc__richfaces-ui-misc-ui__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.misc__richfaces-ui-misc-ui__version>
+		<m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-spi-maven__version>2.0.0-beta-3</m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-spi-maven__version>
+		<m:properties__version.glassfish31>3.1.2.2</m:properties__version.glassfish31>
+		<m:dependency.management__org.jboss.arquillian.container__arquillian-container-test-impl-base__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.container__arquillian-container-test-impl-base__version>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-configuration__version>1.1.0.Final</m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-configuration__version>
+		<m:dependency.management__org.jboss.arquillian.protocol__arquillian-protocol-servlet__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.protocol__arquillian-protocol-servlet__version>
+		<m:dependency.management__org.jboss.arquillian.container__arquillian-container-impl-base__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.container__arquillian-container-impl-base__version>
+		<m:properties__version.maven-file-management>1.2.1</m:properties__version.maven-file-management>
+		<m:dependency.management__org.jboss.shrinkwrap__shrinkwrap-api__version>1.0.1</m:dependency.management__org.jboss.shrinkwrap__shrinkwrap-api__version>
+		<m:properties__version.javacc.plugin>2.4.1</m:properties__version.javacc.plugin>
+		<m:dependency.management__org.hibernate__hibernate-validator__version>4.2.0.Final</m:dependency.management__org.hibernate__hibernate-validator__version>
+		<m:properties__downloadSources>true</m:properties__downloadSources>
+		<m:properties__project.build.sourceEncoding>UTF-8</m:properties__project.build.sourceEncoding>
+		<m:dependency.management__org.jboss.test-jsf__jsf-test-stage__version>1.1.6</m:dependency.management__org.jboss.test-jsf__jsf-test-stage__version>
+		<m:dependency.management__org.richfaces.ui.common__richfaces-ui-common-ui__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.common__richfaces-ui-common-ui__version>
+		<m:properties__version.war.plugin>2.1.1</m:properties__version.war.plugin>
+		<m:dependency.management__javax.enterprise__cdi-api__version>1.0-SP4</m:dependency.management__javax.enterprise__cdi-api__version>
+		<m:properties__version.mockito>1.8.5</m:properties__version.mockito>
+		<m:dependency.management__dom4j__dom4j__exclusion_0>xml-apis__xml-apis</m:dependency.management__dom4j__dom4j__exclusion_0>
+		<m:properties__version.plugin.plugin>2.9</m:properties__version.plugin.plugin>
+		<m:properties__version.rar.plugin>2.2</m:properties__version.rar.plugin>
+		<m:dependency.management__javax.servlet.jsp.jstl__jstl-api__version>1.2</m:dependency.management__javax.servlet.jsp.jstl__jstl-api__version>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-ie-driver__version>2.25.0</m:dependency.management__org.seleniumhq.selenium__selenium-ie-driver__version>
+		<m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-spi__version>2.0.0-alpha-3</m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-spi__version>
+		<m:dependency.management__net.sf.ehcache__ehcache__version>1.6.0</m:dependency.management__net.sf.ehcache__ehcache__version>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-webdriver__version>1.1.0.Final</m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-webdriver__version>
+		<m:dependency.management__org.hibernate.java-persistence__jpa-api__version>2.0-cr-1</m:dependency.management__org.hibernate.java-persistence__jpa-api__version>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-selenium-depchain__version>1.1.0.Final</m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-selenium-depchain__version>
+		<m:properties__version.dependency.plugin>2.3</m:properties__version.dependency.plugin>
+		<m:properties__version.jstools.plugin>0.7</m:properties__version.jstools.plugin>
+		<m:dependency.management__org.richfaces.ui.output__richfaces-ui-output-api__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.output__richfaces-ui-output-api__version>
+		<m:dependency.management__org.jboss.arquillian.testenricher__arquillian-testenricher-resource__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.testenricher__arquillian-testenricher-resource__version>
+		<m:properties__version.arquillian.tomcat>1.0.0.CR4</m:properties__version.arquillian.tomcat>
+		<m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-impl-base__version>2.0.0-alpha-3</m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-impl-base__version>
+		<m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-gen__version>2.0.0-alpha-3</m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-gen__version>
+		<m:properties__version.eclipse.plugin>2.8</m:properties__version.eclipse.plugin>
+		<m:properties__jboss.releases.repo.url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</m:properties__jboss.releases.repo.url>
+		<m:properties__version.sonatype-sisu>3.1.0</m:properties__version.sonatype-sisu>
+		<m:dependency.management__org.jboss.arquillian.testng__arquillian-testng-standalone__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.testng__arquillian-testng-standalone__version>
+		<m:dependency.management__org.ocpsoft.rewrite__rewrite-servlet__version>1.0.4.Final</m:dependency.management__org.ocpsoft.rewrite__rewrite-servlet__version>
+		<m:dependency.management__org.jboss.arquillian.container__arquillian-container-spi__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.container__arquillian-container-spi__version>
+		<m:dependency.management__org.jboss.shrinkwrap__shrinkwrap-impl-nio2__version>1.1.2</m:dependency.management__org.jboss.shrinkwrap__shrinkwrap-impl-nio2__version>
+		<m:properties__maven.compiler.source>1.6</m:properties__maven.compiler.source>
+		<m:dependency.management__commons-codec__commons-codec__version>1.6</m:dependency.management__commons-codec__commons-codec__version>
+		<m:properties__version.test-jsf>1.1.6</m:properties__version.test-jsf>
+		<m:dependency.management__com.google.code.javaparser__javaparser__version>1.0.1</m:dependency.management__com.google.code.javaparser__javaparser__version>
+		<m:dependency.management__org.apache.maven__maven-plugin-api__version>3.0.4</m:dependency.management__org.apache.maven__maven-plugin-api__version>
+		<m:dependency.management__org.jboss.arquillian.test__arquillian-test-spi__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.test__arquillian-test-spi__version>
+		<m:dependency.management__org.slf4j__slf4j-jdk14__version>1.6.1</m:dependency.management__org.slf4j__slf4j-jdk14__version>
+		<m:properties__version.license.plugin>1.0</m:properties__version.license.plugin>
+		<m:dependency.management__org.jboss.test-jsf__jsf-mock__version>1.1.6</m:dependency.management__org.jboss.test-jsf__jsf-mock__version>
+		<m:dependency.management__org.jboss.test-jsf__jsf-mockito__version>1.1.6</m:dependency.management__org.jboss.test-jsf__jsf-mockito__version>
+		<m:properties__version.arquillian.glassfish31>1.0.0.CR3</m:properties__version.arquillian.glassfish31>
+		<m:dependency.management__org.jboss.arquillian.config__arquillian-config-impl-base__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.config__arquillian-config-impl-base__version>
+		<m:properties__version.commons-io>2.1</m:properties__version.commons-io>
+		<m:properties__version.maven-archiver>2.4</m:properties__version.maven-archiver>
+		<m:dependency.management__com.googlecode.functional-collections__functional-collections__version>1.1.7</m:dependency.management__com.googlecode.functional-collections__functional-collections__version>
+		<m:properties__arquillian.launch.tomcat6>false</m:properties__arquillian.launch.tomcat6>
+		<m:properties__version.hornetq>2.2.7.Final</m:properties__version.hornetq>
+		<m:properties__version.enforcer.plugin>1.0</m:properties__version.enforcer.plugin>
+		<m:dependency.management__javax.inject__javax.inject__version>1</m:dependency.management__javax.inject__javax.inject__version>
+		<m:dependency.management__org.jboss.weld.servlet__weld-servlet__version>1.1.4.Final</m:dependency.management__org.jboss.weld.servlet__weld-servlet__version>
+		<m:dependency.management__org.jboss.arquillian.core__arquillian-core-spi__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.core__arquillian-core-spi__version>
+		<m:properties__version.release.plugin>2.1</m:properties__version.release.plugin>
+		<m:properties__arquillian.launch.tomcat7>false</m:properties__arquillian.launch.tomcat7>
+		<m:dependency.management__com.google.guava__guava__version>13.0.1</m:dependency.management__com.google.guava__guava__version>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-chrome-driver__version>2.25.0</m:dependency.management__org.seleniumhq.selenium__selenium-chrome-driver__version>
+		<m:dependency.management__org.richfaces.ui.validator__richfaces-ui-validator-api__version>4.3.2.Final</m:dependency.management__org.richfaces.ui.validator__richfaces-ui-validator-api__version>
+	</info>
+	<configurations>
+		<conf name="default" visibility="public" description="runtime dependencies and master artifact can be used with this conf" extends="runtime,master"/>
+		<conf name="master" visibility="public" description="contains only the artifact published by this module itself, with no transitive dependencies"/>
+		<conf name="compile" visibility="public" description="this is the default scope, used if none is specified. Compile dependencies are available in all classpaths."/>
+		<conf name="provided" visibility="public" description="this is much like compile, but indicates you expect the JDK or a container to provide it. It is only available on the compilation classpath, and is not transitive."/>
+		<conf name="runtime" visibility="public" description="this scope indicates that the dependency is not required for compilation, but is for execution. It is in the runtime and test classpaths, but not the compile classpath." extends="compile"/>
+		<conf name="test" visibility="private" description="this scope indicates that the dependency is not required for normal use of the application, and is only available for the test compilation and execution phases." extends="runtime"/>
+		<conf name="system" visibility="public" description="this scope is similar to provided except that you have to provide the JAR which contains it explicitly. The artifact is always available and is not looked up in a repository."/>
+		<conf name="sources" visibility="public" description="this configuration contains the source artifact of this module, if any."/>
+		<conf name="javadoc" visibility="public" description="this configuration contains the javadoc artifact of this module, if any."/>
+		<conf name="optional" visibility="public" description="contains all optional dependencies"/>
+	</configurations>
+	<publications>
+		<artifact name="richfaces-core-api" type="jar" ext="jar" conf="master"/>
+		<artifact name="richfaces-core-api" type="source" ext="jar" conf="sources" m:classifier="sources"/>
+		<artifact name="richfaces-core-api" type="javadoc" ext="jar" conf="javadoc" m:classifier="javadoc"/>
+	</publications>
+	<dependencies>
+		<dependency org="com.google.guava" name="guava" rev="13.0.1" force="true" conf="compile->compile(*),master(*);runtime->runtime(*)"/>
+		<dependency org="javax.el" name="el-api" rev="1.0" force="true" conf="provided->compile(*),provided(*),runtime(*),master(*)"/>
+		<dependency org="org.jboss.spec.javax.servlet" name="jboss-servlet-api_3.0_spec" rev="1.0.0.Final" force="true" conf="provided->compile(*),provided(*),runtime(*),master(*)"/>
+		<dependency org="javax.inject" name="javax.inject" rev="1" force="true" conf="provided->compile(*),provided(*),runtime(*),master(*)"/>
+		<dependency org="junit" name="junit" rev="4.8.2" force="true" conf="test->runtime(*),master(*)"/>
+		<dependency org="org.easymock" name="easymock" rev="2.5.2" force="true" conf="test->runtime(*),master(*)"/>
+		<dependency org="org.jboss.test-jsf" name="jsf-mock" rev="1.1.6" force="true" conf="test->runtime(*),master(*)"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-warp-impl" matcher="exact" rev="1.0.0.Alpha2"/>
+		<override org="com.googlecode.functional-collections" module="functional-collections" matcher="exact" rev="1.1.7"/>
+		<override org="javax.enterprise" module="cdi-api" matcher="exact" rev="1.0-SP4"/>
+		<override org="org.jboss.arquillian.core" module="arquillian-core-api" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.jboss.shrinkwrap" module="shrinkwrap-api" matcher="exact" rev="1.0.1"/>
+		<override org="net.sf.ehcache" module="ehcache" matcher="exact" rev="1.6.0"/>
+		<override org="org.jboss.spec.javax.faces" module="jboss-jsf-api_2.1_spec" matcher="exact" rev="2.0.7.Final"/>
+		<override org="org.richfaces.ui.output" module="richfaces-ui-output-ui" matcher="exact" rev="4.3.2.Final"/>
+		<override org="org.glassfish" module="javax.faces" matcher="exact" rev="2.1.19"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-warp-jsf" matcher="exact" rev="1.0.0.Alpha2"/>
+		<override org="org.richfaces.ui.common" module="richfaces-ui-common-ui" matcher="exact" rev="4.3.2.Final"/>
+		<override org="org.jboss.arquillian.graphene" module="graphene-webdriver" matcher="exact" rev="2.0.0.Alpha3"/>
+		<override org="org.jboss.shrinkwrap.descriptors" module="shrinkwrap-descriptors-impl-base" matcher="exact" rev="2.0.0-alpha-3"/>
+		<override org="org.richfaces.ui.common" module="richfaces-ui-common-api" matcher="exact" rev="4.3.2.Final"/>
+		<override org="org.jboss.shrinkwrap.descriptors" module="shrinkwrap-descriptors-impl-javaee" matcher="exact" rev="2.0.0-alpha-3"/>
+		<override org="org.jboss.spec" module="jboss-javaee-web-6.0" matcher="exact" rev="3.0.1.Final"/>
+		<override org="com.yahoo.platform.yui" module="yuicompressor" matcher="exact" rev="2.3.6"/>
+		<override org="org.jboss.arquillian.testng" module="arquillian-testng-core" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.ocpsoft.rewrite" module="rewrite-servlet" matcher="exact" rev="1.0.4.Final"/>
+		<override org="org.jboss.arquillian.testng" module="arquillian-testng-standalone" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.freemarker" module="freemarker" matcher="exact" rev="2.3.9"/>
+		<override org="org.richfaces.cdk" module="attributes" matcher="exact" rev="4.3.1.Final"/>
+		<override org="net.sf.saxon" module="saxon" matcher="exact" rev="8.7"/>
+		<override org="com.beust" module="jcommander" matcher="exact" rev="1.20"/>
+		<override org="org.hornetq" module="hornetq-jms" matcher="exact" rev="2.2.7.Final"/>
+		<override org="org.seleniumhq.selenium" module="selenium-htmlunit-driver" matcher="exact" rev="2.25.0"/>
+		<override org="org.seleniumhq.selenium" module="selenium-support" matcher="exact" rev="2.25.0"/>
+		<override org="com.google.inject.extensions" module="guice-grapher" matcher="exact" rev="3.0"/>
+		<override org="org.richfaces.ui.dnd" module="richfaces-ui-dnd-api" matcher="exact" rev="4.3.2.Final"/>
+		<override org="org.apache.maven" module="maven-core" matcher="exact" rev="3.0.4"/>
+		<override org="org.jboss.arquillian.testenricher" module="arquillian-testenricher-cdi" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.sonatype.sisu" module="sisu-guice" matcher="exact" rev="3.1.0"/>
+		<override org="org.richfaces.ui.misc" module="richfaces-ui-misc-ui" matcher="exact" rev="4.3.2.Final"/>
+		<override org="org.richfaces.cdk" module="commons" matcher="exact" rev="4.3.1.Final"/>
+		<override org="commons-io" module="commons-io" matcher="exact" rev="2.1"/>
+		<override org="org.apache.maven" module="maven-archiver" matcher="exact" rev="2.4"/>
+		<override org="org.seleniumhq.selenium" module="selenium-ie-driver" matcher="exact" rev="2.25.0"/>
+		<override org="org.jboss.arquillian.junit" module="arquillian-junit-container" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-drone-selenium-depchain" matcher="exact" rev="1.1.0.Final"/>
+		<override org="org.richfaces.ui.core" module="richfaces-ui-core-ui" matcher="exact" rev="4.3.2.Final"/>
+		<override org="org.reflections" module="reflections" matcher="exact" rev="0.9.5"/>
+		<override org="org.jboss.shrinkwrap.descriptors" module="shrinkwrap-descriptors-impl-jboss" matcher="exact" rev="2.0.0-alpha-3"/>
+		<override org="org.jboss.shrinkwrap.descriptors" module="shrinkwrap-descriptors-api-base" matcher="exact" rev="2.0.0-alpha-3"/>
+		<override org="org.jboss.shrinkwrap.descriptors" module="shrinkwrap-descriptors-depchain" matcher="exact" rev="2.0.0-alpha-3"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-warp-spi" matcher="exact" rev="1.0.0.Alpha2"/>
+		<override org="org.seleniumhq.selenium" module="selenium-remote-driver" matcher="exact" rev="2.25.0"/>
+		<override org="org.jboss.shrinkwrap.resolver" module="shrinkwrap-resolver-maven-plugin" matcher="exact" rev="2.0.0-beta-3"/>
+		<override org="org.richfaces.core" module="richfaces-core-impl" matcher="exact" rev="4.3.2.Final"/>
+		<override org="org.jboss.shrinkwrap.descriptors" module="shrinkwrap-descriptors-spi" matcher="exact" rev="2.0.0-alpha-3"/>
+		<override org="org.jboss.test-jsf" module="jsf-mockito" matcher="exact" rev="1.1.6"/>
+		<override org="org.jboss.arquillian.protocol" module="arquillian-protocol-servlet" matcher="exact" rev="1.0.3.Final"/>
+		<override org="com.google.inject.extensions" module="guice-multibindings" matcher="exact" rev="3.0"/>
+		<override org="org.seleniumhq.selenium" module="selenium-api" matcher="exact" rev="2.25.0"/>
+		<override org="org.richfaces.ui" module="static-resources" matcher="exact" rev="4.3.2.Final"/>
+		<override org="javax.validation" module="validation-api" matcher="exact" rev="1.0.0.GA"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-drone-selenium" matcher="exact" rev="1.1.0.Final"/>
+		<override org="org.jboss.shrinkwrap" module="shrinkwrap-impl-nio2" matcher="exact" rev="1.1.2"/>
+		<override org="com.sun.faces" module="jsf-impl" matcher="exact" rev="2.1.19-jbossorg-1"/>
+		<override org="org.apache.maven" module="maven-artifact" matcher="exact" rev="3.0.4"/>
+		<override org="org.jboss.test-jsf" module="jsf-test-scriptunit" matcher="exact" rev="1.1.6"/>
+		<override org="org.hornetq" module="hornetq-logging" matcher="exact" rev="2.2.7.Final"/>
+		<override org="org.apache.maven" module="maven-plugin-api" matcher="exact" rev="3.0.4"/>
+		<override org="org.richfaces.ui.input" module="richfaces-ui-input-ui" matcher="exact" rev="4.3.2.Final"/>
+		<override org="org.jboss.shrinkwrap.resolver" module="shrinkwrap-resolver-api" matcher="exact" rev="1.0.0-beta-7"/>
+		<override org="org.apache.myfaces.core" module="myfaces-api" matcher="exact" rev="2.1.10"/>
+		<override org="org.sonatype.sisu.inject" module="guice-multibindings" matcher="exact" rev="3.1.0"/>
+		<override org="org.seleniumhq.selenium" module="selenium-server" matcher="exact" rev="2.25.0"/>
+		<override org="org.richfaces.ui.iteration" module="richfaces-ui-iteration-api" matcher="exact" rev="4.3.2.Final"/>
+		<override org="org.jboss.arquillian.test" module="arquillian-test-spi" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.jboss.arquillian.config" module="arquillian-config-api" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.jboss.arquillian.testenricher" module="arquillian-testenricher-initialcontext" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.jboss.shrinkwrap.resolver" module="shrinkwrap-resolver-api-maven" matcher="exact" rev="1.0.0-beta-7"/>
+		<override org="org.jboss.arquillian.test" module="arquillian-test-impl-base" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.jboss.arquillian.container" module="arquillian-container-spi" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.richfaces.core" module="richfaces-core-api" matcher="exact" rev="4.3.2.Final"/>
+		<override org="org.apache.openjpa" module="openjpa" matcher="exact" rev="2.1.1"/>
+		<override org="org.slf4j" module="slf4j-api" matcher="exact" rev="1.6.1"/>
+		<override org="org.richfaces.ui.iteration" module="richfaces-ui-iteration-ui" matcher="exact" rev="4.3.2.Final"/>
+		<override org="org.easymock" module="easymock" matcher="exact" rev="2.5.2"/>
+		<override org="org.jboss.arquillian.container" module="arquillian-container-impl-base" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.jboss.cache" module="jbosscache-core" matcher="exact" rev="3.2.5.GA"/>
+		<override org="org.mockito" module="mockito-all" matcher="exact" rev="1.8.5"/>
+		<override org="org.jboss.test-jsf" module="jsf-mock" matcher="exact" rev="1.1.6"/>
+		<override org="org.richfaces.build.resources" module="faces-vdl-documentation" matcher="exact" rev="3"/>
+		<override org="com.google.guava" module="guava" matcher="exact" rev="13.0.1"/>
+		<override org="org.richfaces.cdk" module="annotations" matcher="exact" rev="4.3.1.Final"/>
+		<override org="org.jboss.weld.servlet" module="weld-servlet" matcher="exact" rev="1.1.4.Final"/>
+		<override org="javax.el" module="el-api" matcher="exact" rev="1.0"/>
+		<override org="org.hibernate" module="hibernate-entitymanager" matcher="exact" rev="4.0.0.Final"/>
+		<override org="org.codehaus.plexus" module="plexus-velocity" matcher="exact" rev="1.1.2"/>
+		<override org="org.richfaces.ui.validator" module="richfaces-ui-validator-ui" matcher="exact" rev="4.3.2.Final"/>
+		<override org="org.jboss.test-jsf" module="jsf-test-stage" matcher="exact" rev="1.1.6"/>
+		<override org="org.seleniumhq.selenium" module="selenium-java" matcher="exact" rev="2.25.0"/>
+		<override org="org.jboss.shrinkwrap.resolver" module="shrinkwrap-resolver-impl-maven-archive" matcher="exact" rev="2.0.0-beta-3"/>
+		<override org="com.google.inject" module="guice" matcher="exact" rev="3.0"/>
+		<override org="org.seleniumhq.selenium" module="selenium-iphone-driver" matcher="exact" rev="2.25.0"/>
+		<override org="org.richfaces.ui" module="richfaces-components-api" matcher="exact" rev="4.3.2.Final"/>
+		<override org="org.jboss.el" module="jboss-el" matcher="exact" rev="1.0_02.CR6"/>
+		<override org="javax.servlet.jsp.jstl" module="jstl-api" matcher="exact" rev="1.2"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-warp" matcher="exact" rev="1.0.0.Alpha2"/>
+		<override org="org.richfaces.ui.output" module="richfaces-ui-output-api" matcher="exact" rev="4.3.2.Final"/>
+		<override org="org.jboss.arquillian.protocol" module="arquillian-protocol-jmx" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.jboss.arquillian.core" module="arquillian-core-spi" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.seleniumhq.selenium" module="selenium-chrome-driver" matcher="exact" rev="2.25.0"/>
+		<override org="org.jboss.shrinkwrap" module="shrinkwrap-api-nio2" matcher="exact" rev="1.1.2"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-warp-api" matcher="exact" rev="1.0.0.Alpha2"/>
+		<override org="javax.xml.bind" module="jaxb-api" matcher="exact" rev="2.2"/>
+		<override org="org.apache.httpcomponents" module="httpclient" matcher="exact" rev="4.2.1"/>
+		<override org="org.jboss.test-jsf" module="jsf-test-jetty" matcher="exact" rev="1.1.6"/>
+		<override org="org.jboss.arquillian.config" module="arquillian-config-impl-base" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.jboss.shrinkwrap.resolver" module="shrinkwrap-resolver-impl-maven" matcher="exact" rev="1.0.0-beta-7"/>
+		<override org="org.jboss.shrinkwrap.resolver" module="shrinkwrap-resolver-spi-maven" matcher="exact" rev="2.0.0-beta-3"/>
+		<override org="org.richfaces.ui.validator" module="richfaces-ui-validator-api" matcher="exact" rev="4.3.2.Final"/>
+		<override org="org.richfaces.ui.dnd" module="richfaces-ui-dnd-ui" matcher="exact" rev="4.3.2.Final"/>
+		<override org="org.jboss.arquillian.container" module="arquillian-container-test-api" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.hibernate" module="hibernate-validator" matcher="exact" rev="4.2.0.Final"/>
+		<override org="org.jboss.shrinkwrap.resolver" module="shrinkwrap-resolver-spi" matcher="exact" rev="2.0.0-beta-3"/>
+		<override org="org.jboss.arquillian.config" module="arquillian-config-spi" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.jboss.spec.javax.servlet" module="jboss-servlet-api_3.0_spec" matcher="exact" rev="1.0.0.Final"/>
+		<override org="org.apache.maven.shared" module="file-management" matcher="exact" rev="1.2.1"/>
+		<override org="org.slf4j" module="slf4j-simple" matcher="exact" rev="1.6.1"/>
+		<override org="xerces" module="xercesImpl" matcher="exact" rev="2.9.1"/>
+		<override org="org.richfaces.cdk" module="generator" matcher="exact" rev="4.3.1.Final"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-drone-impl" matcher="exact" rev="1.1.0.Final"/>
+		<override org="commons-codec" module="commons-codec" matcher="exact" rev="1.6"/>
+		<override org="opensymphony" module="oscache" matcher="exact" rev="2.3"/>
+		<override org="javax.faces" module="javax.faces-api" matcher="exact" rev="2.1"/>
+		<override org="org.jboss.arquillian.junit" module="arquillian-junit-standalone" matcher="exact" rev="1.0.3.Final"/>
+		<override org="com.google.inject.extensions" module="guice-assistedinject" matcher="exact" rev="3.0"/>
+		<override org="javax.inject" module="javax.inject" matcher="exact" rev="1"/>
+		<override org="org.jboss.shrinkwrap.descriptors" module="shrinkwrap-descriptors-api-javaee" matcher="exact" rev="2.0.0-alpha-3"/>
+		<override org="org.atmosphere" module="atmosphere-runtime" matcher="exact" rev="1.0.10"/>
+		<override org="org.richfaces.ui.input" module="richfaces-ui-input-api" matcher="exact" rev="4.3.2.Final"/>
+		<override org="org.jboss.arquillian.testng" module="arquillian-testng-container" matcher="exact" rev="1.0.3.Final"/>
+		<override org="junit" module="junit" matcher="exact" rev="4.8.2"/>
+		<override org="org.jboss.spec" module="jboss-javaee-6.0" matcher="exact" rev="3.0.1.Final"/>
+		<override org="org.slf4j" module="slf4j-jdk14" matcher="exact" rev="1.6.1"/>
+		<override org="org.richfaces.ui.core" module="richfaces-ui-core-api" matcher="exact" rev="4.3.2.Final"/>
+		<override org="commons-logging" module="commons-logging" matcher="exact" rev="1.1.1"/>
+		<override org="org.hsqldb" module="hsqldb-j5" matcher="exact" rev="2.0.0"/>
+		<override org="org.jboss.arquillian.core" module="arquillian-core-impl-base" matcher="exact" rev="1.0.3.Final"/>
+		<override org="xmlunit" module="xmlunit" matcher="exact" rev="1.2"/>
+		<override org="org.richfaces.ui" module="richfaces-components-ui" matcher="exact" rev="4.3.2.Final"/>
+		<override org="org.jboss.arquillian.testenricher" module="arquillian-testenricher-ejb" matcher="exact" rev="1.0.3.Final"/>
+		<override org="javax.jms" module="jms-api" matcher="exact" rev="1.1-rev-1"/>
+		<override org="org.jboss.as" module="jboss-as-arquillian-container-managed" matcher="exact" rev="7.1.1.Final"/>
+		<override org="org.ocpsoft.rewrite" module="rewrite-integration-cdi" matcher="exact" rev="1.0.4.Final"/>
+		<override org="javax.servlet" module="javax.servlet-api" matcher="exact" rev="3.0.1"/>
+		<override org="org.jboss.shrinkwrap" module="shrinkwrap-spi" matcher="exact" rev="1.0.1"/>
+		<override org="com.sun.xsom" module="xsom" matcher="exact" rev="20081112"/>
+		<override org="org.hibernate.java-persistence" module="jpa-api" matcher="exact" rev="2.0-cr-1"/>
+		<override org="org.richfaces.test" module="richfaces-arquillian" matcher="exact" rev="4.3.2.Final"/>
+		<override org="org.jboss.arquillian.junit" module="arquillian-junit-core" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.apache.httpcomponents" module="httpcore" matcher="exact" rev="4.2.1"/>
+		<override org="com.sun.el" module="el-ri" matcher="exact" rev="1.0"/>
+		<override org="org.jboss.netty" module="netty" matcher="exact" rev="3.2.5.Final"/>
+		<override org="org.jboss.arquillian.test" module="arquillian-test-api" matcher="exact" rev="1.0.3.Final"/>
+		<override org="com.sun.faces" module="jsf-api" matcher="exact" rev="2.1.0"/>
+		<override org="org.apache.maven" module="maven-model" matcher="exact" rev="3.0.4"/>
+		<override org="org.jboss.shrinkwrap.resolver" module="shrinkwrap-resolver-api-maven-archive" matcher="exact" rev="2.0.0-beta-3"/>
+		<override org="org.codehaus.plexus" module="plexus-utils" matcher="exact" rev="1.5.15"/>
+		<override org="org.hornetq" module="hornetq-core" matcher="exact" rev="2.2.7.Final"/>
+		<override org="org.apache.myfaces.core" module="myfaces-impl" matcher="exact" rev="2.1.10"/>
+		<override org="javax.servlet.jsp" module="jsp-api" matcher="exact" rev="2.1"/>
+		<override org="org.jboss.arquillian.testenricher" module="arquillian-testenricher-resource" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.jboss.test-jsf" module="htmlunit-client" matcher="exact" rev="1.1.6"/>
+		<override org="org.jboss.arquillian.container" module="arquillian-container-test-spi" matcher="exact" rev="1.0.3.Final"/>
+		<override org="com.google.code.javaparser" module="javaparser" matcher="exact" rev="1.0.1"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-drone-webdriver-depchain" matcher="exact" rev="1.1.0.Final"/>
+		<override org="org.jboss.shrinkwrap.descriptors" module="shrinkwrap-descriptors-api-jboss" matcher="exact" rev="2.0.0-alpha-3"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-drone-configuration" matcher="exact" rev="1.1.0.Final"/>
+		<override org="org.easymock" module="easymockclassextension" matcher="exact" rev="2.5.2"/>
+		<override org="org.jboss.arquillian.container" module="arquillian-container-test-impl-base" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-drone-webdriver" matcher="exact" rev="1.1.0.Final"/>
+		<override org="com.opera" module="operadriver" matcher="exact" rev="1.1"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-drone-selenium-server" matcher="exact" rev="1.1.0.Final"/>
+		<override org="dom4j" module="dom4j" matcher="exact" rev="1.6.1"/>
+		<override org="org.richfaces.cdk" module="xinclude" matcher="exact" rev="4.3.1.Final"/>
+		<override org="org.jboss.as" module="jboss-as-controller-client" matcher="exact" rev="7.1.1.Final"/>
+		<override org="org.jboss.as" module="jboss-as-arquillian-container-remote" matcher="exact" rev="7.1.1.Final"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-drone-api" matcher="exact" rev="1.1.0.Final"/>
+		<override org="net.sourceforge.cssparser" module="cssparser" matcher="exact" rev="0.9.5"/>
+		<override org="org.jboss.shrinkwrap.descriptors" module="shrinkwrap-descriptors-gen" matcher="exact" rev="2.0.0-alpha-3"/>
+		<override org="org.seleniumhq.selenium" module="selenium-firefox-driver" matcher="exact" rev="2.25.0"/>
+		<override org="org.seleniumhq.selenium" module="selenium-android-driver" matcher="exact" rev="2.25.0"/>
+		<override org="org.jboss.shrinkwrap.resolver" module="shrinkwrap-resolver-depchain" matcher="exact" rev="2.0.0-beta-3"/>
+		<override org="com.sun.xml.bind" module="jaxb-impl" matcher="exact" rev="2.2"/>
+		<override org="org.jboss.shrinkwrap" module="shrinkwrap-impl-base" matcher="exact" rev="1.0.1"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-drone-spi" matcher="exact" rev="1.1.0.Final"/>
+	</dependencies>
+</ivy-module>

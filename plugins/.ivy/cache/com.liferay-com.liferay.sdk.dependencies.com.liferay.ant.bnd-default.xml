@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="com.liferay"
+		module="com.liferay.sdk.dependencies.com.liferay.ant.bnd"
+		revision="working@L3-LULI"
+		conf="default"
+		confs="default"
+		date="20141105153056"/>
+	<dependencies>
+		<module organisation="com.liferay" name="com.liferay.ant.bnd">
+			<revision name="1.0.0-SNAPSHOT" status="integration" pubdate="20140518052102" resolver="default" artresolver="default" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="0">
+				<license name="LGPL 2.1" url="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt"/>
+				<metadata-artifact status="no" details="" size="2483" time="0" location="D:\test run\project-validation\liferay-plugins-sdk-7.0-ce-m1-20140820241612512\liferay-plugins-sdk-7.0\.ivy\cache\com.liferay\com.liferay.ant.bnd\ivy-1.0.0-SNAPSHOT.xml" searched="false" origin-is-local="false" origin-location="http://cdn.repository.liferay.com/nexus/content/groups/public/com/liferay/com.liferay.ant.bnd/1.0.0-SNAPSHOT/com.liferay.ant.bnd-1.0.0-SNAPSHOT.pom"/>
+				<caller organisation="com.liferay" name="com.liferay.sdk.dependencies.com.liferay.ant.bnd" conf="default" rev="1.0.0-SNAPSHOT" rev-constraint-default="1.0.0-SNAPSHOT" rev-constraint-dynamic="1.0.0-SNAPSHOT" callerrev="working@L3-LULI"/>
+				<artifacts>
+					<artifact name="com.liferay.ant.bnd" type="jar" ext="jar" status="no" details="" size="15595" time="0" location="D:\test run\project-validation\liferay-plugins-sdk-7.0-ce-m1-20140820241612512\liferay-plugins-sdk-7.0\.ivy\cache\com.liferay\com.liferay.ant.bnd\jars\com.liferay.ant.bnd-1.0.0-SNAPSHOT.jar">
+						<origin-location is-local="false" location="http://cdn.repository.liferay.com/nexus/content/groups/public/com/liferay/com.liferay.ant.bnd/1.0.0-SNAPSHOT/com.liferay.ant.bnd-1.0.0-SNAPSHOT.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

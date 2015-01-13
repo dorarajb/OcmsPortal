@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id: pom.xml 672 2011-06-22 19:22:21Z ermanno.franco $ -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>net.sourceforge.wurfl</groupId>
+    <artifactId>wurfl</artifactId>
+    <version>1.3.1.1</version>
+    <packaging>jar</packaging>
+
+    <name>wurfl</name>
+    <url>http://dev.wurflpro.com/projects/wurfl-api</url>
+    <description>Wireless Universal Resource File core API</description>
+    <inceptionYear>2008</inceptionYear>
+
+    <licenses>
+        <license>
+            <name>GNU AFFERO GENERAL PUBLIC LICENSE, version 3</name>
+            <url>http://www.gnu.org/licenses/agpl.txt</url>
+            <comments>Read the COPYING file</comments>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <mailingLists>
+        <mailingList>
+            <name>wmlprogramming</name>
+            <post>wmlprogramming@yahoogroups.com</post>
+            <archive>http://tech.groups.yahoo.com/group/wmlprogramming/messages</archive>
+        </mailingList>
+    </mailingLists>
+
+    <issueManagement>
+        <system>Redmine</system>
+        <url>http://dev.scientiamobile.com/redmine/projects/wurfl-api-java</url>
+    </issueManagement>
+
+    <ciManagement>
+        <system>hudson</system>
+        <url>http://dev.scientiamobile.com/hudson/job/wurfl-api-trunk/</url>
+        <notifiers>
+            <notifier>
+                <configuration>
+                    <recipients>filippo.deluca@wurflpro.it asres.fantayeneh@wurflpro.it</recipients>
+                </configuration>
+            </notifier>
+        </notifiers>
+    </ciManagement>
+
+    <organization>
+        <name>ScientiaMobile Inc.</name>
+        <url>http://www.ScientiaMobile.com</url>
+    </organization>
+
+    <!-- Developers -->
+    <developers>
+        <developer>
+            <id>luca.passani</id>
+            <name>Luca Passani</name>
+            <email>luca.passani@wurlfpro.it</email>
+            <timezone>+1</timezone>
+            <organization>WURFL-Pro srl</organization>
+            <roles>
+                <role>Project Manager</role>
+                <role>Developer</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>asres.fantayeneh</id>
+            <name>Fantayeneh Asres Gizaw</name>
+            <email>asres.fantayeneh@wurflpro.it</email>
+            <timezone>0</timezone>
+            <organization>WURFL-Pro srl</organization>
+            <roles>
+                <role>Developer</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>filippo.deluca</id>
+            <name>Filippo De Luca</name>
+            <email>filippo.deluca@wurflpro.it</email>
+            <timezone>+1</timezone>
+            <organization>WURFL-Pro srl</organization>
+            <roles>
+                <role>Developer</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>tommaso.teofili</id>
+            <name>Tommaso Teofili</name>
+            <email>tommaso.teofili@gmail.com</email>
+            <timezone>+1</timezone>
+            <roles>
+                <role>Developer</role>
+            </roles>
+        </developer>
+  		<developer>
+			<id>ermanno.franco</id>
+			<name>Ermanno Franco</name>
+			<email>ermanno.franco@gmail.com</email>
+			<timezone>+1</timezone>
+			<organization>ScientiaMobile Inc.</organization>
+			<roles>
+				<role>Developer</role>
+			</roles>
+		</developer>	        
+    </developers>
+
+    <scm>
+        <connection>scm:svn:https://dev.scientiamobile.com/svn/wurflpro/wurfl-api/java/core/trunk</connection>
+        <developerConnection>scm:svn:https://dev.scientiamobile.com/svn/wurflpro/wurfl-api/java/core/trunk
+        </developerConnection>
+        <url>https://dev.scientiamobile.com/svn/wurflpro/wurfl-api/java/core/trunk</url>
+    </scm>
+
+    	<distributionManagement>
+		<repository>
+			<id>releases.scientiamobile.com</id>
+			<name>Scientia Mobile Repository</name>
+			<url>http://dev.scientiamobile.com/nexus/content/repositories/public-releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots.scientiamobile.com</id>
+			<name>Scientia Mobile Snapshot Repository</name>
+			<url>http://dev.scientiamobile.com/nexus/content/repositories/public-snapshot/</url>
+		</snapshotRepository>
+        <site>
+            <id>site.wurflpro.com</id>
+            <url>scp://dev.wurflpro.com/var/www/dev.wurflpro.com/maven/wurfl</url>
+        </site>
+    </distributionManagement>
+
+    <!-- Properties -->
+    <properties>
+        <spring.version>2.5.6</spring.version>
+        <logback-version>0.9.28</logback-version>
+        <slf4j-version>1.6.1</slf4j-version>
+    </properties>
+
+    <!-- Dependencies -->
+    <dependencies>
+
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.4</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sf.jsr107cache</groupId>
+            <artifactId>jsr107cache</artifactId>
+            <version>1.1</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>1.3.0</version>
+            <optional>true</optional>
+        </dependency>
+        <!-- slf4 / no common logging / etc -->
+        <!-- All the following is related to our will to NOT use Commong-logging -->
+        <!-- use no-commons-logging -->
+        <!--
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>99.0-does-not-exist</version>
+        </dependency>
+        -->
+        <!-- no-commons-logging-api, if you need it -->
+        <!--
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging-api</artifactId>
+            <version>99.0-does-not-exist</version>
+        </dependency>
+        -->
+        <!-- the slf4j commons-logging replacement -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${slf4j-version}</version>
+        </dependency>
+        <!-- using slf4j native backend -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${logback-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <classifier>jdk14</classifier>
+            <version>5.7</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.easymock</groupId>
+            <artifactId>easymock</artifactId>
+            <version>2.3</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- Build -->
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.mycila.maven-license-plugin</groupId>
+                    <artifactId>maven-license-plugin</artifactId>
+                    <version>1.9.0</version>
+                    <configuration>
+                        <header>src/main/etc/header.txt</header>
+                        <excludes>
+                            <exclude>src/main/assembly/**/header-*.txt</exclude>
+                            <exclude>.idea/**/*</exclude>
+                            <exclude>**/*.bak</exclude>
+                            <exclude>**/*.gz</exclude>
+                            <exclude>**/*.zip</exclude>
+                            <exclude>**/*.bz2</exclude>
+                            <exclude>**/.*</exclude>
+                        </excludes>
+                        <properties>
+                            <years>2011</years>
+                            <organization.name>${project.organization.name}</organization.name>
+                            <organization.url>${project.organization.url}</organization.url>
+                            <organization.email>support@scientiamobile.com</organization.email>
+                        </properties>
+                        <mapping>
+                            <yml>SCRIPT_STYLE</yml>
+                            <mdxml>XML_STYLE</mdxml>
+                        </mapping>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <source>1.4</source>
+                    <target>1.4</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.4.2</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.8</version>
+                <configuration>
+                    <downloadSources>true</downloadSources>
+                    <downloadJavadocs>true</downloadJavadocs>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <groups>unit,func</groups>
+                    <argLine>-Xmx787m</argLine>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <outputEncoding>UTF-8</outputEncoding>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>com.mycila.maven-license-plugin</groupId>
+                <artifactId>maven-license-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>2.5</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>2.5</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-clover-plugin</artifactId>
+                <version>2.4</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-jxr-plugin</artifactId>
+                <version>2.1</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-changelog-plugin</artifactId>
+                <version>2.1</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <configuration>
+                    <threshold>Normal</threshold>
+                </configuration>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <profiles>
+
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+
+                    <plugin>
+                        <groupId>com.mycila.maven-license-plugin</groupId>
+                        <artifactId>maven-license-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>check</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>source</id>
+            <build>
+                <plugins>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>2.1.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <phase>compile</phase>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>ant</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>
+                                    src/main/assembly/ant.xml
+                                </descriptor>
+                            </descriptors>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>eula-assembly</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>com.mycila.maven-license-plugin</groupId>
+                        <artifactId>maven-license-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <phase>test</phase>
+                                <goals>
+                                    <goal>check</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>commercial</id>
+
+            <build>
+                <plugins>
+
+                    <plugin>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>
+                                    src/main/assembly/commercial.xml
+                                </descriptor>
+                            </descriptors>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>commercial-assembly</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                </plugins>
+
+            </build>
+
+        </profile>
+
+    </profiles>
+<!--
+    <repositories>
+        <repository>
+            <id>no-commons-logging</id>
+            <name>No-commons-logging Maven Repository</name>
+            <layout>default</layout>
+            <url>http://no-commons-logging.zapto.org/mvn2</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+    </repositories>
+    -->
+</project>

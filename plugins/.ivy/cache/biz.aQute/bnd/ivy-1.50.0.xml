@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0">
+	<info organisation="biz.aQute"
+		module="bnd"
+		revision="1.50.0"
+		status="release"
+		publication="20130423155728"
+		default="true"
+	/>
+	<configurations>
+		<conf name="default" visibility="public"/>
+	</configurations>
+	<publications>
+		<artifact name="bnd" type="jar" ext="jar" conf="default"/>
+	</publications>
+</ivy-module>

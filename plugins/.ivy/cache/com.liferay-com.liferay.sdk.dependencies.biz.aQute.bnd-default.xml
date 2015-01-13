@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="com.liferay"
+		module="com.liferay.sdk.dependencies.biz.aQute.bnd"
+		revision="working@L3-LULI"
+		conf="default"
+		confs="default"
+		date="20140903174526"/>
+	<dependencies>
+		<module organisation="com.liferay" name="aQute.bnd">
+			<revision name="2.3.0.20140225-161137" status="release" pubdate="20140701065829" resolver="liferay-public" artresolver="default" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="0">
+				<metadata-artifact status="no" details="" size="2285" time="0" location="D:\github\liferay-trunk\liferay-plugins\.ivy\cache\com.liferay\aQute.bnd\ivy-2.3.0.20140225-161137.xml" searched="false" origin-is-local="false" origin-location="http://cdn.repository.liferay.com/nexus/content/groups/public/com/liferay/aQute.bnd/2.3.0.20140225-161137/aQute.bnd-2.3.0.20140225-161137.pom"/>
+				<caller organisation="com.liferay" name="com.liferay.sdk.dependencies.biz.aQute.bnd" conf="default" rev="2.3.0.20140225-161137" rev-constraint-default="2.3.0.20140225-161137" rev-constraint-dynamic="2.3.0.20140225-161137" callerrev="working@L3-LULI"/>
+				<artifacts>
+					<artifact name="aQute.bnd" type="jar" ext="jar" status="no" details="" size="2140747" time="0" location="D:\github\liferay-trunk\liferay-plugins\.ivy\cache\com.liferay\aQute.bnd\jars\aQute.bnd-2.3.0.20140225-161137.jar">
+						<origin-location is-local="false" location="http://cdn.repository.liferay.com/nexus/content/groups/public/com/liferay/aQute.bnd/2.3.0.20140225-161137/aQute.bnd-2.3.0.20140225-161137.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

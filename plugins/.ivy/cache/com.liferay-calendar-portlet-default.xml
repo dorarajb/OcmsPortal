@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="com.liferay"
+		module="calendar-portlet"
+		revision="working@L3-LULI"
+		conf="default"
+		confs="default"
+		date="20141008140513"/>
+	<dependencies>
+		<module organisation="com.liferay" name="com.google.ical">
+			<revision name="20110304" status="release" pubdate="20140614082306" resolver="liferay-public" artresolver="default" homepage="" downloaded="true" searched="true" default="false" conf="default, compile, runtime, master" position="0">
+				<license name="LGPL 2.1" url="http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt"/>
+				<metadata-artifact status="successful" details="" size="1255" time="1798" location="D:\github\liferay-trunk\liferay-plugins\.ivy\cache\com.liferay\com.google.ical\ivy-20110304.xml" searched="true" original-local-location="D:\github\liferay-trunk\liferay-plugins\.ivy\cache\com.liferay\com.google.ical\ivy-20110304.xml.original" origin-is-local="false" origin-location="http://cdn.repository.liferay.com/nexus/content/groups/public/com/liferay/com.google.ical/20110304/com.google.ical-20110304.pom"/>
+				<caller organisation="com.liferay" name="calendar-portlet" conf="default" rev="20110304" rev-constraint-default="20110304" rev-constraint-dynamic="20110304" callerrev="working@L3-LULI"/>
+				<artifacts>
+					<artifact name="com.google.ical" type="jar" ext="jar" status="successful" details="" size="164242" time="4487" location="D:\github\liferay-trunk\liferay-plugins\.ivy\cache\com.liferay\com.google.ical\jars\com.google.ical-20110304.jar">
+						<origin-location is-local="false" location="http://cdn.repository.liferay.com/nexus/content/groups/public/com/liferay/com.google.ical/20110304/com.google.ical-20110304.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="joda-time" name="joda-time">
+			<revision name="1.5.2" status="release" pubdate="20080128184802" resolver="liferay-public" artresolver="default" homepage="http://joda-time.sourceforge.net" downloaded="true" searched="true" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="1">
+				<license name="Apache 2" url="http://www.apache.org/licenses/"/>
+				<metadata-artifact status="successful" details="" size="4422" time="1349" location="D:\github\liferay-trunk\liferay-plugins\.ivy\cache\joda-time\joda-time\ivy-1.5.2.xml" searched="true" original-local-location="D:\github\liferay-trunk\liferay-plugins\.ivy\cache\joda-time\joda-time\ivy-1.5.2.xml.original" origin-is-local="false" origin-location="http://cdn.repository.liferay.com/nexus/content/groups/public/joda-time/joda-time/1.5.2/joda-time-1.5.2.pom"/>
+				<caller organisation="com.liferay" name="com.google.ical" conf="default, compile, runtime, master" rev="1.5.2" rev-constraint-default="1.5.2" rev-constraint-dynamic="1.5.2" callerrev="20110304"/>
+				<artifacts>
+					<artifact name="joda-time" type="jar" ext="jar" status="successful" details="" size="531326" time="4690" location="D:\github\liferay-trunk\liferay-plugins\.ivy\cache\joda-time\joda-time\jars\joda-time-1.5.2.jar">
+						<origin-location is-local="false" location="http://cdn.repository.liferay.com/nexus/content/groups/public/joda-time/joda-time/1.5.2/joda-time-1.5.2.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

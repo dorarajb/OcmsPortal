@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="com.liferay"
+		module="portlet_liferay_faces_alloy_tmpl"
+		revision="working@gamerson"
+		conf="default"
+		confs="default"
+		date="20131022113719"/>
+	<dependencies>
+		<module organisation="com.liferay.faces" name="liferay-faces-portal">
+			<revision name="3.2.4-ga5-SNAPSHOT" status="integration" pubdate="20131022061920" resolver="oss-nexus" artresolver="default" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="8">
+				<metadata-artifact status="no" details="" size="37666" time="0" location="D:\dev java\QA\620RC4\liferay-plugins-sdk-6.2.0\.ivy\cache\com.liferay.faces\liferay-faces-portal\ivy-3.2.4-ga5-SNAPSHOT.xml" searched="false" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/snapshots/com/liferay/faces/liferay-faces-portal/3.2.4-ga5-SNAPSHOT/liferay-faces-portal-3.2.4-ga5-20131021.221917-414.pom"/>
+				<caller organisation="com.liferay" name="portlet_liferay_faces_alloy_tmpl" conf="default" rev="3.2.4-ga5-SNAPSHOT" rev-constraint-default="3.2.4-ga5-SNAPSHOT" rev-constraint-dynamic="3.2.4-ga5-SNAPSHOT" callerrev="working@gamerson"/>
+				<artifacts>
+					<artifact name="liferay-faces-portal" type="jar" ext="jar" status="no" details="" size="98679" time="0" location="D:\dev java\QA\620RC4\liferay-plugins-sdk-6.2.0\.ivy\cache\com.liferay.faces\liferay-faces-portal\jars\liferay-faces-portal-3.2.4-ga5-SNAPSHOT.jar">
+						<origin-location is-local="false" location="https://oss.sonatype.org/content/repositories/snapshots/com/liferay/faces/liferay-faces-portal/3.2.4-ga5-SNAPSHOT/liferay-faces-portal-3.2.4-ga5-20131021.221917-414.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.liferay.faces" name="liferay-faces-bridge-impl">
+			<revision name="3.2.4-ga5-SNAPSHOT" status="integration" pubdate="20131022061856" resolver="oss-nexus" artresolver="default" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, master(*), compile(*), runtime, runtime(*), master" position="7">
+				<metadata-artifact status="no" details="" size="38091" time="0" location="D:\dev java\QA\620RC4\liferay-plugins-sdk-6.2.0\.ivy\cache\com.liferay.faces\liferay-faces-bridge-impl\ivy-3.2.4-ga5-SNAPSHOT.xml" searched="false" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/snapshots/com/liferay/faces/liferay-faces-bridge-impl/3.2.4-ga5-SNAPSHOT/liferay-faces-bridge-impl-3.2.4-ga5-20131021.221851-416.pom"/>
+				<caller organisation="com.liferay.faces" name="liferay-faces-portal" conf="default, compile, runtime, master" rev="3.2.4-ga5-SNAPSHOT" rev-constraint-default="3.2.4-ga5-SNAPSHOT" rev-constraint-dynamic="3.2.4-ga5-SNAPSHOT" callerrev="3.2.4-ga5-SNAPSHOT"/>
+				<caller organisation="com.liferay" name="portlet_liferay_faces_alloy_tmpl" conf="default" rev="3.2.4-ga5-SNAPSHOT" rev-constraint-default="3.2.4-ga5-SNAPSHOT" rev-constraint-dynamic="3.2.4-ga5-SNAPSHOT" callerrev="working@gamerson"/>
+				<artifacts>
+					<artifact name="liferay-faces-bridge-impl" type="jar" ext="jar" status="no" details="" size="522891" time="0" location="D:\dev java\QA\620RC4\liferay-plugins-sdk-6.2.0\.ivy\cache\com.liferay.faces\liferay-faces-bridge-impl\jars\liferay-faces-bridge-impl-3.2.4-ga5-SNAPSHOT.jar">
+						<origin-location is-local="false" location="https://oss.sonatype.org/content/repositories/snapshots/com/liferay/faces/liferay-faces-bridge-impl/3.2.4-ga5-SNAPSHOT/liferay-faces-bridge-impl-3.2.4-ga5-20131021.221851-416.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.liferay.faces" name="liferay-faces-bridge-api">
+			<revision name="3.2.4-ga5-SNAPSHOT" status="integration" pubdate="20131022061839" resolver="oss-nexus" artresolver="default" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, master(*), compile(*), runtime, runtime(*), master" position="6">
+				<metadata-artifact status="no" details="" size="36806" time="0" location="D:\dev java\QA\620RC4\liferay-plugins-sdk-6.2.0\.ivy\cache\com.liferay.faces\liferay-faces-bridge-api\ivy-3.2.4-ga5-SNAPSHOT.xml" searched="false" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/snapshots/com/liferay/faces/liferay-faces-bridge-api/3.2.4-ga5-SNAPSHOT/liferay-faces-bridge-api-3.2.4-ga5-20131021.221836-418.pom"/>
+				<caller organisation="com.liferay.faces" name="liferay-faces-bridge-impl" conf="default, compile, runtime, master" rev="3.2.4-ga5-SNAPSHOT" rev-constraint-default="3.2.4-ga5-SNAPSHOT" rev-constraint-dynamic="3.2.4-ga5-SNAPSHOT" callerrev="3.2.4-ga5-SNAPSHOT"/>
+				<caller organisation="com.liferay" name="portlet_liferay_faces_alloy_tmpl" conf="default" rev="3.2.4-ga5-SNAPSHOT" rev-constraint-default="3.2.4-ga5-SNAPSHOT" rev-constraint-dynamic="3.2.4-ga5-SNAPSHOT" callerrev="working@gamerson"/>
+				<artifacts>
+					<artifact name="liferay-faces-bridge-api" type="jar" ext="jar" status="no" details="" size="30696" time="0" location="D:\dev java\QA\620RC4\liferay-plugins-sdk-6.2.0\.ivy\cache\com.liferay.faces\liferay-faces-bridge-api\jars\liferay-faces-bridge-api-3.2.4-ga5-SNAPSHOT.jar">
+						<origin-location is-local="false" location="https://oss.sonatype.org/content/repositories/snapshots/com/liferay/faces/liferay-faces-bridge-api/3.2.4-ga5-SNAPSHOT/liferay-faces-bridge-api-3.2.4-ga5-20131021.221836-418.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.liferay.faces" name="liferay-faces-alloy">
+			<revision name="3.2.4-ga5-SNAPSHOT" status="integration" pubdate="20131022113240" resolver="oss-nexus" artresolver="default" homepage="" downloaded="true" searched="true" default="false" conf="default, compile, runtime, master" position="4">
+				<metadata-artifact status="successful" details="" size="3627" time="3846" location="D:\dev java\QA\620RC4\liferay-plugins-sdk-6.2.0\.ivy\cache\com.liferay.faces\liferay-faces-alloy\ivy-3.2.4-ga5-SNAPSHOT.xml" searched="true" original-local-location="D:\dev java\QA\620RC4\liferay-plugins-sdk-6.2.0\.ivy\cache\com.liferay.faces\liferay-faces-alloy\ivy-3.2.4-ga5-SNAPSHOT.xml.original" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/snapshots/com/liferay/faces/liferay-faces-alloy/3.2.4-ga5-SNAPSHOT/liferay-faces-alloy-3.2.4-ga5-20131022.033237-420.pom"/>
+				<caller organisation="com.liferay" name="portlet_liferay_faces_alloy_tmpl" conf="default" rev="3.2.4-ga5-SNAPSHOT" rev-constraint-default="3.2.4-ga5-SNAPSHOT" rev-constraint-dynamic="3.2.4-ga5-SNAPSHOT" callerrev="working@gamerson"/>
+				<artifacts>
+					<artifact name="liferay-faces-alloy" type="jar" ext="jar" status="successful" details="" size="195785" time="4092" location="D:\dev java\QA\620RC4\liferay-plugins-sdk-6.2.0\.ivy\cache\com.liferay.faces\liferay-faces-alloy\jars\liferay-faces-alloy-3.2.4-ga5-SNAPSHOT.jar">
+						<origin-location is-local="false" location="https://oss.sonatype.org/content/repositories/snapshots/com/liferay/faces/liferay-faces-alloy/3.2.4-ga5-SNAPSHOT/liferay-faces-alloy-3.2.4-ga5-20131022.033237-420.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.liferay.faces" name="liferay-faces-util">
+			<revision name="3.2.4-ga5-SNAPSHOT" status="integration" pubdate="20131022061816" resolver="oss-nexus" artresolver="default" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, master(*), runtime, compile(*), runtime(*), master" position="5">
+				<metadata-artifact status="no" details="" size="37470" time="0" location="D:\dev java\QA\620RC4\liferay-plugins-sdk-6.2.0\.ivy\cache\com.liferay.faces\liferay-faces-util\ivy-3.2.4-ga5-SNAPSHOT.xml" searched="false" origin-is-local="false" origin-location="https://oss.sonatype.org/content/repositories/snapshots/com/liferay/faces/liferay-faces-util/3.2.4-ga5-SNAPSHOT/liferay-faces-util-3.2.4-ga5-20131021.221812-420.pom"/>
+				<caller organisation="com.liferay.faces" name="liferay-faces-portal" conf="default, compile, runtime, master" rev="3.2.4-ga5-SNAPSHOT" rev-constraint-default="3.2.4-ga5-SNAPSHOT" rev-constraint-dynamic="3.2.4-ga5-SNAPSHOT" callerrev="3.2.4-ga5-SNAPSHOT"/>
+				<caller organisation="com.liferay.faces" name="liferay-faces-bridge-impl" conf="default, compile, runtime, master" rev="3.2.4-ga5-SNAPSHOT" rev-constraint-default="3.2.4-ga5-SNAPSHOT" rev-constraint-dynamic="3.2.4-ga5-SNAPSHOT" callerrev="3.2.4-ga5-SNAPSHOT"/>
+				<caller organisation="com.liferay" name="portlet_liferay_faces_alloy_tmpl" conf="default" rev="3.2.4-ga5-SNAPSHOT" rev-constraint-default="3.2.4-ga5-SNAPSHOT" rev-constraint-dynamic="3.2.4-ga5-SNAPSHOT" callerrev="working@gamerson"/>
+				<caller organisation="com.liferay.faces" name="liferay-faces-alloy" conf="default, compile, runtime, master" rev="3.2.4-ga5-SNAPSHOT" rev-constraint-default="3.2.4-ga5-SNAPSHOT" rev-constraint-dynamic="3.2.4-ga5-SNAPSHOT" callerrev="3.2.4-ga5-SNAPSHOT"/>
+				<artifacts>
+					<artifact name="liferay-faces-util" type="jar" ext="jar" status="no" details="" size="141103" time="0" location="D:\dev java\QA\620RC4\liferay-plugins-sdk-6.2.0\.ivy\cache\com.liferay.faces\liferay-faces-util\jars\liferay-faces-util-3.2.4-ga5-SNAPSHOT.jar">
+						<origin-location is-local="false" location="https://oss.sonatype.org/content/repositories/snapshots/com/liferay/faces/liferay-faces-util/3.2.4-ga5-SNAPSHOT/liferay-faces-util-3.2.4-ga5-20131021.221812-420.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.sun.faces" name="jsf-impl">
+			<revision name="2.1.21" status="release" pubdate="20130409222302" resolver="maven2" artresolver="default" homepage="http://java.sun.com/javaee/javaserverfaces/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="3">
+				<license name="                 COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) plus GPL             " url="http://glassfish.java.net/nonav/public/CDDL+GPL.html"/>
+				<metadata-artifact status="no" details="" size="3645" time="0" location="D:\dev java\QA\620RC4\liferay-plugins-sdk-6.2.0\.ivy\cache\com.sun.faces\jsf-impl\ivy-2.1.21.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/sun/faces/jsf-impl/2.1.21/jsf-impl-2.1.21.pom"/>
+				<caller organisation="com.liferay" name="portlet_liferay_faces_alloy_tmpl" conf="default" rev="2.1.21" rev-constraint-default="2.1.21" rev-constraint-dynamic="2.1.21" callerrev="working@gamerson"/>
+				<artifacts>
+					<artifact name="jsf-impl" type="jar" ext="jar" status="no" details="" size="2007978" time="0" location="D:\dev java\QA\620RC4\liferay-plugins-sdk-6.2.0\.ivy\cache\com.sun.faces\jsf-impl\jars\jsf-impl-2.1.21.jar">
+						<origin-location is-local="false" location="http://build-1:8081/nexus/content/groups/public/com/sun/faces/jsf-impl/2.1.21/jsf-impl-2.1.21.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.sun.faces" name="jsf-api">
+			<revision name="2.1.21" status="release" pubdate="20130409222229" resolver="maven2" artresolver="default" homepage="http://java.sun.com/javaee/javaserverfaces/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="2">
+				<license name="                 COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) plus GPL             " url="http://glassfish.java.net/nonav/public/CDDL+GPL.html"/>
+				<metadata-artifact status="no" details="" size="3641" time="0" location="D:\dev java\QA\620RC4\liferay-plugins-sdk-6.2.0\.ivy\cache\com.sun.faces\jsf-api\ivy-2.1.21.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/com/sun/faces/jsf-api/2.1.21/jsf-api-2.1.21.pom"/>
+				<caller organisation="com.liferay" name="portlet_liferay_faces_alloy_tmpl" conf="default" rev="2.1.21" rev-constraint-default="2.1.21" rev-constraint-dynamic="2.1.21" callerrev="working@gamerson"/>
+				<artifacts>
+					<artifact name="jsf-api" type="jar" ext="jar" status="no" details="" size="635911" time="0" location="D:\dev java\QA\620RC4\liferay-plugins-sdk-6.2.0\.ivy\cache\com.sun.faces\jsf-api\jars\jsf-api-2.1.21.jar">
+						<origin-location is-local="false" location="http://build-1:8081/nexus/content/groups/public/com/sun/faces/jsf-api/2.1.21/jsf-api-2.1.21.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.jboss.el" name="jboss-el">
+			<revision name="2.0.1.GA" status="release" pubdate="20080123032647" resolver="jboss-nexus" artresolver="default" homepage="" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="0">
+				<metadata-artifact status="no" details="" size="2462" time="0" location="D:\dev java\QA\620RC4\liferay-plugins-sdk-6.2.0\.ivy\cache\org.jboss.el\jboss-el\ivy-2.0.1.GA.xml" searched="false" origin-is-local="false" origin-location="https://repository.jboss.org/nexus/content/repositories/releases/org/jboss/el/jboss-el/2.0.1.GA/jboss-el-2.0.1.GA.pom"/>
+				<caller organisation="com.liferay" name="portlet_liferay_faces_alloy_tmpl" conf="default" rev="2.0.1.GA" rev-constraint-default="2.0.1.GA" rev-constraint-dynamic="2.0.1.GA" callerrev="working@gamerson"/>
+				<artifacts>
+					<artifact name="jboss-el" type="jar" ext="jar" status="no" details="" size="133493" time="0" location="D:\dev java\QA\620RC4\liferay-plugins-sdk-6.2.0\.ivy\cache\org.jboss.el\jboss-el\jars\jboss-el-2.0.1.GA.jar">
+						<origin-location is-local="false" location="http://build-1:8081/nexus/content/groups/public/org/jboss/el/jboss-el/2.0.1.GA/jboss-el-2.0.1.GA.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="javax.el" name="el-api">
+			<revision name="1.0" status="release" pubdate="20081111075401" resolver="maven2" artresolver="default" homepage="" downloaded="false" searched="false" default="false" conf="compile, master(*), runtime, compile(*), runtime(*), master" position="1">
+				<metadata-artifact status="no" details="" size="2296" time="0" location="D:\dev java\QA\620RC4\liferay-plugins-sdk-6.2.0\.ivy\cache\javax.el\el-api\ivy-1.0.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/javax/el/el-api/1.0/el-api-1.0.pom"/>
+				<caller organisation="org.jboss.el" name="jboss-el" conf="default, compile, runtime, master" rev="1.0" rev-constraint-default="1.0" rev-constraint-dynamic="1.0" callerrev="2.0.1.GA"/>
+				<artifacts>
+					<artifact name="el-api" type="jar" ext="jar" status="no" details="" size="24432" time="0" location="D:\dev java\QA\620RC4\liferay-plugins-sdk-6.2.0\.ivy\cache\javax.el\el-api\jars\el-api-1.0.jar">
+						<origin-location is-local="false" location="http://build-1:8081/nexus/content/groups/public/javax/el/el-api/1.0/el-api-1.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

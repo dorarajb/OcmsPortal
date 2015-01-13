@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright 2004-2013 ICEsoft Technologies Canada Corp.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the
+  ~ License. You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing,
+  ~ software distributed under the License is distributed on an "AS
+  ~ IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+  ~ express or implied. See the License for the specific language
+  ~ governing permissions and limitations under the License.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.icepush</groupId>
+        <artifactId>icepush-parent</artifactId>
+        <version>3.3.0</version>
+        <relativePath>..</relativePath>
+    </parent>
+
+    <groupId>org.icepush</groupId>
+    <artifactId>${icepush.lib.name}</artifactId>
+    <packaging>jar</packaging>
+    <name>${icepush.product.name} Core Library</name>
+    <url>http://www.icesoft.org</url>
+    <description>${icepush.product.name} Core Library</description>
+
+    <build>
+
+        <plugins>
+
+            <!-- Building our JavaScript Bridge is still currently done through Ant -->
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.7</version>
+
+                <executions>
+
+                    <!-- Run the default Ant target to clean everything -->
+                    <execution>
+                        <id>clean-all</id>
+                        <phase>clean</phase>
+                        <configuration>
+                            <target>
+                                <ant antfile="./build.xml" target="clean"/>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+
+                    <!-- Other parts of the build need the icepush.jar in the lib directory. -->
+                    <execution>
+                        <id>compile-all</id>
+                        <phase>compile</phase>
+                        <configuration>
+                            <target>
+                                <ant antfile="./build.xml"/>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+
+                    <!-- Run the Ant target to process the ProductInfo -->
+                    <execution>
+                        <id>gen-productinfo</id>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <target>
+                                <ant antfile="./build.xml" target="product.info"/>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+
+                    <!-- Run the default Ant build to process the JavaScript files -->
+                    <execution>
+                        <id>gen-javascript</id>
+                        <phase>compile</phase>
+                        <configuration>
+                            <target>
+                                <ant antfile="./build.xml" target="build.bridge"/>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+
+                </executions>
+            </plugin>
+
+            <!--The regular Maven processes are unaware of the icepush*.js files that
+                are generated so we need to copy them across just before the package phase. -->
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.5</version>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${basedir}/target/classes/META-INF/resources</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>build/javascript/META-INF/resources</directory>
+                                    <filtering>false</filtering>
+                                    <includes>
+                                        <include>**/*.js</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+            <plugin>
+
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.8.1</version>
+
+                <configuration>
+                    <debug>true</debug>
+                    <use>false</use>
+
+                    <windowtitle>${javadoc.title}</windowtitle>
+                    <header>${javadoc.header}</header>
+
+                    <!-- It doesn't appear that we can be as easily selective about the granularity of the files
+                         that will be documented as we can with Ant.  So we end up with a small number of files
+                         that are included that we may want to exclude. -->
+                    <excludePackageNames>
+                        org.icepush.util.*
+                    </excludePackageNames>
+
+                    <footer>${javadoc.footer}</footer>
+                    <bottom>Copyright ${icesoft.copyright.year} ${icesoft.copyright}</bottom>
+                </configuration>
+
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.1.2</version>
+                <configuration>
+                    <attach>true</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+
+    </build>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.1</version>
+        </dependency>
+
+    </dependencies>
+
+    <profiles>
+
+        <!-- Not sure why but when I tried to put this in the top-level parent pom, it would sign all the artifacts
+             but would only deploy the signatures for the main .jar and not the the sources and javadoc jars. It
+             apparently works fine if the profile is defined in each project so that's what I've done for now. -->
+        <profile>
+            <id>sign-artifacts</id>
+            <activation>
+                <!--<activeByDefault>true</activeByDefault>-->
+                <property>
+                    <name>signArtifacts</name>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.4</version>
+
+                        <executions>
+
+                            <execution>
+                                <id>sign-library</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <configuration>
+                                    <keyname>${icefaces.gpg.keyname}</keyname>
+                                    <passphrase>${icefaces.gpg.passphrase}</passphrase>
+                                </configuration>
+                            </execution>
+
+                        </executions>
+
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+    </profiles>
+
+</project>

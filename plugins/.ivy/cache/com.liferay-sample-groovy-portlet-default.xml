@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="com.liferay"
+		module="sample-groovy-portlet"
+		revision="working@terry-PC"
+		conf="default"
+		confs="default"
+		date="20140108140307"/>
+	<dependencies>
+		<module organisation="org.codehaus.groovy" name="groovy-all">
+			<revision name="1.5.7" status="release" pubdate="20081009230527" resolver="maven2" artresolver="default" homepage="http://groovy.codehaus.org/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="0">
+				<metadata-artifact status="no" details="" size="5523" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\org.codehaus.groovy\groovy-all\ivy-1.5.7.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/codehaus/groovy/groovy-all/1.5.7/groovy-all-1.5.7.pom"/>
+				<caller organisation="com.liferay" name="sample-groovy-portlet" conf="default" rev="1.5.7" rev-constraint-default="1.5.7" rev-constraint-dynamic="1.5.7" callerrev="working@terry-PC"/>
+				<artifacts>
+					<artifact name="groovy-all" type="jar" ext="jar" status="no" details="" size="2895520" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\org.codehaus.groovy\groovy-all\jars\groovy-all-1.5.7.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/codehaus/groovy/groovy-all/1.5.7/groovy-all-1.5.7.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

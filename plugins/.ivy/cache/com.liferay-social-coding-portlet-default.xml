@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="com.liferay"
+		module="social-coding-portlet"
+		revision="working@terry-PC"
+		conf="default"
+		confs="default"
+		date="20131121141815"/>
+	<dependencies>
+		<module organisation="org.tmatesoft.svnkit" name="svnkit">
+			<revision name="1.2.0.4949" status="release" pubdate="20081226214929" resolver="maven2" artresolver="default" homepage="http://svnkit.com/" downloaded="false" searched="false" default="false" conf="default, compile, runtime, master" position="0">
+				<license name="Unknown License" url="http://svnkit.com/license.html"/>
+				<metadata-artifact status="no" details="" size="2676" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\org.tmatesoft.svnkit\svnkit\ivy-1.2.0.4949.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/tmatesoft/svnkit/svnkit/1.2.0.4949/svnkit-1.2.0.4949.pom"/>
+				<caller organisation="com.liferay" name="social-coding-portlet" conf="default" rev="1.2.0.4949" rev-constraint-default="1.2.0.4949" rev-constraint-dynamic="1.2.0.4949" callerrev="working@terry-PC"/>
+				<artifacts>
+					<artifact name="svnkit" type="jar" ext="jar" status="no" details="" size="1731755" time="0" location="D:\work\liferay-plugins-src\liferay-plugins-trunk-git\.ivy\cache\org.tmatesoft.svnkit\svnkit\jars\svnkit-1.2.0.4949.jar">
+						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/tmatesoft/svnkit/svnkit/1.2.0.4949/svnkit-1.2.0.4949.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

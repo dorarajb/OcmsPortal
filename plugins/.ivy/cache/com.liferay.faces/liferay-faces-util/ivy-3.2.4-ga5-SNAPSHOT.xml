@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
+	<info organisation="com.liferay.faces"
+		module="liferay-faces-util"
+		revision="3.2.4-ga5-SNAPSHOT"
+		status="integration"
+		publication="20131022061816"
+	>
+		<description homepage="">
+		Liferay Faces Common Utilities
+		</description>
+		<m:dependency.management__org.primefaces__primefaces__version>3.5</m:dependency.management__org.primefaces__primefaces__version>
+		<m:dependency.management__com.sun.faces__jsf-api__scope>compile</m:dependency.management__com.sun.faces__jsf-api__scope>
+		<m:dependency.management__org.jboss.arquillian.container__arquillian-container-test-spi__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.container__arquillian-container-test-spi__version>
+		<m:dependency.management__org.jboss.arquillian.container__arquillian-container-test-api__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.container__arquillian-container-test-api__version>
+		<m:dependency.management__javax.portlet__portlet-api__scope>provided</m:dependency.management__javax.portlet__portlet-api__scope>
+		<m:properties__faces.impl.scope>compile</m:properties__faces.impl.scope>
+		<m:dependency.management__org.jboss.arquillian.protocol__arquillian-protocol-jmx__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.protocol__arquillian-protocol-jmx__version>
+		<m:properties__primefaces3.version>3.5</m:properties__primefaces3.version>
+		<m:properties__myfaces.version>2.1.8</m:properties__myfaces.version>
+		<m:properties__arquillian.drone.version>1.1.1.Final</m:properties__arquillian.drone.version>
+		<m:dependency.management__org.jboss.seam__jboss-el__version>2.0.0.GA</m:dependency.management__org.jboss.seam__jboss-el__version>
+		<m:properties__selenium.version>2.31.0</m:properties__selenium.version>
+		<m:dependency.management__org.icefaces__icefaces-compat__version>3.3.0</m:dependency.management__org.icefaces__icefaces-compat__version>
+		<m:properties__codename>Ephesus</m:properties__codename>
+		<m:properties__icefaces3.version>3.3.0</m:properties__icefaces3.version>
+		<m:dependency.management__javax.annotation__jsr250-api__scope>provided</m:dependency.management__javax.annotation__jsr250-api__scope>
+		<m:dependency.management__org.jboss.arquillian.config__arquillian-config-api__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.config__arquillian-config-api__version>
+		<m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-api-maven__version>1.0.0-beta-7</m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-api-maven__version>
+		<m:dependency.management__javax.servlet__servlet-api__scope>provided</m:dependency.management__javax.servlet__servlet-api__scope>
+		<m:dependency.management__com.sun.faces__jsf-api__version>2.1.21</m:dependency.management__com.sun.faces__jsf-api__version>
+		<m:dependency.management__org.richfaces.core__richfaces-core-api__version>4.3.2.Final</m:dependency.management__org.richfaces.core__richfaces-core-api__version>
+		<m:dependency.management__org.apache.myfaces.core__myfaces-api__version>2.1.8</m:dependency.management__org.apache.myfaces.core__myfaces-api__version>
+		<m:dependency.management__log4j__log4j__version>1.2.14</m:dependency.management__log4j__log4j__version>
+		<m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-impl-maven__version>1.0.0-beta-7</m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-impl-maven__version>
+		<m:dependency.management__org.jboss.arquillian.testng__arquillian-testng-container__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.testng__arquillian-testng-container__version>
+		<m:dependency.management__org.jboss.arquillian.testenricher__arquillian-testenricher-cdi__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.testenricher__arquillian-testenricher-cdi__version>
+		<m:properties__pluto.deploy.dir>${pluto.tomcat.dir}/webapps</m:properties__pluto.deploy.dir>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-support__version>2.31.0</m:dependency.management__org.seleniumhq.selenium__selenium-support__version>
+		<m:dependency.management__com.sun.faces__jsf-impl__version>2.1.21</m:dependency.management__com.sun.faces__jsf-impl__version>
+		<m:properties__arquillian.graphene.version>2.0.0.Alpha3</m:properties__arquillian.graphene.version>
+		<m:properties__weld.version>1.1.10.Final</m:properties__weld.version>
+		<m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-api-javaee__version>2.0.0-alpha-3</m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-api-javaee__version>
+		<m:properties__liferay.tomcat.version>7.0.40</m:properties__liferay.tomcat.version>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-api__version>2.31.0</m:dependency.management__org.seleniumhq.selenium__selenium-api__version>
+		<m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-impl-javaee__version>2.0.0-alpha-3</m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-impl-javaee__version>
+		<m:dependency.management__org.icepush__icepush__version>3.3.0</m:dependency.management__org.icepush__icepush__version>
+		<m:properties__liferay.resin.version>4.0.33</m:properties__liferay.resin.version>
+		<m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-api__version>1.0.0-beta-7</m:dependency.management__org.jboss.shrinkwrap.resolver__shrinkwrap-resolver-api__version>
+		<m:properties__faces.spec.version>2.1</m:properties__faces.spec.version>
+		<m:properties__liferay.auto.deploy.dir>${liferay.home}/deploy</m:properties__liferay.auto.deploy.dir>
+		<m:dependency.management__javax.el__el-api__version>1.0</m:dependency.management__javax.el__el-api__version>
+		<m:dependency.management__org.apache.myfaces.core__myfaces-impl__version>2.1.8</m:dependency.management__org.apache.myfaces.core__myfaces-impl__version>
+		<m:dependency.management__org.jboss.arquillian.testng__arquillian-testng-core__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.testng__arquillian-testng-core__version>
+		<m:properties__liferay.deploy.version>${liferay.version}</m:properties__liferay.deploy.version>
+		<m:dependency.management__javax.servlet__servlet-api__version>2.5</m:dependency.management__javax.servlet__servlet-api__version>
+		<m:properties__spring.version>3.0.7.RELEASE</m:properties__spring.version>
+		<m:properties__liferay.app.server.dir>${liferay.home}/tomcat-${liferay.tomcat.version}</m:properties__liferay.app.server.dir>
+		<m:dependency.management__org.jboss.arquillian.test__arquillian-test-impl-base__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.test__arquillian-test-impl-base__version>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-htmlunit-driver__version>2.31.0</m:dependency.management__org.seleniumhq.selenium__selenium-htmlunit-driver__version>
+		<m:dependency.management__org.jboss.seam__jboss-el__exclusion_0>javax.el__el-api</m:dependency.management__org.jboss.seam__jboss-el__exclusion_0>
+		<m:properties__liferay.glassfish.version>3.1.2.2</m:properties__liferay.glassfish.version>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-spi__version>1.1.1.Final</m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-spi__version>
+		<m:dependency.management__org.springframework__spring-web__version>3.0.7.RELEASE</m:dependency.management__org.springframework__spring-web__version>
+		<m:dependency.management__javax.enterprise__cdi-api__scope>provided</m:dependency.management__javax.enterprise__cdi-api__scope>
+		<m:dependency.management__org.jboss.shrinkwrap__shrinkwrap-spi__version>1.0.1</m:dependency.management__org.jboss.shrinkwrap__shrinkwrap-spi__version>
+		<m:properties__weblogic.xerces.version>2.11.0</m:properties__weblogic.xerces.version>
+		<m:dependency.management__com.liferay.portal__util-taglib__version>6.2.0-SNAPSHOT</m:dependency.management__com.liferay.portal__util-taglib__version>
+		<m:dependency.management__junit__junit__version>4.10</m:dependency.management__junit__junit__version>
+		<m:properties__liferay.deploy.dir>${liferay.app.server.dir}/webapps</m:properties__liferay.deploy.dir>
+		<m:dependency.management__org.jboss.arquillian.core__arquillian-core-impl-base__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.core__arquillian-core-impl-base__version>
+		<m:properties__cdi.version>1.0-SP4</m:properties__cdi.version>
+		<m:properties__sonatypeOssDistMgmtSnapshotsUrl>https://oss.sonatype.org/content/repositories/snapshots/</m:properties__sonatypeOssDistMgmtSnapshotsUrl>
+		<m:properties__liferay.websphere.version>8.0.0.6</m:properties__liferay.websphere.version>
+		<m:properties__faces.api.artifact.id>jsf-api</m:properties__faces.api.artifact.id>
+		<m:dependency.management__commons-fileupload__commons-fileupload__version>1.2.2</m:dependency.management__commons-fileupload__commons-fileupload__version>
+		<m:dependency.management__org.icefaces__icefaces-ace__version>3.3.0</m:dependency.management__org.icefaces__icefaces-ace__version>
+		<m:maven.plugins>org.apache.maven.plugins__maven-enforcer-plugin__1.0|org.apache.maven.plugins__maven-enforcer-plugin__1.0|org.codehaus.mojo__buildnumber-maven-plugin__null|org.apache.maven.plugins__maven-enforcer-plugin__1.0|org.apache.maven.plugins__maven-enforcer-plugin__1.0|org.codehaus.mojo__buildnumber-maven-plugin__null</m:maven.plugins>
+		<m:properties__mojarra.version>2.1.21</m:properties__mojarra.version>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-impl__version>1.1.1.Final</m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-impl__version>
+		<m:properties__war.packaging.excludes>
+			WEB-INF/glassfish-*.xml,
+			WEB-INF/ibm-*.xml,
+			WEB-INF/jboss-*.xml,
+			WEB-INF/sun-*.xml,
+			WEB-INF/web-*.xml,
+			WEB-INF/weblogic.xml
+		</m:properties__war.packaging.excludes>
+		<m:dependency.management__org.jboss.arquillian.test__arquillian-test-api__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.test__arquillian-test-api__version>
+		<m:dependency.management__javax.servlet__jstl__version>1.2</m:dependency.management__javax.servlet__jstl__version>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-firefox-driver__version>2.31.0</m:dependency.management__org.seleniumhq.selenium__selenium-firefox-driver__version>
+		<m:properties__jstl.version>1.2</m:properties__jstl.version>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-webdriver-depchain__version>1.1.1.Final</m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-webdriver-depchain__version>
+		<m:dependency.management__org.richfaces.core__richfaces-core-impl__version>4.3.2.Final</m:dependency.management__org.richfaces.core__richfaces-core-impl__version>
+		<m:properties__pluto.home>${env.PORTALS_HOME}/liferay.com/${pluto.portal}-jsf-${faces.spec.version}</m:properties__pluto.home>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-java__version>2.31.0</m:dependency.management__org.seleniumhq.selenium__selenium-java__version>
+		<m:properties__full.version>${project.version} (${codename} / ${timestamp} AD)</m:properties__full.version>
+		<m:properties__faces.version>${mojarra.version}</m:properties__faces.version>
+		<m:properties__tck.version>jsr329-1.0.1-liferay</m:properties__tck.version>
+		<m:dependency.management__org.jboss.arquillian.testenricher__arquillian-testenricher-ejb__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.testenricher__arquillian-testenricher-ejb__version>
+		<m:dependency.management__com.sun.faces__jsf-impl__scope>compile</m:dependency.management__com.sun.faces__jsf-impl__scope>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-server__version>2.31.0</m:dependency.management__org.seleniumhq.selenium__selenium-server__version>
+		<m:properties__liferay.version>6.2.0-SNAPSHOT</m:properties__liferay.version>
+		<m:dependency.management__commons-io__commons-io__version>1.3.2</m:dependency.management__commons-io__commons-io__version>
+		<m:dependency.management__javax.annotation__jsr250-api__version>1.0</m:dependency.management__javax.annotation__jsr250-api__version>
+		<m:dependency.management__org.richfaces.ui__richfaces-components-ui__version>4.3.2.Final</m:dependency.management__org.richfaces.ui__richfaces-components-ui__version>
+		<m:properties__liferay.app.server.tld.portal.dir>${liferay.app.server.dir}/webapps/ROOT/WEB-INF/tld</m:properties__liferay.app.server.tld.portal.dir>
+		<m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-impl-jboss__version>2.0.0-alpha-3</m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-impl-jboss__version>
+		<m:dependency.management__org.jboss.arquillian.junit__arquillian-junit-core__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.junit__arquillian-junit-core__version>
+		<m:dependency.management__com.liferay.cdi__cdi-portlet-bridge-shared__version>6.2.0.1</m:dependency.management__com.liferay.cdi__cdi-portlet-bridge-shared__version>
+		<m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-api-jboss__version>2.0.0-alpha-3</m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-api-jboss__version>
+		<m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-api-base__version>2.0.0-alpha-3</m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-api-base__version>
+		<m:dependency.management__org.icefaces__icefaces__version>3.3.0</m:dependency.management__org.icefaces__icefaces__version>
+		<m:properties__weblogic.jaxb.version>2.2.7</m:properties__weblogic.jaxb.version>
+		<m:dependency.management__javax.servlet.jsp__jsp-api__version>2.1</m:dependency.management__javax.servlet.jsp__jsp-api__version>
+		<m:properties__liferay.jetty.version>8.1.10</m:properties__liferay.jetty.version>
+		<m:dependency.management__org.seleniumhq.selenium.client-drivers__selenium-java-client-driver__version>1.0.1</m:dependency.management__org.seleniumhq.selenium.client-drivers__selenium-java-client-driver__version>
+		<m:properties__app.server.type>tomcat</m:properties__app.server.type>
+		<m:dependency.management__org.richfaces.ui__richfaces-components-api__version>4.3.2.Final</m:dependency.management__org.richfaces.ui__richfaces-components-api__version>
+		<m:properties__surefire.version>2.12</m:properties__surefire.version>
+		<m:properties__liferay.jonas.version>5.2.3</m:properties__liferay.jonas.version>
+		<m:properties__webapp.descriptor>web.xml</m:properties__webapp.descriptor>
+		<m:properties__pluto.portal>pluto-${pluto.version}</m:properties__pluto.portal>
+		<m:dependency.management__org.seleniumhq.selenium.client-drivers__selenium-java-client-driver__scope>test</m:dependency.management__org.seleniumhq.selenium.client-drivers__selenium-java-client-driver__scope>
+		<m:properties__liferay.app.server.lib.global.dir>${liferay.app.server.dir}/lib/ext</m:properties__liferay.app.server.lib.global.dir>
+		<m:dependency.management__org.jboss.arquillian.junit__arquillian-junit-container__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.junit__arquillian-junit-container__version>
+		<m:dependency.management__com.liferay.portal__portal-service__version>6.2.0-SNAPSHOT</m:dependency.management__com.liferay.portal__portal-service__version>
+		<m:dependency.management__org.jboss.arquillian.container__arquillian-container-test-impl-base__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.container__arquillian-container-test-impl-base__version>
+		<m:dependency.management__commons-logging__commons-logging__version>1.1.1</m:dependency.management__commons-logging__commons-logging__version>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-configuration__version>1.1.1.Final</m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-configuration__version>
+		<m:dependency.management__org.jboss.arquillian.protocol__arquillian-protocol-servlet__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.protocol__arquillian-protocol-servlet__version>
+		<m:dependency.management__org.jboss.arquillian.container__arquillian-container-impl-base__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.container__arquillian-container-impl-base__version>
+		<m:properties__log4j.version>1.2.14</m:properties__log4j.version>
+		<m:dependency.management__org.jboss.shrinkwrap__shrinkwrap-api__version>1.0.1</m:dependency.management__org.jboss.shrinkwrap__shrinkwrap-api__version>
+		<m:dependency.management__javax.portlet__portlet-api__version>2.0</m:dependency.management__javax.portlet__portlet-api__version>
+		<m:properties__tck.trinidad.version>2.0.1</m:properties__tck.trinidad.version>
+		<m:dependency.management__org.icefaces__icefaces__exclusion_1>javax.mail__mail</m:dependency.management__org.icefaces__icefaces__exclusion_1>
+		<m:dependency.management__org.icefaces__icefaces__exclusion_0>org.glassfish__javax.faces</m:dependency.management__org.icefaces__icefaces__exclusion_0>
+		<m:properties__project.build.sourceEncoding>UTF-8</m:properties__project.build.sourceEncoding>
+		<m:properties__liferay.weblogic.version>10.3.6.0</m:properties__liferay.weblogic.version>
+		<m:properties__portlet.war.deployment.type>deploy</m:properties__portlet.war.deployment.type>
+		<m:dependency.management__javax.enterprise__cdi-api__version>1.0-SP4</m:dependency.management__javax.enterprise__cdi-api__version>
+		<m:properties__liferay.jboss.version>7.1.1</m:properties__liferay.jboss.version>
+		<m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-spi__version>2.0.0-alpha-3</m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-spi__version>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-ie-driver__version>2.31.0</m:dependency.management__org.seleniumhq.selenium__selenium-ie-driver__version>
+		<m:dependency.management__org.icefaces__icefaces__exclusion_2>javax.activation__javax.activation</m:dependency.management__org.icefaces__icefaces__exclusion_2>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-webdriver__version>1.1.1.Final</m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-webdriver__version>
+		<m:dependency.management__javax.servlet.jsp__jsp-api__scope>provided</m:dependency.management__javax.servlet.jsp__jsp-api__scope>
+		<m:properties__faces.api.scope>compile</m:properties__faces.api.scope>
+		<m:properties__arquillian.version>1.0.3.Final</m:properties__arquillian.version>
+		<m:dependency.management__org.jboss.arquillian.junit__arquillian-junit-standalone__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.junit__arquillian-junit-standalone__version>
+		<m:properties__liferay.app.server.portal.dir>${liferay.app.server.dir}/webapps/ROOT</m:properties__liferay.app.server.portal.dir>
+		<m:dependency.management__javax.faces__javax.faces-api__version>2.1</m:dependency.management__javax.faces__javax.faces-api__version>
+		<m:properties__liferay.geronimo.version>2.2.1</m:properties__liferay.geronimo.version>
+		<m:dependency.management__org.jboss.arquillian.testenricher__arquillian-testenricher-resource__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.testenricher__arquillian-testenricher-resource__version>
+		<m:properties__pluto.version>2.0.3</m:properties__pluto.version>
+		<m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-impl-base__version>2.0.0-alpha-3</m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-impl-base__version>
+		<m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-gen__version>2.0.0-alpha-3</m:dependency.management__org.jboss.shrinkwrap.descriptors__shrinkwrap-descriptors-gen__version>
+		<m:dependency.management__org.jboss.arquillian.config__arquillian-config-spi__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.config__arquillian-config-spi__version>
+		<m:properties__liferay.portal>liferay-portal-${liferay.deploy.version}</m:properties__liferay.portal>
+		<m:properties__faces.impl.artifact.id>jsf-impl</m:properties__faces.impl.artifact.id>
+		<m:dependency.management__org.jboss.arquillian.testng__arquillian-testng-standalone__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.testng__arquillian-testng-standalone__version>
+		<m:dependency.management__org.jboss.arquillian.core__arquillian-core-api__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.core__arquillian-core-api__version>
+		<m:dependency.management__org.jboss.arquillian.container__arquillian-container-spi__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.container__arquillian-container-spi__version>
+		<m:properties__liferay.maven.plugin.version>6.2.0-B2</m:properties__liferay.maven.plugin.version>
+		<m:dependency.management__javax.el__el-api__scope>provided</m:dependency.management__javax.el__el-api__scope>
+		<m:properties__faces.group.id>com.sun.faces</m:properties__faces.group.id>
+		<m:properties__liferay.app.server.deploy.dir>${liferay.app.server.dir}/webapps</m:properties__liferay.app.server.deploy.dir>
+		<m:dependency.management__org.jboss.arquillian.test__arquillian-test-spi__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.test__arquillian-test-spi__version>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-remote-driver__version>2.31.0</m:dependency.management__org.seleniumhq.selenium__selenium-remote-driver__version>
+		<m:properties__faces.api.version>${faces.spec.version}</m:properties__faces.api.version>
+		<m:dependency.management__junit__junit__scope>test</m:dependency.management__junit__junit__scope>
+		<m:dependency.management__org.jboss.arquillian.config__arquillian-config-impl-base__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.config__arquillian-config-impl-base__version>
+		<m:properties__pluto.tomcat.version>7.0.21</m:properties__pluto.tomcat.version>
+		<m:dependency.management__org.jboss.shrinkwrap__shrinkwrap-impl-base__version>1.0.1</m:dependency.management__org.jboss.shrinkwrap__shrinkwrap-impl-base__version>
+		<m:properties__liferay.home>${env.PORTALS_HOME}/liferay.com/${liferay.portal}-jsf-${faces.spec.version}</m:properties__liferay.home>
+		<m:properties__pluto.tomcat.dir>${pluto.home}/tomcat-${pluto.tomcat.version}</m:properties__pluto.tomcat.dir>
+		<m:dependency.management__org.jboss.arquillian.testenricher__arquillian-testenricher-initialcontext__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.testenricher__arquillian-testenricher-initialcontext__version>
+		<m:dependency.management__org.jboss.arquillian.graphene__graphene-webdriver__version>2.0.0.Alpha3</m:dependency.management__org.jboss.arquillian.graphene__graphene-webdriver__version>
+		<m:dependency.management__com.liferay.portal__portal-service__scope>provided</m:dependency.management__com.liferay.portal__portal-service__scope>
+		<m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-api__version>1.1.1.Final</m:dependency.management__org.jboss.arquillian.extension__arquillian-drone-api__version>
+		<m:properties__portal.type>liferay</m:properties__portal.type>
+		<m:dependency.management__javax.inject__javax.inject__version>1</m:dependency.management__javax.inject__javax.inject__version>
+		<m:dependency.management__javax.faces__javax.faces-api__scope>provided</m:dependency.management__javax.faces__javax.faces-api__scope>
+		<m:dependency.management__org.jboss.weld.servlet__weld-servlet__version>1.1.10.Final</m:dependency.management__org.jboss.weld.servlet__weld-servlet__version>
+		<m:dependency.management__org.jboss.arquillian.core__arquillian-core-spi__version>1.0.3.Final</m:dependency.management__org.jboss.arquillian.core__arquillian-core-spi__version>
+		<m:dependency.management__org.seleniumhq.selenium__selenium-chrome-driver__version>2.31.0</m:dependency.management__org.seleniumhq.selenium__selenium-chrome-driver__version>
+		<m:properties__richfaces4.version>4.3.2.Final</m:properties__richfaces4.version>
+		<m:dependency.management__com.liferay.portal__util-taglib__scope>provided</m:dependency.management__com.liferay.portal__util-taglib__scope>
+	</info>
+	<configurations>
+		<conf name="default" visibility="public" description="runtime dependencies and master artifact can be used with this conf" extends="runtime,master"/>
+		<conf name="master" visibility="public" description="contains only the artifact published by this module itself, with no transitive dependencies"/>
+		<conf name="compile" visibility="public" description="this is the default scope, used if none is specified. Compile dependencies are available in all classpaths."/>
+		<conf name="provided" visibility="public" description="this is much like compile, but indicates you expect the JDK or a container to provide it. It is only available on the compilation classpath, and is not transitive."/>
+		<conf name="runtime" visibility="public" description="this scope indicates that the dependency is not required for compilation, but is for execution. It is in the runtime and test classpaths, but not the compile classpath." extends="compile"/>
+		<conf name="test" visibility="private" description="this scope indicates that the dependency is not required for normal use of the application, and is only available for the test compilation and execution phases." extends="runtime"/>
+		<conf name="system" visibility="public" description="this scope is similar to provided except that you have to provide the JAR which contains it explicitly. The artifact is always available and is not looked up in a repository."/>
+		<conf name="sources" visibility="public" description="this configuration contains the source artifact of this module, if any."/>
+		<conf name="javadoc" visibility="public" description="this configuration contains the javadoc artifact of this module, if any."/>
+		<conf name="optional" visibility="public" description="contains all optional dependencies"/>
+	</configurations>
+	<publications>
+		<artifact name="liferay-faces-util" type="jar" ext="jar" conf="master"/>
+	</publications>
+	<dependencies>
+		<dependency org="com.liferay.portal" name="portal-service" rev="6.2.0-SNAPSHOT" force="true" conf="optional->compile(*),provided(*),runtime(*),master(*)"/>
+		<dependency org="com.liferay.portal" name="util-taglib" rev="6.2.0-SNAPSHOT" force="true" conf="optional->compile(*),provided(*),runtime(*),master(*)"/>
+		<dependency org="javax.el" name="el-api" rev="1.0" force="true" conf="provided->compile(*),provided(*),runtime(*),master(*)"/>
+		<dependency org="javax.faces" name="javax.faces-api" rev="2.1" force="true" conf="provided->compile(*),provided(*),runtime(*),master(*)"/>
+		<dependency org="javax.servlet" name="servlet-api" rev="2.5" force="true" conf="provided->compile(*),provided(*),runtime(*),master(*)"/>
+		<dependency org="javax.servlet.jsp" name="jsp-api" rev="2.1" force="true" conf="provided->compile(*),provided(*),runtime(*),master(*)"/>
+		<dependency org="junit" name="junit" rev="4.10" force="true" conf="test->runtime(*),master(*)"/>
+		<dependency org="log4j" name="log4j" rev="1.2.14" force="true" conf="optional->compile(*),provided(*),runtime(*),master(*)"/>
+		<override org="org.seleniumhq.selenium" module="selenium-java" matcher="exact" rev="2.31.0"/>
+		<override org="org.icepush" module="icepush" matcher="exact" rev="3.3.0"/>
+		<override org="org.richfaces.ui" module="richfaces-components-api" matcher="exact" rev="4.3.2.Final"/>
+		<override org="javax.enterprise" module="cdi-api" matcher="exact" rev="1.0-SP4"/>
+		<override org="org.jboss.arquillian.core" module="arquillian-core-api" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.jboss.shrinkwrap" module="shrinkwrap-api" matcher="exact" rev="1.0.1"/>
+		<override org="org.jboss.arquillian.core" module="arquillian-core-spi" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.jboss.arquillian.protocol" module="arquillian-protocol-jmx" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.seleniumhq.selenium" module="selenium-chrome-driver" matcher="exact" rev="2.31.0"/>
+		<override org="com.liferay.portal" module="util-taglib" matcher="exact" rev="6.2.0-SNAPSHOT"/>
+		<override org="org.jboss.arquillian.graphene" module="graphene-webdriver" matcher="exact" rev="2.0.0.Alpha3"/>
+		<override org="org.jboss.shrinkwrap.descriptors" module="shrinkwrap-descriptors-impl-base" matcher="exact" rev="2.0.0-alpha-3"/>
+		<override org="org.jboss.shrinkwrap.descriptors" module="shrinkwrap-descriptors-impl-javaee" matcher="exact" rev="2.0.0-alpha-3"/>
+		<override org="org.jboss.arquillian.testng" module="arquillian-testng-core" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.jboss.arquillian.config" module="arquillian-config-impl-base" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.jboss.shrinkwrap.resolver" module="shrinkwrap-resolver-impl-maven" matcher="exact" rev="1.0.0-beta-7"/>
+		<override org="org.icefaces" module="icefaces-ace" matcher="exact" rev="3.3.0"/>
+		<override org="org.jboss.arquillian.testng" module="arquillian-testng-standalone" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.jboss.arquillian.container" module="arquillian-container-test-api" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.primefaces" module="primefaces" matcher="exact" rev="3.5"/>
+		<override org="org.jboss.arquillian.config" module="arquillian-config-spi" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.seleniumhq.selenium.client-drivers" module="selenium-java-client-driver" matcher="exact" rev="1.0.1"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-drone-impl" matcher="exact" rev="1.1.1.Final"/>
+		<override org="javax.faces" module="javax.faces-api" matcher="exact" rev="2.1"/>
+		<override org="org.jboss.arquillian.junit" module="arquillian-junit-standalone" matcher="exact" rev="1.0.3.Final"/>
+		<override org="javax.inject" module="javax.inject" matcher="exact" rev="1"/>
+		<override org="org.seleniumhq.selenium" module="selenium-htmlunit-driver" matcher="exact" rev="2.31.0"/>
+		<override org="org.jboss.shrinkwrap.descriptors" module="shrinkwrap-descriptors-api-javaee" matcher="exact" rev="2.0.0-alpha-3"/>
+		<override org="org.seleniumhq.selenium" module="selenium-support" matcher="exact" rev="2.31.0"/>
+		<override org="org.jboss.arquillian.testng" module="arquillian-testng-container" matcher="exact" rev="1.0.3.Final"/>
+		<override org="junit" module="junit" matcher="exact" rev="4.10"/>
+		<override org="org.jboss.arquillian.testenricher" module="arquillian-testenricher-cdi" matcher="exact" rev="1.0.3.Final"/>
+		<override org="commons-io" module="commons-io" matcher="exact" rev="1.3.2"/>
+		<override org="commons-logging" module="commons-logging" matcher="exact" rev="1.1.1"/>
+		<override org="org.jboss.arquillian.core" module="arquillian-core-impl-base" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.seleniumhq.selenium" module="selenium-ie-driver" matcher="exact" rev="2.31.0"/>
+		<override org="org.jboss.arquillian.junit" module="arquillian-junit-container" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.icefaces" module="icefaces-compat" matcher="exact" rev="3.3.0"/>
+		<override org="org.jboss.shrinkwrap.descriptors" module="shrinkwrap-descriptors-impl-jboss" matcher="exact" rev="2.0.0-alpha-3"/>
+		<override org="commons-fileupload" module="commons-fileupload" matcher="exact" rev="1.2.2"/>
+		<override org="org.jboss.shrinkwrap.descriptors" module="shrinkwrap-descriptors-api-base" matcher="exact" rev="2.0.0-alpha-3"/>
+		<override org="org.richfaces.ui" module="richfaces-components-ui" matcher="exact" rev="4.3.2.Final"/>
+		<override org="org.jboss.arquillian.testenricher" module="arquillian-testenricher-ejb" matcher="exact" rev="1.0.3.Final"/>
+		<override org="com.liferay.cdi" module="cdi-portlet-bridge-shared" matcher="exact" rev="6.2.0.1"/>
+		<override org="org.seleniumhq.selenium" module="selenium-remote-driver" matcher="exact" rev="2.31.0"/>
+		<override org="org.jboss.shrinkwrap.descriptors" module="shrinkwrap-descriptors-spi" matcher="exact" rev="2.0.0-alpha-3"/>
+		<override org="javax.servlet" module="servlet-api" matcher="exact" rev="2.5"/>
+		<override org="org.richfaces.core" module="richfaces-core-impl" matcher="exact" rev="4.3.2.Final"/>
+		<override org="org.jboss.arquillian.protocol" module="arquillian-protocol-servlet" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.seleniumhq.selenium" module="selenium-api" matcher="exact" rev="2.31.0"/>
+		<override org="org.jboss.shrinkwrap" module="shrinkwrap-spi" matcher="exact" rev="1.0.1"/>
+		<override org="org.jboss.arquillian.junit" module="arquillian-junit-core" matcher="exact" rev="1.0.3.Final"/>
+		<override org="javax.portlet" module="portlet-api" matcher="exact" rev="2.0"/>
+		<override org="com.sun.faces" module="jsf-impl" matcher="exact" rev="2.1.21"/>
+		<override org="org.jboss.arquillian.test" module="arquillian-test-api" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.springframework" module="spring-web" matcher="exact" rev="3.0.7.RELEASE"/>
+		<override org="javax.servlet" module="jstl" matcher="exact" rev="1.2"/>
+		<override org="com.sun.faces" module="jsf-api" matcher="exact" rev="2.1.21"/>
+		<override org="org.jboss.shrinkwrap.resolver" module="shrinkwrap-resolver-api" matcher="exact" rev="1.0.0-beta-7"/>
+		<override org="org.apache.myfaces.core" module="myfaces-api" matcher="exact" rev="2.1.8"/>
+		<override org="org.jboss.seam" module="jboss-el" matcher="exact" rev="2.0.0.GA"/>
+		<override org="org.apache.myfaces.core" module="myfaces-impl" matcher="exact" rev="2.1.8"/>
+		<override org="org.seleniumhq.selenium" module="selenium-server" matcher="exact" rev="2.31.0"/>
+		<override org="javax.servlet.jsp" module="jsp-api" matcher="exact" rev="2.1"/>
+		<override org="javax.annotation" module="jsr250-api" matcher="exact" rev="1.0"/>
+		<override org="org.jboss.arquillian.test" module="arquillian-test-spi" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.jboss.arquillian.testenricher" module="arquillian-testenricher-resource" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.jboss.arquillian.container" module="arquillian-container-test-spi" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.jboss.arquillian.config" module="arquillian-config-api" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-drone-webdriver-depchain" matcher="exact" rev="1.1.1.Final"/>
+		<override org="org.jboss.arquillian.testenricher" module="arquillian-testenricher-initialcontext" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.jboss.shrinkwrap.resolver" module="shrinkwrap-resolver-api-maven" matcher="exact" rev="1.0.0-beta-7"/>
+		<override org="org.jboss.shrinkwrap.descriptors" module="shrinkwrap-descriptors-api-jboss" matcher="exact" rev="2.0.0-alpha-3"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-drone-configuration" matcher="exact" rev="1.1.1.Final"/>
+		<override org="log4j" module="log4j" matcher="exact" rev="1.2.14"/>
+		<override org="org.jboss.arquillian.container" module="arquillian-container-test-impl-base" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.jboss.arquillian.test" module="arquillian-test-impl-base" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-drone-webdriver" matcher="exact" rev="1.1.1.Final"/>
+		<override org="org.richfaces.core" module="richfaces-core-api" matcher="exact" rev="4.3.2.Final"/>
+		<override org="org.jboss.arquillian.container" module="arquillian-container-spi" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.icefaces" module="icefaces" matcher="exact" rev="3.3.0"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-drone-api" matcher="exact" rev="1.1.1.Final"/>
+		<override org="org.jboss.arquillian.container" module="arquillian-container-impl-base" matcher="exact" rev="1.0.3.Final"/>
+		<override org="org.seleniumhq.selenium" module="selenium-firefox-driver" matcher="exact" rev="2.31.0"/>
+		<override org="org.jboss.shrinkwrap.descriptors" module="shrinkwrap-descriptors-gen" matcher="exact" rev="2.0.0-alpha-3"/>
+		<override org="org.jboss.weld.servlet" module="weld-servlet" matcher="exact" rev="1.1.10.Final"/>
+		<override org="javax.el" module="el-api" matcher="exact" rev="1.0"/>
+		<override org="org.jboss.arquillian.extension" module="arquillian-drone-spi" matcher="exact" rev="1.1.1.Final"/>
+		<override org="org.jboss.shrinkwrap" module="shrinkwrap-impl-base" matcher="exact" rev="1.0.1"/>
+		<override org="com.liferay.portal" module="portal-service" matcher="exact" rev="6.2.0-SNAPSHOT"/>
+	</dependencies>
+</ivy-module>
