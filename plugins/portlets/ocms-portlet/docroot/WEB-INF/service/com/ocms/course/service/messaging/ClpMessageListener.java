@@ -18,6 +18,8 @@ import com.liferay.portal.kernel.messaging.BaseMessageListener;
 import com.liferay.portal.kernel.messaging.Message;
 
 import com.ocms.course.service.ClpSerializer;
+import com.ocms.course.service.ContactLocalServiceUtil;
+import com.ocms.course.service.ContactServiceUtil;
 import com.ocms.course.service.CourseLocalServiceUtil;
 import com.ocms.course.service.CourseSeriesLocalServiceUtil;
 import com.ocms.course.service.CourseSeriesServiceUtil;
@@ -40,6 +42,9 @@ public class ClpMessageListener extends BaseMessageListener {
 
 		if (command.equals("undeploy") &&
 				servletContextName.equals(getServletContextName())) {
+			ContactLocalServiceUtil.clearService();
+
+			ContactServiceUtil.clearService();
 			CourseLocalServiceUtil.clearService();
 
 			CourseServiceUtil.clearService();

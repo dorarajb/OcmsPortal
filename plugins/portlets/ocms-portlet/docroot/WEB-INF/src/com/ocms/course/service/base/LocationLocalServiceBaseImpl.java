@@ -33,6 +33,7 @@ import com.liferay.portal.service.persistence.UserPersistence;
 
 import com.ocms.course.model.Location;
 import com.ocms.course.service.LocationLocalService;
+import com.ocms.course.service.persistence.ContactPersistence;
 import com.ocms.course.service.persistence.CoursePersistence;
 import com.ocms.course.service.persistence.CourseSeriesPersistence;
 import com.ocms.course.service.persistence.LocationPersistence;
@@ -274,6 +275,62 @@ public abstract class LocationLocalServiceBaseImpl extends BaseLocalServiceImpl
 	@Override
 	public Location updateLocation(Location location) throws SystemException {
 		return locationPersistence.update(location);
+	}
+
+	/**
+	 * Returns the contact local service.
+	 *
+	 * @return the contact local service
+	 */
+	public com.ocms.course.service.ContactLocalService getContactLocalService() {
+		return contactLocalService;
+	}
+
+	/**
+	 * Sets the contact local service.
+	 *
+	 * @param contactLocalService the contact local service
+	 */
+	public void setContactLocalService(
+		com.ocms.course.service.ContactLocalService contactLocalService) {
+		this.contactLocalService = contactLocalService;
+	}
+
+	/**
+	 * Returns the contact remote service.
+	 *
+	 * @return the contact remote service
+	 */
+	public com.ocms.course.service.ContactService getContactService() {
+		return contactService;
+	}
+
+	/**
+	 * Sets the contact remote service.
+	 *
+	 * @param contactService the contact remote service
+	 */
+	public void setContactService(
+		com.ocms.course.service.ContactService contactService) {
+		this.contactService = contactService;
+	}
+
+	/**
+	 * Returns the contact persistence.
+	 *
+	 * @return the contact persistence
+	 */
+	public ContactPersistence getContactPersistence() {
+		return contactPersistence;
+	}
+
+	/**
+	 * Sets the contact persistence.
+	 *
+	 * @param contactPersistence the contact persistence
+	 */
+	public void setContactPersistence(ContactPersistence contactPersistence) {
+		this.contactPersistence = contactPersistence;
 	}
 
 	/**
@@ -621,6 +678,12 @@ public abstract class LocationLocalServiceBaseImpl extends BaseLocalServiceImpl
 		}
 	}
 
+	@BeanReference(type = com.ocms.course.service.ContactLocalService.class)
+	protected com.ocms.course.service.ContactLocalService contactLocalService;
+	@BeanReference(type = com.ocms.course.service.ContactService.class)
+	protected com.ocms.course.service.ContactService contactService;
+	@BeanReference(type = ContactPersistence.class)
+	protected ContactPersistence contactPersistence;
 	@BeanReference(type = com.ocms.course.service.CourseLocalService.class)
 	protected com.ocms.course.service.CourseLocalService courseLocalService;
 	@BeanReference(type = com.ocms.course.service.CourseService.class)

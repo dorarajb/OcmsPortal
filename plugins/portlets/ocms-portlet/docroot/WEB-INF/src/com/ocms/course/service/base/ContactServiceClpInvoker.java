@@ -14,7 +14,7 @@
 
 package com.ocms.course.service.base;
 
-import com.ocms.course.service.CourseServiceUtil;
+import com.ocms.course.service.ContactServiceUtil;
 
 import java.util.Arrays;
 
@@ -22,8 +22,8 @@ import java.util.Arrays;
  * @author doraraj
  * @generated
  */
-public class CourseServiceClpInvoker {
-	public CourseServiceClpInvoker() {
+public class ContactServiceClpInvoker {
+	public ContactServiceClpInvoker() {
 		_methodName36 = "getBeanIdentifier";
 
 		_methodParameterTypes36 = new String[] {  };
@@ -37,12 +37,12 @@ public class CourseServiceClpInvoker {
 		Object[] arguments) throws Throwable {
 		if (_methodName36.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes36, parameterTypes)) {
-			return CourseServiceUtil.getBeanIdentifier();
+			return ContactServiceUtil.getBeanIdentifier();
 		}
 
 		if (_methodName37.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes37, parameterTypes)) {
-			CourseServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
+			ContactServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
