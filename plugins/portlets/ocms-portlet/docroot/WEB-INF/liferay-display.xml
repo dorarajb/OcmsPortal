@@ -7,6 +7,5 @@
 		<portlet id="course"></portlet>
 		<portlet id="location"></portlet>
 		<portlet id="course-series"></portlet>
-		<portlet id="contact"></portlet>
 	</category>
 </display>
