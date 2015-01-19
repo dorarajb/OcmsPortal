@@ -7,6 +7,38 @@
 			<access>PROPERTY</access>
 		</persistence-unit-defaults>
 	</persistence-unit-metadata>
+	<mapped-superclass class="com.ocms.course.model.impl.ContactModelImpl">
+		<attributes>
+			<id name="contactId" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="contactType" />
+			<basic name="contactName" />
+			<basic name="addressLine1" />
+			<basic name="addressLine2" />
+			<basic name="city" />
+			<basic name="state">
+				<column name="STATE_" />
+			</basic>
+			<basic name="region" />
+			<basic name="zip" />
+			<basic name="phone" />
+			<basic name="fax" />
+			<basic name="email" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
 	<mapped-superclass class="com.ocms.course.model.impl.CourseModelImpl">
 		<attributes>
 			<id name="courseId" />
@@ -100,6 +132,10 @@
 			<transient name="userUuid" />
 		</attributes>
 	</mapped-superclass>
+	<entity class="com.ocms.course.model.impl.ContactImpl" name="Contact">
+		<table name="CM_Contact" />
+		<attributes />
+	</entity>
 	<entity class="com.ocms.course.model.impl.CourseImpl" name="Course">
 		<table name="CM_Course" />
 		<attributes />
