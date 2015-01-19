@@ -106,39 +106,6 @@
             <finder-column name="locationId"></finder-column>
         </finder>
 	</entity>
-	<entity name="Contact" local-service="true">
-
-
-		<!-- PK fields -->
-
-		<column name="contactId" type="long" primary="true"></column>
-
-		<!-- Group instance -->
-
-		<column name="groupId" type="long"></column>
-
-		<!-- Audit fields -->
-
-		<column name="companyId" type="long"></column>
-		<column name="userId" type="long"></column>
-		<column name="userName" type="String"></column>
-		<column name="createDate" type="Date"></column>
-		<column name="modifiedDate" type="Date"></column>
-        <column name="contactType" type="String"></column>
-        <column name="contactName" type="String"></column>
-        <column name="addressLine1" type="String"></column>
-        <column name="addressLine2" type="String"></column>
-        <column name="city" type="String"></column>
-        <column name="state" type="String"></column>
-        <column name="region" type="String"></column>
-        <column name="zip" type="String"></column>
-        <column name="phone" type="String"></column>
-        <column name="fax" type="String"></column>
-        <column name="email" type="String"></column>
-        <finder name="contactId" return-type="Collection">
-            <finder-column name="contactId"></finder-column>
-        </finder>
-	</entity>
 	<exceptions>
         <exception>CourseCode</exception>
         <exception>CourseName</exception>
@@ -163,16 +130,5 @@
         <exception>CourseSeriesPublishStatus</exception>
         <exception>CourseSeriesStartDate</exception>
         <exception>CourseSeriesEndDate</exception>
-        <exception>ContactType</exception>
-        <exception>ContactName</exception>
-        <exception>ContactAddressLine1</exception>
-        <exception>ContactAddressLine2</exception>
-        <exception>ContactCity</exception>
-        <exception>ContactState</exception>
-        <exception>ContactRegion</exception>
-        <exception>ContactZip</exception>
-        <exception>ContactPhone</exception>
-        <exception>ContactFax</exception>
-        <exception>ContactEmail</exception>
     </exceptions>
 </service-builder>
