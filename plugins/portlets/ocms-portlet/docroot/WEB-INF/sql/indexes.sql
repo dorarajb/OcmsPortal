@@ -1,5 +1,3 @@
-create index IX_F506837A on CM_Contact (contactId);
-
 create index IX_2FDAEE00 on CM_Course (courseId);
 create index IX_9C158BF4 on CM_Course (groupId);
 
