@@ -648,7 +648,7 @@ public class ContactWrapper implements Contact, ModelWrapper<Contact> {
 	}
 
 	@Override
-	public int compareTo(Contact contact) {
+	public int compareTo(com.ocms.course.model.Contact contact) {
 		return _contact.compareTo(contact);
 	}
 
@@ -658,17 +658,17 @@ public class ContactWrapper implements Contact, ModelWrapper<Contact> {
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<Contact> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<com.ocms.course.model.Contact> toCacheModel() {
 		return _contact.toCacheModel();
 	}
 
 	@Override
-	public Contact toEscapedModel() {
+	public com.ocms.course.model.Contact toEscapedModel() {
 		return new ContactWrapper(_contact.toEscapedModel());
 	}
 
 	@Override
-	public Contact toUnescapedModel() {
+	public com.ocms.course.model.Contact toUnescapedModel() {
 		return new ContactWrapper(_contact.toUnescapedModel());
 	}
 

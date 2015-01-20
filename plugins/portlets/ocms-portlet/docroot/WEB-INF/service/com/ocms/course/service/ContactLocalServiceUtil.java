@@ -271,6 +271,60 @@ public class ContactLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static java.util.List<com.ocms.course.model.Contact> getContactByGroupId(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getContactByGroupId(groupId);
+	}
+
+	public static java.util.List<com.ocms.course.model.Contact> getContactByGroupId(
+		long groupId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getContactByGroupId(groupId, start, end);
+	}
+
+	public static java.util.List<com.ocms.course.model.Contact> getContactByContactId(
+		long contactId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getContactByContactId(contactId);
+	}
+
+	public static java.util.List<com.ocms.course.model.Contact> getContactByContactId(
+		long contactId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getContactByContactId(contactId, start, end);
+	}
+
+	public static com.ocms.course.model.Contact addContact(long userId,
+		java.lang.String contactType, java.lang.String contactName,
+		java.lang.String addressLine1, java.lang.String addressLine2,
+		java.lang.String city, java.lang.String state, java.lang.String region,
+		java.lang.String zip, java.lang.String phone, java.lang.String fax,
+		java.lang.String email,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .addContact(userId, contactType, contactName, addressLine1,
+			addressLine2, city, state, region, zip, phone, fax, email,
+			serviceContext);
+	}
+
+	public static com.ocms.course.model.Contact updateContact(long userId,
+		long contactId, java.lang.String contactType,
+		java.lang.String contactName, java.lang.String addressLine1,
+		java.lang.String addressLine2, java.lang.String city,
+		java.lang.String state, java.lang.String region, java.lang.String zip,
+		java.lang.String phone, java.lang.String fax, java.lang.String email,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .updateContact(userId, contactId, contactType, contactName,
+			addressLine1, addressLine2, city, state, region, zip, phone, fax,
+			email, serviceContext);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

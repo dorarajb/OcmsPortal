@@ -7,17 +7,17 @@
 <portlet:actionURL name="addContact" var="addContactURL"></portlet:actionURL>
 <aui:form action="<%= addContactURL %>" name="<portlet:namespace />fm">
     <aui:fieldset>
-        <aui:input name="Contacttype" />
-        <aui:input name="Contactname" />
-        <aui:input name="Addressline1" />
-        <aui:input name="Addressline2" />
-        <aui:input name="City" />
-        <aui:input name="State" />
-        <aui:input name="Region" />
-        <aui:input name="Zip" />
-        <aui:input name="Phone" />
-        <aui:input name="Fax" />
-        <aui:input name="Email" />
+        <aui:input name="contactType" />
+        <aui:input name="contactName" />
+        <aui:input name="addressLine1" />
+        <aui:input name="addressLine2" />
+        <aui:input name="city" />
+        <aui:input name="state" />
+        <aui:input name="region" />
+        <aui:input name="zip" />
+        <aui:input name="phone" />
+        <aui:input name="fax" />
+        <aui:input name="email" />
     </aui:fieldset>
 
     <aui:button-row>
