@@ -32,6 +32,18 @@ create table CM_Course (
 	duration VARCHAR(75) null
 );
 
+create table CM_CoursePackage (
+	coursePackageId LONG not null primary key,
+	groupId LONG,
+	companyId LONG,
+	userId LONG,
+	userName VARCHAR(75) null,
+	createDate DATE null,
+	modifiedDate DATE null,
+	name VARCHAR(75) null,
+	code_ VARCHAR(75) null
+);
+
 create table CM_CourseSeries (
 	courseSeriesId LONG not null primary key,
 	groupId LONG,
@@ -71,4 +83,21 @@ create table CM_Location (
 	fax VARCHAR(75) null,
 	email VARCHAR(75) null,
 	siteUrl VARCHAR(75) null
+);
+
+create table CM_Pricing (
+	pricingId LONG not null primary key,
+	groupId LONG,
+	companyId LONG,
+	userId LONG,
+	userName VARCHAR(75) null,
+	createDate DATE null,
+	modifiedDate DATE null,
+	locationId INTEGER,
+	courseId INTEGER,
+	packageId INTEGER,
+	deposit INTEGER,
+	price INTEGER,
+	currency_ VARCHAR(75) null,
+	effectiveDate DATE null
 );

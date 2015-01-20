@@ -33,6 +33,17 @@
 		<field name="name" type="String" />
 		<field name="duration" type="String" />
 	</model>
+	<model name="com.ocms.course.model.CoursePackage">
+		<field name="coursePackageId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="name" type="String" />
+		<field name="code" type="String" />
+	</model>
 	<model name="com.ocms.course.model.CourseSeries">
 		<field name="courseSeriesId" type="long" />
 		<field name="groupId" type="long" />
@@ -71,5 +82,21 @@
 		<field name="fax" type="String" />
 		<field name="email" type="String" />
 		<field name="siteUrl" type="String" />
+	</model>
+	<model name="com.ocms.course.model.Pricing">
+		<field name="pricingId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="locationId" type="int" />
+		<field name="courseId" type="int" />
+		<field name="packageId" type="int" />
+		<field name="deposit" type="int" />
+		<field name="price" type="int" />
+		<field name="currency" type="String" />
+		<field name="effectiveDate" type="Date" />
 	</model>
 </model-hints>

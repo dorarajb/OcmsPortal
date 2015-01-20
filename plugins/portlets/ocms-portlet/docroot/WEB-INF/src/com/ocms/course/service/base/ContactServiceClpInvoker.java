@@ -24,24 +24,24 @@ import java.util.Arrays;
  */
 public class ContactServiceClpInvoker {
 	public ContactServiceClpInvoker() {
-		_methodName36 = "getBeanIdentifier";
+		_methodName48 = "getBeanIdentifier";
 
-		_methodParameterTypes36 = new String[] {  };
+		_methodParameterTypes48 = new String[] {  };
 
-		_methodName37 = "setBeanIdentifier";
+		_methodName49 = "setBeanIdentifier";
 
-		_methodParameterTypes37 = new String[] { "java.lang.String" };
+		_methodParameterTypes49 = new String[] { "java.lang.String" };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
 		Object[] arguments) throws Throwable {
-		if (_methodName36.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes36, parameterTypes)) {
+		if (_methodName48.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes48, parameterTypes)) {
 			return ContactServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName37.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes37, parameterTypes)) {
+		if (_methodName49.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes49, parameterTypes)) {
 			ContactServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
@@ -50,8 +50,8 @@ public class ContactServiceClpInvoker {
 		throw new UnsupportedOperationException();
 	}
 
-	private String _methodName36;
-	private String[] _methodParameterTypes36;
-	private String _methodName37;
-	private String[] _methodParameterTypes37;
+	private String _methodName48;
+	private String[] _methodParameterTypes48;
+	private String _methodName49;
+	private String[] _methodParameterTypes49;
 }

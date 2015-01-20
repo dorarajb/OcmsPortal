@@ -27,8 +27,10 @@ import com.liferay.portal.model.BaseModel;
 
 import com.ocms.course.model.ContactClp;
 import com.ocms.course.model.CourseClp;
+import com.ocms.course.model.CoursePackageClp;
 import com.ocms.course.model.CourseSeriesClp;
 import com.ocms.course.model.LocationClp;
+import com.ocms.course.model.PricingClp;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -113,12 +115,20 @@ public class ClpSerializer {
 			return translateInputCourse(oldModel);
 		}
 
+		if (oldModelClassName.equals(CoursePackageClp.class.getName())) {
+			return translateInputCoursePackage(oldModel);
+		}
+
 		if (oldModelClassName.equals(CourseSeriesClp.class.getName())) {
 			return translateInputCourseSeries(oldModel);
 		}
 
 		if (oldModelClassName.equals(LocationClp.class.getName())) {
 			return translateInputLocation(oldModel);
+		}
+
+		if (oldModelClassName.equals(PricingClp.class.getName())) {
+			return translateInputPricing(oldModel);
 		}
 
 		return oldModel;
@@ -156,6 +166,16 @@ public class ClpSerializer {
 		return newModel;
 	}
 
+	public static Object translateInputCoursePackage(BaseModel<?> oldModel) {
+		CoursePackageClp oldClpModel = (CoursePackageClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getCoursePackageRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
 	public static Object translateInputCourseSeries(BaseModel<?> oldModel) {
 		CourseSeriesClp oldClpModel = (CourseSeriesClp)oldModel;
 
@@ -170,6 +190,16 @@ public class ClpSerializer {
 		LocationClp oldClpModel = (LocationClp)oldModel;
 
 		BaseModel<?> newModel = oldClpModel.getLocationRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputPricing(BaseModel<?> oldModel) {
+		PricingClp oldClpModel = (PricingClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getPricingRemoteModel();
 
 		newModel.setModelAttributes(oldClpModel.getModelAttributes());
 
@@ -202,12 +232,21 @@ public class ClpSerializer {
 		}
 
 		if (oldModelClassName.equals(
+					"com.ocms.course.model.impl.CoursePackageImpl")) {
+			return translateOutputCoursePackage(oldModel);
+		}
+
+		if (oldModelClassName.equals(
 					"com.ocms.course.model.impl.CourseSeriesImpl")) {
 			return translateOutputCourseSeries(oldModel);
 		}
 
 		if (oldModelClassName.equals("com.ocms.course.model.impl.LocationImpl")) {
 			return translateOutputLocation(oldModel);
+		}
+
+		if (oldModelClassName.equals("com.ocms.course.model.impl.PricingImpl")) {
+			return translateOutputPricing(oldModel);
 		}
 
 		return oldModel;
@@ -346,6 +385,14 @@ public class ClpSerializer {
 			return new com.ocms.course.CourseNameException();
 		}
 
+		if (className.equals("com.ocms.course.CoursePackageCodeException")) {
+			return new com.ocms.course.CoursePackageCodeException();
+		}
+
+		if (className.equals("com.ocms.course.CoursePackageNameException")) {
+			return new com.ocms.course.CoursePackageNameException();
+		}
+
 		if (className.equals("com.ocms.course.CourseSeriesEndDateException")) {
 			return new com.ocms.course.CourseSeriesEndDateException();
 		}
@@ -366,6 +413,18 @@ public class ClpSerializer {
 
 		if (className.equals("com.ocms.course.CourseSeriesTypeException")) {
 			return new com.ocms.course.CourseSeriesTypeException();
+		}
+
+		if (className.equals("com.ocms.course.CurrencyException")) {
+			return new com.ocms.course.CurrencyException();
+		}
+
+		if (className.equals("com.ocms.course.DepositException")) {
+			return new com.ocms.course.DepositException();
+		}
+
+		if (className.equals("com.ocms.course.EffectiveDateException")) {
+			return new com.ocms.course.EffectiveDateException();
 		}
 
 		if (className.equals("com.ocms.course.LocationAddressLine1Exception")) {
@@ -420,6 +479,10 @@ public class ClpSerializer {
 			return new com.ocms.course.LocationZipException();
 		}
 
+		if (className.equals("com.ocms.course.PriceException")) {
+			return new com.ocms.course.PriceException();
+		}
+
 		if (className.equals("com.ocms.course.NoSuchContactException")) {
 			return new com.ocms.course.NoSuchContactException();
 		}
@@ -428,12 +491,20 @@ public class ClpSerializer {
 			return new com.ocms.course.NoSuchCourseException();
 		}
 
+		if (className.equals("com.ocms.course.NoSuchCoursePackageException")) {
+			return new com.ocms.course.NoSuchCoursePackageException();
+		}
+
 		if (className.equals("com.ocms.course.NoSuchCourseSeriesException")) {
 			return new com.ocms.course.NoSuchCourseSeriesException();
 		}
 
 		if (className.equals("com.ocms.course.NoSuchLocationException")) {
 			return new com.ocms.course.NoSuchLocationException();
+		}
+
+		if (className.equals("com.ocms.course.NoSuchPricingException")) {
+			return new com.ocms.course.NoSuchPricingException();
 		}
 
 		return throwable;
@@ -459,6 +530,16 @@ public class ClpSerializer {
 		return newModel;
 	}
 
+	public static Object translateOutputCoursePackage(BaseModel<?> oldModel) {
+		CoursePackageClp newModel = new CoursePackageClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setCoursePackageRemoteModel(oldModel);
+
+		return newModel;
+	}
+
 	public static Object translateOutputCourseSeries(BaseModel<?> oldModel) {
 		CourseSeriesClp newModel = new CourseSeriesClp();
 
@@ -475,6 +556,16 @@ public class ClpSerializer {
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
 		newModel.setLocationRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputPricing(BaseModel<?> oldModel) {
+		PricingClp newModel = new PricingClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setPricingRemoteModel(oldModel);
 
 		return newModel;
 	}

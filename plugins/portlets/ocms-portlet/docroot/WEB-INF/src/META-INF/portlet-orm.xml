@@ -63,6 +63,29 @@
 			<transient name="userUuid" />
 		</attributes>
 	</mapped-superclass>
+	<mapped-superclass class="com.ocms.course.model.impl.CoursePackageModelImpl">
+		<attributes>
+			<id name="coursePackageId" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="name" />
+			<basic name="code">
+				<column name="CODE_" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
 	<mapped-superclass class="com.ocms.course.model.impl.CourseSeriesModelImpl">
 		<attributes>
 			<id name="courseSeriesId" />
@@ -132,6 +155,36 @@
 			<transient name="userUuid" />
 		</attributes>
 	</mapped-superclass>
+	<mapped-superclass class="com.ocms.course.model.impl.PricingModelImpl">
+		<attributes>
+			<id name="pricingId" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="locationId" />
+			<basic name="courseId" />
+			<basic name="packageId" />
+			<basic name="deposit" />
+			<basic name="price" />
+			<basic name="currency">
+				<column name="CURRENCY_" />
+			</basic>
+			<basic name="effectiveDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
 	<entity class="com.ocms.course.model.impl.ContactImpl" name="Contact">
 		<table name="CM_Contact" />
 		<attributes />
@@ -140,12 +193,20 @@
 		<table name="CM_Course" />
 		<attributes />
 	</entity>
+	<entity class="com.ocms.course.model.impl.CoursePackageImpl" name="CoursePackage">
+		<table name="CM_CoursePackage" />
+		<attributes />
+	</entity>
 	<entity class="com.ocms.course.model.impl.CourseSeriesImpl" name="CourseSeries">
 		<table name="CM_CourseSeries" />
 		<attributes />
 	</entity>
 	<entity class="com.ocms.course.model.impl.LocationImpl" name="Location">
 		<table name="CM_Location" />
+		<attributes />
+	</entity>
+	<entity class="com.ocms.course.model.impl.PricingImpl" name="Pricing">
+		<table name="CM_Pricing" />
 		<attributes />
 	</entity>
 </entity-mappings>
