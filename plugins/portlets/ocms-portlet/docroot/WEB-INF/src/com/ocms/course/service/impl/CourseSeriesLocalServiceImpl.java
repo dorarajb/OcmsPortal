@@ -116,6 +116,7 @@ public class CourseSeriesLocalServiceImpl
 		courseSeries.setStart_date(startDate);
 		courseSeries.setEnd_date(endDate);
 		courseSeries.setType(type);
+		courseSeries.setMax_no_of_stud_reg(maxNoStudReg);
 		courseSeries.setPublishing_status(publishingStatus);
 		courseSeries.setCourseId(courseId);
 		courseSeries.setLocationId(locationId);
@@ -148,6 +149,7 @@ public class CourseSeriesLocalServiceImpl
 		courseSeries.setStart_date(startDate);
 		courseSeries.setEnd_date(endDate);
 		courseSeries.setType(type);
+		courseSeries.setMax_no_of_stud_reg(maxNoStudReg);
 		courseSeries.setPublishing_status(publishingStatus);
 		courseSeries.setCourseId(courseId);
 		courseSeries.setLocationId(locationId);

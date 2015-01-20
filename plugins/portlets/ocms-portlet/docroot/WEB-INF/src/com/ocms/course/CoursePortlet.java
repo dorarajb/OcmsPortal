@@ -1,13 +1,7 @@
 package com.ocms.course;
 
-import java.io.IOException;
-import java.util.List;
-
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
-import javax.portlet.PortletException;
-import javax.portlet.RenderRequest;
-import javax.portlet.RenderResponse;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
@@ -74,34 +68,5 @@ public class CoursePortlet extends MVCPortlet {
 	            "/html/course/select_course.jsp");
 	    }
 
-	}
-	
-	@Override
-	public void render(RenderRequest renderRequest,
-	        RenderResponse renderResponse) throws PortletException, IOException {
-
-	    try {
-	        ServiceContext serviceContext = ServiceContextFactory.getInstance(
-	                Course.class.getName(), renderRequest);
-
-	        long groupId = serviceContext.getScopeGroupId();
-
-	        long courseId = ParamUtil.getLong(renderRequest, "courseId");
-		    
-	        List<Course> courses = CourseLocalServiceUtil.getCoursesByGroupId(groupId);
-
-	        if (courses.size() == 0) {
-	            Course course = CourseLocalServiceUtil.addCourse(
-	                    serviceContext.getUserId(), "Course Name", "Course Code", "Course Duration", serviceContext);
-	            courseId = course.getCourseId();
-	        }
-	        if (!(courseId > 0)) {
-	            courseId = courses.get(0).getCourseId();
-	        }
-	        renderRequest.setAttribute("courseId", courseId);
-	    } catch (Exception e) {
-	        throw new PortletException(e);
-	    }
-	    super.render(renderRequest, renderResponse);
 	}
 }

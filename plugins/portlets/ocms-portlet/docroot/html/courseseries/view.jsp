@@ -1,10 +1,11 @@
 <%@include file="/html/init.jsp"%>
 <portlet:actionURL name="addCourseSeries" var="addCourseSeriesURL"></portlet:actionURL>
 <% PortletURL actionURL = renderResponse.createRenderURL(); %>
-<aui:form action="<%=addCourseSeriesURL.toString()%>" name="<portlet:namespace />fm">
+<aui:form action="<%=addCourseSeriesURL.toString()%>" name="fmLocation" method="post">
 	<liferay-ui:search-container curParam="locationParam" 
 		iteratorURL="<%= actionURL %>" delta="10" 
-		emptyResultsMessage="No Results Found">
+		emptyResultsMessage="No Results Found"
+		rowChecker="<%=new RowChecker(renderResponse)%>">
 	    <liferay-ui:search-container-results
 	        results="<%=LocationLocalServiceUtil.getLocationByGroupId(scopeGroupId,
 	                        searchContainer.getStart(),
@@ -17,9 +18,6 @@
 	        	<portlet:param name="locationId" value="<%=String.valueOf(location.getLocationId()) %>" />
 	        	<portlet:param name="mvcPath" value="/html/courseseries/select_location.jsp" />
 			</portlet:renderURL>
-			<liferay-ui:search-container-column-text>
-				<aui:input name="<portlet:namespace />locationId" type="checkbox" value="<%=String.valueOf(location.getLocationId()) %>"></aui:input>
-			</liferay-ui:search-container-column-text>
 	        <liferay-ui:search-container-column-text property="name" href="<%=selectLocationURL.toString() %>"/>
 	        <liferay-ui:search-container-column-text property="code" />
 	        <liferay-ui:search-container-column-text property="city" />
@@ -30,7 +28,10 @@
 	    </liferay-ui:search-container-row>
 	    <liferay-ui:search-iterator searchContainer="<%= searchContainer %>" paginate="<%= true %>" />
 	</liferay-ui:search-container>
-	
+</aui:form>
+<aui:form action="<%=addCourseSeriesURL.toString()%>" name="fmCourse" method="post">
+	<aui:input name="locationIds" type="hidden" />
+	<aui:input name="courseIds" type="hidden" />
 	<liferay-ui:search-container curParam="courseParam"
 		iteratorURL="<%=actionURL%>" delta="10"
 		emptyResultsMessage="No Results Found"
@@ -45,10 +46,8 @@
 			className="com.ocms.course.model.Course" modelVar="course"
 			keyProperty="courseId">
 			<portlet:renderURL var="selectCourseURL">
-				<portlet:param name="courseId"
-					value="<%=String.valueOf(course.getCourseId()) %>" />
-				<portlet:param name="mvcPath"
-					value="/html/courseseries/select_course.jsp" />
+				<portlet:param name="courseId" value="<%=String.valueOf(course.getCourseId()) %>" />
+				<portlet:param name="mvcPath" value="/html/courseseries/select_course.jsp" />
 			</portlet:renderURL>
 			<liferay-ui:search-container-column-text property="name"
 				href="<%=selectCourseURL.toString() %>" />
@@ -60,9 +59,7 @@
 			paginate="<%= true %>" />
 	</liferay-ui:search-container>
 	
-	<aui:button-row cssClass="course-series-buttons">
-	    <aui:button type="submit" value="Add Course Series" />
-	</aui:button-row>
+    <aui:button value="Add Course Series" onClick="constructCourseSeries();"/>
 </aui:form>
 <liferay-ui:search-container curParam="courseSeriesParam" 
 	iteratorURL="<%= actionURL %>" delta="10" 
@@ -90,3 +87,25 @@
     </liferay-ui:search-container-row>
     <liferay-ui:search-iterator searchContainer="<%= searchContainer %>" paginate="<%= true %>" />
 </liferay-ui:search-container>
+<aui:script>
+Liferay.provide(
+     window,
+     'constructCourseSeries',
+     function() {
+		var courseCheckBoxValue = Liferay.Util.listCheckedExcept(document.<portlet:namespace />fmCourse, "<portlet:namespace />allRowIds");
+		var locationCheckBoxValue = Liferay.Util.listCheckedExcept(document.<portlet:namespace />fmLocation, "<portlet:namespace />allRowIds");
+		if(courseCheckBoxValue=="" || courseCheckBoxValue==null){
+			alert("Please select atleast one courses to create a course series");
+			return false;
+		}
+		if(locationCheckBoxValue=="" || locationCheckBoxValue==null){
+			alert("Please select atleast one locations to create a course series");
+			return false;
+		}
+		document.<portlet:namespace />fmCourse.<portlet:namespace />courseIds.value=courseCheckBoxValue;
+		document.<portlet:namespace />fmCourse.<portlet:namespace />locationIds.value=locationCheckBoxValue;
+		submitForm(document.<portlet:namespace />fmCourse, "<%=addCourseSeriesURL.toString()%>");
+     },
+     ['liferay-util-list-fields']
+);
+</aui:script>

@@ -1,13 +1,7 @@
 package com.ocms.location;
 
-import java.io.IOException;
-import java.util.List;
-
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
-import javax.portlet.PortletException;
-import javax.portlet.RenderRequest;
-import javax.portlet.RenderResponse;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
@@ -96,37 +90,5 @@ public class LocationPortlet extends MVCPortlet {
 	            "/html/location/select_location.jsp");
 	    }
 
-	}
-	
-	@Override
-	public void render(RenderRequest renderRequest,
-	        RenderResponse renderResponse) throws PortletException, IOException {
-
-	    try {
-	        ServiceContext serviceContext = ServiceContextFactory.getInstance(
-	                Location.class.getName(), renderRequest);
-
-	        long groupId = serviceContext.getScopeGroupId();
-
-	        long locationId = ParamUtil.getLong(renderRequest, "locationId");
-		    
-	        List<Location> locations = LocationLocalServiceUtil.getLocationByGroupId(groupId);
-
-	        if (locations.size() == 0) {
-	        	
-				Location location = LocationLocalServiceUtil.addLocation(serviceContext.getUserId(),
-						"name", "code", "notes", "addressLine1", "addressLine2", "city", "state",
-						"region", "country", "zip", "phone", "fax", "email", serviceContext);
-	        	
-	            locationId = location.getLocationId();
-	        }
-	        if (!(locationId > 0)) {
-	            locationId = locations.get(0).getLocationId();
-	        }
-	        renderRequest.setAttribute("locationId", locationId);
-	    } catch (Exception e) {
-	        throw new PortletException(e);
-	    }
-	    super.render(renderRequest, renderResponse);
 	}
 }
