@@ -8,5 +8,6 @@
 		<portlet id="location"></portlet>
 		<portlet id="course-series"></portlet>
 		<portlet id="contact"></portlet>
+		<portlet id="course-package"></portlet>
 	</category>
 </display>

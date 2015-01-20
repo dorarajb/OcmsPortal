@@ -18,6 +18,8 @@
 <%@ page import="com.liferay.portal.kernel.dao.search.RowChecker" %>
 <%@ page import="com.ocms.course.model.Contact" %>
 <%@ page import="com.ocms.course.service.ContactLocalServiceUtil" %>
+<%@ page import="com.ocms.course.model.CoursePackage" %>
+<%@ page import="com.ocms.course.service.CoursePackageLocalServiceUtil" %>
 
 <portlet:defineObjects />
 <theme:defineObjects />

@@ -540,7 +540,7 @@ public class PricingWrapper implements Pricing, ModelWrapper<Pricing> {
 	}
 
 	@Override
-	public int compareTo(Pricing pricing) {
+	public int compareTo(com.ocms.course.model.Pricing pricing) {
 		return _pricing.compareTo(pricing);
 	}
 
@@ -550,17 +550,17 @@ public class PricingWrapper implements Pricing, ModelWrapper<Pricing> {
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<Pricing> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<com.ocms.course.model.Pricing> toCacheModel() {
 		return _pricing.toCacheModel();
 	}
 
 	@Override
-	public Pricing toEscapedModel() {
+	public com.ocms.course.model.Pricing toEscapedModel() {
 		return new PricingWrapper(_pricing.toEscapedModel());
 	}
 
 	@Override
-	public Pricing toUnescapedModel() {
+	public com.ocms.course.model.Pricing toUnescapedModel() {
 		return new PricingWrapper(_pricing.toUnescapedModel());
 	}
 

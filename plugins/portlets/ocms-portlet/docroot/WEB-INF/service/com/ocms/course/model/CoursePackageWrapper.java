@@ -406,7 +406,7 @@ public class CoursePackageWrapper implements CoursePackage,
 	}
 
 	@Override
-	public int compareTo(CoursePackage coursePackage) {
+	public int compareTo(com.ocms.course.model.CoursePackage coursePackage) {
 		return _coursePackage.compareTo(coursePackage);
 	}
 
@@ -416,17 +416,17 @@ public class CoursePackageWrapper implements CoursePackage,
 	}
 
 	@Override
-	public com.liferay.portal.model.CacheModel<CoursePackage> toCacheModel() {
+	public com.liferay.portal.model.CacheModel<com.ocms.course.model.CoursePackage> toCacheModel() {
 		return _coursePackage.toCacheModel();
 	}
 
 	@Override
-	public CoursePackage toEscapedModel() {
+	public com.ocms.course.model.CoursePackage toEscapedModel() {
 		return new CoursePackageWrapper(_coursePackage.toEscapedModel());
 	}
 
 	@Override
-	public CoursePackage toUnescapedModel() {
+	public com.ocms.course.model.CoursePackage toUnescapedModel() {
 		return new CoursePackageWrapper(_coursePackage.toUnescapedModel());
 	}
 

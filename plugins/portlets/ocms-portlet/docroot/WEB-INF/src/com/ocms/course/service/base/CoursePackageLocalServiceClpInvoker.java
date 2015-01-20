@@ -113,6 +113,36 @@ public class CoursePackageLocalServiceClpInvoker {
 		_methodName65 = "setBeanIdentifier";
 
 		_methodParameterTypes65 = new String[] { "java.lang.String" };
+
+		_methodName70 = "getCoursesPackagesByGroupId";
+
+		_methodParameterTypes70 = new String[] { "long" };
+
+		_methodName71 = "getCoursesPackagesByGroupId";
+
+		_methodParameterTypes71 = new String[] { "long", "int", "int" };
+
+		_methodName72 = "getCoursesPackagesByCoursePackageId";
+
+		_methodParameterTypes72 = new String[] { "long" };
+
+		_methodName73 = "getCoursesPackagesByCoursePackageId";
+
+		_methodParameterTypes73 = new String[] { "long", "int", "int" };
+
+		_methodName75 = "addCoursePackage";
+
+		_methodParameterTypes75 = new String[] {
+				"long", "java.lang.String", "java.lang.String",
+				"com.liferay.portal.service.ServiceContext"
+			};
+
+		_methodName76 = "updateCoursePackage";
+
+		_methodParameterTypes76 = new String[] {
+				"long", "long", "java.lang.String", "java.lang.String",
+				"com.liferay.portal.service.ServiceContext"
+			};
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -216,6 +246,45 @@ public class CoursePackageLocalServiceClpInvoker {
 			return null;
 		}
 
+		if (_methodName70.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes70, parameterTypes)) {
+			return CoursePackageLocalServiceUtil.getCoursesPackagesByGroupId(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName71.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes71, parameterTypes)) {
+			return CoursePackageLocalServiceUtil.getCoursesPackagesByGroupId(((Long)arguments[0]).longValue(),
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue());
+		}
+
+		if (_methodName72.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes72, parameterTypes)) {
+			return CoursePackageLocalServiceUtil.getCoursesPackagesByCoursePackageId(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName73.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes73, parameterTypes)) {
+			return CoursePackageLocalServiceUtil.getCoursesPackagesByCoursePackageId(((Long)arguments[0]).longValue(),
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue());
+		}
+
+		if (_methodName75.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes75, parameterTypes)) {
+			return CoursePackageLocalServiceUtil.addCoursePackage(((Long)arguments[0]).longValue(),
+				(java.lang.String)arguments[1], (java.lang.String)arguments[2],
+				(com.liferay.portal.service.ServiceContext)arguments[3]);
+		}
+
+		if (_methodName76.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes76, parameterTypes)) {
+			return CoursePackageLocalServiceUtil.updateCoursePackage(((Long)arguments[0]).longValue(),
+				((Long)arguments[1]).longValue(),
+				(java.lang.String)arguments[2], (java.lang.String)arguments[3],
+				(com.liferay.portal.service.ServiceContext)arguments[4]);
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -255,4 +324,16 @@ public class CoursePackageLocalServiceClpInvoker {
 	private String[] _methodParameterTypes64;
 	private String _methodName65;
 	private String[] _methodParameterTypes65;
+	private String _methodName70;
+	private String[] _methodParameterTypes70;
+	private String _methodName71;
+	private String[] _methodParameterTypes71;
+	private String _methodName72;
+	private String[] _methodParameterTypes72;
+	private String _methodName73;
+	private String[] _methodParameterTypes73;
+	private String _methodName75;
+	private String[] _methodParameterTypes75;
+	private String _methodName76;
+	private String[] _methodParameterTypes76;
 }

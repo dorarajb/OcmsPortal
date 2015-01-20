@@ -275,6 +275,51 @@ public class CoursePackageLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static java.util.List<com.ocms.course.model.CoursePackage> getCoursesPackagesByGroupId(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getCoursesPackagesByGroupId(groupId);
+	}
+
+	public static java.util.List<com.ocms.course.model.CoursePackage> getCoursesPackagesByGroupId(
+		long groupId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getCoursesPackagesByGroupId(groupId, start, end);
+	}
+
+	public static java.util.List<com.ocms.course.model.CoursePackage> getCoursesPackagesByCoursePackageId(
+		long coursePackageId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getCoursesPackagesByCoursePackageId(coursePackageId);
+	}
+
+	public static java.util.List<com.ocms.course.model.CoursePackage> getCoursesPackagesByCoursePackageId(
+		long coursePackageId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .getCoursesPackagesByCoursePackageId(coursePackageId, start,
+			end);
+	}
+
+	public static com.ocms.course.model.CoursePackage addCoursePackage(
+		long userId, java.lang.String name, java.lang.String code,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().addCoursePackage(userId, name, code, serviceContext);
+	}
+
+	public static com.ocms.course.model.CoursePackage updateCoursePackage(
+		long userId, long coursePackageId, java.lang.String name,
+		java.lang.String code,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .updateCoursePackage(userId, coursePackageId, name, code,
+			serviceContext);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

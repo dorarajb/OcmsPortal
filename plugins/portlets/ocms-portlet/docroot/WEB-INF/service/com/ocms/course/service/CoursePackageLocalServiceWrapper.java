@@ -288,6 +288,57 @@ public class CoursePackageLocalServiceWrapper
 			arguments);
 	}
 
+	@Override
+	public java.util.List<com.ocms.course.model.CoursePackage> getCoursesPackagesByGroupId(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _coursePackageLocalService.getCoursesPackagesByGroupId(groupId);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.CoursePackage> getCoursesPackagesByGroupId(
+		long groupId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _coursePackageLocalService.getCoursesPackagesByGroupId(groupId,
+			start, end);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.CoursePackage> getCoursesPackagesByCoursePackageId(
+		long coursePackageId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _coursePackageLocalService.getCoursesPackagesByCoursePackageId(coursePackageId);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.CoursePackage> getCoursesPackagesByCoursePackageId(
+		long coursePackageId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _coursePackageLocalService.getCoursesPackagesByCoursePackageId(coursePackageId,
+			start, end);
+	}
+
+	@Override
+	public com.ocms.course.model.CoursePackage addCoursePackage(long userId,
+		java.lang.String name, java.lang.String code,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _coursePackageLocalService.addCoursePackage(userId, name, code,
+			serviceContext);
+	}
+
+	@Override
+	public com.ocms.course.model.CoursePackage updateCoursePackage(
+		long userId, long coursePackageId, java.lang.String name,
+		java.lang.String code,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _coursePackageLocalService.updateCoursePackage(userId,
+			coursePackageId, name, code, serviceContext);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */
