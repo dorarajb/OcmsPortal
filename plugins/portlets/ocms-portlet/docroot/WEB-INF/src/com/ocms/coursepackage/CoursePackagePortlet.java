@@ -72,34 +72,4 @@ public class CoursePackagePortlet extends MVCPortlet {
 	    }
 
 	}
-	
-	@Override
-	public void render(RenderRequest renderRequest,
-	        RenderResponse renderResponse) throws PortletException, IOException {
-
-	    try {
-	        ServiceContext serviceContext = ServiceContextFactory.getInstance(
-	                CoursePackage.class.getName(), renderRequest);
-
-	        long groupId = serviceContext.getScopeGroupId();
-
-	        long coursePackageId = ParamUtil.getLong(renderRequest, "coursePackageId");
-		    
-	        List<CoursePackage> coursesPackageList = CoursePackageLocalServiceUtil.getCoursesPackagesByGroupId(groupId);
-
-	        if (coursesPackageList.size() == 0) {
-	        	CoursePackage coursesPackage = CoursePackageLocalServiceUtil.addCoursePackage(
-	                    serviceContext.getUserId(), "Course Name", "Course Code", serviceContext);
-	        	coursePackageId = coursesPackage.getCoursePackageId();
-	        }
-	        if (!(coursesPackageList.size()  > 0)) {
-	        	coursePackageId = coursesPackageList.get(0).getCoursePackageId();
-	        }
-	        renderRequest.setAttribute("coursePackageId", coursePackageId);
-	    } catch (Exception e) {
-	        throw new PortletException(e);
-	    }
-	    super.render(renderRequest, renderResponse);
-	}
-
 }
