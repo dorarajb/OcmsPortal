@@ -1,9 +1,5 @@
 <%@include file="/html/init.jsp"%>
 
-<%
-    long coursePackageId = Long.valueOf((Long) renderRequest.getAttribute("coursePackageId"));
-%>
-
 <portlet:renderURL var="viewPageURL">
     <portlet:param name="mvcPath" value="/html/coursepackage/view.jsp" />
 </portlet:renderURL>
