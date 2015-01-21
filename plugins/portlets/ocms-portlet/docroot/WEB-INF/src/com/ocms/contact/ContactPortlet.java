@@ -1,13 +1,7 @@
 package com.ocms.contact;
 
-import java.io.IOException;
-import java.util.List;
-
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
-import javax.portlet.PortletException;
-import javax.portlet.RenderRequest;
-import javax.portlet.RenderResponse;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
@@ -74,30 +68,5 @@ public class ContactPortlet extends MVCPortlet {
 	    	SessionErrors.add(request, e.getClass().getName());
 	        response.setRenderParameter("mvcPath","/html/contact/select_contact.jsp");
 	    }
-	}
-	
-	@Override
-	public void render(RenderRequest renderRequest, RenderResponse renderResponse) throws PortletException, IOException {
-		try{
-			ServiceContext serviceContext = ServiceContextFactory.getInstance(Contact.class.getName(), renderRequest);
-
-	        long groupId = serviceContext.getScopeGroupId();
-
-	        long contactId = ParamUtil.getLong(renderRequest, "contactId");
-	        
-	        List<Contact> contacts = ContactLocalServiceUtil.getContactByGroupId(groupId);
-	        if (contacts.size() == 0) {
-	        	Contact contact = ContactLocalServiceUtil.addContact(serviceContext.getUserId(), "Home", "Course", "Newton Road", "Huston Street", "Bloomington", "Ohio", "xxx", "0000", "000-000-0000", "000-000-0000", "x@y.com", serviceContext);
-	        	contactId = contact.getContactId();
-	        }
-	        if (!(contactId > 0)) {
-	        	contactId = contacts.get(0).getContactId();
-	        }
-	        renderRequest.setAttribute("contactId", contactId);
-			
-		}catch(Exception e){
-			throw new PortletException(e);
-		}
-		super.render(renderRequest, renderResponse);
-	}
+	}	
 }

@@ -1,16 +1,8 @@
 <%@include file="/html/init.jsp"%>
 
-<%
-    long contactId = Long.valueOf((Long) renderRequest.getAttribute("contactId"));
-%>
-
 <portlet:renderURL var="viewPageURL">
     <portlet:param name="mvcPath" value="/html/contact/view.jsp" />
 </portlet:renderURL>
-
-<aui:nav cssClass="nav-tabs">
-    <aui:nav-item cssClass="active" href="<%=viewPageURL%>" label="Contact" />
-</aui:nav>
 
 <portlet:renderURL var="addContact">
     <portlet:param name="mvcPath" value="/html/contact/add_contact.jsp" />

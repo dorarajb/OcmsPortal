@@ -1,16 +1,8 @@
 <%@include file="/html/init.jsp"%>
 
-<%
-    long locationId = Long.valueOf((Long) renderRequest.getAttribute("locationId"));
-%>
-
 <portlet:renderURL var="viewPageURL">
     <portlet:param name="mvcPath" value="/html/location/view.jsp" />
 </portlet:renderURL>
-
-<aui:nav cssClass="nav-tabs">
-    <aui:nav-item cssClass="active" href="<%=viewPageURL%>" label="Location" />
-</aui:nav>
 
 <portlet:renderURL var="addLocationURL">
     <portlet:param name="mvcPath" value="/html/location/add_location.jsp" />

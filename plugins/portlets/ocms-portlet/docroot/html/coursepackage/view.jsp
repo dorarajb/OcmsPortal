@@ -8,10 +8,6 @@
     <portlet:param name="mvcPath" value="/html/coursepackage/view.jsp" />
 </portlet:renderURL>
 
-<aui:nav cssClass="nav-tabs">
-    <aui:nav-item cssClass="active" href="<%=viewPageURL%>" label="Courses" />
-</aui:nav>
-
 <portlet:renderURL var="addCoursePackageURL">
     <portlet:param name="mvcPath" value="/html/coursepackage/add_coursepackage.jsp" />
 </portlet:renderURL>
@@ -19,8 +15,6 @@
 <aui:button-row cssClass="course-buttons">
     <aui:button onClick="<%=addCoursePackageURL.toString()%>" value="Add Course Package" />
 </aui:button-row>
-
-
 
 <liferay-ui:search-container>
     <liferay-ui:search-container-results
