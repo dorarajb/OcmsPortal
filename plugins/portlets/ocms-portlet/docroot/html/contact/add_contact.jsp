@@ -5,9 +5,9 @@
 </portlet:renderURL>
 
 <portlet:actionURL name="addContact" var="addContactURL"></portlet:actionURL>
-<aui:form action="<%= addContactURL %>" name="<portlet:namespace />fm">
+<aui:form action="<%= addContactURL %>" name="<portlet:namespace />fm" ng-controller="contactCtrl">
     <aui:fieldset>
-        <aui:input name="contactType" />
+        <aui:input name="contactType" ng-model="contactType"/>
         <aui:input name="contactName" />
         <aui:input name="addressLine1" />
         <aui:input name="addressLine2" />
