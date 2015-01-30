@@ -1,13 +1,22 @@
 <?xml version="1.0"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.ocms.course.service.ContactLocalService" class="com.ocms.course.service.impl.ContactLocalServiceImpl" />
+	<bean id="com.ocms.course.service.ContactService" class="com.ocms.course.service.impl.ContactServiceImpl" />
+	<bean id="com.ocms.course.service.persistence.ContactPersistence" class="com.ocms.course.service.persistence.ContactPersistenceImpl" parent="basePersistence" />
 	<bean id="com.ocms.course.service.CourseLocalService" class="com.ocms.course.service.impl.CourseLocalServiceImpl" />
 	<bean id="com.ocms.course.service.CourseService" class="com.ocms.course.service.impl.CourseServiceImpl" />
 	<bean id="com.ocms.course.service.persistence.CoursePersistence" class="com.ocms.course.service.persistence.CoursePersistenceImpl" parent="basePersistence" />
+	<bean id="com.ocms.course.service.CoursePackageLocalService" class="com.ocms.course.service.impl.CoursePackageLocalServiceImpl" />
+	<bean id="com.ocms.course.service.CoursePackageService" class="com.ocms.course.service.impl.CoursePackageServiceImpl" />
+	<bean id="com.ocms.course.service.persistence.CoursePackagePersistence" class="com.ocms.course.service.persistence.CoursePackagePersistenceImpl" parent="basePersistence" />
 	<bean id="com.ocms.course.service.CourseSeriesLocalService" class="com.ocms.course.service.impl.CourseSeriesLocalServiceImpl" />
 	<bean id="com.ocms.course.service.CourseSeriesService" class="com.ocms.course.service.impl.CourseSeriesServiceImpl" />
 	<bean id="com.ocms.course.service.persistence.CourseSeriesPersistence" class="com.ocms.course.service.persistence.CourseSeriesPersistenceImpl" parent="basePersistence" />
 	<bean id="com.ocms.course.service.LocationLocalService" class="com.ocms.course.service.impl.LocationLocalServiceImpl" />
 	<bean id="com.ocms.course.service.LocationService" class="com.ocms.course.service.impl.LocationServiceImpl" />
 	<bean id="com.ocms.course.service.persistence.LocationPersistence" class="com.ocms.course.service.persistence.LocationPersistenceImpl" parent="basePersistence" />
+	<bean id="com.ocms.course.service.PricingLocalService" class="com.ocms.course.service.impl.PricingLocalServiceImpl" />
+	<bean id="com.ocms.course.service.PricingService" class="com.ocms.course.service.impl.PricingServiceImpl" />
+	<bean id="com.ocms.course.service.persistence.PricingPersistence" class="com.ocms.course.service.persistence.PricingPersistenceImpl" parent="basePersistence" />
 </beans>

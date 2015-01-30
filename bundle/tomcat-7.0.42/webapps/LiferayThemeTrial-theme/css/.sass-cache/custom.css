@@ -1,0 +1,13 @@
+@CHARSET "ISO-8859-1";
+body {
+  background: #EEF0F2;
+  font-size: 11px; }
+
+body {
+  background-color: #4F555B;
+  background-image: url("../images/layout/Penguins.gif");
+  background-repeat: repeat-x;
+  color: #FFFFFF;
+  font-family: Verdana,Helvetica,sans-serif;
+  font-size: 11px; }
+

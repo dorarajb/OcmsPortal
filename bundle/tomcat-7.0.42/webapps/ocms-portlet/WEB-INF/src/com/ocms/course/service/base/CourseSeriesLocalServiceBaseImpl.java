@@ -33,9 +33,12 @@ import com.liferay.portal.service.persistence.UserPersistence;
 
 import com.ocms.course.model.CourseSeries;
 import com.ocms.course.service.CourseSeriesLocalService;
+import com.ocms.course.service.persistence.ContactPersistence;
+import com.ocms.course.service.persistence.CoursePackagePersistence;
 import com.ocms.course.service.persistence.CoursePersistence;
 import com.ocms.course.service.persistence.CourseSeriesPersistence;
 import com.ocms.course.service.persistence.LocationPersistence;
+import com.ocms.course.service.persistence.PricingPersistence;
 
 import java.io.Serializable;
 
@@ -283,6 +286,62 @@ public abstract class CourseSeriesLocalServiceBaseImpl
 	}
 
 	/**
+	 * Returns the contact local service.
+	 *
+	 * @return the contact local service
+	 */
+	public com.ocms.course.service.ContactLocalService getContactLocalService() {
+		return contactLocalService;
+	}
+
+	/**
+	 * Sets the contact local service.
+	 *
+	 * @param contactLocalService the contact local service
+	 */
+	public void setContactLocalService(
+		com.ocms.course.service.ContactLocalService contactLocalService) {
+		this.contactLocalService = contactLocalService;
+	}
+
+	/**
+	 * Returns the contact remote service.
+	 *
+	 * @return the contact remote service
+	 */
+	public com.ocms.course.service.ContactService getContactService() {
+		return contactService;
+	}
+
+	/**
+	 * Sets the contact remote service.
+	 *
+	 * @param contactService the contact remote service
+	 */
+	public void setContactService(
+		com.ocms.course.service.ContactService contactService) {
+		this.contactService = contactService;
+	}
+
+	/**
+	 * Returns the contact persistence.
+	 *
+	 * @return the contact persistence
+	 */
+	public ContactPersistence getContactPersistence() {
+		return contactPersistence;
+	}
+
+	/**
+	 * Sets the contact persistence.
+	 *
+	 * @param contactPersistence the contact persistence
+	 */
+	public void setContactPersistence(ContactPersistence contactPersistence) {
+		this.contactPersistence = contactPersistence;
+	}
+
+	/**
 	 * Returns the course local service.
 	 *
 	 * @return the course local service
@@ -336,6 +395,63 @@ public abstract class CourseSeriesLocalServiceBaseImpl
 	 */
 	public void setCoursePersistence(CoursePersistence coursePersistence) {
 		this.coursePersistence = coursePersistence;
+	}
+
+	/**
+	 * Returns the course package local service.
+	 *
+	 * @return the course package local service
+	 */
+	public com.ocms.course.service.CoursePackageLocalService getCoursePackageLocalService() {
+		return coursePackageLocalService;
+	}
+
+	/**
+	 * Sets the course package local service.
+	 *
+	 * @param coursePackageLocalService the course package local service
+	 */
+	public void setCoursePackageLocalService(
+		com.ocms.course.service.CoursePackageLocalService coursePackageLocalService) {
+		this.coursePackageLocalService = coursePackageLocalService;
+	}
+
+	/**
+	 * Returns the course package remote service.
+	 *
+	 * @return the course package remote service
+	 */
+	public com.ocms.course.service.CoursePackageService getCoursePackageService() {
+		return coursePackageService;
+	}
+
+	/**
+	 * Sets the course package remote service.
+	 *
+	 * @param coursePackageService the course package remote service
+	 */
+	public void setCoursePackageService(
+		com.ocms.course.service.CoursePackageService coursePackageService) {
+		this.coursePackageService = coursePackageService;
+	}
+
+	/**
+	 * Returns the course package persistence.
+	 *
+	 * @return the course package persistence
+	 */
+	public CoursePackagePersistence getCoursePackagePersistence() {
+		return coursePackagePersistence;
+	}
+
+	/**
+	 * Sets the course package persistence.
+	 *
+	 * @param coursePackagePersistence the course package persistence
+	 */
+	public void setCoursePackagePersistence(
+		CoursePackagePersistence coursePackagePersistence) {
+		this.coursePackagePersistence = coursePackagePersistence;
 	}
 
 	/**
@@ -449,6 +565,62 @@ public abstract class CourseSeriesLocalServiceBaseImpl
 	 */
 	public void setLocationPersistence(LocationPersistence locationPersistence) {
 		this.locationPersistence = locationPersistence;
+	}
+
+	/**
+	 * Returns the pricing local service.
+	 *
+	 * @return the pricing local service
+	 */
+	public com.ocms.course.service.PricingLocalService getPricingLocalService() {
+		return pricingLocalService;
+	}
+
+	/**
+	 * Sets the pricing local service.
+	 *
+	 * @param pricingLocalService the pricing local service
+	 */
+	public void setPricingLocalService(
+		com.ocms.course.service.PricingLocalService pricingLocalService) {
+		this.pricingLocalService = pricingLocalService;
+	}
+
+	/**
+	 * Returns the pricing remote service.
+	 *
+	 * @return the pricing remote service
+	 */
+	public com.ocms.course.service.PricingService getPricingService() {
+		return pricingService;
+	}
+
+	/**
+	 * Sets the pricing remote service.
+	 *
+	 * @param pricingService the pricing remote service
+	 */
+	public void setPricingService(
+		com.ocms.course.service.PricingService pricingService) {
+		this.pricingService = pricingService;
+	}
+
+	/**
+	 * Returns the pricing persistence.
+	 *
+	 * @return the pricing persistence
+	 */
+	public PricingPersistence getPricingPersistence() {
+		return pricingPersistence;
+	}
+
+	/**
+	 * Sets the pricing persistence.
+	 *
+	 * @param pricingPersistence the pricing persistence
+	 */
+	public void setPricingPersistence(PricingPersistence pricingPersistence) {
+		this.pricingPersistence = pricingPersistence;
 	}
 
 	/**
@@ -627,12 +799,24 @@ public abstract class CourseSeriesLocalServiceBaseImpl
 		}
 	}
 
+	@BeanReference(type = com.ocms.course.service.ContactLocalService.class)
+	protected com.ocms.course.service.ContactLocalService contactLocalService;
+	@BeanReference(type = com.ocms.course.service.ContactService.class)
+	protected com.ocms.course.service.ContactService contactService;
+	@BeanReference(type = ContactPersistence.class)
+	protected ContactPersistence contactPersistence;
 	@BeanReference(type = com.ocms.course.service.CourseLocalService.class)
 	protected com.ocms.course.service.CourseLocalService courseLocalService;
 	@BeanReference(type = com.ocms.course.service.CourseService.class)
 	protected com.ocms.course.service.CourseService courseService;
 	@BeanReference(type = CoursePersistence.class)
 	protected CoursePersistence coursePersistence;
+	@BeanReference(type = com.ocms.course.service.CoursePackageLocalService.class)
+	protected com.ocms.course.service.CoursePackageLocalService coursePackageLocalService;
+	@BeanReference(type = com.ocms.course.service.CoursePackageService.class)
+	protected com.ocms.course.service.CoursePackageService coursePackageService;
+	@BeanReference(type = CoursePackagePersistence.class)
+	protected CoursePackagePersistence coursePackagePersistence;
 	@BeanReference(type = com.ocms.course.service.CourseSeriesLocalService.class)
 	protected com.ocms.course.service.CourseSeriesLocalService courseSeriesLocalService;
 	@BeanReference(type = com.ocms.course.service.CourseSeriesService.class)
@@ -645,6 +829,12 @@ public abstract class CourseSeriesLocalServiceBaseImpl
 	protected com.ocms.course.service.LocationService locationService;
 	@BeanReference(type = LocationPersistence.class)
 	protected LocationPersistence locationPersistence;
+	@BeanReference(type = com.ocms.course.service.PricingLocalService.class)
+	protected com.ocms.course.service.PricingLocalService pricingLocalService;
+	@BeanReference(type = com.ocms.course.service.PricingService.class)
+	protected com.ocms.course.service.PricingService pricingService;
+	@BeanReference(type = PricingPersistence.class)
+	protected PricingPersistence pricingPersistence;
 	@BeanReference(type = com.liferay.counter.service.CounterLocalService.class)
 	protected com.liferay.counter.service.CounterLocalService counterLocalService;
 	@BeanReference(type = com.liferay.portal.service.ResourceLocalService.class)

@@ -1,16 +1,8 @@
 <%@include file="/html/init.jsp"%>
 
-<%
-    long courseId = Long.valueOf((Long) renderRequest.getAttribute("courseId"));
-%>
-
 <portlet:renderURL var="viewPageURL">
     <portlet:param name="mvcPath" value="/html/course/view.jsp" />
 </portlet:renderURL>
-
-<aui:nav cssClass="nav-tabs">
-    <aui:nav-item cssClass="active" href="<%=viewPageURL%>" label="Courses" />
-</aui:nav>
 
 <portlet:renderURL var="addCourseURL">
     <portlet:param name="mvcPath" value="/html/course/add_course.jsp" />

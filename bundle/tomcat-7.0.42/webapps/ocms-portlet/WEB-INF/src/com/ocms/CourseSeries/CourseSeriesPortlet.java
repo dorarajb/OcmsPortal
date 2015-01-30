@@ -1,15 +1,9 @@
 package com.ocms.CourseSeries;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
-
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
-import javax.portlet.PortletException;
-import javax.portlet.RenderRequest;
-import javax.portlet.RenderResponse;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
@@ -19,7 +13,6 @@ import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portal.service.ServiceContextFactory;
 import com.liferay.util.bridges.mvc.MVCPortlet;
-import com.ocms.course.model.Course;
 import com.ocms.course.model.CourseSeries;
 import com.ocms.course.service.CourseSeriesLocalServiceUtil;
 
@@ -34,14 +27,19 @@ public class CourseSeriesPortlet extends MVCPortlet {
 	    ServiceContext serviceContext = ServiceContextFactory.getInstance(
 	        CourseSeries.class.getName(), request);
 
-	    String[] locationIds = ParamUtil.getParameterValues(request, "locationIds");
-	    String[] courseIds = ParamUtil.getParameterValues(request, "rowIds");
+	    long[] locationIds = ParamUtil.getLongValues(request, "locationIds");
+	    long[] courseIds = ParamUtil.getLongValues(request, "courseIds");
 	    
 	    try {
-			CourseSeriesLocalServiceUtil.addCourseSeries(
-					serviceContext.getUserId(), 10801, 11105,
-					new Date(), new Date(), "type", 0, "Do not publish",
-					serviceContext);
+	    	
+	    	for (long locationId : locationIds) {
+	    		for (long courseId : courseIds) {
+	    			CourseSeriesLocalServiceUtil.addCourseSeries(
+	    					serviceContext.getUserId(), courseId, locationId,
+	    					new Date(), new Date(), "type", 100, "Do not publish",
+	    					serviceContext);
+	    		}
+	    	}
 
 	        SessionMessages.add(request, "courseSeriesAdded");
 
@@ -70,7 +68,7 @@ public class CourseSeriesPortlet extends MVCPortlet {
 	    try {
 	        CourseSeriesLocalServiceUtil.updateCourse(
 					serviceContext.getUserId(), courseId, locationId,
-					new Date(), new Date(), type, maxNoStudReg, publishingStatus,
+					startDate, endDate, type, maxNoStudReg, publishingStatus,
 					serviceContext);
 
 	        SessionMessages.add(request, "courseSeriesUpdated");
@@ -82,36 +80,4 @@ public class CourseSeriesPortlet extends MVCPortlet {
 	            "/html/courseseries/select_courseseries.jsp");
 	    }
 	}
-	
-	@Override
-	public void render(RenderRequest renderRequest,
-	        RenderResponse renderResponse) throws PortletException, IOException {
-
-	    try {
-	        ServiceContext serviceContext = ServiceContextFactory.getInstance(
-	                Course.class.getName(), renderRequest);
-
-	        long groupId = serviceContext.getScopeGroupId();
-
-	        long courseSeriesId = ParamUtil.getLong(renderRequest, "courseSeriesId");
-		    
-	        List<CourseSeries> courses = CourseSeriesLocalServiceUtil.getCourseSeriesByGroupId(groupId);
-
-	        if (courses.size() == 0) {
-	            CourseSeries courseSeries = CourseSeriesLocalServiceUtil.addCourseSeries(
-	                    serviceContext.getUserId(), 10802, 10803,  
-	                    new Date(), new Date(), "type", 10, "Do not publish", 
-	                    serviceContext);
-	            courseSeriesId = courseSeries.getCourseId();
-	        }
-	        if (!(courseSeriesId > 0)) {
-	            courseSeriesId = courses.get(0).getCourseId();
-	        }
-	        renderRequest.setAttribute("courseSeriesId", courseSeriesId);
-	    } catch (Exception e) {
-	        throw new PortletException(e);
-	    }
-	    super.render(renderRequest, renderResponse);
-	}
-
 }

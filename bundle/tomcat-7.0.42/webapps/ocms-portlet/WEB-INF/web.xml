@@ -97,6 +97,24 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet>
+		<servlet-name>contact Servlet</servlet-name>
+		<servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
+		<init-param>
+			<param-name>portlet-class</param-name>
+			<param-value>com.ocms.contact.ContactPortlet</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>coursepackage Servlet</servlet-name>
+		<servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
+		<init-param>
+			<param-name>portlet-class</param-name>
+			<param-value>com.ocms.coursepackage.CoursePackagePortlet</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
 		<servlet-name>Dynamic Resource Servlet</servlet-name>
 		<servlet-class>com.liferay.portal.kernel.servlet.PortalClassLoaderServlet</servlet-class>
 		<init-param>
@@ -120,6 +138,14 @@
 	<servlet-mapping>
 		<servlet-name>courseseries Servlet</servlet-name>
 		<url-pattern>/courseseries/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>contact Servlet</servlet-name>
+		<url-pattern>/contact/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>coursepackage Servlet</servlet-name>
+		<url-pattern>/coursepackage/*</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>Dynamic Resource Servlet</servlet-name>

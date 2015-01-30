@@ -1,10 +1,12 @@
 .settings/*
 .classpath
 .project
+.gitignore
 
 plugins/.project
 plugins/build.*.properties
 plugins/.ivy/cache/com.liferay-plugins-default.xml
+plugins/portlets/ocms-portlet/docroot/WEB-INF/classes
 *.class
 *.sql
 *.log

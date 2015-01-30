@@ -1,21 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+
 <service-builder package-path="com.ocms.course">
 	<author>doraraj</author>
 	<namespace>CM</namespace>
 	<entity name="Course" local-service="true">
-
-
 		<!-- PK fields -->
-
 		<column name="courseId" type="long" primary="true"></column>
-
 		<!-- Group instance -->
-
 		<column name="groupId" type="long"></column>
-
 		<!-- Audit fields -->
-
 		<column name="companyId" type="long"></column>
 		<column name="userId" type="long"></column>
 		<column name="userName" type="String"></column>
@@ -24,111 +18,210 @@
 		<column name="code" type="String"></column>
 		<column name="name" type="String"></column>
 		<column name="duration" type="String"></column>
-        <finder name="GroupId" return-type="Collection">
-            <finder-column name="groupId"></finder-column>
-        </finder>
-        <finder name="CourseId" return-type="Collection">
-            <finder-column name="courseId"></finder-column>
-        </finder>
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+		</finder>
+		<finder name="CourseId" return-type="Collection">
+			<finder-column name="courseId"></finder-column>
+		</finder>
 	</entity>
 	<entity name="Location" local-service="true">
-
 		<!-- PK fields -->
-
 		<column name="locationId" type="long" primary="true"></column>
-
 		<!-- Group instance -->
-
 		<column name="groupId" type="long"></column>
-
 		<!-- Audit fields -->
-
 		<column name="companyId" type="long"></column>
 		<column name="userId" type="long"></column>
 		<column name="userName" type="String"></column>
 		<column name="createDate" type="Date"></column>
 		<column name="modifiedDate" type="Date"></column>
-        <column name="code" type="String"></column>
-        <column name="name" type="String"></column>
-        <column name="notes" type="String"></column>
-        <column name="addressLine1" type="String"></column>
-        <column name="addressLine2" type="String"></column>
-        <column name="city" type="String"></column>
-        <column name="state" type="String"></column>
-        <column name="country" type="String"></column>
-        <column name="region" type="String"></column>
-        <column name="zipcode" type="String"></column>
-        <column name="phone" type="String"></column>
-        <column name="fax" type="String"></column>
-        <column name="email" type="String"></column>
-        <column name="siteUrl" type="String"></column>
-        <finder name="GroupId" return-type="Collection">
-            <finder-column name="groupId"></finder-column>
-        </finder>
-        <finder name="LocationId" return-type="Collection">
-            <finder-column name="locationId"></finder-column>
-        </finder>
+		<column name="code" type="String"></column>
+		<column name="name" type="String"></column>
+		<column name="notes" type="String"></column>
+		<column name="addressLine1" type="String"></column>
+		<column name="addressLine2" type="String"></column>
+		<column name="city" type="String"></column>
+		<column name="state" type="String"></column>
+		<column name="country" type="String"></column>
+		<column name="region" type="String"></column>
+		<column name="zipcode" type="String"></column>
+		<column name="phone" type="String"></column>
+		<column name="fax" type="String"></column>
+		<column name="email" type="String"></column>
+		<column name="siteUrl" type="String"></column>
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+		</finder>
+		<finder name="LocationId" return-type="Collection">
+			<finder-column name="locationId"></finder-column>
+		</finder>
 	</entity>
 	<entity name="CourseSeries" local-service="true">
-
 		<!-- PK fields -->
-
 		<column name="courseSeriesId" type="long" primary="true"></column>
-
 		<!-- Group instance -->
-
 		<column name="groupId" type="long"></column>
-
 		<!-- Audit fields -->
-
 		<column name="companyId" type="long"></column>
 		<column name="userId" type="long"></column>
 		<column name="userName" type="String"></column>
 		<column name="createDate" type="Date"></column>
 		<column name="modifiedDate" type="Date"></column>
-        <column name="courseId" type="long"></column>
-        <column name="locationId" type="long"></column>
-        <column name="type" type="String"></column>
-        <column name="start_date" type="Date"></column>
-        <column name="end_date" type="Date"></column>
-        <column name="publishing_status" type="String"></column>
-        <column name="max_no_of_stud_reg" type="long"></column>
-        <finder name="GroupId" return-type="Collection">
-            <finder-column name="groupId"></finder-column>
-        </finder>
-        <finder name="courseSeriesId" return-type="Collection">
-            <finder-column name="courseSeriesId"></finder-column>
-        </finder>
-        <finder name="CourseId" return-type="Collection">
-            <finder-column name="courseId"></finder-column>
-        </finder>
-        <finder name="LocationId" return-type="Collection">
-            <finder-column name="locationId"></finder-column>
-        </finder>
+		<column name="courseId" type="long"></column>
+		<column name="locationId" type="long"></column>
+		<column name="type" type="String"></column>
+		<column name="start_date" type="Date"></column>
+		<column name="end_date" type="Date"></column>
+		<column name="publishing_status" type="String"></column>
+		<column name="max_no_of_stud_reg" type="long"></column>
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+		</finder>
+		<finder name="courseSeriesId" return-type="Collection">
+			<finder-column name="courseSeriesId"></finder-column>
+		</finder>
+		<finder name="CourseId" return-type="Collection">
+			<finder-column name="courseId"></finder-column>
+		</finder>
+		<finder name="LocationId" return-type="Collection">
+			<finder-column name="locationId"></finder-column>
+		</finder>
+	</entity>
+	<entity name="Contact" local-service="true">
+		<!-- PK fields -->
+		<column name="contactId" type="long" primary="true"></column>
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="contactType" type="String"></column>
+		<column name="contactName" type="String"></column>
+		<column name="addressLine1" type="String"></column>
+		<column name="addressLine2" type="String"></column>
+		<column name="city" type="String"></column>
+		<column name="state" type="String"></column>
+		<column name="region" type="String"></column>
+		<column name="zip" type="String"></column>
+		<column name="phone" type="String"></column>
+		<column name="fax" type="String"></column>
+		<column name="email" type="String"></column>
+		<finder name="ContactId" return-type="Collection">
+			<finder-column name="contactId"></finder-column>
+		</finder>
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+		</finder>
+	</entity>
+	<entity name="CoursePackage" local-service="true">
+		<!-- PK fields -->
+		<column name="coursePackageId" type="long" primary="true"></column>
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="name" type="String"></column>
+		<column name="code" type="String"></column>
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+		</finder>
+		<finder name="CoursePackageId" return-type="Collection">
+			<finder-column name="coursePackageId"></finder-column>
+		</finder>
+		<finder name="Name" return-type="Collection">
+			<finder-column name="name"></finder-column>
+		</finder>
+	</entity>
+	<entity name="Pricing" local-service="true">
+		<!-- PK fields -->
+		<column name="pricingId" type="long" primary="true"></column>
+		<!-- Group instance -->
+		<column name="groupId" type="long"></column>
+		<!-- Audit fields -->
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+		<column name="locationId" type="int"></column>
+		<column name="courseId" type="int"></column>
+		<column name="packageId" type="int"></column>
+		<column name="deposit" type="int"></column>
+		<column name="price" type="int"></column>
+		<column name="currency" type="String"></column>
+		<column name="effectiveDate" type="Date"></column>
+		<column name="courseCode" type="String"></column>
+		<column name="locationCode" type="String"></column>
+		<finder name="GroupId" return-type="Collection">
+			<finder-column name="groupId"></finder-column>
+		</finder>
+		<finder name="PricingId" return-type="Collection">
+			<finder-column name="pricingId"></finder-column>
+		</finder>
+		<finder name="PackageId" return-type="Collection">
+			<finder-column name="packageId"></finder-column>
+		</finder>
+		<finder name="CourseId" return-type="Collection">
+			<finder-column name="courseId"></finder-column>
+		</finder>
+		<finder name="LocationId" return-type="Collection">
+			<finder-column name="locationId"></finder-column>
+		</finder>
+		<finder name="Price" return-type="Collection">
+			<finder-column name="price"></finder-column>
+		</finder>
 	</entity>
 	<exceptions>
-        <exception>CourseCode</exception>
-        <exception>CourseName</exception>
-        <exception>CourseDuration</exception>
-        <exception>LocationCode</exception>
-        <exception>LocationName</exception>
-        <exception>LocationPhone</exception>
-        <exception>LocationEmail</exception>
-        <exception>LocationNotes</exception>
-        <exception>LocationAddressLine1</exception>
-        <exception>LocationAddressLine2</exception>
-        <exception>LocationCity</exception>
-        <exception>LocationState</exception>
-        <exception>LocationCountry</exception>
-        <exception>LocationZip</exception>
-        <exception>LocationRegion</exception>
-        <exception>LocationPhone</exception>
-        <exception>LocationFax</exception>
-        <exception>LocationEmail</exception>
-        <exception>CourseSeriesType</exception>
-        <exception>CourseSeriesMaxNoStudReg</exception>
-        <exception>CourseSeriesPublishStatus</exception>
-        <exception>CourseSeriesStartDate</exception>
-        <exception>CourseSeriesEndDate</exception>
-    </exceptions>
+		<exception>CourseCode</exception>
+		<exception>CourseName</exception>
+		<exception>CourseDuration</exception>
+		<exception>LocationCode</exception>
+		<exception>LocationName</exception>
+		<exception>LocationPhone</exception>
+		<exception>LocationEmail</exception>
+		<exception>LocationNotes</exception>
+		<exception>LocationAddressLine1</exception>
+		<exception>LocationAddressLine2</exception>
+		<exception>LocationCity</exception>
+		<exception>LocationState</exception>
+		<exception>LocationCountry</exception>
+		<exception>LocationZip</exception>
+		<exception>LocationRegion</exception>
+		<exception>LocationPhone</exception>
+		<exception>LocationFax</exception>
+		<exception>LocationEmail</exception>
+		<exception>CourseSeriesType</exception>
+		<exception>CourseSeriesMaxNoStudReg</exception>
+		<exception>CourseSeriesPublishStatus</exception>
+		<exception>CourseSeriesStartDate</exception>
+		<exception>CourseSeriesEndDate</exception>
+		<exception>ContactType</exception>
+		<exception>ContactName</exception>
+		<exception>ContactAddressLine1</exception>
+		<exception>ContactAddressLine2</exception>
+		<exception>ContactCity</exception>
+		<exception>ContactState</exception>
+		<exception>ContactRegion</exception>
+		<exception>ContactZip</exception>
+		<exception>ContactPhone</exception>
+		<exception>ContactFax</exception>
+		<exception>ContactEmail</exception>
+		<exception>CoursePackageName</exception>
+		<exception>Deposit</exception>
+		<exception>Price</exception>
+		<exception>Currency</exception>
+		<exception>EffectiveDate</exception>
+		<exception>CoursePackageCode</exception>
+		<exception>PricingLocationId</exception>
+		<exception>PricingCourseId</exception>
+		<exception>PricingPackageId</exception>
+	</exceptions>
 </service-builder>

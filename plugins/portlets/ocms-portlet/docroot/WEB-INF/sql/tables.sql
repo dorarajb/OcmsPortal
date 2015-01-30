@@ -99,5 +99,7 @@ create table CM_Pricing (
 	deposit INTEGER,
 	price INTEGER,
 	currency_ VARCHAR(75) null,
-	effectiveDate DATE null
+	effectiveDate DATE null,
+	courseCode VARCHAR(75) null,
+	locationCode VARCHAR(75) null
 );

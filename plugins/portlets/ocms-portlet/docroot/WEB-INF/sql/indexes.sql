@@ -17,6 +17,7 @@ create index IX_6C0B415A on CM_Location (groupId);
 create index IX_E3AFCB74 on CM_Location (locationId);
 
 create index IX_C0BFCBA1 on CM_Pricing (courseId);
+create index IX_903DF633 on CM_Pricing (groupId);
 create index IX_4C733BFB on CM_Pricing (locationId);
 create index IX_939332BA on CM_Pricing (packageId);
 create index IX_61136982 on CM_Pricing (price);

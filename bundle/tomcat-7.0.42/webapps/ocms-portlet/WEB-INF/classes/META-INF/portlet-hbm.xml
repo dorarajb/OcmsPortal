@@ -2,9 +2,35 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.ocms.course.model.Contact" />
 	<import class="com.ocms.course.model.Course" />
+	<import class="com.ocms.course.model.CoursePackage" />
 	<import class="com.ocms.course.model.CourseSeries" />
 	<import class="com.ocms.course.model.Location" />
+	<import class="com.ocms.course.model.Pricing" />
+	<class name="com.ocms.course.model.impl.ContactImpl" table="CM_Contact">
+		<cache usage="read-write" />
+		<id name="contactId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="contactType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="contactName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="addressLine1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="addressLine2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="city" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="state" type="com.liferay.portal.dao.orm.hibernate.StringType" column="state_" />
+		<property name="region" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="zip" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="phone" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="fax" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
 	<class name="com.ocms.course.model.impl.CourseImpl" table="CM_Course">
 		<cache usage="read-write" />
 		<id name="courseId" type="long">
@@ -19,6 +45,20 @@
 		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
 		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="duration" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ocms.course.model.impl.CoursePackageImpl" table="CM_CoursePackage">
+		<cache usage="read-write" />
+		<id name="coursePackageId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
 	</class>
 	<class name="com.ocms.course.model.impl.CourseSeriesImpl" table="CM_CourseSeries">
 		<cache usage="read-write" />
@@ -64,5 +104,26 @@
 		<property name="fax" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="siteUrl" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.ocms.course.model.impl.PricingImpl" table="CM_Pricing">
+		<cache usage="read-write" />
+		<id name="pricingId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="locationId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="courseId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="packageId" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="deposit" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="price" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="currency" type="com.liferay.portal.dao.orm.hibernate.StringType" column="currency_" />
+		<property name="effectiveDate" type="org.hibernate.type.TimestampType" />
+		<property name="courseCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="locationCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
 </hibernate-mapping>

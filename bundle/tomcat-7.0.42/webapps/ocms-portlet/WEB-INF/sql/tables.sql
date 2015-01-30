@@ -1,3 +1,24 @@
+create table CM_Contact (
+	contactId LONG not null primary key,
+	groupId LONG,
+	companyId LONG,
+	userId LONG,
+	userName VARCHAR(75) null,
+	createDate DATE null,
+	modifiedDate DATE null,
+	contactType VARCHAR(75) null,
+	contactName VARCHAR(75) null,
+	addressLine1 VARCHAR(75) null,
+	addressLine2 VARCHAR(75) null,
+	city VARCHAR(75) null,
+	state_ VARCHAR(75) null,
+	region VARCHAR(75) null,
+	zip VARCHAR(75) null,
+	phone VARCHAR(75) null,
+	fax VARCHAR(75) null,
+	email VARCHAR(75) null
+);
+
 create table CM_Course (
 	courseId LONG not null primary key,
 	groupId LONG,
@@ -9,6 +30,18 @@ create table CM_Course (
 	code_ VARCHAR(75) null,
 	name VARCHAR(75) null,
 	duration VARCHAR(75) null
+);
+
+create table CM_CoursePackage (
+	coursePackageId LONG not null primary key,
+	groupId LONG,
+	companyId LONG,
+	userId LONG,
+	userName VARCHAR(75) null,
+	createDate DATE null,
+	modifiedDate DATE null,
+	name VARCHAR(75) null,
+	code_ VARCHAR(75) null
 );
 
 create table CM_CourseSeries (
@@ -50,4 +83,23 @@ create table CM_Location (
 	fax VARCHAR(75) null,
 	email VARCHAR(75) null,
 	siteUrl VARCHAR(75) null
+);
+
+create table CM_Pricing (
+	pricingId LONG not null primary key,
+	groupId LONG,
+	companyId LONG,
+	userId LONG,
+	userName VARCHAR(75) null,
+	createDate DATE null,
+	modifiedDate DATE null,
+	locationId INTEGER,
+	courseId INTEGER,
+	packageId INTEGER,
+	deposit INTEGER,
+	price INTEGER,
+	currency_ VARCHAR(75) null,
+	effectiveDate DATE null,
+	courseCode VARCHAR(75) null,
+	locationCode VARCHAR(75) null
 );

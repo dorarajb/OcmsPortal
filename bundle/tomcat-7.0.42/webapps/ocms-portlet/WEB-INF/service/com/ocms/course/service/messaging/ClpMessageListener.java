@@ -18,12 +18,18 @@ import com.liferay.portal.kernel.messaging.BaseMessageListener;
 import com.liferay.portal.kernel.messaging.Message;
 
 import com.ocms.course.service.ClpSerializer;
+import com.ocms.course.service.ContactLocalServiceUtil;
+import com.ocms.course.service.ContactServiceUtil;
 import com.ocms.course.service.CourseLocalServiceUtil;
+import com.ocms.course.service.CoursePackageLocalServiceUtil;
+import com.ocms.course.service.CoursePackageServiceUtil;
 import com.ocms.course.service.CourseSeriesLocalServiceUtil;
 import com.ocms.course.service.CourseSeriesServiceUtil;
 import com.ocms.course.service.CourseServiceUtil;
 import com.ocms.course.service.LocationLocalServiceUtil;
 import com.ocms.course.service.LocationServiceUtil;
+import com.ocms.course.service.PricingLocalServiceUtil;
+import com.ocms.course.service.PricingServiceUtil;
 
 /**
  * @author doraraj
@@ -40,15 +46,24 @@ public class ClpMessageListener extends BaseMessageListener {
 
 		if (command.equals("undeploy") &&
 				servletContextName.equals(getServletContextName())) {
+			ContactLocalServiceUtil.clearService();
+
+			ContactServiceUtil.clearService();
 			CourseLocalServiceUtil.clearService();
 
 			CourseServiceUtil.clearService();
+			CoursePackageLocalServiceUtil.clearService();
+
+			CoursePackageServiceUtil.clearService();
 			CourseSeriesLocalServiceUtil.clearService();
 
 			CourseSeriesServiceUtil.clearService();
 			LocationLocalServiceUtil.clearService();
 
 			LocationServiceUtil.clearService();
+			PricingLocalServiceUtil.clearService();
+
+			PricingServiceUtil.clearService();
 		}
 	}
 }

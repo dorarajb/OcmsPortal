@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context docBase="E:\ocmsLR\bundle\tomcat-7.0.42\webapps\ocms-portlet" reloadable="true" source="org.eclipse.jst.jee.server:ocms-portlet"/>
+<Context docBase="D:\Madan\OcmsPortalProject\OcmsPortal\bundle\tomcat-7.0.42\webapps\ocms-portlet" reloadable="true" source="org.eclipse.jst.jee.server:ocms-portlet"/>
