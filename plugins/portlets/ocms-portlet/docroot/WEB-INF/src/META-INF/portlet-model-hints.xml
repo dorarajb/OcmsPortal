@@ -98,5 +98,7 @@
 		<field name="price" type="int" />
 		<field name="currency" type="String" />
 		<field name="effectiveDate" type="Date" />
+		<field name="courseCode" type="String" />
+		<field name="locationCode" type="String" />
 	</model>
 </model-hints>

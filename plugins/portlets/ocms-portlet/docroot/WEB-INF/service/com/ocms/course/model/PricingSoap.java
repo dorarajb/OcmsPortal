@@ -45,6 +45,8 @@ public class PricingSoap implements Serializable {
 		soapModel.setPrice(model.getPrice());
 		soapModel.setCurrency(model.getCurrency());
 		soapModel.setEffectiveDate(model.getEffectiveDate());
+		soapModel.setCourseCode(model.getCourseCode());
+		soapModel.setLocationCode(model.getLocationCode());
 
 		return soapModel;
 	}
@@ -209,6 +211,22 @@ public class PricingSoap implements Serializable {
 		_effectiveDate = effectiveDate;
 	}
 
+	public String getCourseCode() {
+		return _courseCode;
+	}
+
+	public void setCourseCode(String courseCode) {
+		_courseCode = courseCode;
+	}
+
+	public String getLocationCode() {
+		return _locationCode;
+	}
+
+	public void setLocationCode(String locationCode) {
+		_locationCode = locationCode;
+	}
+
 	private long _pricingId;
 	private long _groupId;
 	private long _companyId;
@@ -223,4 +241,6 @@ public class PricingSoap implements Serializable {
 	private int _price;
 	private String _currency;
 	private Date _effectiveDate;
+	private String _courseCode;
+	private String _locationCode;
 }

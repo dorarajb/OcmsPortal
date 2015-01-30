@@ -271,6 +271,93 @@ public class PricingLocalServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static java.util.List<com.ocms.course.model.Pricing> getPricingByGroupId(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getPricingByGroupId(groupId);
+	}
+
+	public static java.util.List<com.ocms.course.model.Pricing> getPricingByGroupId(
+		long groupId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getPricingByGroupId(groupId, start, end);
+	}
+
+	public static java.util.List<com.ocms.course.model.Pricing> getPricingByCourseId(
+		int courseId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getPricingByCourseId(courseId);
+	}
+
+	public static java.util.List<com.ocms.course.model.Pricing> getPricingByCourseId(
+		int courseId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getPricingByCourseId(courseId, start, end);
+	}
+
+	public static java.util.List<com.ocms.course.model.Pricing> getPricingByPackageId(
+		int packageId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getPricingByPackageId(packageId);
+	}
+
+	public static java.util.List<com.ocms.course.model.Pricing> getPricingByPackageId(
+		int packageId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getPricingByPackageId(packageId, start, end);
+	}
+
+	public static java.util.List<com.ocms.course.model.Pricing> getPricingByPricingId(
+		int pricingId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getPricingByPricingId(pricingId);
+	}
+
+	public static java.util.List<com.ocms.course.model.Pricing> getPricingByPricingId(
+		int pricingId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getPricingByPricingId(pricingId, start, end);
+	}
+
+	public static java.util.List<com.ocms.course.model.Pricing> getPricingByPrice(
+		int price) throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getPricingByPrice(price);
+	}
+
+	public static java.util.List<com.ocms.course.model.Pricing> getPricingByPrice(
+		int price, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getPricingByPrice(price, start, end);
+	}
+
+	public static com.ocms.course.model.Pricing addPricing(long userId,
+		int deposit, int price, java.lang.String currency,
+		java.util.Date effectiveDate, int locationId,
+		java.lang.String locationCode, int courseId,
+		java.lang.String courseCode, int packageId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .addPricing(userId, deposit, price, currency, effectiveDate,
+			locationId, locationCode, courseId, courseCode, packageId,
+			serviceContext);
+	}
+
+	public static com.ocms.course.model.Pricing updatePricing(long userId,
+		int deposit, int price, java.lang.String currency,
+		java.util.Date effectiveDate, int locationId,
+		java.lang.String locationCode, int courseId,
+		java.lang.String courseCode, int packageId, long pricingId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .updatePricing(userId, deposit, price, currency,
+			effectiveDate, locationId, locationCode, courseId, courseCode,
+			packageId, pricingId, serviceContext);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

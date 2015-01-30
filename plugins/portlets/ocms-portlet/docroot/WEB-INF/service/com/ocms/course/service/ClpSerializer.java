@@ -483,6 +483,18 @@ public class ClpSerializer {
 			return new com.ocms.course.PriceException();
 		}
 
+		if (className.equals("com.ocms.course.PricingCourseIdException")) {
+			return new com.ocms.course.PricingCourseIdException();
+		}
+
+		if (className.equals("com.ocms.course.PricingLocationIdException")) {
+			return new com.ocms.course.PricingLocationIdException();
+		}
+
+		if (className.equals("com.ocms.course.PricingPackageIdException")) {
+			return new com.ocms.course.PricingPackageIdException();
+		}
+
 		if (className.equals("com.ocms.course.NoSuchContactException")) {
 			return new com.ocms.course.NoSuchContactException();
 		}

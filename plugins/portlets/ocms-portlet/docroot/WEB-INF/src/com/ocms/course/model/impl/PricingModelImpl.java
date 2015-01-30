@@ -79,9 +79,11 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 			{ "deposit", Types.INTEGER },
 			{ "price", Types.INTEGER },
 			{ "currency_", Types.VARCHAR },
-			{ "effectiveDate", Types.TIMESTAMP }
+			{ "effectiveDate", Types.TIMESTAMP },
+			{ "courseCode", Types.VARCHAR },
+			{ "locationCode", Types.VARCHAR }
 		};
-	public static final String TABLE_SQL_CREATE = "create table CM_Pricing (pricingId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,locationId INTEGER,courseId INTEGER,packageId INTEGER,deposit INTEGER,price INTEGER,currency_ VARCHAR(75) null,effectiveDate DATE null)";
+	public static final String TABLE_SQL_CREATE = "create table CM_Pricing (pricingId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,locationId INTEGER,courseId INTEGER,packageId INTEGER,deposit INTEGER,price INTEGER,currency_ VARCHAR(75) null,effectiveDate DATE null,courseCode VARCHAR(75) null,locationCode VARCHAR(75) null)";
 	public static final String TABLE_SQL_DROP = "drop table CM_Pricing";
 	public static final String ORDER_BY_JPQL = " ORDER BY pricing.pricingId ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY CM_Pricing.pricingId ASC";
@@ -98,10 +100,11 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 				"value.object.column.bitmask.enabled.com.ocms.course.model.Pricing"),
 			true);
 	public static long COURSEID_COLUMN_BITMASK = 1L;
-	public static long LOCATIONID_COLUMN_BITMASK = 2L;
-	public static long PACKAGEID_COLUMN_BITMASK = 4L;
-	public static long PRICE_COLUMN_BITMASK = 8L;
-	public static long PRICINGID_COLUMN_BITMASK = 16L;
+	public static long GROUPID_COLUMN_BITMASK = 2L;
+	public static long LOCATIONID_COLUMN_BITMASK = 4L;
+	public static long PACKAGEID_COLUMN_BITMASK = 8L;
+	public static long PRICE_COLUMN_BITMASK = 16L;
+	public static long PRICINGID_COLUMN_BITMASK = 32L;
 
 	/**
 	 * Converts the soap model instance into a normal model instance.
@@ -130,6 +133,8 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 		model.setPrice(soapModel.getPrice());
 		model.setCurrency(soapModel.getCurrency());
 		model.setEffectiveDate(soapModel.getEffectiveDate());
+		model.setCourseCode(soapModel.getCourseCode());
+		model.setLocationCode(soapModel.getLocationCode());
 
 		return model;
 	}
@@ -208,6 +213,8 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 		attributes.put("price", getPrice());
 		attributes.put("currency", getCurrency());
 		attributes.put("effectiveDate", getEffectiveDate());
+		attributes.put("courseCode", getCourseCode());
+		attributes.put("locationCode", getLocationCode());
 
 		return attributes;
 	}
@@ -297,6 +304,18 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 		if (effectiveDate != null) {
 			setEffectiveDate(effectiveDate);
 		}
+
+		String courseCode = (String)attributes.get("courseCode");
+
+		if (courseCode != null) {
+			setCourseCode(courseCode);
+		}
+
+		String locationCode = (String)attributes.get("locationCode");
+
+		if (locationCode != null) {
+			setLocationCode(locationCode);
+		}
 	}
 
 	@JSON
@@ -330,7 +349,19 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 
 	@Override
 	public void setGroupId(long groupId) {
+		_columnBitmask |= GROUPID_COLUMN_BITMASK;
+
+		if (!_setOriginalGroupId) {
+			_setOriginalGroupId = true;
+
+			_originalGroupId = _groupId;
+		}
+
 		_groupId = groupId;
+	}
+
+	public long getOriginalGroupId() {
+		return _originalGroupId;
 	}
 
 	@JSON
@@ -533,6 +564,38 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 		_effectiveDate = effectiveDate;
 	}
 
+	@JSON
+	@Override
+	public String getCourseCode() {
+		if (_courseCode == null) {
+			return StringPool.BLANK;
+		}
+		else {
+			return _courseCode;
+		}
+	}
+
+	@Override
+	public void setCourseCode(String courseCode) {
+		_courseCode = courseCode;
+	}
+
+	@JSON
+	@Override
+	public String getLocationCode() {
+		if (_locationCode == null) {
+			return StringPool.BLANK;
+		}
+		else {
+			return _locationCode;
+		}
+	}
+
+	@Override
+	public void setLocationCode(String locationCode) {
+		_locationCode = locationCode;
+	}
+
 	public long getColumnBitmask() {
 		return _columnBitmask;
 	}
@@ -578,6 +641,8 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 		pricingImpl.setPrice(getPrice());
 		pricingImpl.setCurrency(getCurrency());
 		pricingImpl.setEffectiveDate(getEffectiveDate());
+		pricingImpl.setCourseCode(getCourseCode());
+		pricingImpl.setLocationCode(getLocationCode());
 
 		pricingImpl.resetOriginalValues();
 
@@ -633,6 +698,10 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 		pricingModelImpl._originalPricingId = pricingModelImpl._pricingId;
 
 		pricingModelImpl._setOriginalPricingId = false;
+
+		pricingModelImpl._originalGroupId = pricingModelImpl._groupId;
+
+		pricingModelImpl._setOriginalGroupId = false;
 
 		pricingModelImpl._originalLocationId = pricingModelImpl._locationId;
 
@@ -718,12 +787,28 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 			pricingCacheModel.effectiveDate = Long.MIN_VALUE;
 		}
 
+		pricingCacheModel.courseCode = getCourseCode();
+
+		String courseCode = pricingCacheModel.courseCode;
+
+		if ((courseCode != null) && (courseCode.length() == 0)) {
+			pricingCacheModel.courseCode = null;
+		}
+
+		pricingCacheModel.locationCode = getLocationCode();
+
+		String locationCode = pricingCacheModel.locationCode;
+
+		if ((locationCode != null) && (locationCode.length() == 0)) {
+			pricingCacheModel.locationCode = null;
+		}
+
 		return pricingCacheModel;
 	}
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(29);
+		StringBundler sb = new StringBundler(33);
 
 		sb.append("{pricingId=");
 		sb.append(getPricingId());
@@ -753,6 +838,10 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 		sb.append(getCurrency());
 		sb.append(", effectiveDate=");
 		sb.append(getEffectiveDate());
+		sb.append(", courseCode=");
+		sb.append(getCourseCode());
+		sb.append(", locationCode=");
+		sb.append(getLocationCode());
 		sb.append("}");
 
 		return sb.toString();
@@ -760,7 +849,7 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(46);
+		StringBundler sb = new StringBundler(52);
 
 		sb.append("<model><model-name>");
 		sb.append("com.ocms.course.model.Pricing");
@@ -822,6 +911,14 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 			"<column><column-name>effectiveDate</column-name><column-value><![CDATA[");
 		sb.append(getEffectiveDate());
 		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>courseCode</column-name><column-value><![CDATA[");
+		sb.append(getCourseCode());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>locationCode</column-name><column-value><![CDATA[");
+		sb.append(getLocationCode());
+		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -836,6 +933,8 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 	private long _originalPricingId;
 	private boolean _setOriginalPricingId;
 	private long _groupId;
+	private long _originalGroupId;
+	private boolean _setOriginalGroupId;
 	private long _companyId;
 	private long _userId;
 	private String _userUuid;
@@ -857,6 +956,8 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 	private boolean _setOriginalPrice;
 	private String _currency;
 	private Date _effectiveDate;
+	private String _courseCode;
+	private String _locationCode;
 	private long _columnBitmask;
 	private Pricing _escapedModel;
 }

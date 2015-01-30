@@ -280,6 +280,102 @@ public class PricingLocalServiceWrapper implements PricingLocalService,
 		return _pricingLocalService.invokeMethod(name, parameterTypes, arguments);
 	}
 
+	@Override
+	public java.util.List<com.ocms.course.model.Pricing> getPricingByGroupId(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _pricingLocalService.getPricingByGroupId(groupId);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.Pricing> getPricingByGroupId(
+		long groupId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _pricingLocalService.getPricingByGroupId(groupId, start, end);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.Pricing> getPricingByCourseId(
+		int courseId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _pricingLocalService.getPricingByCourseId(courseId);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.Pricing> getPricingByCourseId(
+		int courseId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _pricingLocalService.getPricingByCourseId(courseId, start, end);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.Pricing> getPricingByPackageId(
+		int packageId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _pricingLocalService.getPricingByPackageId(packageId);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.Pricing> getPricingByPackageId(
+		int packageId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _pricingLocalService.getPricingByPackageId(packageId, start, end);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.Pricing> getPricingByPricingId(
+		int pricingId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _pricingLocalService.getPricingByPricingId(pricingId);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.Pricing> getPricingByPricingId(
+		int pricingId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _pricingLocalService.getPricingByPricingId(pricingId, start, end);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.Pricing> getPricingByPrice(
+		int price) throws com.liferay.portal.kernel.exception.SystemException {
+		return _pricingLocalService.getPricingByPrice(price);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.Pricing> getPricingByPrice(
+		int price, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _pricingLocalService.getPricingByPrice(price, start, end);
+	}
+
+	@Override
+	public com.ocms.course.model.Pricing addPricing(long userId, int deposit,
+		int price, java.lang.String currency, java.util.Date effectiveDate,
+		int locationId, java.lang.String locationCode, int courseId,
+		java.lang.String courseCode, int packageId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _pricingLocalService.addPricing(userId, deposit, price,
+			currency, effectiveDate, locationId, locationCode, courseId,
+			courseCode, packageId, serviceContext);
+	}
+
+	@Override
+	public com.ocms.course.model.Pricing updatePricing(long userId,
+		int deposit, int price, java.lang.String currency,
+		java.util.Date effectiveDate, int locationId,
+		java.lang.String locationCode, int courseId,
+		java.lang.String courseCode, int packageId, long pricingId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _pricingLocalService.updatePricing(userId, deposit, price,
+			currency, effectiveDate, locationId, locationCode, courseId,
+			courseCode, packageId, pricingId, serviceContext);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

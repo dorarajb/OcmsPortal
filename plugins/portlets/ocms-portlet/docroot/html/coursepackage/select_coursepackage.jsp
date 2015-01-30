@@ -1,4 +1,4 @@
-<%@include file = "/html/init.jsp" %>
+<%@include file = "/html/init.jsp"  %>
 <%
 long coursePackageId = Long.valueOf(ParamUtil.getLong(renderRequest, "coursePackageId"));
 CoursePackage coursePackage = CoursePackageLocalServiceUtil.getCoursePackage(coursePackageId);
@@ -13,12 +13,14 @@ CoursePackage coursePackage = CoursePackageLocalServiceUtil.getCoursePackage(cou
 
         <aui:fieldset>
         	<aui:input name="coursePackageId" value="<%=coursePackage.getCoursePackageId() %>" type="hidden"/>
-        	<aui:input name="pname" value="<%=coursePackage.getName() %>"/>
-            <aui:input name="pcode" value="<%=coursePackage.getCode() %>"/>
+        	<aui:input name="pname" value="<%=coursePackage.getName() %>" disabled="<%= true %>"/>
+            <aui:input name="pcode" value="<%=coursePackage.getCode() %>" disabled="<%= true %>" />
         </aui:fieldset>
 
-        <aui:button-row>
+        <%-- <aui:button-row>
             <aui:button type="submit" name="update" value="Update"></aui:button>
             <aui:button type="cancel" onClick="<%= viewURL %>"></aui:button>
-        </aui:button-row>
+        </aui:button-row> --%>
 </aui:form>
+<%session.setAttribute("coursePackage", coursePackage);%>
+<%@include file = "/html/coursepackage/listpackagedetails.jsp"  %>

@@ -160,14 +160,14 @@
 		<column name="modifiedDate" type="Date"></column>
         <column name="name" type="String"></column>
         <column name="code" type="String"></column>
+        <finder name="GroupId" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+        </finder>
         <finder name="CoursePackageId" return-type="Collection">
             <finder-column name="coursePackageId"></finder-column>
         </finder>
         <finder name="Name" return-type="Collection">
             <finder-column name="name"></finder-column>
-        </finder>
-        <finder name="GroupId" return-type="Collection">
-            <finder-column name="groupId"></finder-column>
         </finder>
 	</entity>
 	<entity name="Pricing" local-service="true">
@@ -194,6 +194,11 @@
         <column name="price" type="int"></column>
         <column name="currency" type="String"></column>
         <column name="effectiveDate" type="Date"></column>
+        <column name="courseCode" type="String"></column>
+        <column name="locationCode" type="String"></column>
+        <finder name="GroupId" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+        </finder>
         <finder name="PricingId" return-type="Collection">
             <finder-column name="pricingId"></finder-column>
         </finder>
@@ -251,5 +256,8 @@
         <exception>Currency</exception>
         <exception>EffectiveDate</exception>
         <exception>CoursePackageCode</exception>
+        <exception>PricingLocationId</exception>
+        <exception>PricingCourseId</exception>
+        <exception>PricingPackageId</exception>
     </exceptions>
 </service-builder>

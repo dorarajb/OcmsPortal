@@ -288,6 +288,36 @@ public interface PricingModel extends BaseModel<Pricing>, GroupedModel {
 	 */
 	public void setEffectiveDate(Date effectiveDate);
 
+	/**
+	 * Returns the course code of this pricing.
+	 *
+	 * @return the course code of this pricing
+	 */
+	@AutoEscape
+	public String getCourseCode();
+
+	/**
+	 * Sets the course code of this pricing.
+	 *
+	 * @param courseCode the course code of this pricing
+	 */
+	public void setCourseCode(String courseCode);
+
+	/**
+	 * Returns the location code of this pricing.
+	 *
+	 * @return the location code of this pricing
+	 */
+	@AutoEscape
+	public String getLocationCode();
+
+	/**
+	 * Sets the location code of this pricing.
+	 *
+	 * @param locationCode the location code of this pricing
+	 */
+	public void setLocationCode(String locationCode);
+
 	@Override
 	public boolean isNew();
 

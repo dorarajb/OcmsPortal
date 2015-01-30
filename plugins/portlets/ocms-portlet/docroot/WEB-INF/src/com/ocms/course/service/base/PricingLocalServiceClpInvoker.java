@@ -107,6 +107,62 @@ public class PricingLocalServiceClpInvoker {
 		_methodName65 = "setBeanIdentifier";
 
 		_methodParameterTypes65 = new String[] { "java.lang.String" };
+
+		_methodName70 = "getPricingByGroupId";
+
+		_methodParameterTypes70 = new String[] { "long" };
+
+		_methodName71 = "getPricingByGroupId";
+
+		_methodParameterTypes71 = new String[] { "long", "int", "int" };
+
+		_methodName72 = "getPricingByCourseId";
+
+		_methodParameterTypes72 = new String[] { "int" };
+
+		_methodName73 = "getPricingByCourseId";
+
+		_methodParameterTypes73 = new String[] { "int", "int", "int" };
+
+		_methodName74 = "getPricingByPackageId";
+
+		_methodParameterTypes74 = new String[] { "int" };
+
+		_methodName75 = "getPricingByPackageId";
+
+		_methodParameterTypes75 = new String[] { "int", "int", "int" };
+
+		_methodName76 = "getPricingByPricingId";
+
+		_methodParameterTypes76 = new String[] { "int" };
+
+		_methodName77 = "getPricingByPricingId";
+
+		_methodParameterTypes77 = new String[] { "int", "int", "int" };
+
+		_methodName78 = "getPricingByPrice";
+
+		_methodParameterTypes78 = new String[] { "int" };
+
+		_methodName79 = "getPricingByPrice";
+
+		_methodParameterTypes79 = new String[] { "int", "int", "int" };
+
+		_methodName81 = "addPricing";
+
+		_methodParameterTypes81 = new String[] {
+				"long", "int", "int", "java.lang.String", "java.util.Date",
+				"int", "java.lang.String", "int", "java.lang.String", "int",
+				"com.liferay.portal.service.ServiceContext"
+			};
+
+		_methodName82 = "updatePricing";
+
+		_methodParameterTypes82 = new String[] {
+				"long", "int", "int", "java.lang.String", "java.util.Date",
+				"int", "java.lang.String", "int", "java.lang.String", "int",
+				"long", "com.liferay.portal.service.ServiceContext"
+			};
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -210,6 +266,95 @@ public class PricingLocalServiceClpInvoker {
 			return null;
 		}
 
+		if (_methodName70.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes70, parameterTypes)) {
+			return PricingLocalServiceUtil.getPricingByGroupId(((Long)arguments[0]).longValue());
+		}
+
+		if (_methodName71.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes71, parameterTypes)) {
+			return PricingLocalServiceUtil.getPricingByGroupId(((Long)arguments[0]).longValue(),
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue());
+		}
+
+		if (_methodName72.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes72, parameterTypes)) {
+			return PricingLocalServiceUtil.getPricingByCourseId(((Integer)arguments[0]).intValue());
+		}
+
+		if (_methodName73.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes73, parameterTypes)) {
+			return PricingLocalServiceUtil.getPricingByCourseId(((Integer)arguments[0]).intValue(),
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue());
+		}
+
+		if (_methodName74.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes74, parameterTypes)) {
+			return PricingLocalServiceUtil.getPricingByPackageId(((Integer)arguments[0]).intValue());
+		}
+
+		if (_methodName75.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes75, parameterTypes)) {
+			return PricingLocalServiceUtil.getPricingByPackageId(((Integer)arguments[0]).intValue(),
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue());
+		}
+
+		if (_methodName76.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes76, parameterTypes)) {
+			return PricingLocalServiceUtil.getPricingByPricingId(((Integer)arguments[0]).intValue());
+		}
+
+		if (_methodName77.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes77, parameterTypes)) {
+			return PricingLocalServiceUtil.getPricingByPricingId(((Integer)arguments[0]).intValue(),
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue());
+		}
+
+		if (_methodName78.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes78, parameterTypes)) {
+			return PricingLocalServiceUtil.getPricingByPrice(((Integer)arguments[0]).intValue());
+		}
+
+		if (_methodName79.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes79, parameterTypes)) {
+			return PricingLocalServiceUtil.getPricingByPrice(((Integer)arguments[0]).intValue(),
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue());
+		}
+
+		if (_methodName81.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes81, parameterTypes)) {
+			return PricingLocalServiceUtil.addPricing(((Long)arguments[0]).longValue(),
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue(),
+				(java.lang.String)arguments[3], (java.util.Date)arguments[4],
+				((Integer)arguments[5]).intValue(),
+				(java.lang.String)arguments[6],
+				((Integer)arguments[7]).intValue(),
+				(java.lang.String)arguments[8],
+				((Integer)arguments[9]).intValue(),
+				(com.liferay.portal.service.ServiceContext)arguments[10]);
+		}
+
+		if (_methodName82.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes82, parameterTypes)) {
+			return PricingLocalServiceUtil.updatePricing(((Long)arguments[0]).longValue(),
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue(),
+				(java.lang.String)arguments[3], (java.util.Date)arguments[4],
+				((Integer)arguments[5]).intValue(),
+				(java.lang.String)arguments[6],
+				((Integer)arguments[7]).intValue(),
+				(java.lang.String)arguments[8],
+				((Integer)arguments[9]).intValue(),
+				((Long)arguments[10]).longValue(),
+				(com.liferay.portal.service.ServiceContext)arguments[11]);
+		}
+
 		throw new UnsupportedOperationException();
 	}
 
@@ -249,4 +394,28 @@ public class PricingLocalServiceClpInvoker {
 	private String[] _methodParameterTypes64;
 	private String _methodName65;
 	private String[] _methodParameterTypes65;
+	private String _methodName70;
+	private String[] _methodParameterTypes70;
+	private String _methodName71;
+	private String[] _methodParameterTypes71;
+	private String _methodName72;
+	private String[] _methodParameterTypes72;
+	private String _methodName73;
+	private String[] _methodParameterTypes73;
+	private String _methodName74;
+	private String[] _methodParameterTypes74;
+	private String _methodName75;
+	private String[] _methodParameterTypes75;
+	private String _methodName76;
+	private String[] _methodParameterTypes76;
+	private String _methodName77;
+	private String[] _methodParameterTypes77;
+	private String _methodName78;
+	private String[] _methodParameterTypes78;
+	private String _methodName79;
+	private String[] _methodParameterTypes79;
+	private String _methodName81;
+	private String[] _methodParameterTypes81;
+	private String _methodName82;
+	private String[] _methodParameterTypes82;
 }

@@ -179,6 +179,8 @@
 			<basic name="effectiveDate">
 				<temporal>TIMESTAMP</temporal>
 			</basic>
+			<basic name="courseCode" />
+			<basic name="locationCode" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />

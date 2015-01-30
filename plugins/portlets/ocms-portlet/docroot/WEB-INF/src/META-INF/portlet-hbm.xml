@@ -123,5 +123,7 @@
 		<property name="price" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
 		<property name="currency" type="com.liferay.portal.dao.orm.hibernate.StringType" column="currency_" />
 		<property name="effectiveDate" type="org.hibernate.type.TimestampType" />
+		<property name="courseCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="locationCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
 </hibernate-mapping>

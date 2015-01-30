@@ -88,6 +88,8 @@ public class PricingClp extends BaseModelImpl<Pricing> implements Pricing {
 		attributes.put("price", getPrice());
 		attributes.put("currency", getCurrency());
 		attributes.put("effectiveDate", getEffectiveDate());
+		attributes.put("courseCode", getCourseCode());
+		attributes.put("locationCode", getLocationCode());
 
 		return attributes;
 	}
@@ -176,6 +178,18 @@ public class PricingClp extends BaseModelImpl<Pricing> implements Pricing {
 
 		if (effectiveDate != null) {
 			setEffectiveDate(effectiveDate);
+		}
+
+		String courseCode = (String)attributes.get("courseCode");
+
+		if (courseCode != null) {
+			setCourseCode(courseCode);
+		}
+
+		String locationCode = (String)attributes.get("locationCode");
+
+		if (locationCode != null) {
+			setLocationCode(locationCode);
 		}
 	}
 
@@ -511,6 +525,52 @@ public class PricingClp extends BaseModelImpl<Pricing> implements Pricing {
 		}
 	}
 
+	@Override
+	public String getCourseCode() {
+		return _courseCode;
+	}
+
+	@Override
+	public void setCourseCode(String courseCode) {
+		_courseCode = courseCode;
+
+		if (_pricingRemoteModel != null) {
+			try {
+				Class<?> clazz = _pricingRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setCourseCode", String.class);
+
+				method.invoke(_pricingRemoteModel, courseCode);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public String getLocationCode() {
+		return _locationCode;
+	}
+
+	@Override
+	public void setLocationCode(String locationCode) {
+		_locationCode = locationCode;
+
+		if (_pricingRemoteModel != null) {
+			try {
+				Class<?> clazz = _pricingRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setLocationCode", String.class);
+
+				method.invoke(_pricingRemoteModel, locationCode);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
 	public BaseModel<?> getPricingRemoteModel() {
 		return _pricingRemoteModel;
 	}
@@ -594,6 +654,8 @@ public class PricingClp extends BaseModelImpl<Pricing> implements Pricing {
 		clone.setPrice(getPrice());
 		clone.setCurrency(getCurrency());
 		clone.setEffectiveDate(getEffectiveDate());
+		clone.setCourseCode(getCourseCode());
+		clone.setLocationCode(getLocationCode());
 
 		return clone;
 	}
@@ -642,7 +704,7 @@ public class PricingClp extends BaseModelImpl<Pricing> implements Pricing {
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(29);
+		StringBundler sb = new StringBundler(33);
 
 		sb.append("{pricingId=");
 		sb.append(getPricingId());
@@ -672,6 +734,10 @@ public class PricingClp extends BaseModelImpl<Pricing> implements Pricing {
 		sb.append(getCurrency());
 		sb.append(", effectiveDate=");
 		sb.append(getEffectiveDate());
+		sb.append(", courseCode=");
+		sb.append(getCourseCode());
+		sb.append(", locationCode=");
+		sb.append(getLocationCode());
 		sb.append("}");
 
 		return sb.toString();
@@ -679,7 +745,7 @@ public class PricingClp extends BaseModelImpl<Pricing> implements Pricing {
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(46);
+		StringBundler sb = new StringBundler(52);
 
 		sb.append("<model><model-name>");
 		sb.append("com.ocms.course.model.Pricing");
@@ -741,6 +807,14 @@ public class PricingClp extends BaseModelImpl<Pricing> implements Pricing {
 			"<column><column-name>effectiveDate</column-name><column-value><![CDATA[");
 		sb.append(getEffectiveDate());
 		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>courseCode</column-name><column-value><![CDATA[");
+		sb.append(getCourseCode());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>locationCode</column-name><column-value><![CDATA[");
+		sb.append(getLocationCode());
+		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -762,5 +836,7 @@ public class PricingClp extends BaseModelImpl<Pricing> implements Pricing {
 	private int _price;
 	private String _currency;
 	private Date _effectiveDate;
+	private String _courseCode;
+	private String _locationCode;
 	private BaseModel<?> _pricingRemoteModel;
 }

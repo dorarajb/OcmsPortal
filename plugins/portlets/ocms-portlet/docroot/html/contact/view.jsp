@@ -1,5 +1,4 @@
 <%@include file="/html/init.jsp"%>
-
 <portlet:renderURL var="viewPageURL">
     <portlet:param name="mvcPath" value="/html/contact/view.jsp" />
 </portlet:renderURL>

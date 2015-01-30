@@ -3,6 +3,7 @@
 <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-portlet" %>
 <%@ taglib uri="http://liferay.com/tld/theme" prefix="theme" %>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <%@ page import="java.util.List" %>
 <%@page import="javax.portlet.PortletURL"%>
@@ -20,6 +21,9 @@
 <%@ page import="com.ocms.course.service.ContactLocalServiceUtil" %>
 <%@ page import="com.ocms.course.model.CoursePackage" %>
 <%@ page import="com.ocms.course.service.CoursePackageLocalServiceUtil" %>
+<%@ page import="com.ocms.course.model.Pricing" %>
+<%@ page import="com.ocms.course.service.PricingLocalServiceUtil" %>
+
 
 <portlet:defineObjects />
 <theme:defineObjects />

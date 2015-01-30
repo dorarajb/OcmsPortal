@@ -14,6 +14,27 @@
 
 package com.ocms.course.service.impl;
 
+import java.util.Date;
+import java.util.List;
+
+import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.Validator;
+import com.liferay.portal.model.User;
+import com.liferay.portal.service.ServiceContext;
+import com.ocms.course.CourseCodeException;
+import com.ocms.course.CourseDurationException;
+import com.ocms.course.CourseNameException;
+import com.ocms.course.CurrencyException;
+import com.ocms.course.DepositException;
+import com.ocms.course.EffectiveDateException;
+import com.ocms.course.NoSuchPricingException;
+import com.ocms.course.PriceException;
+import com.ocms.course.PricingCourseIdException;
+import com.ocms.course.PricingLocationIdException;
+import com.ocms.course.PricingPackageIdException;
+import com.ocms.course.model.Course;
+import com.ocms.course.model.Pricing;
 import com.ocms.course.service.base.PricingLocalServiceBaseImpl;
 
 /**
@@ -26,7 +47,7 @@ import com.ocms.course.service.base.PricingLocalServiceBaseImpl;
  * This is a local service. Methods of this service will not have security checks based on the propagated JAAS credentials because this service can only be accessed from within the same VM.
  * </p>
  *
- * @author doraraj
+ * @author dorarajb
  * @see com.ocms.course.service.base.PricingLocalServiceBaseImpl
  * @see com.ocms.course.service.PricingLocalServiceUtil
  */
@@ -36,4 +57,135 @@ public class PricingLocalServiceImpl extends PricingLocalServiceBaseImpl {
 	 *
 	 * Never reference this interface directly. Always use {@link com.ocms.course.service.PricingLocalServiceUtil} to access the pricing local service.
 	 */
+	public List<Pricing> getPricingByGroupId(long groupId) throws SystemException {
+		return (List<Pricing>) pricingPersistence.findByGroupId(groupId);
+	}
+	
+	public List<Pricing> getPricingByGroupId(long groupId, int start, int end) throws SystemException {
+		return pricingPersistence.findByGroupId(groupId, start, end);
+	}
+	
+	public List<Pricing> getPricingByCourseId(int courseId) throws SystemException {
+		return pricingPersistence.findByCourseId(courseId);
+	}
+	
+	public List<Pricing> getPricingByCourseId(int courseId, int start, int end) throws SystemException {
+		return pricingPersistence.findByCourseId(courseId, start, end);
+	}
+	
+	public List<Pricing> getPricingByPackageId(int packageId) throws SystemException {
+		return pricingPersistence.findByPackageId(packageId);
+	}
+	
+	public List<Pricing> getPricingByPackageId(int packageId, int start, int end) throws SystemException {
+		return pricingPersistence.findByPackageId(packageId, start, end);
+	}
+	
+	public List<Pricing> getPricingByPricingId(int pricingId) throws SystemException {
+		return pricingPersistence.findByPricingId(pricingId);
+	}
+	
+	public List<Pricing> getPricingByPricingId(int pricingId, int start, int end) throws SystemException {
+		return pricingPersistence.findByPricingId(pricingId, start, end);
+	}
+	
+	public List<Pricing> getPricingByPrice(int price) throws SystemException {
+		return pricingPersistence.findByPrice(price);
+	}
+	
+	public List<Pricing> getPricingByPrice(int price, int start, int end) throws SystemException {
+		return pricingPersistence.findByPrice(price, start, end);
+	}
+	protected void validate(int deposit, int price, String currency, Date effectiveDate, int pricingLocationId, int pricingCourseId, int pricingPackageId) throws PortalException {
+		if (Validator.isNull(deposit)) {
+			throw new DepositException();
+		}
+		if (Validator.isNull(price)) {
+			throw new PriceException();
+		}
+		if (Validator.isNull(currency)) {
+			throw new CurrencyException();
+		}
+		if (Validator.isNull(effectiveDate)) {
+			throw new EffectiveDateException();
+		}
+		if (Validator.isNull(pricingLocationId)) {
+			throw new PricingLocationIdException();
+		}
+		if (Validator.isNull(pricingCourseId)) {
+			throw new PricingCourseIdException();
+		}
+		if (Validator.isNull(pricingPackageId)) {
+			throw new PricingPackageIdException();
+		}
+	}
+	
+	public Pricing addPricing(long userId,int deposit, int price, String currency, Date effectiveDate, int locationId,String locationCode, int courseId, String courseCode,  int packageId, ServiceContext serviceContext) throws SystemException, PortalException {
+		long groupId = serviceContext.getScopeGroupId();
+
+		User user = userPersistence.findByPrimaryKey(userId);
+
+		Date now = new Date();
+
+		validate(deposit, price, currency, effectiveDate, locationId, courseId, packageId);
+
+		long pricingId = counterLocalService.increment();
+
+		Pricing pricing = pricingPersistence.create(pricingId);
+
+		pricing.setUserId(userId);
+		pricing.setGroupId(groupId);
+		pricing.setCompanyId(user.getCompanyId());
+		pricing.setUserName(user.getFullName());
+		pricing.setCreateDate(serviceContext.getCreateDate(now));
+		pricing.setModifiedDate(serviceContext.getModifiedDate(now));
+		pricing.setDeposit(deposit);
+		pricing.setPrice(price);
+		pricing.setCurrency(currency);
+		pricing.setEffectiveDate(effectiveDate);
+		pricing.setLocationId(locationId);
+		pricing.setLocationCode(locationCode);
+		pricing.setCourseId(courseId);
+		pricing.setCourseCode(courseCode);
+		pricing.setPackageId(packageId);
+		pricing.setExpandoBridgeAttributes(serviceContext);
+
+		pricingPersistence.update(pricing);
+
+		return pricing;
+	}
+	
+	public Pricing updatePricing(long userId,int deposit, int price, String currency, Date effectiveDate, int locationId, String locationCode, int courseId, String courseCode, int packageId,long pricingId, ServiceContext serviceContext) throws SystemException, PortalException {
+
+		long groupId = serviceContext.getScopeGroupId();
+		User user = userPersistence.findByPrimaryKey(userId);
+		Date now = new Date();
+
+		validate(deposit, price, currency, effectiveDate, locationId, courseId, packageId);
+
+		List<Pricing> priceList = pricingPersistence.findByPricingId(pricingId);
+		Pricing pricing = priceList.get(0);
+		
+		pricing.setUserId(userId);
+		pricing.setGroupId(groupId);
+		pricing.setCompanyId(user.getCompanyId());
+		pricing.setUserName(user.getFullName());
+		pricing.setCreateDate(serviceContext.getCreateDate(now));
+		pricing.setModifiedDate(serviceContext.getModifiedDate(now));
+		pricing.setDeposit(deposit);
+		pricing.setPrice(price);
+		pricing.setCurrency(currency);
+		pricing.setEffectiveDate(effectiveDate);
+		pricing.setLocationId(locationId);
+		pricing.setLocationCode(locationCode);
+		pricing.setCourseId(courseId);
+		pricing.setCourseCode(courseCode);
+		pricing.setPackageId(packageId);
+		pricing.setExpandoBridgeAttributes(serviceContext);
+
+
+		pricingPersistence.update(pricing);
+
+		return pricing;
+	}
 }

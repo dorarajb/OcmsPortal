@@ -37,7 +37,7 @@ import java.util.Date;
 public class PricingCacheModel implements CacheModel<Pricing>, Externalizable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(29);
+		StringBundler sb = new StringBundler(33);
 
 		sb.append("{pricingId=");
 		sb.append(pricingId);
@@ -67,6 +67,10 @@ public class PricingCacheModel implements CacheModel<Pricing>, Externalizable {
 		sb.append(currency);
 		sb.append(", effectiveDate=");
 		sb.append(effectiveDate);
+		sb.append(", courseCode=");
+		sb.append(courseCode);
+		sb.append(", locationCode=");
+		sb.append(locationCode);
 		sb.append("}");
 
 		return sb.toString();
@@ -122,6 +126,20 @@ public class PricingCacheModel implements CacheModel<Pricing>, Externalizable {
 			pricingImpl.setEffectiveDate(new Date(effectiveDate));
 		}
 
+		if (courseCode == null) {
+			pricingImpl.setCourseCode(StringPool.BLANK);
+		}
+		else {
+			pricingImpl.setCourseCode(courseCode);
+		}
+
+		if (locationCode == null) {
+			pricingImpl.setLocationCode(StringPool.BLANK);
+		}
+		else {
+			pricingImpl.setLocationCode(locationCode);
+		}
+
 		pricingImpl.resetOriginalValues();
 
 		return pricingImpl;
@@ -143,6 +161,8 @@ public class PricingCacheModel implements CacheModel<Pricing>, Externalizable {
 		price = objectInput.readInt();
 		currency = objectInput.readUTF();
 		effectiveDate = objectInput.readLong();
+		courseCode = objectInput.readUTF();
+		locationCode = objectInput.readUTF();
 	}
 
 	@Override
@@ -176,6 +196,20 @@ public class PricingCacheModel implements CacheModel<Pricing>, Externalizable {
 		}
 
 		objectOutput.writeLong(effectiveDate);
+
+		if (courseCode == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(courseCode);
+		}
+
+		if (locationCode == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(locationCode);
+		}
 	}
 
 	public long pricingId;
@@ -192,4 +226,6 @@ public class PricingCacheModel implements CacheModel<Pricing>, Externalizable {
 	public int price;
 	public String currency;
 	public long effectiveDate;
+	public String courseCode;
+	public String locationCode;
 }

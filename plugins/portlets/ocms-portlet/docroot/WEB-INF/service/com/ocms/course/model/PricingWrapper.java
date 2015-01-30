@@ -63,6 +63,8 @@ public class PricingWrapper implements Pricing, ModelWrapper<Pricing> {
 		attributes.put("price", getPrice());
 		attributes.put("currency", getCurrency());
 		attributes.put("effectiveDate", getEffectiveDate());
+		attributes.put("courseCode", getCourseCode());
+		attributes.put("locationCode", getLocationCode());
 
 		return attributes;
 	}
@@ -151,6 +153,18 @@ public class PricingWrapper implements Pricing, ModelWrapper<Pricing> {
 
 		if (effectiveDate != null) {
 			setEffectiveDate(effectiveDate);
+		}
+
+		String courseCode = (String)attributes.get("courseCode");
+
+		if (courseCode != null) {
+			setCourseCode(courseCode);
+		}
+
+		String locationCode = (String)attributes.get("locationCode");
+
+		if (locationCode != null) {
+			setLocationCode(locationCode);
 		}
 	}
 
@@ -474,6 +488,46 @@ public class PricingWrapper implements Pricing, ModelWrapper<Pricing> {
 	@Override
 	public void setEffectiveDate(java.util.Date effectiveDate) {
 		_pricing.setEffectiveDate(effectiveDate);
+	}
+
+	/**
+	* Returns the course code of this pricing.
+	*
+	* @return the course code of this pricing
+	*/
+	@Override
+	public java.lang.String getCourseCode() {
+		return _pricing.getCourseCode();
+	}
+
+	/**
+	* Sets the course code of this pricing.
+	*
+	* @param courseCode the course code of this pricing
+	*/
+	@Override
+	public void setCourseCode(java.lang.String courseCode) {
+		_pricing.setCourseCode(courseCode);
+	}
+
+	/**
+	* Returns the location code of this pricing.
+	*
+	* @return the location code of this pricing
+	*/
+	@Override
+	public java.lang.String getLocationCode() {
+		return _pricing.getLocationCode();
+	}
+
+	/**
+	* Sets the location code of this pricing.
+	*
+	* @param locationCode the location code of this pricing
+	*/
+	@Override
+	public void setLocationCode(java.lang.String locationCode) {
+		_pricing.setLocationCode(locationCode);
 	}
 
 	@Override

@@ -16,8 +16,7 @@
 
 <liferay-ui:search-container>
     <liferay-ui:search-container-results
-        results="<%=LocationLocalServiceUtil.getLocationByGroupId(scopeGroupId,
-                        searchContainer.getStart(),
+        results="<%=LocationLocalServiceUtil.getLocationByGroupId(scopeGroupId, searchContainer.getStart(),
                         searchContainer.getEnd())%>"
         total="<%=LocationLocalServiceUtil.getLocationsCount()%>" />
 

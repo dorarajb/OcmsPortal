@@ -14,7 +14,8 @@
 
 <liferay-ui:search-container>
     <liferay-ui:search-container-results
-        results="<%=CoursePackageLocalServiceUtil.getCoursesPackagesByGroupId(scopeGroupId, searchContainer.getStart(),searchContainer.getEnd())%>"
+        results="<%=CoursePackageLocalServiceUtil.getCoursesPackagesByGroupId(scopeGroupId,
+        		searchContainer.getStart(),searchContainer.getEnd())%>"
         total="<%=CoursePackageLocalServiceUtil.getCoursePackagesCount()%>" />
 
     <liferay-ui:search-container-row 

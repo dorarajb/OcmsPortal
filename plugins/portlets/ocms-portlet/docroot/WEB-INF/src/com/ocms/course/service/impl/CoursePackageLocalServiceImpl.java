@@ -24,7 +24,6 @@ import com.liferay.portal.model.User;
 import com.liferay.portal.service.ServiceContext;
 import com.ocms.course.CoursePackageCodeException;
 import com.ocms.course.CoursePackageNameException;
-import com.ocms.course.model.Course;
 import com.ocms.course.model.CoursePackage;
 import com.ocms.course.service.base.CoursePackageLocalServiceBaseImpl;
 
