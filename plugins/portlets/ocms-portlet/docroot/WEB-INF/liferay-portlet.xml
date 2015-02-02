@@ -10,33 +10,6 @@
 		<css-class-wrapper>ocms-portlet</css-class-wrapper>
 	</portlet>
 	<portlet>
-		<portlet-name>course</portlet-name>
-		<icon>/icon.png</icon>
-		<header-portlet-css>/css/main.css</header-portlet-css>
-		<footer-portlet-javascript>
-			/js/main.js
-		</footer-portlet-javascript>
-		<css-class-wrapper>course-portlet</css-class-wrapper>
-	</portlet>
-	<portlet>
-		<portlet-name>location</portlet-name>
-		<icon>/icon.png</icon>
-		<header-portlet-css>/css/main.css</header-portlet-css>
-		<footer-portlet-javascript>
-			/js/main.js
-		</footer-portlet-javascript>
-		<css-class-wrapper>location-portlet</css-class-wrapper>
-	</portlet>
-	<portlet>
-		<portlet-name>course-series</portlet-name>
-		<icon>/icon.png</icon>
-		<header-portlet-css>/css/main.css</header-portlet-css>
-		<footer-portlet-javascript>
-			/js/main.js
-		</footer-portlet-javascript>
-		<css-class-wrapper>course-series-portlet</css-class-wrapper>
-	</portlet>
-	<portlet>
 		<portlet-name>contact</portlet-name>
 		<icon>/icon.png</icon>
 		<header-portlet-css>/css/main.css</header-portlet-css>
