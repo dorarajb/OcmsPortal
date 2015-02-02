@@ -311,16 +311,25 @@ public class CourseSeriesLocalServiceUtil {
 		return getService().getCourseSeriesByLocationId(locationId, start, end);
 	}
 
+	public static java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByLocationId(
+		long locationId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .getCourseSeriesByLocationId(locationId, orderByComparator);
+	}
+
 	public static com.ocms.course.model.CourseSeries addCourseSeries(
 		long userId, long courseId, long locationId, java.util.Date startDate,
 		java.util.Date endDate, java.lang.String type, long maxNoStudReg,
-		java.lang.String publishingStatus,
+		java.lang.String publishingStatus, long seriesCount,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		return getService()
 				   .addCourseSeries(userId, courseId, locationId, startDate,
-			endDate, type, maxNoStudReg, publishingStatus, serviceContext);
+			endDate, type, maxNoStudReg, publishingStatus, seriesCount,
+			serviceContext);
 	}
 
 	public static com.ocms.course.model.CourseSeries updateCourse(long userId,

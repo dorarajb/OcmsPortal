@@ -279,10 +279,16 @@ public interface CourseSeriesLocalService extends BaseLocalService,
 		long locationId, int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByLocationId(
+		long locationId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
 	public com.ocms.course.model.CourseSeries addCourseSeries(long userId,
 		long courseId, long locationId, java.util.Date startDate,
 		java.util.Date endDate, java.lang.String type, long maxNoStudReg,
-		java.lang.String publishingStatus,
+		java.lang.String publishingStatus, long seriesCount,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;

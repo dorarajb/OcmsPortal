@@ -74,10 +74,11 @@
 		<property name="courseId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="locationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="type" type="com.liferay.portal.dao.orm.hibernate.StringType" column="type_" />
-		<property name="start_date" type="org.hibernate.type.TimestampType" />
-		<property name="end_date" type="org.hibernate.type.TimestampType" />
-		<property name="publishing_status" type="com.liferay.portal.dao.orm.hibernate.StringType" />
-		<property name="max_no_of_stud_reg" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="startDate" type="org.hibernate.type.TimestampType" />
+		<property name="endDate" type="org.hibernate.type.TimestampType" />
+		<property name="publishingStatus" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="maxNoStudReg" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="seriesCount" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 	</class>
 	<class name="com.ocms.course.model.impl.LocationImpl" table="CM_Location">
 		<cache usage="read-write" />

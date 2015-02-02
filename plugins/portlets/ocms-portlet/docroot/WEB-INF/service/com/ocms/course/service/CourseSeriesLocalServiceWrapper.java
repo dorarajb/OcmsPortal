@@ -333,16 +333,25 @@ public class CourseSeriesLocalServiceWrapper implements CourseSeriesLocalService
 	}
 
 	@Override
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByLocationId(
+		long locationId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _courseSeriesLocalService.getCourseSeriesByLocationId(locationId,
+			orderByComparator);
+	}
+
+	@Override
 	public com.ocms.course.model.CourseSeries addCourseSeries(long userId,
 		long courseId, long locationId, java.util.Date startDate,
 		java.util.Date endDate, java.lang.String type, long maxNoStudReg,
-		java.lang.String publishingStatus,
+		java.lang.String publishingStatus, long seriesCount,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		return _courseSeriesLocalService.addCourseSeries(userId, courseId,
 			locationId, startDate, endDate, type, maxNoStudReg,
-			publishingStatus, serviceContext);
+			publishingStatus, seriesCount, serviceContext);
 	}
 
 	@Override

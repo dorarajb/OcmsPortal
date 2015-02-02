@@ -9,5 +9,6 @@
 		<portlet id="course-series"></portlet>
 		<portlet id="contact"></portlet>
 		<portlet id="course-package"></portlet>
+		<portlet id="course-mgmt"></portlet>
 	</category>
 </display>

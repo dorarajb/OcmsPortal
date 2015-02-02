@@ -55,10 +55,11 @@
 		<field name="courseId" type="long" />
 		<field name="locationId" type="long" />
 		<field name="type" type="String" />
-		<field name="start_date" type="Date" />
-		<field name="end_date" type="Date" />
-		<field name="publishing_status" type="String" />
-		<field name="max_no_of_stud_reg" type="long" />
+		<field name="startDate" type="Date" />
+		<field name="endDate" type="Date" />
+		<field name="publishingStatus" type="String" />
+		<field name="maxNoStudReg" type="long" />
+		<field name="seriesCount" type="long" />
 	</model>
 	<model name="com.ocms.course.model.Location">
 		<field name="locationId" type="long" />

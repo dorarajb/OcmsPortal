@@ -89,10 +89,11 @@
         <column name="courseId" type="long"></column>
         <column name="locationId" type="long"></column>
         <column name="type" type="String"></column>
-        <column name="start_date" type="Date"></column>
-        <column name="end_date" type="Date"></column>
-        <column name="publishing_status" type="String"></column>
-        <column name="max_no_of_stud_reg" type="long"></column>
+        <column name="startDate" type="Date"></column>
+        <column name="endDate" type="Date"></column>
+        <column name="publishingStatus" type="String"></column>
+        <column name="maxNoStudReg" type="long"></column>
+        <column name="seriesCount" type="long"></column>
         <finder name="GroupId" return-type="Collection">
             <finder-column name="groupId"></finder-column>
         </finder>

@@ -104,14 +104,15 @@
 			<basic name="type">
 				<column name="TYPE_" />
 			</basic>
-			<basic name="start_date">
+			<basic name="startDate">
 				<temporal>TIMESTAMP</temporal>
 			</basic>
-			<basic name="end_date">
+			<basic name="endDate">
 				<temporal>TIMESTAMP</temporal>
 			</basic>
-			<basic name="publishing_status" />
-			<basic name="max_no_of_stud_reg" />
+			<basic name="publishingStatus" />
+			<basic name="maxNoStudReg" />
+			<basic name="seriesCount" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />

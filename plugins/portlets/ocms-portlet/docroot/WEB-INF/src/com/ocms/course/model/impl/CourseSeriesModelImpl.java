@@ -76,12 +76,13 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 			{ "courseId", Types.BIGINT },
 			{ "locationId", Types.BIGINT },
 			{ "type_", Types.VARCHAR },
-			{ "start_date", Types.TIMESTAMP },
-			{ "end_date", Types.TIMESTAMP },
-			{ "publishing_status", Types.VARCHAR },
-			{ "max_no_of_stud_reg", Types.BIGINT }
+			{ "startDate", Types.TIMESTAMP },
+			{ "endDate", Types.TIMESTAMP },
+			{ "publishingStatus", Types.VARCHAR },
+			{ "maxNoStudReg", Types.BIGINT },
+			{ "seriesCount", Types.BIGINT }
 		};
-	public static final String TABLE_SQL_CREATE = "create table CM_CourseSeries (courseSeriesId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,courseId LONG,locationId LONG,type_ VARCHAR(75) null,start_date DATE null,end_date DATE null,publishing_status VARCHAR(75) null,max_no_of_stud_reg LONG)";
+	public static final String TABLE_SQL_CREATE = "create table CM_CourseSeries (courseSeriesId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,courseId LONG,locationId LONG,type_ VARCHAR(75) null,startDate DATE null,endDate DATE null,publishingStatus VARCHAR(75) null,maxNoStudReg LONG,seriesCount LONG)";
 	public static final String TABLE_SQL_DROP = "drop table CM_CourseSeries";
 	public static final String ORDER_BY_JPQL = " ORDER BY courseSeries.courseSeriesId ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY CM_CourseSeries.courseSeriesId ASC";
@@ -125,10 +126,11 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 		model.setCourseId(soapModel.getCourseId());
 		model.setLocationId(soapModel.getLocationId());
 		model.setType(soapModel.getType());
-		model.setStart_date(soapModel.getStart_date());
-		model.setEnd_date(soapModel.getEnd_date());
-		model.setPublishing_status(soapModel.getPublishing_status());
-		model.setMax_no_of_stud_reg(soapModel.getMax_no_of_stud_reg());
+		model.setStartDate(soapModel.getStartDate());
+		model.setEndDate(soapModel.getEndDate());
+		model.setPublishingStatus(soapModel.getPublishingStatus());
+		model.setMaxNoStudReg(soapModel.getMaxNoStudReg());
+		model.setSeriesCount(soapModel.getSeriesCount());
 
 		return model;
 	}
@@ -203,10 +205,11 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 		attributes.put("courseId", getCourseId());
 		attributes.put("locationId", getLocationId());
 		attributes.put("type", getType());
-		attributes.put("start_date", getStart_date());
-		attributes.put("end_date", getEnd_date());
-		attributes.put("publishing_status", getPublishing_status());
-		attributes.put("max_no_of_stud_reg", getMax_no_of_stud_reg());
+		attributes.put("startDate", getStartDate());
+		attributes.put("endDate", getEndDate());
+		attributes.put("publishingStatus", getPublishingStatus());
+		attributes.put("maxNoStudReg", getMaxNoStudReg());
+		attributes.put("seriesCount", getSeriesCount());
 
 		return attributes;
 	}
@@ -273,28 +276,34 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 			setType(type);
 		}
 
-		Date start_date = (Date)attributes.get("start_date");
+		Date startDate = (Date)attributes.get("startDate");
 
-		if (start_date != null) {
-			setStart_date(start_date);
+		if (startDate != null) {
+			setStartDate(startDate);
 		}
 
-		Date end_date = (Date)attributes.get("end_date");
+		Date endDate = (Date)attributes.get("endDate");
 
-		if (end_date != null) {
-			setEnd_date(end_date);
+		if (endDate != null) {
+			setEndDate(endDate);
 		}
 
-		String publishing_status = (String)attributes.get("publishing_status");
+		String publishingStatus = (String)attributes.get("publishingStatus");
 
-		if (publishing_status != null) {
-			setPublishing_status(publishing_status);
+		if (publishingStatus != null) {
+			setPublishingStatus(publishingStatus);
 		}
 
-		Long max_no_of_stud_reg = (Long)attributes.get("max_no_of_stud_reg");
+		Long maxNoStudReg = (Long)attributes.get("maxNoStudReg");
 
-		if (max_no_of_stud_reg != null) {
-			setMax_no_of_stud_reg(max_no_of_stud_reg);
+		if (maxNoStudReg != null) {
+			setMaxNoStudReg(maxNoStudReg);
+		}
+
+		Long seriesCount = (Long)attributes.get("seriesCount");
+
+		if (seriesCount != null) {
+			setSeriesCount(seriesCount);
 		}
 	}
 
@@ -478,51 +487,62 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 
 	@JSON
 	@Override
-	public Date getStart_date() {
-		return _start_date;
+	public Date getStartDate() {
+		return _startDate;
 	}
 
 	@Override
-	public void setStart_date(Date start_date) {
-		_start_date = start_date;
-	}
-
-	@JSON
-	@Override
-	public Date getEnd_date() {
-		return _end_date;
-	}
-
-	@Override
-	public void setEnd_date(Date end_date) {
-		_end_date = end_date;
+	public void setStartDate(Date startDate) {
+		_startDate = startDate;
 	}
 
 	@JSON
 	@Override
-	public String getPublishing_status() {
-		if (_publishing_status == null) {
+	public Date getEndDate() {
+		return _endDate;
+	}
+
+	@Override
+	public void setEndDate(Date endDate) {
+		_endDate = endDate;
+	}
+
+	@JSON
+	@Override
+	public String getPublishingStatus() {
+		if (_publishingStatus == null) {
 			return StringPool.BLANK;
 		}
 		else {
-			return _publishing_status;
+			return _publishingStatus;
 		}
 	}
 
 	@Override
-	public void setPublishing_status(String publishing_status) {
-		_publishing_status = publishing_status;
+	public void setPublishingStatus(String publishingStatus) {
+		_publishingStatus = publishingStatus;
 	}
 
 	@JSON
 	@Override
-	public long getMax_no_of_stud_reg() {
-		return _max_no_of_stud_reg;
+	public long getMaxNoStudReg() {
+		return _maxNoStudReg;
 	}
 
 	@Override
-	public void setMax_no_of_stud_reg(long max_no_of_stud_reg) {
-		_max_no_of_stud_reg = max_no_of_stud_reg;
+	public void setMaxNoStudReg(long maxNoStudReg) {
+		_maxNoStudReg = maxNoStudReg;
+	}
+
+	@JSON
+	@Override
+	public long getSeriesCount() {
+		return _seriesCount;
+	}
+
+	@Override
+	public void setSeriesCount(long seriesCount) {
+		_seriesCount = seriesCount;
 	}
 
 	public long getColumnBitmask() {
@@ -566,10 +586,11 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 		courseSeriesImpl.setCourseId(getCourseId());
 		courseSeriesImpl.setLocationId(getLocationId());
 		courseSeriesImpl.setType(getType());
-		courseSeriesImpl.setStart_date(getStart_date());
-		courseSeriesImpl.setEnd_date(getEnd_date());
-		courseSeriesImpl.setPublishing_status(getPublishing_status());
-		courseSeriesImpl.setMax_no_of_stud_reg(getMax_no_of_stud_reg());
+		courseSeriesImpl.setStartDate(getStartDate());
+		courseSeriesImpl.setEndDate(getEndDate());
+		courseSeriesImpl.setPublishingStatus(getPublishingStatus());
+		courseSeriesImpl.setMaxNoStudReg(getMaxNoStudReg());
+		courseSeriesImpl.setSeriesCount(getSeriesCount());
 
 		courseSeriesImpl.resetOriginalValues();
 
@@ -691,40 +712,42 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 			courseSeriesCacheModel.type = null;
 		}
 
-		Date start_date = getStart_date();
+		Date startDate = getStartDate();
 
-		if (start_date != null) {
-			courseSeriesCacheModel.start_date = start_date.getTime();
+		if (startDate != null) {
+			courseSeriesCacheModel.startDate = startDate.getTime();
 		}
 		else {
-			courseSeriesCacheModel.start_date = Long.MIN_VALUE;
+			courseSeriesCacheModel.startDate = Long.MIN_VALUE;
 		}
 
-		Date end_date = getEnd_date();
+		Date endDate = getEndDate();
 
-		if (end_date != null) {
-			courseSeriesCacheModel.end_date = end_date.getTime();
+		if (endDate != null) {
+			courseSeriesCacheModel.endDate = endDate.getTime();
 		}
 		else {
-			courseSeriesCacheModel.end_date = Long.MIN_VALUE;
+			courseSeriesCacheModel.endDate = Long.MIN_VALUE;
 		}
 
-		courseSeriesCacheModel.publishing_status = getPublishing_status();
+		courseSeriesCacheModel.publishingStatus = getPublishingStatus();
 
-		String publishing_status = courseSeriesCacheModel.publishing_status;
+		String publishingStatus = courseSeriesCacheModel.publishingStatus;
 
-		if ((publishing_status != null) && (publishing_status.length() == 0)) {
-			courseSeriesCacheModel.publishing_status = null;
+		if ((publishingStatus != null) && (publishingStatus.length() == 0)) {
+			courseSeriesCacheModel.publishingStatus = null;
 		}
 
-		courseSeriesCacheModel.max_no_of_stud_reg = getMax_no_of_stud_reg();
+		courseSeriesCacheModel.maxNoStudReg = getMaxNoStudReg();
+
+		courseSeriesCacheModel.seriesCount = getSeriesCount();
 
 		return courseSeriesCacheModel;
 	}
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(29);
+		StringBundler sb = new StringBundler(31);
 
 		sb.append("{courseSeriesId=");
 		sb.append(getCourseSeriesId());
@@ -746,14 +769,16 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 		sb.append(getLocationId());
 		sb.append(", type=");
 		sb.append(getType());
-		sb.append(", start_date=");
-		sb.append(getStart_date());
-		sb.append(", end_date=");
-		sb.append(getEnd_date());
-		sb.append(", publishing_status=");
-		sb.append(getPublishing_status());
-		sb.append(", max_no_of_stud_reg=");
-		sb.append(getMax_no_of_stud_reg());
+		sb.append(", startDate=");
+		sb.append(getStartDate());
+		sb.append(", endDate=");
+		sb.append(getEndDate());
+		sb.append(", publishingStatus=");
+		sb.append(getPublishingStatus());
+		sb.append(", maxNoStudReg=");
+		sb.append(getMaxNoStudReg());
+		sb.append(", seriesCount=");
+		sb.append(getSeriesCount());
 		sb.append("}");
 
 		return sb.toString();
@@ -761,7 +786,7 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(46);
+		StringBundler sb = new StringBundler(49);
 
 		sb.append("<model><model-name>");
 		sb.append("com.ocms.course.model.CourseSeries");
@@ -808,20 +833,24 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 		sb.append(getType());
 		sb.append("]]></column-value></column>");
 		sb.append(
-			"<column><column-name>start_date</column-name><column-value><![CDATA[");
-		sb.append(getStart_date());
+			"<column><column-name>startDate</column-name><column-value><![CDATA[");
+		sb.append(getStartDate());
 		sb.append("]]></column-value></column>");
 		sb.append(
-			"<column><column-name>end_date</column-name><column-value><![CDATA[");
-		sb.append(getEnd_date());
+			"<column><column-name>endDate</column-name><column-value><![CDATA[");
+		sb.append(getEndDate());
 		sb.append("]]></column-value></column>");
 		sb.append(
-			"<column><column-name>publishing_status</column-name><column-value><![CDATA[");
-		sb.append(getPublishing_status());
+			"<column><column-name>publishingStatus</column-name><column-value><![CDATA[");
+		sb.append(getPublishingStatus());
 		sb.append("]]></column-value></column>");
 		sb.append(
-			"<column><column-name>max_no_of_stud_reg</column-name><column-value><![CDATA[");
-		sb.append(getMax_no_of_stud_reg());
+			"<column><column-name>maxNoStudReg</column-name><column-value><![CDATA[");
+		sb.append(getMaxNoStudReg());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>seriesCount</column-name><column-value><![CDATA[");
+		sb.append(getSeriesCount());
 		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
@@ -852,10 +881,11 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 	private long _originalLocationId;
 	private boolean _setOriginalLocationId;
 	private String _type;
-	private Date _start_date;
-	private Date _end_date;
-	private String _publishing_status;
-	private long _max_no_of_stud_reg;
+	private Date _startDate;
+	private Date _endDate;
+	private String _publishingStatus;
+	private long _maxNoStudReg;
+	private long _seriesCount;
 	private long _columnBitmask;
 	private CourseSeries _escapedModel;
 }

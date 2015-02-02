@@ -38,7 +38,7 @@ public class CourseSeriesCacheModel implements CacheModel<CourseSeries>,
 	Externalizable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(29);
+		StringBundler sb = new StringBundler(31);
 
 		sb.append("{courseSeriesId=");
 		sb.append(courseSeriesId);
@@ -60,14 +60,16 @@ public class CourseSeriesCacheModel implements CacheModel<CourseSeries>,
 		sb.append(locationId);
 		sb.append(", type=");
 		sb.append(type);
-		sb.append(", start_date=");
-		sb.append(start_date);
-		sb.append(", end_date=");
-		sb.append(end_date);
-		sb.append(", publishing_status=");
-		sb.append(publishing_status);
-		sb.append(", max_no_of_stud_reg=");
-		sb.append(max_no_of_stud_reg);
+		sb.append(", startDate=");
+		sb.append(startDate);
+		sb.append(", endDate=");
+		sb.append(endDate);
+		sb.append(", publishingStatus=");
+		sb.append(publishingStatus);
+		sb.append(", maxNoStudReg=");
+		sb.append(maxNoStudReg);
+		sb.append(", seriesCount=");
+		sb.append(seriesCount);
 		sb.append("}");
 
 		return sb.toString();
@@ -113,28 +115,29 @@ public class CourseSeriesCacheModel implements CacheModel<CourseSeries>,
 			courseSeriesImpl.setType(type);
 		}
 
-		if (start_date == Long.MIN_VALUE) {
-			courseSeriesImpl.setStart_date(null);
+		if (startDate == Long.MIN_VALUE) {
+			courseSeriesImpl.setStartDate(null);
 		}
 		else {
-			courseSeriesImpl.setStart_date(new Date(start_date));
+			courseSeriesImpl.setStartDate(new Date(startDate));
 		}
 
-		if (end_date == Long.MIN_VALUE) {
-			courseSeriesImpl.setEnd_date(null);
+		if (endDate == Long.MIN_VALUE) {
+			courseSeriesImpl.setEndDate(null);
 		}
 		else {
-			courseSeriesImpl.setEnd_date(new Date(end_date));
+			courseSeriesImpl.setEndDate(new Date(endDate));
 		}
 
-		if (publishing_status == null) {
-			courseSeriesImpl.setPublishing_status(StringPool.BLANK);
+		if (publishingStatus == null) {
+			courseSeriesImpl.setPublishingStatus(StringPool.BLANK);
 		}
 		else {
-			courseSeriesImpl.setPublishing_status(publishing_status);
+			courseSeriesImpl.setPublishingStatus(publishingStatus);
 		}
 
-		courseSeriesImpl.setMax_no_of_stud_reg(max_no_of_stud_reg);
+		courseSeriesImpl.setMaxNoStudReg(maxNoStudReg);
+		courseSeriesImpl.setSeriesCount(seriesCount);
 
 		courseSeriesImpl.resetOriginalValues();
 
@@ -153,10 +156,11 @@ public class CourseSeriesCacheModel implements CacheModel<CourseSeries>,
 		courseId = objectInput.readLong();
 		locationId = objectInput.readLong();
 		type = objectInput.readUTF();
-		start_date = objectInput.readLong();
-		end_date = objectInput.readLong();
-		publishing_status = objectInput.readUTF();
-		max_no_of_stud_reg = objectInput.readLong();
+		startDate = objectInput.readLong();
+		endDate = objectInput.readLong();
+		publishingStatus = objectInput.readUTF();
+		maxNoStudReg = objectInput.readLong();
+		seriesCount = objectInput.readLong();
 	}
 
 	@Override
@@ -186,17 +190,18 @@ public class CourseSeriesCacheModel implements CacheModel<CourseSeries>,
 			objectOutput.writeUTF(type);
 		}
 
-		objectOutput.writeLong(start_date);
-		objectOutput.writeLong(end_date);
+		objectOutput.writeLong(startDate);
+		objectOutput.writeLong(endDate);
 
-		if (publishing_status == null) {
+		if (publishingStatus == null) {
 			objectOutput.writeUTF(StringPool.BLANK);
 		}
 		else {
-			objectOutput.writeUTF(publishing_status);
+			objectOutput.writeUTF(publishingStatus);
 		}
 
-		objectOutput.writeLong(max_no_of_stud_reg);
+		objectOutput.writeLong(maxNoStudReg);
+		objectOutput.writeLong(seriesCount);
 	}
 
 	public long courseSeriesId;
@@ -209,8 +214,9 @@ public class CourseSeriesCacheModel implements CacheModel<CourseSeries>,
 	public long courseId;
 	public long locationId;
 	public String type;
-	public long start_date;
-	public long end_date;
-	public String publishing_status;
-	public long max_no_of_stud_reg;
+	public long startDate;
+	public long endDate;
+	public String publishingStatus;
+	public long maxNoStudReg;
+	public long seriesCount;
 }

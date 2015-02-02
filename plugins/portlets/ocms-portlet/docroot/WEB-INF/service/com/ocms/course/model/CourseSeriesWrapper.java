@@ -60,10 +60,11 @@ public class CourseSeriesWrapper implements CourseSeries,
 		attributes.put("courseId", getCourseId());
 		attributes.put("locationId", getLocationId());
 		attributes.put("type", getType());
-		attributes.put("start_date", getStart_date());
-		attributes.put("end_date", getEnd_date());
-		attributes.put("publishing_status", getPublishing_status());
-		attributes.put("max_no_of_stud_reg", getMax_no_of_stud_reg());
+		attributes.put("startDate", getStartDate());
+		attributes.put("endDate", getEndDate());
+		attributes.put("publishingStatus", getPublishingStatus());
+		attributes.put("maxNoStudReg", getMaxNoStudReg());
+		attributes.put("seriesCount", getSeriesCount());
 
 		return attributes;
 	}
@@ -130,28 +131,34 @@ public class CourseSeriesWrapper implements CourseSeries,
 			setType(type);
 		}
 
-		Date start_date = (Date)attributes.get("start_date");
+		Date startDate = (Date)attributes.get("startDate");
 
-		if (start_date != null) {
-			setStart_date(start_date);
+		if (startDate != null) {
+			setStartDate(startDate);
 		}
 
-		Date end_date = (Date)attributes.get("end_date");
+		Date endDate = (Date)attributes.get("endDate");
 
-		if (end_date != null) {
-			setEnd_date(end_date);
+		if (endDate != null) {
+			setEndDate(endDate);
 		}
 
-		String publishing_status = (String)attributes.get("publishing_status");
+		String publishingStatus = (String)attributes.get("publishingStatus");
 
-		if (publishing_status != null) {
-			setPublishing_status(publishing_status);
+		if (publishingStatus != null) {
+			setPublishingStatus(publishingStatus);
 		}
 
-		Long max_no_of_stud_reg = (Long)attributes.get("max_no_of_stud_reg");
+		Long maxNoStudReg = (Long)attributes.get("maxNoStudReg");
 
-		if (max_no_of_stud_reg != null) {
-			setMax_no_of_stud_reg(max_no_of_stud_reg);
+		if (maxNoStudReg != null) {
+			setMaxNoStudReg(maxNoStudReg);
+		}
+
+		Long seriesCount = (Long)attributes.get("seriesCount");
+
+		if (seriesCount != null) {
+			setSeriesCount(seriesCount);
 		}
 	}
 
@@ -398,83 +405,103 @@ public class CourseSeriesWrapper implements CourseSeries,
 	}
 
 	/**
-	* Returns the start_date of this course series.
+	* Returns the start date of this course series.
 	*
-	* @return the start_date of this course series
+	* @return the start date of this course series
 	*/
 	@Override
-	public java.util.Date getStart_date() {
-		return _courseSeries.getStart_date();
+	public java.util.Date getStartDate() {
+		return _courseSeries.getStartDate();
 	}
 
 	/**
-	* Sets the start_date of this course series.
+	* Sets the start date of this course series.
 	*
-	* @param start_date the start_date of this course series
+	* @param startDate the start date of this course series
 	*/
 	@Override
-	public void setStart_date(java.util.Date start_date) {
-		_courseSeries.setStart_date(start_date);
+	public void setStartDate(java.util.Date startDate) {
+		_courseSeries.setStartDate(startDate);
 	}
 
 	/**
-	* Returns the end_date of this course series.
+	* Returns the end date of this course series.
 	*
-	* @return the end_date of this course series
+	* @return the end date of this course series
 	*/
 	@Override
-	public java.util.Date getEnd_date() {
-		return _courseSeries.getEnd_date();
+	public java.util.Date getEndDate() {
+		return _courseSeries.getEndDate();
 	}
 
 	/**
-	* Sets the end_date of this course series.
+	* Sets the end date of this course series.
 	*
-	* @param end_date the end_date of this course series
+	* @param endDate the end date of this course series
 	*/
 	@Override
-	public void setEnd_date(java.util.Date end_date) {
-		_courseSeries.setEnd_date(end_date);
+	public void setEndDate(java.util.Date endDate) {
+		_courseSeries.setEndDate(endDate);
 	}
 
 	/**
-	* Returns the publishing_status of this course series.
+	* Returns the publishing status of this course series.
 	*
-	* @return the publishing_status of this course series
+	* @return the publishing status of this course series
 	*/
 	@Override
-	public java.lang.String getPublishing_status() {
-		return _courseSeries.getPublishing_status();
+	public java.lang.String getPublishingStatus() {
+		return _courseSeries.getPublishingStatus();
 	}
 
 	/**
-	* Sets the publishing_status of this course series.
+	* Sets the publishing status of this course series.
 	*
-	* @param publishing_status the publishing_status of this course series
+	* @param publishingStatus the publishing status of this course series
 	*/
 	@Override
-	public void setPublishing_status(java.lang.String publishing_status) {
-		_courseSeries.setPublishing_status(publishing_status);
+	public void setPublishingStatus(java.lang.String publishingStatus) {
+		_courseSeries.setPublishingStatus(publishingStatus);
 	}
 
 	/**
-	* Returns the max_no_of_stud_reg of this course series.
+	* Returns the max no stud reg of this course series.
 	*
-	* @return the max_no_of_stud_reg of this course series
+	* @return the max no stud reg of this course series
 	*/
 	@Override
-	public long getMax_no_of_stud_reg() {
-		return _courseSeries.getMax_no_of_stud_reg();
+	public long getMaxNoStudReg() {
+		return _courseSeries.getMaxNoStudReg();
 	}
 
 	/**
-	* Sets the max_no_of_stud_reg of this course series.
+	* Sets the max no stud reg of this course series.
 	*
-	* @param max_no_of_stud_reg the max_no_of_stud_reg of this course series
+	* @param maxNoStudReg the max no stud reg of this course series
 	*/
 	@Override
-	public void setMax_no_of_stud_reg(long max_no_of_stud_reg) {
-		_courseSeries.setMax_no_of_stud_reg(max_no_of_stud_reg);
+	public void setMaxNoStudReg(long maxNoStudReg) {
+		_courseSeries.setMaxNoStudReg(maxNoStudReg);
+	}
+
+	/**
+	* Returns the series count of this course series.
+	*
+	* @return the series count of this course series
+	*/
+	@Override
+	public long getSeriesCount() {
+		return _courseSeries.getSeriesCount();
+	}
+
+	/**
+	* Sets the series count of this course series.
+	*
+	* @param seriesCount the series count of this course series
+	*/
+	@Override
+	public void setSeriesCount(long seriesCount) {
+		_courseSeries.setSeriesCount(seriesCount);
 	}
 
 	@Override

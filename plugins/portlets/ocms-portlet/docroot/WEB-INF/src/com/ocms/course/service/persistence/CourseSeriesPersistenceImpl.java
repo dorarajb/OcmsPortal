@@ -2234,10 +2234,11 @@ public class CourseSeriesPersistenceImpl extends BasePersistenceImpl<CourseSerie
 		courseSeriesImpl.setCourseId(courseSeries.getCourseId());
 		courseSeriesImpl.setLocationId(courseSeries.getLocationId());
 		courseSeriesImpl.setType(courseSeries.getType());
-		courseSeriesImpl.setStart_date(courseSeries.getStart_date());
-		courseSeriesImpl.setEnd_date(courseSeries.getEnd_date());
-		courseSeriesImpl.setPublishing_status(courseSeries.getPublishing_status());
-		courseSeriesImpl.setMax_no_of_stud_reg(courseSeries.getMax_no_of_stud_reg());
+		courseSeriesImpl.setStartDate(courseSeries.getStartDate());
+		courseSeriesImpl.setEndDate(courseSeries.getEndDate());
+		courseSeriesImpl.setPublishingStatus(courseSeries.getPublishingStatus());
+		courseSeriesImpl.setMaxNoStudReg(courseSeries.getMaxNoStudReg());
+		courseSeriesImpl.setSeriesCount(courseSeries.getSeriesCount());
 
 		return courseSeriesImpl;
 	}

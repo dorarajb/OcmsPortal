@@ -19,6 +19,7 @@ import java.util.List;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.util.OrderByComparator;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.User;
 import com.liferay.portal.service.ServiceContext;
@@ -27,6 +28,7 @@ import com.ocms.course.CourseSeriesMaxNoStudRegException;
 import com.ocms.course.CourseSeriesStartDateException;
 import com.ocms.course.CourseSeriesTypeException;
 import com.ocms.course.model.CourseSeries;
+import com.ocms.course.service.CourseSeriesLocalServiceUtil;
 import com.ocms.course.service.base.CourseSeriesLocalServiceBaseImpl;
 
 /**
@@ -75,6 +77,10 @@ public class CourseSeriesLocalServiceImpl
 		return courseSeriesPersistence.findByLocationId(locationId, start, end);
 	}
 	
+	public List<CourseSeries> getCourseSeriesByLocationId(long locationId, OrderByComparator orderByComparator) throws SystemException {
+		return courseSeriesPersistence.findByLocationId(locationId, 0, CourseSeriesLocalServiceUtil.getCourseSeriesesCount(), orderByComparator);
+	}
+	
 	protected void validate(Date startDate, Date endDate, String type,
 			long maxNoStudReg) throws PortalException {
 		if (Validator.isNull(startDate)) {
@@ -93,7 +99,7 @@ public class CourseSeriesLocalServiceImpl
 	
 	public CourseSeries addCourseSeries(long userId, long courseId, long locationId,
 			Date startDate, Date endDate, String type, long maxNoStudReg,
-			String publishingStatus, ServiceContext serviceContext)
+			String publishingStatus, long seriesCount, ServiceContext serviceContext)
 			throws SystemException, PortalException {
 		long groupId = serviceContext.getScopeGroupId();
 
@@ -104,7 +110,6 @@ public class CourseSeriesLocalServiceImpl
 		validate(startDate, endDate, type, maxNoStudReg);
 
 		long courseSeriesId = counterLocalService.increment();
-
 		CourseSeries courseSeries = courseSeriesPersistence.create(courseSeriesId);
 
 		courseSeries.setUserId(userId);
@@ -113,13 +118,14 @@ public class CourseSeriesLocalServiceImpl
 		courseSeries.setUserName(user.getFullName());
 		courseSeries.setCreateDate(serviceContext.getCreateDate(now));
 		courseSeries.setModifiedDate(serviceContext.getModifiedDate(now));
-		courseSeries.setStart_date(startDate);
-		courseSeries.setEnd_date(endDate);
+		courseSeries.setStartDate(startDate);
+		courseSeries.setEndDate(endDate);
 		courseSeries.setType(type);
-		courseSeries.setMax_no_of_stud_reg(maxNoStudReg);
-		courseSeries.setPublishing_status(publishingStatus);
+		courseSeries.setMaxNoStudReg(maxNoStudReg);
+		courseSeries.setPublishingStatus(publishingStatus);
 		courseSeries.setCourseId(courseId);
 		courseSeries.setLocationId(locationId);
+		courseSeries.setSeriesCount(seriesCount);
 		courseSeries.setExpandoBridgeAttributes(serviceContext);
 
 		courseSeriesPersistence.update(courseSeries);
@@ -146,11 +152,11 @@ public class CourseSeriesLocalServiceImpl
 		courseSeries.setUserName(user.getFullName());
 		courseSeries.setCreateDate(serviceContext.getCreateDate(now));
 		courseSeries.setModifiedDate(serviceContext.getModifiedDate(now));
-		courseSeries.setStart_date(startDate);
-		courseSeries.setEnd_date(endDate);
+		courseSeries.setStartDate(startDate);
+		courseSeries.setEndDate(endDate);
 		courseSeries.setType(type);
-		courseSeries.setMax_no_of_stud_reg(maxNoStudReg);
-		courseSeries.setPublishing_status(publishingStatus);
+		courseSeries.setMaxNoStudReg(maxNoStudReg);
+		courseSeries.setPublishingStatus(publishingStatus);
 		courseSeries.setCourseId(courseId);
 		courseSeries.setLocationId(locationId);
 		courseSeries.setExpandoBridgeAttributes(serviceContext);

@@ -85,10 +85,11 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 		attributes.put("courseId", getCourseId());
 		attributes.put("locationId", getLocationId());
 		attributes.put("type", getType());
-		attributes.put("start_date", getStart_date());
-		attributes.put("end_date", getEnd_date());
-		attributes.put("publishing_status", getPublishing_status());
-		attributes.put("max_no_of_stud_reg", getMax_no_of_stud_reg());
+		attributes.put("startDate", getStartDate());
+		attributes.put("endDate", getEndDate());
+		attributes.put("publishingStatus", getPublishingStatus());
+		attributes.put("maxNoStudReg", getMaxNoStudReg());
+		attributes.put("seriesCount", getSeriesCount());
 
 		return attributes;
 	}
@@ -155,28 +156,34 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 			setType(type);
 		}
 
-		Date start_date = (Date)attributes.get("start_date");
+		Date startDate = (Date)attributes.get("startDate");
 
-		if (start_date != null) {
-			setStart_date(start_date);
+		if (startDate != null) {
+			setStartDate(startDate);
 		}
 
-		Date end_date = (Date)attributes.get("end_date");
+		Date endDate = (Date)attributes.get("endDate");
 
-		if (end_date != null) {
-			setEnd_date(end_date);
+		if (endDate != null) {
+			setEndDate(endDate);
 		}
 
-		String publishing_status = (String)attributes.get("publishing_status");
+		String publishingStatus = (String)attributes.get("publishingStatus");
 
-		if (publishing_status != null) {
-			setPublishing_status(publishing_status);
+		if (publishingStatus != null) {
+			setPublishingStatus(publishingStatus);
 		}
 
-		Long max_no_of_stud_reg = (Long)attributes.get("max_no_of_stud_reg");
+		Long maxNoStudReg = (Long)attributes.get("maxNoStudReg");
 
-		if (max_no_of_stud_reg != null) {
-			setMax_no_of_stud_reg(max_no_of_stud_reg);
+		if (maxNoStudReg != null) {
+			setMaxNoStudReg(maxNoStudReg);
+		}
+
+		Long seriesCount = (Long)attributes.get("seriesCount");
+
+		if (seriesCount != null) {
+			setSeriesCount(seriesCount);
 		}
 	}
 
@@ -421,21 +428,21 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 	}
 
 	@Override
-	public Date getStart_date() {
-		return _start_date;
+	public Date getStartDate() {
+		return _startDate;
 	}
 
 	@Override
-	public void setStart_date(Date start_date) {
-		_start_date = start_date;
+	public void setStartDate(Date startDate) {
+		_startDate = startDate;
 
 		if (_courseSeriesRemoteModel != null) {
 			try {
 				Class<?> clazz = _courseSeriesRemoteModel.getClass();
 
-				Method method = clazz.getMethod("setStart_date", Date.class);
+				Method method = clazz.getMethod("setStartDate", Date.class);
 
-				method.invoke(_courseSeriesRemoteModel, start_date);
+				method.invoke(_courseSeriesRemoteModel, startDate);
 			}
 			catch (Exception e) {
 				throw new UnsupportedOperationException(e);
@@ -444,21 +451,21 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 	}
 
 	@Override
-	public Date getEnd_date() {
-		return _end_date;
+	public Date getEndDate() {
+		return _endDate;
 	}
 
 	@Override
-	public void setEnd_date(Date end_date) {
-		_end_date = end_date;
+	public void setEndDate(Date endDate) {
+		_endDate = endDate;
 
 		if (_courseSeriesRemoteModel != null) {
 			try {
 				Class<?> clazz = _courseSeriesRemoteModel.getClass();
 
-				Method method = clazz.getMethod("setEnd_date", Date.class);
+				Method method = clazz.getMethod("setEndDate", Date.class);
 
-				method.invoke(_courseSeriesRemoteModel, end_date);
+				method.invoke(_courseSeriesRemoteModel, endDate);
 			}
 			catch (Exception e) {
 				throw new UnsupportedOperationException(e);
@@ -467,22 +474,22 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 	}
 
 	@Override
-	public String getPublishing_status() {
-		return _publishing_status;
+	public String getPublishingStatus() {
+		return _publishingStatus;
 	}
 
 	@Override
-	public void setPublishing_status(String publishing_status) {
-		_publishing_status = publishing_status;
+	public void setPublishingStatus(String publishingStatus) {
+		_publishingStatus = publishingStatus;
 
 		if (_courseSeriesRemoteModel != null) {
 			try {
 				Class<?> clazz = _courseSeriesRemoteModel.getClass();
 
-				Method method = clazz.getMethod("setPublishing_status",
+				Method method = clazz.getMethod("setPublishingStatus",
 						String.class);
 
-				method.invoke(_courseSeriesRemoteModel, publishing_status);
+				method.invoke(_courseSeriesRemoteModel, publishingStatus);
 			}
 			catch (Exception e) {
 				throw new UnsupportedOperationException(e);
@@ -491,22 +498,44 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 	}
 
 	@Override
-	public long getMax_no_of_stud_reg() {
-		return _max_no_of_stud_reg;
+	public long getMaxNoStudReg() {
+		return _maxNoStudReg;
 	}
 
 	@Override
-	public void setMax_no_of_stud_reg(long max_no_of_stud_reg) {
-		_max_no_of_stud_reg = max_no_of_stud_reg;
+	public void setMaxNoStudReg(long maxNoStudReg) {
+		_maxNoStudReg = maxNoStudReg;
 
 		if (_courseSeriesRemoteModel != null) {
 			try {
 				Class<?> clazz = _courseSeriesRemoteModel.getClass();
 
-				Method method = clazz.getMethod("setMax_no_of_stud_reg",
-						long.class);
+				Method method = clazz.getMethod("setMaxNoStudReg", long.class);
 
-				method.invoke(_courseSeriesRemoteModel, max_no_of_stud_reg);
+				method.invoke(_courseSeriesRemoteModel, maxNoStudReg);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public long getSeriesCount() {
+		return _seriesCount;
+	}
+
+	@Override
+	public void setSeriesCount(long seriesCount) {
+		_seriesCount = seriesCount;
+
+		if (_courseSeriesRemoteModel != null) {
+			try {
+				Class<?> clazz = _courseSeriesRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setSeriesCount", long.class);
+
+				method.invoke(_courseSeriesRemoteModel, seriesCount);
 			}
 			catch (Exception e) {
 				throw new UnsupportedOperationException(e);
@@ -593,10 +622,11 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 		clone.setCourseId(getCourseId());
 		clone.setLocationId(getLocationId());
 		clone.setType(getType());
-		clone.setStart_date(getStart_date());
-		clone.setEnd_date(getEnd_date());
-		clone.setPublishing_status(getPublishing_status());
-		clone.setMax_no_of_stud_reg(getMax_no_of_stud_reg());
+		clone.setStartDate(getStartDate());
+		clone.setEndDate(getEndDate());
+		clone.setPublishingStatus(getPublishingStatus());
+		clone.setMaxNoStudReg(getMaxNoStudReg());
+		clone.setSeriesCount(getSeriesCount());
 
 		return clone;
 	}
@@ -645,7 +675,7 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(29);
+		StringBundler sb = new StringBundler(31);
 
 		sb.append("{courseSeriesId=");
 		sb.append(getCourseSeriesId());
@@ -667,14 +697,16 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 		sb.append(getLocationId());
 		sb.append(", type=");
 		sb.append(getType());
-		sb.append(", start_date=");
-		sb.append(getStart_date());
-		sb.append(", end_date=");
-		sb.append(getEnd_date());
-		sb.append(", publishing_status=");
-		sb.append(getPublishing_status());
-		sb.append(", max_no_of_stud_reg=");
-		sb.append(getMax_no_of_stud_reg());
+		sb.append(", startDate=");
+		sb.append(getStartDate());
+		sb.append(", endDate=");
+		sb.append(getEndDate());
+		sb.append(", publishingStatus=");
+		sb.append(getPublishingStatus());
+		sb.append(", maxNoStudReg=");
+		sb.append(getMaxNoStudReg());
+		sb.append(", seriesCount=");
+		sb.append(getSeriesCount());
 		sb.append("}");
 
 		return sb.toString();
@@ -682,7 +714,7 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(46);
+		StringBundler sb = new StringBundler(49);
 
 		sb.append("<model><model-name>");
 		sb.append("com.ocms.course.model.CourseSeries");
@@ -729,20 +761,24 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 		sb.append(getType());
 		sb.append("]]></column-value></column>");
 		sb.append(
-			"<column><column-name>start_date</column-name><column-value><![CDATA[");
-		sb.append(getStart_date());
+			"<column><column-name>startDate</column-name><column-value><![CDATA[");
+		sb.append(getStartDate());
 		sb.append("]]></column-value></column>");
 		sb.append(
-			"<column><column-name>end_date</column-name><column-value><![CDATA[");
-		sb.append(getEnd_date());
+			"<column><column-name>endDate</column-name><column-value><![CDATA[");
+		sb.append(getEndDate());
 		sb.append("]]></column-value></column>");
 		sb.append(
-			"<column><column-name>publishing_status</column-name><column-value><![CDATA[");
-		sb.append(getPublishing_status());
+			"<column><column-name>publishingStatus</column-name><column-value><![CDATA[");
+		sb.append(getPublishingStatus());
 		sb.append("]]></column-value></column>");
 		sb.append(
-			"<column><column-name>max_no_of_stud_reg</column-name><column-value><![CDATA[");
-		sb.append(getMax_no_of_stud_reg());
+			"<column><column-name>maxNoStudReg</column-name><column-value><![CDATA[");
+		sb.append(getMaxNoStudReg());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>seriesCount</column-name><column-value><![CDATA[");
+		sb.append(getSeriesCount());
 		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
@@ -761,9 +797,10 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 	private long _courseId;
 	private long _locationId;
 	private String _type;
-	private Date _start_date;
-	private Date _end_date;
-	private String _publishing_status;
-	private long _max_no_of_stud_reg;
+	private Date _startDate;
+	private Date _endDate;
+	private String _publishingStatus;
+	private long _maxNoStudReg;
+	private long _seriesCount;
 	private BaseModel<?> _courseSeriesRemoteModel;
 }

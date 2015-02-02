@@ -41,10 +41,11 @@ public class CourseSeriesSoap implements Serializable {
 		soapModel.setCourseId(model.getCourseId());
 		soapModel.setLocationId(model.getLocationId());
 		soapModel.setType(model.getType());
-		soapModel.setStart_date(model.getStart_date());
-		soapModel.setEnd_date(model.getEnd_date());
-		soapModel.setPublishing_status(model.getPublishing_status());
-		soapModel.setMax_no_of_stud_reg(model.getMax_no_of_stud_reg());
+		soapModel.setStartDate(model.getStartDate());
+		soapModel.setEndDate(model.getEndDate());
+		soapModel.setPublishingStatus(model.getPublishingStatus());
+		soapModel.setMaxNoStudReg(model.getMaxNoStudReg());
+		soapModel.setSeriesCount(model.getSeriesCount());
 
 		return soapModel;
 	}
@@ -177,36 +178,44 @@ public class CourseSeriesSoap implements Serializable {
 		_type = type;
 	}
 
-	public Date getStart_date() {
-		return _start_date;
+	public Date getStartDate() {
+		return _startDate;
 	}
 
-	public void setStart_date(Date start_date) {
-		_start_date = start_date;
+	public void setStartDate(Date startDate) {
+		_startDate = startDate;
 	}
 
-	public Date getEnd_date() {
-		return _end_date;
+	public Date getEndDate() {
+		return _endDate;
 	}
 
-	public void setEnd_date(Date end_date) {
-		_end_date = end_date;
+	public void setEndDate(Date endDate) {
+		_endDate = endDate;
 	}
 
-	public String getPublishing_status() {
-		return _publishing_status;
+	public String getPublishingStatus() {
+		return _publishingStatus;
 	}
 
-	public void setPublishing_status(String publishing_status) {
-		_publishing_status = publishing_status;
+	public void setPublishingStatus(String publishingStatus) {
+		_publishingStatus = publishingStatus;
 	}
 
-	public long getMax_no_of_stud_reg() {
-		return _max_no_of_stud_reg;
+	public long getMaxNoStudReg() {
+		return _maxNoStudReg;
 	}
 
-	public void setMax_no_of_stud_reg(long max_no_of_stud_reg) {
-		_max_no_of_stud_reg = max_no_of_stud_reg;
+	public void setMaxNoStudReg(long maxNoStudReg) {
+		_maxNoStudReg = maxNoStudReg;
+	}
+
+	public long getSeriesCount() {
+		return _seriesCount;
+	}
+
+	public void setSeriesCount(long seriesCount) {
+		_seriesCount = seriesCount;
 	}
 
 	private long _courseSeriesId;
@@ -219,8 +228,9 @@ public class CourseSeriesSoap implements Serializable {
 	private long _courseId;
 	private long _locationId;
 	private String _type;
-	private Date _start_date;
-	private Date _end_date;
-	private String _publishing_status;
-	private long _max_no_of_stud_reg;
+	private Date _startDate;
+	private Date _endDate;
+	private String _publishingStatus;
+	private long _maxNoStudReg;
+	private long _seriesCount;
 }

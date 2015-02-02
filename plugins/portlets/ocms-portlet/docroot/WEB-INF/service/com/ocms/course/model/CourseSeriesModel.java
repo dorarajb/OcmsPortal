@@ -233,61 +233,75 @@ public interface CourseSeriesModel extends BaseModel<CourseSeries>, GroupedModel
 	public void setType(String type);
 
 	/**
-	 * Returns the start_date of this course series.
+	 * Returns the start date of this course series.
 	 *
-	 * @return the start_date of this course series
+	 * @return the start date of this course series
 	 */
-	public Date getStart_date();
+	public Date getStartDate();
 
 	/**
-	 * Sets the start_date of this course series.
+	 * Sets the start date of this course series.
 	 *
-	 * @param start_date the start_date of this course series
+	 * @param startDate the start date of this course series
 	 */
-	public void setStart_date(Date start_date);
+	public void setStartDate(Date startDate);
 
 	/**
-	 * Returns the end_date of this course series.
+	 * Returns the end date of this course series.
 	 *
-	 * @return the end_date of this course series
+	 * @return the end date of this course series
 	 */
-	public Date getEnd_date();
+	public Date getEndDate();
 
 	/**
-	 * Sets the end_date of this course series.
+	 * Sets the end date of this course series.
 	 *
-	 * @param end_date the end_date of this course series
+	 * @param endDate the end date of this course series
 	 */
-	public void setEnd_date(Date end_date);
+	public void setEndDate(Date endDate);
 
 	/**
-	 * Returns the publishing_status of this course series.
+	 * Returns the publishing status of this course series.
 	 *
-	 * @return the publishing_status of this course series
+	 * @return the publishing status of this course series
 	 */
 	@AutoEscape
-	public String getPublishing_status();
+	public String getPublishingStatus();
 
 	/**
-	 * Sets the publishing_status of this course series.
+	 * Sets the publishing status of this course series.
 	 *
-	 * @param publishing_status the publishing_status of this course series
+	 * @param publishingStatus the publishing status of this course series
 	 */
-	public void setPublishing_status(String publishing_status);
+	public void setPublishingStatus(String publishingStatus);
 
 	/**
-	 * Returns the max_no_of_stud_reg of this course series.
+	 * Returns the max no stud reg of this course series.
 	 *
-	 * @return the max_no_of_stud_reg of this course series
+	 * @return the max no stud reg of this course series
 	 */
-	public long getMax_no_of_stud_reg();
+	public long getMaxNoStudReg();
 
 	/**
-	 * Sets the max_no_of_stud_reg of this course series.
+	 * Sets the max no stud reg of this course series.
 	 *
-	 * @param max_no_of_stud_reg the max_no_of_stud_reg of this course series
+	 * @param maxNoStudReg the max no stud reg of this course series
 	 */
-	public void setMax_no_of_stud_reg(long max_no_of_stud_reg);
+	public void setMaxNoStudReg(long maxNoStudReg);
+
+	/**
+	 * Returns the series count of this course series.
+	 *
+	 * @return the series count of this course series
+	 */
+	public long getSeriesCount();
+
+	/**
+	 * Sets the series count of this course series.
+	 *
+	 * @param seriesCount the series count of this course series
+	 */
+	public void setSeriesCount(long seriesCount);
 
 	@Override
 	public boolean isNew();
