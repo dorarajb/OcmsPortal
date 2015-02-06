@@ -18,6 +18,7 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.jsonwebservice.JSONWebService;
 import com.liferay.portal.kernel.transaction.Isolation;
+import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
 import com.liferay.portal.security.ac.AccessControlled;
 import com.liferay.portal.service.BaseService;
@@ -63,4 +64,56 @@ public interface CourseSeriesService extends BaseService, InvokableService {
 	public java.lang.Object invokeMethod(java.lang.String name,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByGroupId(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByGroupId(
+		long groupId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByCourseId(
+		long courseId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByCourseId(
+		long courseId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByLocationId(
+		long locationId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByLocationId(
+		long locationId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByLocationId(
+		long locationId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public com.ocms.course.model.CourseSeries addCourseSeries(long userId,
+		long courseId, long locationId, java.util.Date startDate,
+		java.util.Date endDate, java.lang.String type, long maxNoStudReg,
+		java.lang.String publishingStatus, long seriesCount,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	public com.ocms.course.model.CourseSeries updateCourse(long userId,
+		long courseId, long locationId, java.util.Date startDate,
+		java.util.Date endDate, java.lang.String type, long maxNoStudReg,
+		java.lang.String publishingStatus,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
 }

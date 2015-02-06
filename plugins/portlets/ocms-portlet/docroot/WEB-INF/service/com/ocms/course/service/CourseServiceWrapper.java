@@ -56,6 +56,62 @@ public class CourseServiceWrapper implements CourseService,
 		return _courseService.invokeMethod(name, parameterTypes, arguments);
 	}
 
+	@Override
+	public java.lang.String getCourse()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _courseService.getCourse();
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.Course> getCoursesByGroupId(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _courseService.getCoursesByGroupId(groupId);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.Course> getCoursesByGroupId(
+		long groupId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _courseService.getCoursesByGroupId(groupId, start, end);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.Course> getCoursesByCourseId(
+		long courseId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _courseService.getCoursesByCourseId(courseId);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.Course> getCoursesByCourseId(
+		long courseId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _courseService.getCoursesByCourseId(courseId, start, end);
+	}
+
+	@Override
+	public com.ocms.course.model.Course addCourse(long userId,
+		java.lang.String name, java.lang.String code,
+		java.lang.String duration,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _courseService.addCourse(userId, name, code, duration,
+			serviceContext);
+	}
+
+	@Override
+	public com.ocms.course.model.Course updateCourse(long userId,
+		long courseId, java.lang.String name, java.lang.String code,
+		java.lang.String duration,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _courseService.updateCourse(userId, courseId, name, code,
+			duration, serviceContext);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

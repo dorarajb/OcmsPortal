@@ -63,6 +63,61 @@ public class LocationServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static java.util.List<com.ocms.course.model.Location> getLocationByGroupId(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getLocationByGroupId(groupId);
+	}
+
+	public static java.util.List<com.ocms.course.model.Location> getLocationByGroupId(
+		long groupId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getLocationByGroupId(groupId, start, end);
+	}
+
+	public static java.util.List<com.ocms.course.model.Location> getLocationByLocationId(
+		long locationId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getLocationByLocationId(locationId);
+	}
+
+	public static java.util.List<com.ocms.course.model.Location> getLocationByLocationId(
+		long locationId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getLocationByLocationId(locationId, start, end);
+	}
+
+	public static com.ocms.course.model.Location addLocation(long userId,
+		java.lang.String name, java.lang.String code, java.lang.String notes,
+		java.lang.String addressLine1, java.lang.String addressLine2,
+		java.lang.String city, java.lang.String state, java.lang.String region,
+		java.lang.String country, java.lang.String zip, java.lang.String phone,
+		java.lang.String fax, java.lang.String email,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .addLocation(userId, name, code, notes, addressLine1,
+			addressLine2, city, state, region, country, zip, phone, fax, email,
+			serviceContext);
+	}
+
+	public static com.ocms.course.model.Location updateLocation(long userId,
+		long locationId, java.lang.String name, java.lang.String code,
+		java.lang.String notes, java.lang.String addressLine1,
+		java.lang.String addressLine2, java.lang.String city,
+		java.lang.String state, java.lang.String region,
+		java.lang.String country, java.lang.String zip, java.lang.String phone,
+		java.lang.String fax, java.lang.String email,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .updateLocation(userId, locationId, name, code, notes,
+			addressLine1, addressLine2, city, state, region, country, zip,
+			phone, fax, email, serviceContext);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

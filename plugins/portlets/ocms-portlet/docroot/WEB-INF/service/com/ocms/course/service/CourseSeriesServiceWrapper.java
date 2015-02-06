@@ -56,6 +56,85 @@ public class CourseSeriesServiceWrapper implements CourseSeriesService,
 		return _courseSeriesService.invokeMethod(name, parameterTypes, arguments);
 	}
 
+	@Override
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByGroupId(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _courseSeriesService.getCourseSeriesByGroupId(groupId);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByGroupId(
+		long groupId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _courseSeriesService.getCourseSeriesByGroupId(groupId, start, end);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByCourseId(
+		long courseId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _courseSeriesService.getCourseSeriesByCourseId(courseId);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByCourseId(
+		long courseId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _courseSeriesService.getCourseSeriesByCourseId(courseId, start,
+			end);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByLocationId(
+		long locationId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _courseSeriesService.getCourseSeriesByLocationId(locationId);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByLocationId(
+		long locationId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _courseSeriesService.getCourseSeriesByLocationId(locationId,
+			start, end);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByLocationId(
+		long locationId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _courseSeriesService.getCourseSeriesByLocationId(locationId,
+			orderByComparator);
+	}
+
+	@Override
+	public com.ocms.course.model.CourseSeries addCourseSeries(long userId,
+		long courseId, long locationId, java.util.Date startDate,
+		java.util.Date endDate, java.lang.String type, long maxNoStudReg,
+		java.lang.String publishingStatus, long seriesCount,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _courseSeriesService.addCourseSeries(userId, courseId,
+			locationId, startDate, endDate, type, maxNoStudReg,
+			publishingStatus, seriesCount, serviceContext);
+	}
+
+	@Override
+	public com.ocms.course.model.CourseSeries updateCourse(long userId,
+		long courseId, long locationId, java.util.Date startDate,
+		java.util.Date endDate, java.lang.String type, long maxNoStudReg,
+		java.lang.String publishingStatus,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _courseSeriesService.updateCourse(userId, courseId, locationId,
+			startDate, endDate, type, maxNoStudReg, publishingStatus,
+			serviceContext);
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

@@ -18,6 +18,7 @@ import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.jsonwebservice.JSONWebService;
 import com.liferay.portal.kernel.transaction.Isolation;
+import com.liferay.portal.kernel.transaction.Propagation;
 import com.liferay.portal.kernel.transaction.Transactional;
 import com.liferay.portal.security.ac.AccessControlled;
 import com.liferay.portal.service.BaseService;
@@ -63,4 +64,45 @@ public interface LocationService extends BaseService, InvokableService {
 	public java.lang.Object invokeMethod(java.lang.String name,
 		java.lang.String[] parameterTypes, java.lang.Object[] arguments)
 		throws java.lang.Throwable;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.Location> getLocationByGroupId(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.Location> getLocationByGroupId(
+		long groupId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.Location> getLocationByLocationId(
+		long locationId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.Location> getLocationByLocationId(
+		long locationId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public com.ocms.course.model.Location addLocation(long userId,
+		java.lang.String name, java.lang.String code, java.lang.String notes,
+		java.lang.String addressLine1, java.lang.String addressLine2,
+		java.lang.String city, java.lang.String state, java.lang.String region,
+		java.lang.String country, java.lang.String zip, java.lang.String phone,
+		java.lang.String fax, java.lang.String email,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	public com.ocms.course.model.Location updateLocation(long userId,
+		long locationId, java.lang.String name, java.lang.String code,
+		java.lang.String notes, java.lang.String addressLine1,
+		java.lang.String addressLine2, java.lang.String city,
+		java.lang.String state, java.lang.String region,
+		java.lang.String country, java.lang.String zip, java.lang.String phone,
+		java.lang.String fax, java.lang.String email,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
 }

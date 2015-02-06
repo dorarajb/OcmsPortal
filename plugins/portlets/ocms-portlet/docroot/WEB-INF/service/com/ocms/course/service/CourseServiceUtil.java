@@ -63,6 +63,56 @@ public class CourseServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static java.lang.String getCourse()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getCourse();
+	}
+
+	public static java.util.List<com.ocms.course.model.Course> getCoursesByGroupId(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getCoursesByGroupId(groupId);
+	}
+
+	public static java.util.List<com.ocms.course.model.Course> getCoursesByGroupId(
+		long groupId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getCoursesByGroupId(groupId, start, end);
+	}
+
+	public static java.util.List<com.ocms.course.model.Course> getCoursesByCourseId(
+		long courseId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getCoursesByCourseId(courseId);
+	}
+
+	public static java.util.List<com.ocms.course.model.Course> getCoursesByCourseId(
+		long courseId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getCoursesByCourseId(courseId, start, end);
+	}
+
+	public static com.ocms.course.model.Course addCourse(long userId,
+		java.lang.String name, java.lang.String code,
+		java.lang.String duration,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .addCourse(userId, name, code, duration, serviceContext);
+	}
+
+	public static com.ocms.course.model.Course updateCourse(long userId,
+		long courseId, java.lang.String name, java.lang.String code,
+		java.lang.String duration,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .updateCourse(userId, courseId, name, code, duration,
+			serviceContext);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}
