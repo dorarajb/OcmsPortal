@@ -6,6 +6,7 @@
 	<import class="com.ocms.course.model.Course" />
 	<import class="com.ocms.course.model.CoursePackage" />
 	<import class="com.ocms.course.model.CourseSeries" />
+	<import class="com.ocms.course.model.Event" />
 	<import class="com.ocms.course.model.Location" />
 	<import class="com.ocms.course.model.Pricing" />
 	<class name="com.ocms.course.model.impl.ContactImpl" table="CM_Contact">
@@ -79,6 +80,24 @@
 		<property name="publishingStatus" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="maxNoStudReg" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="seriesCount" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.ocms.course.model.impl.EventImpl" table="CM_Event">
+		<cache usage="read-write" />
+		<id name="eventId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="eventName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="courseCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="locationCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="startDate" type="org.hibernate.type.TimestampType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="endDate" type="org.hibernate.type.TimestampType" />
+		<property name="flag" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
 	</class>
 	<class name="com.ocms.course.model.impl.LocationImpl" table="CM_Location">
 		<cache usage="read-write" />

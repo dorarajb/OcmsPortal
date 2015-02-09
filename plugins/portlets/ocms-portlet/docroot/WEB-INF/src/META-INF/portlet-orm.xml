@@ -119,6 +119,35 @@
 			<transient name="userUuid" />
 		</attributes>
 	</mapped-superclass>
+	<mapped-superclass class="com.ocms.course.model.impl.EventModelImpl">
+		<attributes>
+			<id name="eventId" />
+			<basic name="eventName" />
+			<basic name="courseCode" />
+			<basic name="locationCode" />
+			<basic name="startDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="endDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="flag" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
 	<mapped-superclass class="com.ocms.course.model.impl.LocationModelImpl">
 		<attributes>
 			<id name="locationId" />
@@ -202,6 +231,10 @@
 	</entity>
 	<entity class="com.ocms.course.model.impl.CourseSeriesImpl" name="CourseSeries">
 		<table name="CM_CourseSeries" />
+		<attributes />
+	</entity>
+	<entity class="com.ocms.course.model.impl.EventImpl" name="Event">
+		<table name="CM_Event" />
 		<attributes />
 	</entity>
 	<entity class="com.ocms.course.model.impl.LocationImpl" name="Location">

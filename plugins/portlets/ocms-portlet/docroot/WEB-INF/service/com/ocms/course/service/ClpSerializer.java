@@ -29,6 +29,7 @@ import com.ocms.course.model.ContactClp;
 import com.ocms.course.model.CourseClp;
 import com.ocms.course.model.CoursePackageClp;
 import com.ocms.course.model.CourseSeriesClp;
+import com.ocms.course.model.EventClp;
 import com.ocms.course.model.LocationClp;
 import com.ocms.course.model.PricingClp;
 
@@ -123,6 +124,10 @@ public class ClpSerializer {
 			return translateInputCourseSeries(oldModel);
 		}
 
+		if (oldModelClassName.equals(EventClp.class.getName())) {
+			return translateInputEvent(oldModel);
+		}
+
 		if (oldModelClassName.equals(LocationClp.class.getName())) {
 			return translateInputLocation(oldModel);
 		}
@@ -186,6 +191,16 @@ public class ClpSerializer {
 		return newModel;
 	}
 
+	public static Object translateInputEvent(BaseModel<?> oldModel) {
+		EventClp oldClpModel = (EventClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getEventRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
 	public static Object translateInputLocation(BaseModel<?> oldModel) {
 		LocationClp oldClpModel = (LocationClp)oldModel;
 
@@ -239,6 +254,10 @@ public class ClpSerializer {
 		if (oldModelClassName.equals(
 					"com.ocms.course.model.impl.CourseSeriesImpl")) {
 			return translateOutputCourseSeries(oldModel);
+		}
+
+		if (oldModelClassName.equals("com.ocms.course.model.impl.EventImpl")) {
+			return translateOutputEvent(oldModel);
 		}
 
 		if (oldModelClassName.equals("com.ocms.course.model.impl.LocationImpl")) {
@@ -427,6 +446,30 @@ public class ClpSerializer {
 			return new com.ocms.course.EffectiveDateException();
 		}
 
+		if (className.equals("com.ocms.course.EventCourseCodeException")) {
+			return new com.ocms.course.EventCourseCodeException();
+		}
+
+		if (className.equals("com.ocms.course.EventEndDateException")) {
+			return new com.ocms.course.EventEndDateException();
+		}
+
+		if (className.equals("com.ocms.course.EventIdException")) {
+			return new com.ocms.course.EventIdException();
+		}
+
+		if (className.equals("com.ocms.course.EventLocationCodeException")) {
+			return new com.ocms.course.EventLocationCodeException();
+		}
+
+		if (className.equals("com.ocms.course.EventNameException")) {
+			return new com.ocms.course.EventNameException();
+		}
+
+		if (className.equals("com.ocms.course.EventStartDateException")) {
+			return new com.ocms.course.EventStartDateException();
+		}
+
 		if (className.equals("com.ocms.course.LocationAddressLine1Exception")) {
 			return new com.ocms.course.LocationAddressLine1Exception();
 		}
@@ -511,6 +554,10 @@ public class ClpSerializer {
 			return new com.ocms.course.NoSuchCourseSeriesException();
 		}
 
+		if (className.equals("com.ocms.course.NoSuchEventException")) {
+			return new com.ocms.course.NoSuchEventException();
+		}
+
 		if (className.equals("com.ocms.course.NoSuchLocationException")) {
 			return new com.ocms.course.NoSuchLocationException();
 		}
@@ -558,6 +605,16 @@ public class ClpSerializer {
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
 		newModel.setCourseSeriesRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputEvent(BaseModel<?> oldModel) {
+		EventClp newModel = new EventClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setEventRemoteModel(oldModel);
 
 		return newModel;
 	}

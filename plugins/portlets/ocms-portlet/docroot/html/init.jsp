@@ -23,6 +23,8 @@
 <%@ page import="com.ocms.course.service.CoursePackageLocalServiceUtil" %>
 <%@ page import="com.ocms.course.model.Pricing" %>
 <%@ page import="com.ocms.course.service.PricingLocalServiceUtil" %>
+<%@ page import="com.ocms.course.model.Event" %>
+<%@ page import="com.ocms.course.service.EventLocalServiceUtil" %>
 
 
 <portlet:defineObjects />

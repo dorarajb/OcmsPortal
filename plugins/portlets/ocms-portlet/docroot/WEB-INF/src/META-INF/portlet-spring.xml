@@ -13,6 +13,9 @@
 	<bean id="com.ocms.course.service.CourseSeriesLocalService" class="com.ocms.course.service.impl.CourseSeriesLocalServiceImpl" />
 	<bean id="com.ocms.course.service.CourseSeriesService" class="com.ocms.course.service.impl.CourseSeriesServiceImpl" />
 	<bean id="com.ocms.course.service.persistence.CourseSeriesPersistence" class="com.ocms.course.service.persistence.CourseSeriesPersistenceImpl" parent="basePersistence" />
+	<bean id="com.ocms.course.service.EventLocalService" class="com.ocms.course.service.impl.EventLocalServiceImpl" />
+	<bean id="com.ocms.course.service.EventService" class="com.ocms.course.service.impl.EventServiceImpl" />
+	<bean id="com.ocms.course.service.persistence.EventPersistence" class="com.ocms.course.service.persistence.EventPersistenceImpl" parent="basePersistence" />
 	<bean id="com.ocms.course.service.LocationLocalService" class="com.ocms.course.service.impl.LocationLocalServiceImpl" />
 	<bean id="com.ocms.course.service.LocationService" class="com.ocms.course.service.impl.LocationServiceImpl" />
 	<bean id="com.ocms.course.service.persistence.LocationPersistence" class="com.ocms.course.service.persistence.LocationPersistenceImpl" parent="basePersistence" />

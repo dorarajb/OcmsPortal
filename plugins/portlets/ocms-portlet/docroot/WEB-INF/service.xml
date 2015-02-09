@@ -216,6 +216,39 @@
             <finder-column name="price"></finder-column>
         </finder>
 	</entity>
+	<entity name="Event" local-service="true">
+		<column name="eventId" primary="true" type="long"></column>
+		<column name="eventName" type="String"></column>
+		<column name="courseCode" type="String"></column>
+		<column name="locationCode" type="String"></column>
+		<column name="startDate" type="Date"></column>
+
+
+		<!-- PK fields -->
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="endDate" type="Date"></column>
+        <column name="flag" type="int"></column>
+        <finder name="EventId" return-type="Collection">
+            <finder-column name="eventId"></finder-column>
+        </finder>
+        <finder name="GroupId" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+        </finder>
+        <finder name="Flag" return-type="Collection">
+            <finder-column name="flag"></finder-column>
+        </finder>
+	</entity>
 	<exceptions>
         <exception>CourseCode</exception>
         <exception>CourseName</exception>
@@ -260,5 +293,11 @@
         <exception>PricingLocationId</exception>
         <exception>PricingCourseId</exception>
         <exception>PricingPackageId</exception>
+        <exception>EventId</exception>
+        <exception>EventName</exception>
+        <exception>EventCourseCode</exception>
+        <exception>EventLocationCode</exception>
+        <exception>EventStartDate</exception>
+        <exception>EventEndDate</exception>
     </exceptions>
 </service-builder>

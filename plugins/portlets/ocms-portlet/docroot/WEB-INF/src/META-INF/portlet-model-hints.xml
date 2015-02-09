@@ -61,6 +61,21 @@
 		<field name="maxNoStudReg" type="long" />
 		<field name="seriesCount" type="long" />
 	</model>
+	<model name="com.ocms.course.model.Event">
+		<field name="eventId" type="long" />
+		<field name="eventName" type="String" />
+		<field name="courseCode" type="String" />
+		<field name="locationCode" type="String" />
+		<field name="startDate" type="Date" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="endDate" type="Date" />
+		<field name="flag" type="int" />
+	</model>
 	<model name="com.ocms.course.model.Location">
 		<field name="locationId" type="long" />
 		<field name="groupId" type="long" />

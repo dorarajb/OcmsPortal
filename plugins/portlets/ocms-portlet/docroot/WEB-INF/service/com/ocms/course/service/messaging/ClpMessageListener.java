@@ -26,6 +26,8 @@ import com.ocms.course.service.CoursePackageServiceUtil;
 import com.ocms.course.service.CourseSeriesLocalServiceUtil;
 import com.ocms.course.service.CourseSeriesServiceUtil;
 import com.ocms.course.service.CourseServiceUtil;
+import com.ocms.course.service.EventLocalServiceUtil;
+import com.ocms.course.service.EventServiceUtil;
 import com.ocms.course.service.LocationLocalServiceUtil;
 import com.ocms.course.service.LocationServiceUtil;
 import com.ocms.course.service.PricingLocalServiceUtil;
@@ -58,6 +60,9 @@ public class ClpMessageListener extends BaseMessageListener {
 			CourseSeriesLocalServiceUtil.clearService();
 
 			CourseSeriesServiceUtil.clearService();
+			EventLocalServiceUtil.clearService();
+
+			EventServiceUtil.clearService();
 			LocationLocalServiceUtil.clearService();
 
 			LocationServiceUtil.clearService();
