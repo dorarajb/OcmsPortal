@@ -37,6 +37,7 @@ import com.ocms.course.service.persistence.ContactPersistence;
 import com.ocms.course.service.persistence.CoursePackagePersistence;
 import com.ocms.course.service.persistence.CoursePersistence;
 import com.ocms.course.service.persistence.CourseSeriesPersistence;
+import com.ocms.course.service.persistence.EventPersistence;
 import com.ocms.course.service.persistence.LocationPersistence;
 import com.ocms.course.service.persistence.PricingPersistence;
 
@@ -512,6 +513,62 @@ public abstract class CourseSeriesLocalServiceBaseImpl
 	}
 
 	/**
+	 * Returns the event local service.
+	 *
+	 * @return the event local service
+	 */
+	public com.ocms.course.service.EventLocalService getEventLocalService() {
+		return eventLocalService;
+	}
+
+	/**
+	 * Sets the event local service.
+	 *
+	 * @param eventLocalService the event local service
+	 */
+	public void setEventLocalService(
+		com.ocms.course.service.EventLocalService eventLocalService) {
+		this.eventLocalService = eventLocalService;
+	}
+
+	/**
+	 * Returns the event remote service.
+	 *
+	 * @return the event remote service
+	 */
+	public com.ocms.course.service.EventService getEventService() {
+		return eventService;
+	}
+
+	/**
+	 * Sets the event remote service.
+	 *
+	 * @param eventService the event remote service
+	 */
+	public void setEventService(
+		com.ocms.course.service.EventService eventService) {
+		this.eventService = eventService;
+	}
+
+	/**
+	 * Returns the event persistence.
+	 *
+	 * @return the event persistence
+	 */
+	public EventPersistence getEventPersistence() {
+		return eventPersistence;
+	}
+
+	/**
+	 * Sets the event persistence.
+	 *
+	 * @param eventPersistence the event persistence
+	 */
+	public void setEventPersistence(EventPersistence eventPersistence) {
+		this.eventPersistence = eventPersistence;
+	}
+
+	/**
 	 * Returns the location local service.
 	 *
 	 * @return the location local service
@@ -823,6 +880,12 @@ public abstract class CourseSeriesLocalServiceBaseImpl
 	protected com.ocms.course.service.CourseSeriesService courseSeriesService;
 	@BeanReference(type = CourseSeriesPersistence.class)
 	protected CourseSeriesPersistence courseSeriesPersistence;
+	@BeanReference(type = com.ocms.course.service.EventLocalService.class)
+	protected com.ocms.course.service.EventLocalService eventLocalService;
+	@BeanReference(type = com.ocms.course.service.EventService.class)
+	protected com.ocms.course.service.EventService eventService;
+	@BeanReference(type = EventPersistence.class)
+	protected EventPersistence eventPersistence;
 	@BeanReference(type = com.ocms.course.service.LocationLocalService.class)
 	protected com.ocms.course.service.LocationLocalService locationLocalService;
 	@BeanReference(type = com.ocms.course.service.LocationService.class)

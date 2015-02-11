@@ -80,9 +80,10 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 			{ "endDate", Types.TIMESTAMP },
 			{ "publishingStatus", Types.VARCHAR },
 			{ "maxNoStudReg", Types.BIGINT },
-			{ "seriesCount", Types.BIGINT }
+			{ "seriesCount", Types.BIGINT },
+			{ "courseSeriesCode", Types.VARCHAR }
 		};
-	public static final String TABLE_SQL_CREATE = "create table CM_CourseSeries (courseSeriesId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,courseId LONG,locationId LONG,type_ VARCHAR(75) null,startDate DATE null,endDate DATE null,publishingStatus VARCHAR(75) null,maxNoStudReg LONG,seriesCount LONG)";
+	public static final String TABLE_SQL_CREATE = "create table CM_CourseSeries (courseSeriesId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,courseId LONG,locationId LONG,type_ VARCHAR(75) null,startDate DATE null,endDate DATE null,publishingStatus VARCHAR(75) null,maxNoStudReg LONG,seriesCount LONG,courseSeriesCode VARCHAR(75) null)";
 	public static final String TABLE_SQL_DROP = "drop table CM_CourseSeries";
 	public static final String ORDER_BY_JPQL = " ORDER BY courseSeries.courseSeriesId ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY CM_CourseSeries.courseSeriesId ASC";
@@ -99,9 +100,10 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 				"value.object.column.bitmask.enabled.com.ocms.course.model.CourseSeries"),
 			true);
 	public static long COURSEID_COLUMN_BITMASK = 1L;
-	public static long COURSESERIESID_COLUMN_BITMASK = 2L;
-	public static long GROUPID_COLUMN_BITMASK = 4L;
-	public static long LOCATIONID_COLUMN_BITMASK = 8L;
+	public static long COURSESERIESCODE_COLUMN_BITMASK = 2L;
+	public static long COURSESERIESID_COLUMN_BITMASK = 4L;
+	public static long GROUPID_COLUMN_BITMASK = 8L;
+	public static long LOCATIONID_COLUMN_BITMASK = 16L;
 
 	/**
 	 * Converts the soap model instance into a normal model instance.
@@ -131,6 +133,7 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 		model.setPublishingStatus(soapModel.getPublishingStatus());
 		model.setMaxNoStudReg(soapModel.getMaxNoStudReg());
 		model.setSeriesCount(soapModel.getSeriesCount());
+		model.setCourseSeriesCode(soapModel.getCourseSeriesCode());
 
 		return model;
 	}
@@ -210,6 +213,7 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 		attributes.put("publishingStatus", getPublishingStatus());
 		attributes.put("maxNoStudReg", getMaxNoStudReg());
 		attributes.put("seriesCount", getSeriesCount());
+		attributes.put("courseSeriesCode", getCourseSeriesCode());
 
 		return attributes;
 	}
@@ -304,6 +308,12 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 
 		if (seriesCount != null) {
 			setSeriesCount(seriesCount);
+		}
+
+		String courseSeriesCode = (String)attributes.get("courseSeriesCode");
+
+		if (courseSeriesCode != null) {
+			setCourseSeriesCode(courseSeriesCode);
 		}
 	}
 
@@ -545,6 +555,32 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 		_seriesCount = seriesCount;
 	}
 
+	@JSON
+	@Override
+	public String getCourseSeriesCode() {
+		if (_courseSeriesCode == null) {
+			return StringPool.BLANK;
+		}
+		else {
+			return _courseSeriesCode;
+		}
+	}
+
+	@Override
+	public void setCourseSeriesCode(String courseSeriesCode) {
+		_columnBitmask |= COURSESERIESCODE_COLUMN_BITMASK;
+
+		if (_originalCourseSeriesCode == null) {
+			_originalCourseSeriesCode = _courseSeriesCode;
+		}
+
+		_courseSeriesCode = courseSeriesCode;
+	}
+
+	public String getOriginalCourseSeriesCode() {
+		return GetterUtil.getString(_originalCourseSeriesCode);
+	}
+
 	public long getColumnBitmask() {
 		return _columnBitmask;
 	}
@@ -591,6 +627,7 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 		courseSeriesImpl.setPublishingStatus(getPublishingStatus());
 		courseSeriesImpl.setMaxNoStudReg(getMaxNoStudReg());
 		courseSeriesImpl.setSeriesCount(getSeriesCount());
+		courseSeriesImpl.setCourseSeriesCode(getCourseSeriesCode());
 
 		courseSeriesImpl.resetOriginalValues();
 
@@ -658,6 +695,8 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 		courseSeriesModelImpl._originalLocationId = courseSeriesModelImpl._locationId;
 
 		courseSeriesModelImpl._setOriginalLocationId = false;
+
+		courseSeriesModelImpl._originalCourseSeriesCode = courseSeriesModelImpl._courseSeriesCode;
 
 		courseSeriesModelImpl._columnBitmask = 0;
 	}
@@ -742,12 +781,20 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 
 		courseSeriesCacheModel.seriesCount = getSeriesCount();
 
+		courseSeriesCacheModel.courseSeriesCode = getCourseSeriesCode();
+
+		String courseSeriesCode = courseSeriesCacheModel.courseSeriesCode;
+
+		if ((courseSeriesCode != null) && (courseSeriesCode.length() == 0)) {
+			courseSeriesCacheModel.courseSeriesCode = null;
+		}
+
 		return courseSeriesCacheModel;
 	}
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(31);
+		StringBundler sb = new StringBundler(33);
 
 		sb.append("{courseSeriesId=");
 		sb.append(getCourseSeriesId());
@@ -779,6 +826,8 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 		sb.append(getMaxNoStudReg());
 		sb.append(", seriesCount=");
 		sb.append(getSeriesCount());
+		sb.append(", courseSeriesCode=");
+		sb.append(getCourseSeriesCode());
 		sb.append("}");
 
 		return sb.toString();
@@ -786,7 +835,7 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(49);
+		StringBundler sb = new StringBundler(52);
 
 		sb.append("<model><model-name>");
 		sb.append("com.ocms.course.model.CourseSeries");
@@ -852,6 +901,10 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 			"<column><column-name>seriesCount</column-name><column-value><![CDATA[");
 		sb.append(getSeriesCount());
 		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>courseSeriesCode</column-name><column-value><![CDATA[");
+		sb.append(getCourseSeriesCode());
+		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -886,6 +939,8 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 	private String _publishingStatus;
 	private long _maxNoStudReg;
 	private long _seriesCount;
+	private String _courseSeriesCode;
+	private String _originalCourseSeriesCode;
 	private long _columnBitmask;
 	private CourseSeries _escapedModel;
 }

@@ -65,6 +65,7 @@ public class CourseSeriesWrapper implements CourseSeries,
 		attributes.put("publishingStatus", getPublishingStatus());
 		attributes.put("maxNoStudReg", getMaxNoStudReg());
 		attributes.put("seriesCount", getSeriesCount());
+		attributes.put("courseSeriesCode", getCourseSeriesCode());
 
 		return attributes;
 	}
@@ -159,6 +160,12 @@ public class CourseSeriesWrapper implements CourseSeries,
 
 		if (seriesCount != null) {
 			setSeriesCount(seriesCount);
+		}
+
+		String courseSeriesCode = (String)attributes.get("courseSeriesCode");
+
+		if (courseSeriesCode != null) {
+			setCourseSeriesCode(courseSeriesCode);
 		}
 	}
 
@@ -502,6 +509,26 @@ public class CourseSeriesWrapper implements CourseSeries,
 	@Override
 	public void setSeriesCount(long seriesCount) {
 		_courseSeries.setSeriesCount(seriesCount);
+	}
+
+	/**
+	* Returns the course series code of this course series.
+	*
+	* @return the course series code of this course series
+	*/
+	@Override
+	public java.lang.String getCourseSeriesCode() {
+		return _courseSeries.getCourseSeriesCode();
+	}
+
+	/**
+	* Sets the course series code of this course series.
+	*
+	* @param courseSeriesCode the course series code of this course series
+	*/
+	@Override
+	public void setCourseSeriesCode(java.lang.String courseSeriesCode) {
+		_courseSeries.setCourseSeriesCode(courseSeriesCode);
 	}
 
 	@Override

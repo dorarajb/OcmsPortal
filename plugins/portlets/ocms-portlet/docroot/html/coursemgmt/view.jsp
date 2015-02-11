@@ -3,6 +3,8 @@
 <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
 <%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-portlet" %>
 <%@ taglib uri="http://liferay.com/tld/theme" prefix="theme" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <%@ page import="java.util.List" %>
 <%@ page import="javax.portlet.PortletURL"%>
@@ -48,6 +50,9 @@
 	<portlet:param name="tab" value="location" />
 </portlet:actionURL>
 <portlet:actionURL name="addCourseSeries" var="addCourseSeriesURL">
+	<portlet:param name="tab" value="courseseries" />
+</portlet:actionURL>
+<portlet:actionURL name="createEvents" var="createEventsURL">
 	<portlet:param name="tab" value="courseseries" />
 </portlet:actionURL>
 
@@ -163,8 +168,16 @@ if (activeTab.equalsIgnoreCase("course")) {
 	PortletURL actionURL = renderResponse.createRenderURL();
 	actionURL.setParameter("tab", "courseseries");
 %>
-	
+	<%
+	String[] courseSeriesId = {"ATL-Airport 1","ATL-Airport 2","DEN-Hotel 1","DEN-Hotel 2"};
+	String test = "Testing";
+	session.setAttribute("courseSeriesId", courseSeriesId);
+	%>
+	<%System.out.println("courseSeriesId:"+courseSeriesId[0]); %>
+	<%-- <c:set var="courseSeriesId" value="${fn:split('ATL-Airport 1,ATL-Airport 2,DEN-Hotel 1,DEN-Hotel 2', ',')}" scope="application" />
+	<c:out value="${courseSeriesId}"></c:out> --%>
 	<aui:layout>
+	<aui:button name="createEventsButton" value="Create Events" onClick="<%=createEventsURL%>"/>
 		<aui:column columnWidth="35" first="true">
 			<aui:field-wrapper name="location" helpMessage="Select one or more location" label="Location(s)">
 				<aui:form action="<%=addCourseSeriesURL.toString()%>" name="fmLocation" method="post">

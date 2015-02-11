@@ -99,7 +99,7 @@ public class CourseSeriesServiceImpl extends CourseSeriesServiceBaseImpl {
 		}
 	}
 	
-	public CourseSeries addCourseSeries(long userId, long courseId, long locationId,
+	public CourseSeries addCourseSeries(long userId, long courseId, long locationId, String courseSeriesCode, 
 			Date startDate, Date endDate, String type, long maxNoStudReg,
 			String publishingStatus, long seriesCount, ServiceContext serviceContext)
 			throws SystemException, PortalException {
@@ -127,6 +127,7 @@ public class CourseSeriesServiceImpl extends CourseSeriesServiceBaseImpl {
 		courseSeries.setPublishingStatus(publishingStatus);
 		courseSeries.setCourseId(courseId);
 		courseSeries.setLocationId(locationId);
+		courseSeries.setCourseSeriesCode(courseSeriesCode);
 		courseSeries.setSeriesCount(seriesCount);
 		courseSeries.setExpandoBridgeAttributes(serviceContext);
 

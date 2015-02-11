@@ -90,6 +90,7 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 		attributes.put("publishingStatus", getPublishingStatus());
 		attributes.put("maxNoStudReg", getMaxNoStudReg());
 		attributes.put("seriesCount", getSeriesCount());
+		attributes.put("courseSeriesCode", getCourseSeriesCode());
 
 		return attributes;
 	}
@@ -184,6 +185,12 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 
 		if (seriesCount != null) {
 			setSeriesCount(seriesCount);
+		}
+
+		String courseSeriesCode = (String)attributes.get("courseSeriesCode");
+
+		if (courseSeriesCode != null) {
+			setCourseSeriesCode(courseSeriesCode);
 		}
 	}
 
@@ -543,6 +550,30 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 		}
 	}
 
+	@Override
+	public String getCourseSeriesCode() {
+		return _courseSeriesCode;
+	}
+
+	@Override
+	public void setCourseSeriesCode(String courseSeriesCode) {
+		_courseSeriesCode = courseSeriesCode;
+
+		if (_courseSeriesRemoteModel != null) {
+			try {
+				Class<?> clazz = _courseSeriesRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setCourseSeriesCode",
+						String.class);
+
+				method.invoke(_courseSeriesRemoteModel, courseSeriesCode);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
 	public BaseModel<?> getCourseSeriesRemoteModel() {
 		return _courseSeriesRemoteModel;
 	}
@@ -627,6 +658,7 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 		clone.setPublishingStatus(getPublishingStatus());
 		clone.setMaxNoStudReg(getMaxNoStudReg());
 		clone.setSeriesCount(getSeriesCount());
+		clone.setCourseSeriesCode(getCourseSeriesCode());
 
 		return clone;
 	}
@@ -675,7 +707,7 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(31);
+		StringBundler sb = new StringBundler(33);
 
 		sb.append("{courseSeriesId=");
 		sb.append(getCourseSeriesId());
@@ -707,6 +739,8 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 		sb.append(getMaxNoStudReg());
 		sb.append(", seriesCount=");
 		sb.append(getSeriesCount());
+		sb.append(", courseSeriesCode=");
+		sb.append(getCourseSeriesCode());
 		sb.append("}");
 
 		return sb.toString();
@@ -714,7 +748,7 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(49);
+		StringBundler sb = new StringBundler(52);
 
 		sb.append("<model><model-name>");
 		sb.append("com.ocms.course.model.CourseSeries");
@@ -780,6 +814,10 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 			"<column><column-name>seriesCount</column-name><column-value><![CDATA[");
 		sb.append(getSeriesCount());
 		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>courseSeriesCode</column-name><column-value><![CDATA[");
+		sb.append(getCourseSeriesCode());
+		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -802,5 +840,6 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 	private String _publishingStatus;
 	private long _maxNoStudReg;
 	private long _seriesCount;
+	private String _courseSeriesCode;
 	private BaseModel<?> _courseSeriesRemoteModel;
 }

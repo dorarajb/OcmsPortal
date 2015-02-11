@@ -113,6 +113,7 @@
 			<basic name="publishingStatus" />
 			<basic name="maxNoStudReg" />
 			<basic name="seriesCount" />
+			<basic name="courseSeriesCode" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />
@@ -142,6 +143,8 @@
 				<temporal>TIMESTAMP</temporal>
 			</basic>
 			<basic name="flag" />
+			<basic name="courseId" />
+			<basic name="locationId" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />

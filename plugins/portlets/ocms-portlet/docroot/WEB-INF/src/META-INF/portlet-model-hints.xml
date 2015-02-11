@@ -60,6 +60,7 @@
 		<field name="publishingStatus" type="String" />
 		<field name="maxNoStudReg" type="long" />
 		<field name="seriesCount" type="long" />
+		<field name="courseSeriesCode" type="String" />
 	</model>
 	<model name="com.ocms.course.model.Event">
 		<field name="eventId" type="long" />
@@ -75,6 +76,8 @@
 		<field name="modifiedDate" type="Date" />
 		<field name="endDate" type="Date" />
 		<field name="flag" type="int" />
+		<field name="courseId" type="long" />
+		<field name="locationId" type="long" />
 	</model>
 	<model name="com.ocms.course.model.Location">
 		<field name="locationId" type="long" />

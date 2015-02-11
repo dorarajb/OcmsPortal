@@ -38,7 +38,7 @@ public class CourseSeriesCacheModel implements CacheModel<CourseSeries>,
 	Externalizable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(31);
+		StringBundler sb = new StringBundler(33);
 
 		sb.append("{courseSeriesId=");
 		sb.append(courseSeriesId);
@@ -70,6 +70,8 @@ public class CourseSeriesCacheModel implements CacheModel<CourseSeries>,
 		sb.append(maxNoStudReg);
 		sb.append(", seriesCount=");
 		sb.append(seriesCount);
+		sb.append(", courseSeriesCode=");
+		sb.append(courseSeriesCode);
 		sb.append("}");
 
 		return sb.toString();
@@ -139,6 +141,13 @@ public class CourseSeriesCacheModel implements CacheModel<CourseSeries>,
 		courseSeriesImpl.setMaxNoStudReg(maxNoStudReg);
 		courseSeriesImpl.setSeriesCount(seriesCount);
 
+		if (courseSeriesCode == null) {
+			courseSeriesImpl.setCourseSeriesCode(StringPool.BLANK);
+		}
+		else {
+			courseSeriesImpl.setCourseSeriesCode(courseSeriesCode);
+		}
+
 		courseSeriesImpl.resetOriginalValues();
 
 		return courseSeriesImpl;
@@ -161,6 +170,7 @@ public class CourseSeriesCacheModel implements CacheModel<CourseSeries>,
 		publishingStatus = objectInput.readUTF();
 		maxNoStudReg = objectInput.readLong();
 		seriesCount = objectInput.readLong();
+		courseSeriesCode = objectInput.readUTF();
 	}
 
 	@Override
@@ -202,6 +212,13 @@ public class CourseSeriesCacheModel implements CacheModel<CourseSeries>,
 
 		objectOutput.writeLong(maxNoStudReg);
 		objectOutput.writeLong(seriesCount);
+
+		if (courseSeriesCode == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(courseSeriesCode);
+		}
 	}
 
 	public long courseSeriesId;
@@ -219,4 +236,5 @@ public class CourseSeriesCacheModel implements CacheModel<CourseSeries>,
 	public String publishingStatus;
 	public long maxNoStudReg;
 	public long seriesCount;
+	public String courseSeriesCode;
 }

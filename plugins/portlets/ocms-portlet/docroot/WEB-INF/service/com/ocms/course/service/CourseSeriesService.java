@@ -102,8 +102,9 @@ public interface CourseSeriesService extends BaseService, InvokableService {
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	public com.ocms.course.model.CourseSeries addCourseSeries(long userId,
-		long courseId, long locationId, java.util.Date startDate,
-		java.util.Date endDate, java.lang.String type, long maxNoStudReg,
+		long courseId, long locationId, java.lang.String courseSeriesCode,
+		java.util.Date startDate, java.util.Date endDate,
+		java.lang.String type, long maxNoStudReg,
 		java.lang.String publishingStatus, long seriesCount,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,

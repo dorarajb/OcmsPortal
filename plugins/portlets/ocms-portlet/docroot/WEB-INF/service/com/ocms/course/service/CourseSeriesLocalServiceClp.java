@@ -145,17 +145,21 @@ public class CourseSeriesLocalServiceClp implements CourseSeriesLocalService {
 				"long", "com.liferay.portal.kernel.util.OrderByComparator"
 			};
 
-		_methodName26 = "addCourseSeries";
+		_methodName26 = "getCourseSeriesByCourseSeriesCode";
 
-		_methodParameterTypes26 = new String[] {
-				"long", "long", "long", "java.util.Date", "java.util.Date",
-				"java.lang.String", "long", "java.lang.String", "long",
-				"com.liferay.portal.service.ServiceContext"
-			};
+		_methodParameterTypes26 = new String[] { "java.lang.String" };
 
-		_methodName27 = "updateCourse";
+		_methodName27 = "addCourseSeries";
 
 		_methodParameterTypes27 = new String[] {
+				"long", "long", "long", "java.lang.String", "java.util.Date",
+				"java.util.Date", "java.lang.String", "long", "java.lang.String",
+				"long", "com.liferay.portal.service.ServiceContext"
+			};
+
+		_methodName28 = "updateCourse";
+
+		_methodParameterTypes28 = new String[] {
 				"long", "long", "long", "java.util.Date", "java.util.Date",
 				"java.lang.String", "long", "java.lang.String",
 				"com.liferay.portal.service.ServiceContext"
@@ -925,9 +929,41 @@ public class CourseSeriesLocalServiceClp implements CourseSeriesLocalService {
 	}
 
 	@Override
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByCourseSeriesCode(
+		java.lang.String courseSeriesCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName26,
+					_methodParameterTypes26,
+					new Object[] { ClpSerializer.translateInput(
+							courseSeriesCode) });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<com.ocms.course.model.CourseSeries>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
 	public com.ocms.course.model.CourseSeries addCourseSeries(long userId,
-		long courseId, long locationId, java.util.Date startDate,
-		java.util.Date endDate, java.lang.String type, long maxNoStudReg,
+		long courseId, long locationId, java.lang.String courseSeriesCode,
+		java.util.Date startDate, java.util.Date endDate,
+		java.lang.String type, long maxNoStudReg,
 		java.lang.String publishingStatus, long seriesCount,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -935,14 +971,16 @@ public class CourseSeriesLocalServiceClp implements CourseSeriesLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName26,
-					_methodParameterTypes26,
+			returnObj = _invokableLocalService.invokeMethod(_methodName27,
+					_methodParameterTypes27,
 					new Object[] {
 						userId,
 						
 					courseId,
 						
 					locationId,
+						
+					ClpSerializer.translateInput(courseSeriesCode),
 						
 					ClpSerializer.translateInput(startDate),
 						
@@ -993,8 +1031,8 @@ public class CourseSeriesLocalServiceClp implements CourseSeriesLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName27,
-					_methodParameterTypes27,
+			returnObj = _invokableLocalService.invokeMethod(_methodName28,
+					_methodParameterTypes28,
 					new Object[] {
 						userId,
 						
@@ -1093,4 +1131,6 @@ public class CourseSeriesLocalServiceClp implements CourseSeriesLocalService {
 	private String[] _methodParameterTypes26;
 	private String _methodName27;
 	private String[] _methodParameterTypes27;
+	private String _methodName28;
+	private String[] _methodParameterTypes28;
 }

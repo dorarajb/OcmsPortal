@@ -108,16 +108,17 @@ public class CourseSeriesServiceUtil {
 	}
 
 	public static com.ocms.course.model.CourseSeries addCourseSeries(
-		long userId, long courseId, long locationId, java.util.Date startDate,
+		long userId, long courseId, long locationId,
+		java.lang.String courseSeriesCode, java.util.Date startDate,
 		java.util.Date endDate, java.lang.String type, long maxNoStudReg,
 		java.lang.String publishingStatus, long seriesCount,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		return getService()
-				   .addCourseSeries(userId, courseId, locationId, startDate,
-			endDate, type, maxNoStudReg, publishingStatus, seriesCount,
-			serviceContext);
+				   .addCourseSeries(userId, courseId, locationId,
+			courseSeriesCode, startDate, endDate, type, maxNoStudReg,
+			publishingStatus, seriesCount, serviceContext);
 	}
 
 	public static com.ocms.course.model.CourseSeries updateCourse(long userId,

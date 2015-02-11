@@ -6,6 +6,10 @@ import java.util.List;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
+import javax.portlet.PortletRequest;
+import javax.portlet.PortletSession;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
@@ -17,6 +21,7 @@ import com.liferay.portal.kernel.util.OrderByComparatorFactoryUtil;
 import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portal.service.ServiceContextFactory;
+import com.liferay.portal.util.PortalUtil;
 import com.liferay.util.bridges.mvc.MVCPortlet;
 import com.ocms.course.model.Course;
 import com.ocms.course.model.CourseSeries;
@@ -24,7 +29,11 @@ import com.ocms.course.model.Location;
 import com.ocms.course.model.impl.CourseSeriesImpl;
 import com.ocms.course.service.CourseLocalServiceUtil;
 import com.ocms.course.service.CourseSeriesLocalServiceUtil;
+import com.ocms.course.service.EventLocalServiceUtil;
 import com.ocms.course.service.LocationLocalServiceUtil;
+import com.ocms.course.service.persistence.CoursePersistence;
+import com.ocms.fm.service.FMService;
+import com.ocms.fm.service.FMServiceImpl;
 
 /**
  * Portlet implementation class CourseMgmtPortlet
@@ -187,16 +196,18 @@ public class CourseMgmtPortlet extends MVCPortlet {
 	    try {
 	    	
 	    	for (long locationId : locationIds) {
-	    		long seriesCount = 0; 
+	    		long seriesCount = 0;
+	    		String courseSeriesCode =  null;
 	    		if (CourseSeriesLocalServiceUtil.getCourseSeriesesCount() > 0) {
 	    			List<CourseSeries> courseSeriesTemp = CourseSeriesLocalServiceUtil.getCourseSeriesByLocationId(locationId, comparator);
 	    			if (courseSeriesTemp.size() > 0) {
 	    				seriesCount = courseSeriesTemp.get(courseSeriesTemp.size()-1).getSeriesCount();
 	    			}
+	    			courseSeriesCode = LocationLocalServiceUtil.getLocation(locationId).getCode();
 	    		}	    		
 	    		for (long courseId : courseIds) {
 	    			CourseSeriesLocalServiceUtil.addCourseSeries(
-	    					serviceContext.getUserId(), courseId, locationId,
+	    					serviceContext.getUserId(), courseId, locationId, courseSeriesCode + " " + (seriesCount + 1),
 	    					new Date(), new Date(), "type", 100, "Do not publish", seriesCount + 1,
 	    					serviceContext);
 	    		}
@@ -246,5 +257,52 @@ public class CourseMgmtPortlet extends MVCPortlet {
 	    }
 	    
 	    response.setRenderParameter("tab", activeTab);
+	}
+	
+	public void createEvents(ActionRequest request, ActionResponse response)
+	        throws PortalException, SystemException {
+
+	    ServiceContext serviceContext = ServiceContextFactory.getInstance(
+	        CourseSeries.class.getName(), request);
+	    List<CourseSeries> courseSeriesList = null;
+	    HttpServletRequest httpRequest = PortalUtil.getOriginalServletRequest(PortalUtil.getHttpServletRequest(request));
+	    HttpSession session=httpRequest.getSession();
+	    String[] courseSeriesCodes =(String[]) session.getAttribute("courseSeriesId");
+	    System.out.println("CourseSeries Len:"+ courseSeriesCodes.length);
+	    System.out.println("CourseSeries:"+ courseSeriesCodes);
+	    System.out.println("CourseSeries:"+ courseSeriesCodes[0]);
+	      
+	    for (String courseSeriesCode: courseSeriesCodes)
+	    { 
+	    	
+		    try {
+		    	
+		    	courseSeriesList = CourseSeriesLocalServiceUtil.getCourseSeriesByCourseSeriesCode(courseSeriesCode);
+		    	for (CourseSeries courseSeries : courseSeriesList) {
+		    	
+			    	long courseId = courseSeries.getCourseId();
+				    long locationId = courseSeries.getLocationId();
+				    Date startDate = courseSeries.getStartDate();
+				    Date endDate = courseSeries.getEndDate();
+				    String courseCode = CourseLocalServiceUtil.getCourse(courseId).getCode();
+				    String courseName = CourseLocalServiceUtil.getCourse(courseId).getName();
+				    String locationCode = LocationLocalServiceUtil.getLocation(locationId).getCode();
+				    EventLocalServiceUtil.addEvent(serviceContext.getUserId(), courseName, courseId, courseCode, locationId, locationCode, startDate, endDate, 1, serviceContext);
+			        SessionMessages.add(request, "EventAdded");
+		        
+		    	}
+		
+		    } catch (Exception e) {
+		    	
+		        SessionErrors.add(request, e.getClass().getName());
+		        response.setRenderParameter("mvcPath","/html/coursemgmt/view.jsp");
+		        
+		    }
+		    
+	    }
+	    
+	    FMService fmService = new FMServiceImpl();
+		fmService.addEvent();
+	    response.setRenderParameter("tab", "");
 	}
 }

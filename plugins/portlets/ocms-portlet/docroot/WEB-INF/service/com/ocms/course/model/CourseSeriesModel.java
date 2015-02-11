@@ -303,6 +303,21 @@ public interface CourseSeriesModel extends BaseModel<CourseSeries>, GroupedModel
 	 */
 	public void setSeriesCount(long seriesCount);
 
+	/**
+	 * Returns the course series code of this course series.
+	 *
+	 * @return the course series code of this course series
+	 */
+	@AutoEscape
+	public String getCourseSeriesCode();
+
+	/**
+	 * Sets the course series code of this course series.
+	 *
+	 * @param courseSeriesCode the course series code of this course series
+	 */
+	public void setCourseSeriesCode(String courseSeriesCode);
+
 	@Override
 	public boolean isNew();
 

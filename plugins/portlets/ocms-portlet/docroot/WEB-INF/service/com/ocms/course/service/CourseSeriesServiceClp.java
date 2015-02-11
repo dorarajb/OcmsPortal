@@ -65,9 +65,9 @@ public class CourseSeriesServiceClp implements CourseSeriesService {
 		_methodName10 = "addCourseSeries";
 
 		_methodParameterTypes10 = new String[] {
-				"long", "long", "long", "java.util.Date", "java.util.Date",
-				"java.lang.String", "long", "java.lang.String", "long",
-				"com.liferay.portal.service.ServiceContext"
+				"long", "long", "long", "java.lang.String", "java.util.Date",
+				"java.util.Date", "java.lang.String", "long", "java.lang.String",
+				"long", "com.liferay.portal.service.ServiceContext"
 			};
 
 		_methodName11 = "updateCourse";
@@ -342,8 +342,9 @@ public class CourseSeriesServiceClp implements CourseSeriesService {
 
 	@Override
 	public com.ocms.course.model.CourseSeries addCourseSeries(long userId,
-		long courseId, long locationId, java.util.Date startDate,
-		java.util.Date endDate, java.lang.String type, long maxNoStudReg,
+		long courseId, long locationId, java.lang.String courseSeriesCode,
+		java.util.Date startDate, java.util.Date endDate,
+		java.lang.String type, long maxNoStudReg,
 		java.lang.String publishingStatus, long seriesCount,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -359,6 +360,8 @@ public class CourseSeriesServiceClp implements CourseSeriesService {
 					courseId,
 						
 					locationId,
+						
+					ClpSerializer.translateInput(courseSeriesCode),
 						
 					ClpSerializer.translateInput(startDate),
 						

@@ -746,6 +746,178 @@ public class CourseSeriesUtil {
 	}
 
 	/**
+	* Returns all the course serieses where courseSeriesCode = &#63;.
+	*
+	* @param courseSeriesCode the course series code
+	* @return the matching course serieses
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.ocms.course.model.CourseSeries> findByCourseSeriesCode(
+		java.lang.String courseSeriesCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findByCourseSeriesCode(courseSeriesCode);
+	}
+
+	/**
+	* Returns a range of all the course serieses where courseSeriesCode = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.ocms.course.model.impl.CourseSeriesModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param courseSeriesCode the course series code
+	* @param start the lower bound of the range of course serieses
+	* @param end the upper bound of the range of course serieses (not inclusive)
+	* @return the range of matching course serieses
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.ocms.course.model.CourseSeries> findByCourseSeriesCode(
+		java.lang.String courseSeriesCode, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByCourseSeriesCode(courseSeriesCode, start, end);
+	}
+
+	/**
+	* Returns an ordered range of all the course serieses where courseSeriesCode = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.ocms.course.model.impl.CourseSeriesModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param courseSeriesCode the course series code
+	* @param start the lower bound of the range of course serieses
+	* @param end the upper bound of the range of course serieses (not inclusive)
+	* @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	* @return the ordered range of matching course serieses
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.ocms.course.model.CourseSeries> findByCourseSeriesCode(
+		java.lang.String courseSeriesCode, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByCourseSeriesCode(courseSeriesCode, start, end,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the first course series in the ordered set where courseSeriesCode = &#63;.
+	*
+	* @param courseSeriesCode the course series code
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching course series
+	* @throws com.ocms.course.NoSuchCourseSeriesException if a matching course series could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.CourseSeries findByCourseSeriesCode_First(
+		java.lang.String courseSeriesCode,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.ocms.course.NoSuchCourseSeriesException {
+		return getPersistence()
+				   .findByCourseSeriesCode_First(courseSeriesCode,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the first course series in the ordered set where courseSeriesCode = &#63;.
+	*
+	* @param courseSeriesCode the course series code
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching course series, or <code>null</code> if a matching course series could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.CourseSeries fetchByCourseSeriesCode_First(
+		java.lang.String courseSeriesCode,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchByCourseSeriesCode_First(courseSeriesCode,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the last course series in the ordered set where courseSeriesCode = &#63;.
+	*
+	* @param courseSeriesCode the course series code
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching course series
+	* @throws com.ocms.course.NoSuchCourseSeriesException if a matching course series could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.CourseSeries findByCourseSeriesCode_Last(
+		java.lang.String courseSeriesCode,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.ocms.course.NoSuchCourseSeriesException {
+		return getPersistence()
+				   .findByCourseSeriesCode_Last(courseSeriesCode,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the last course series in the ordered set where courseSeriesCode = &#63;.
+	*
+	* @param courseSeriesCode the course series code
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching course series, or <code>null</code> if a matching course series could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.CourseSeries fetchByCourseSeriesCode_Last(
+		java.lang.String courseSeriesCode,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchByCourseSeriesCode_Last(courseSeriesCode,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the course serieses before and after the current course series in the ordered set where courseSeriesCode = &#63;.
+	*
+	* @param courseSeriesId the primary key of the current course series
+	* @param courseSeriesCode the course series code
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the previous, current, and next course series
+	* @throws com.ocms.course.NoSuchCourseSeriesException if a course series with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.CourseSeries[] findByCourseSeriesCode_PrevAndNext(
+		long courseSeriesId, java.lang.String courseSeriesCode,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.ocms.course.NoSuchCourseSeriesException {
+		return getPersistence()
+				   .findByCourseSeriesCode_PrevAndNext(courseSeriesId,
+			courseSeriesCode, orderByComparator);
+	}
+
+	/**
+	* Removes all the course serieses where courseSeriesCode = &#63; from the database.
+	*
+	* @param courseSeriesCode the course series code
+	* @throws SystemException if a system exception occurred
+	*/
+	public static void removeByCourseSeriesCode(
+		java.lang.String courseSeriesCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		getPersistence().removeByCourseSeriesCode(courseSeriesCode);
+	}
+
+	/**
+	* Returns the number of course serieses where courseSeriesCode = &#63;.
+	*
+	* @param courseSeriesCode the course series code
+	* @return the number of matching course serieses
+	* @throws SystemException if a system exception occurred
+	*/
+	public static int countByCourseSeriesCode(java.lang.String courseSeriesCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().countByCourseSeriesCode(courseSeriesCode);
+	}
+
+	/**
 	* Caches the course series in the entity cache if it is enabled.
 	*
 	* @param courseSeries the course series

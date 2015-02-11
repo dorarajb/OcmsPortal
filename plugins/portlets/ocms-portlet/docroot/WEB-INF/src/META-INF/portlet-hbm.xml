@@ -80,6 +80,7 @@
 		<property name="publishingStatus" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="maxNoStudReg" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="seriesCount" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="courseSeriesCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
 	<class name="com.ocms.course.model.impl.EventImpl" table="CM_Event">
 		<cache usage="read-write" />
@@ -98,6 +99,8 @@
 		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
 		<property name="endDate" type="org.hibernate.type.TimestampType" />
 		<property name="flag" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="courseId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="locationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 	</class>
 	<class name="com.ocms.course.model.impl.LocationImpl" table="CM_Location">
 		<cache usage="read-write" />

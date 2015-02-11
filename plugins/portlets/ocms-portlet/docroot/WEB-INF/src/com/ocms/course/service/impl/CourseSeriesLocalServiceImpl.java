@@ -81,6 +81,10 @@ public class CourseSeriesLocalServiceImpl
 		return courseSeriesPersistence.findByLocationId(locationId, 0, CourseSeriesLocalServiceUtil.getCourseSeriesesCount(), orderByComparator);
 	}
 	
+	public List<CourseSeries> getCourseSeriesByCourseSeriesCode(String courseSeriesCode) throws SystemException {
+		return courseSeriesPersistence.findByCourseSeriesCode(courseSeriesCode);
+	}
+	
 	protected void validate(Date startDate, Date endDate, String type,
 			long maxNoStudReg) throws PortalException {
 		if (Validator.isNull(startDate)) {
@@ -97,7 +101,7 @@ public class CourseSeriesLocalServiceImpl
 		}
 	}
 	
-	public CourseSeries addCourseSeries(long userId, long courseId, long locationId,
+	public CourseSeries addCourseSeries(long userId, long courseId, long locationId, String courseSeriesCode,
 			Date startDate, Date endDate, String type, long maxNoStudReg,
 			String publishingStatus, long seriesCount, ServiceContext serviceContext)
 			throws SystemException, PortalException {
@@ -125,6 +129,7 @@ public class CourseSeriesLocalServiceImpl
 		courseSeries.setPublishingStatus(publishingStatus);
 		courseSeries.setCourseId(courseId);
 		courseSeries.setLocationId(locationId);
+		courseSeries.setCourseSeriesCode(courseSeriesCode);
 		courseSeries.setSeriesCount(seriesCount);
 		courseSeries.setExpandoBridgeAttributes(serviceContext);
 

@@ -46,6 +46,7 @@ public class CourseSeriesSoap implements Serializable {
 		soapModel.setPublishingStatus(model.getPublishingStatus());
 		soapModel.setMaxNoStudReg(model.getMaxNoStudReg());
 		soapModel.setSeriesCount(model.getSeriesCount());
+		soapModel.setCourseSeriesCode(model.getCourseSeriesCode());
 
 		return soapModel;
 	}
@@ -218,6 +219,14 @@ public class CourseSeriesSoap implements Serializable {
 		_seriesCount = seriesCount;
 	}
 
+	public String getCourseSeriesCode() {
+		return _courseSeriesCode;
+	}
+
+	public void setCourseSeriesCode(String courseSeriesCode) {
+		_courseSeriesCode = courseSeriesCode;
+	}
+
 	private long _courseSeriesId;
 	private long _groupId;
 	private long _companyId;
@@ -233,4 +242,5 @@ public class CourseSeriesSoap implements Serializable {
 	private String _publishingStatus;
 	private long _maxNoStudReg;
 	private long _seriesCount;
+	private String _courseSeriesCode;
 }

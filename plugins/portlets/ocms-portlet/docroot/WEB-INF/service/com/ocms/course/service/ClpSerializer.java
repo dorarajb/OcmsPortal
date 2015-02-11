@@ -450,6 +450,10 @@ public class ClpSerializer {
 			return new com.ocms.course.EventCourseCodeException();
 		}
 
+		if (className.equals("com.ocms.course.EventCourseIdException")) {
+			return new com.ocms.course.EventCourseIdException();
+		}
+
 		if (className.equals("com.ocms.course.EventEndDateException")) {
 			return new com.ocms.course.EventEndDateException();
 		}
@@ -460,6 +464,10 @@ public class ClpSerializer {
 
 		if (className.equals("com.ocms.course.EventLocationCodeException")) {
 			return new com.ocms.course.EventLocationCodeException();
+		}
+
+		if (className.equals("com.ocms.course.EventLocationIdException")) {
+			return new com.ocms.course.EventLocationIdException();
 		}
 
 		if (className.equals("com.ocms.course.EventNameException")) {

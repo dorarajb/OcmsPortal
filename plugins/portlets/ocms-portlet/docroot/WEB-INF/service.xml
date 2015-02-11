@@ -94,6 +94,7 @@
         <column name="publishingStatus" type="String"></column>
         <column name="maxNoStudReg" type="long"></column>
         <column name="seriesCount" type="long"></column>
+        <column name="courseSeriesCode" type="String"></column>
         <finder name="GroupId" return-type="Collection">
             <finder-column name="groupId"></finder-column>
         </finder>
@@ -105,6 +106,9 @@
         </finder>
         <finder name="LocationId" return-type="Collection">
             <finder-column name="locationId"></finder-column>
+        </finder>
+        <finder name="CourseSeriesCode" return-type="Collection">
+            <finder-column name="courseSeriesCode"></finder-column>
         </finder>
 	</entity>
 	<entity name="Contact" local-service="true">
@@ -239,6 +243,8 @@
 		<column name="modifiedDate" type="Date"></column>
         <column name="endDate" type="Date"></column>
         <column name="flag" type="int"></column>
+        <column name="courseId" type="long"></column>
+        <column name="locationId" type="long"></column>
         <finder name="EventId" return-type="Collection">
             <finder-column name="eventId"></finder-column>
         </finder>
@@ -299,5 +305,7 @@
         <exception>EventLocationCode</exception>
         <exception>EventStartDate</exception>
         <exception>EventEndDate</exception>
+        <exception>EventCourseId</exception>
+        <exception>EventLocationId</exception>
     </exceptions>
 </service-builder>
