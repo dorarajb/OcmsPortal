@@ -133,4 +133,49 @@ public class EventServiceImpl extends EventServiceBaseImpl {
 
 		return event;
 	}
+	
+	public Event updateEvent(long userId,long eventId, String eventName,long courseId, 
+			String courseCode,long locationId, String locationCode, Date startDate, 
+			Date endDate,int flag, ServiceContext serviceContext) throws SystemException, PortalException {
+
+		long groupId = serviceContext.getScopeGroupId();
+		User user = userPersistence.findByPrimaryKey(userId);
+		Date now = new Date();
+
+		validate(eventName, courseId, courseCode, locationId, locationCode, startDate, endDate);
+
+		List<Event> eventList = eventPersistence.findByEventId(eventId);
+		Event event = eventList.get(0);
+		
+		event.setUserId(userId);
+		event.setGroupId(groupId);
+		event.setCompanyId(user.getCompanyId());
+		event.setUserName(user.getFullName());
+		event.setCreateDate(serviceContext.getCreateDate(now));
+		event.setModifiedDate(serviceContext.getModifiedDate(now));
+		event.setEventName(eventName);
+		event.setCourseId(courseId);
+		event.setCourseCode(courseCode);
+		event.setLocationId(locationId);
+		event.setLocationCode(locationCode);
+		event.setStartDate(startDate);
+		event.setEndDate(endDate);
+		event.setFlag(flag);
+		event.setExpandoBridgeAttributes(serviceContext);
+
+		eventPersistence.update(event);
+
+		return event;
+	}
+	
+	public Event updateEventFlag(Event event, int flag){
+		event.setFlag(flag);
+		try {
+			eventPersistence.update(event);
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return event;
+	}
 }
