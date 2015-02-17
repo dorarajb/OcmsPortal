@@ -17,6 +17,9 @@ package com.ocms.course.service.impl;
 import java.util.Date;
 import java.util.List;
 
+import javax.xml.ws.WebServiceContext;
+import javax.xml.ws.handler.MessageContext;
+
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.jsonwebservice.JSONWebService;
@@ -110,7 +113,7 @@ public class CourseSeriesServiceImpl extends CourseSeriesServiceBaseImpl {
 			throws SystemException, PortalException {
 
 		User user = userPersistence.findByPrimaryKey(userId);
-		long groupId = 10184;
+		long groupId = serviceContext.getScopeGroupId();
 
 		Date now = new Date();
 
@@ -123,8 +126,8 @@ public class CourseSeriesServiceImpl extends CourseSeriesServiceBaseImpl {
 		courseSeries.setGroupId(groupId);
 		courseSeries.setCompanyId(user.getCompanyId());
 		courseSeries.setUserName(user.getFullName());
-		courseSeries.setCreateDate(new Date());
-		courseSeries.setModifiedDate(new Date());
+		courseSeries.setCreateDate(serviceContext.getCreateDate(now));
+		courseSeries.setModifiedDate(serviceContext.getModifiedDate(now));
 		courseSeries.setStartDate(startDate);
 		courseSeries.setEndDate(endDate);
 		courseSeries.setType(type);
@@ -145,7 +148,7 @@ public class CourseSeriesServiceImpl extends CourseSeriesServiceBaseImpl {
 			Date startDate, Date endDate, String type, long maxNoStudReg,
 			String publishingStatus, ServiceContext serviceContext) throws SystemException, PortalException {
 
-		long groupId = 10184;
+		long groupId = serviceContext.getScopeGroupId();
 		User user = userPersistence.findByPrimaryKey(userId);
 		Date now = new Date();
 
@@ -158,8 +161,8 @@ public class CourseSeriesServiceImpl extends CourseSeriesServiceBaseImpl {
 		courseSeries.setGroupId(groupId);
 		courseSeries.setCompanyId(user.getCompanyId());
 		courseSeries.setUserName(user.getFullName());
-		courseSeries.setCreateDate(new Date());
-		courseSeries.setModifiedDate(new Date());
+		courseSeries.setCreateDate(serviceContext.getCreateDate(now));
+		courseSeries.setModifiedDate(serviceContext.getModifiedDate(now));
 		courseSeries.setStartDate(startDate);
 		courseSeries.setEndDate(endDate);
 		courseSeries.setType(type);
@@ -201,18 +204,15 @@ public class CourseSeriesServiceImpl extends CourseSeriesServiceBaseImpl {
 		}
 	}
 	
-	public void addCourseSeriesLoop(long[] locationList, long[] courseList){
-		
-        ServiceContext serviceContext = null;
-        long userId =PrincipalThreadLocal.getUserId();
-        
-        System.out.println("UserId:"+userId);
-        		
+	public void addCourseSeriesLoop(long[] locationList, long[] courseList, ServiceContext serviceContext){
+		 
+		long userId =PrincipalThreadLocal.getUserId();
 		OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
 		OrderByComparator comparator = orderByComparatorFactory.create(CourseSeriesImpl.TABLE_NAME, "seriesCount", false);
 		
 		System.out.println("LocationId:"+locationList);
 		System.out.println("CourseId:"+courseList);
+		System.out.println(serviceContext);
 		
 	    try {
 	    	
@@ -243,11 +243,4 @@ public class CourseSeriesServiceImpl extends CourseSeriesServiceBaseImpl {
 	    
     }
 	
-public void addCourseSeriesLoopTest(){
-		
-		long[] locationList = {1,2};
-		long[] courseList = {11603,11604};
-		addCourseSeriesLoop(locationList, courseList);
-		
-	}
 }
