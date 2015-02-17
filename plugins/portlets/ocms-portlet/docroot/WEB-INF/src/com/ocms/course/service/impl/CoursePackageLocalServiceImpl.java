@@ -126,4 +126,32 @@ public class CoursePackageLocalServiceImpl
 
 		return coursePackage;
 	}
+	
+	public void deleteCoursePackageByCoursePackageId(long coursePackageId){
+		try {
+			coursePackagePersistence.removeByCoursePackageId(coursePackageId);
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void deleteCoursePackageByGrouptId(long groupId){
+		try {
+			coursePackagePersistence.removeByGroupId(groupId);
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void deleteAllCoursePackage(){
+		try {
+			coursePackagePersistence.removeAll();
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 }

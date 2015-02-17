@@ -182,4 +182,32 @@ public class ContactLocalServiceImpl extends ContactLocalServiceBaseImpl {
 
 		return contact;
 	}
+	
+	public void deleteContactByContactId(long contactId){
+		try {
+			contactPersistence.removeByContactId(contactId);
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void deleteContactByGrouptId(long groupId){
+		try {
+			contactPersistence.removeByGroupId(groupId);
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void deleteAllContact(){
+		try {
+			contactPersistence.removeAll();
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 }

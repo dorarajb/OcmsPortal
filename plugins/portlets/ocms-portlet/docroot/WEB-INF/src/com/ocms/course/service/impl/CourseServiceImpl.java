@@ -140,4 +140,31 @@ public class CourseServiceImpl extends CourseServiceBaseImpl {
 
 		return course;
 	}
+	
+	public void deleteCourseByCourseId(long courseId){
+		try {
+			coursePersistence.removeByCourseId(courseId);
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void deleteCourseByGrouptId(long groupId){
+		try {
+			coursePersistence.removeByGroupId(groupId);
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void deleteAllCourse(){
+		try {
+			coursePersistence.removeAll();
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

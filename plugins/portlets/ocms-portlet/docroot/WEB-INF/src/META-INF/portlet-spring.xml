@@ -22,4 +22,4 @@
 	<bean id="com.ocms.course.service.PricingLocalService" class="com.ocms.course.service.impl.PricingLocalServiceImpl" />
 	<bean id="com.ocms.course.service.PricingService" class="com.ocms.course.service.impl.PricingServiceImpl" />
 	<bean id="com.ocms.course.service.persistence.PricingPersistence" class="com.ocms.course.service.persistence.PricingPersistenceImpl" parent="basePersistence" />
-	</beans>
+</beans>

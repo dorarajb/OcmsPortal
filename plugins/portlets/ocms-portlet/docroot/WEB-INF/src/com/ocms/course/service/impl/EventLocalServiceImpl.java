@@ -176,4 +176,31 @@ public class EventLocalServiceImpl extends EventLocalServiceBaseImpl {
 		}
 		return event;
 	}
+	
+	public void deleteEventByEventId(long eventId){
+		try {
+			eventPersistence.removeByEventId(eventId);
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void deleteEventByGrouptId(long groupId){
+		try {
+			eventPersistence.removeByGroupId(groupId);
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void deleteAllEvent(){
+		try {
+			eventPersistence.removeAll();
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

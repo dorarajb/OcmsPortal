@@ -170,4 +170,31 @@ public class CourseSeriesLocalServiceImpl
 
 		return courseSeries;
 	}
+	
+	public void deleteCourseSeriesByCourseSeriesId(long courseSeriesId){
+		try {
+			courseSeriesPersistence.removeBycourseSeriesId(courseSeriesId);
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void deleteCourseSeriesByGrouptId(long groupId){
+		try {
+			courseSeriesPersistence.removeByGroupId(groupId);
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void deleteAllCourseSeries(){
+		try {
+			courseSeriesPersistence.removeAll();
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

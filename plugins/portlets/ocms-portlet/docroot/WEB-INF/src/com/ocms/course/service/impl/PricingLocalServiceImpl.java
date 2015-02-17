@@ -188,4 +188,31 @@ public class PricingLocalServiceImpl extends PricingLocalServiceBaseImpl {
 
 		return pricing;
 	}
+	
+	public void deletePricingByLocationId(long pricingId){
+		try {
+			pricingPersistence.removeByPricingId(pricingId);
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void deletePricingByGrouptId(long groupId){
+		try {
+			pricingPersistence.removeByGroupId(groupId);
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void deleteAllPricing(){
+		try {
+			pricingPersistence.removeAll();
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

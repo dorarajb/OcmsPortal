@@ -203,4 +203,31 @@ public class LocationLocalServiceImpl extends LocationLocalServiceBaseImpl {
 
 		return location;
 	}
+	
+	public void deleteLocationByLocationId(long locationId){
+		try {
+			locationPersistence.removeByLocationId(locationId);
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void deleteLocationByGrouptId(long groupId){
+		try {
+			locationPersistence.removeByGroupId(groupId);
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void deleteAllLocation(){
+		try {
+			locationPersistence.removeAll();
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }
