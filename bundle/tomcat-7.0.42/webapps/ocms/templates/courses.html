@@ -1,0 +1,35 @@
+					<div class="row">
+                        
+                            <!-- general form elements -->
+                            <button type="button" class="btn btn-danger fa fa-plus" ng-click="open(vcourse);">&nbsp;Add New Course</button>
+ 
+
+                        <div class="col-md-12">
+                       	 <div class="container">
+                                    <div class="row cardContainer " >
+                                        <div class="col-sm-10 ">
+                                                <div class="panel-body">                                    
+                                                <table class="table table-striped">
+                                                <tr ng-show="courses.length==0"><td style="vertical-align:middle;"><i class="fa fa-ban fa-3x"></i>&nbsp;No data found</td></tr>
+                                                <tr ng-hide="courses.length>-1"><td style="vertical-align:middle;"><i class="fa fa-cog fa-3x fa-spin"></i>&nbsp;Loading</td></tr>
+                                                
+                                                <tr><th>Course Id</th><th>Name</th><th>Code</th><th>Duration</th><th></th></tr>
+                                            
+                                                <tr ng-repeat="vcourse in courses | filter:filterProduct | orderBy:'-courseId'" id="{{vcourse.courseId}}" animate-on-change='vcourse.name + vcourse.code + vcourse.duration + vcourse.courseId' ng-animate=" 'animate'">
+                                                    <td>{{vcourse.courseId}}</td><td>{{vcourse.name}}</td><td>{{vcourse.code}}</td><td>{{vcourse.duration}}</td>
+                                                    
+                                                    <td style="width:100px">
+                                                        <div class="btn-group">
+                                                          <button type="button" class="btn btn-default fa fa-edit" ng-click="open(vcourse);"></button>
+                                                          <button type="button" class="btn btn-danger fa fa-trash-o" ></button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                </table>  
+                                                </div> 
+                                        </div>
+                                    </div>
+                                    
+                                </div>   
+                        </div>                           
+                      </div>                     

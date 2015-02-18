@@ -1,0 +1,114 @@
+							<div class="box box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title">Location [ID: {{location.locationId}}]</h3>
+                                        <button type="button" class="close" ng-click="cancel();">
+                                            <i class="fa fa-times-circle-o" style="margin:10px;color:blue;"></i>
+                                        </button>                                    
+                                    </div><!-- /.box-header -->
+                                
+                                <!-- form start -->
+                                <form role="form" name="location_form">
+                                    
+                               <div class="box-body">
+                                    <div class="col-xs-6">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">Code</label>
+                                            <input type="text" class="form-control"  name="code" ng-model="location.code" id="code" placeholder="Enter Location Code" >
+                                        </div>
+                                    </div>  
+                                     
+                                    <div class="col-xs-6"> 
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">Name</label>
+                                            <input type="text" class="form-control" name="name" ng-model="location.name" id="name" placeholder="Enter Location Name">
+                                        </div>
+                                    </div>    
+                                    
+                                   <div class="col-xs-6">     
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">Notes</label>
+                                            <input type="text" class="form-control" name="notes" ng-model="location.notes" id="notes" placeholder="Enter Location Note">
+                                        </div>
+                                   </div>   
+                                   
+                                   <div class="col-xs-6">     
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">Address 1</label>
+                                            <input type="text" class="form-control" name="addressLine1" ng-model="location.addressLine1" id="addressLine1" placeholder="Enter Address1">
+                                        </div>
+                                    </div>  
+                                     
+                                    <div class="col-xs-6">   
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">Address 2</label>
+                                            <input type="text" class="form-control" name="addressLine2" ng-model="location.addressLine2" id="addressLine2" placeholder="Enter Address2">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-xs-6">      
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">City</label>
+                                            <input type="text" class="form-control" name="city" ng-model="location.city" id="city" placeholder="Enter City">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-xs-6">      
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">State</label>
+                                            <input type="text" class="form-control" name="state" ng-model="location.state" id="state" placeholder="Enter State">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-xs-6">      
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">Region</label>
+                                            <input type="text" class="form-control" name="region" ng-model="location.region" id="region" placeholder="Enter Region">
+                                        </div> 
+                                     </div>   
+                                      
+                                     <div class="col-xs-6">                                        
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">Country</label>
+                                            <input type="text" class="form-control" name="country" ng-model="location.country" id="region" placeholder="Enter Country">
+                                        </div> 
+                                     </div>
+                                     
+                                     <div class="col-xs-6">                                            
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">Zip code</label>
+                                            <input type="text" class="form-control" name="zipcode" ng-model="location.zipcode" id="zipcode" placeholder="Enter Zip code">
+                                        </div> 
+                                     </div>
+                                     
+                                     <div class="col-xs-6">                                            
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">Phone</label>
+                                            <input type="text" class="form-control" name="phone" ng-model="location.phone" id="phone" placeholder="Enter phone">
+                                        </div> 
+                                     </div>
+                                     
+                                     <div class="col-xs-6">                                            
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">Fax</label>
+                                            <input type="text" class="form-control" name="fax" ng-model="location.fax" id="fax" placeholder="Enter fax">
+                                        </div>  
+                                     </div>
+                                     
+                                     <div class="col-xs-6">                                           
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">Email</label>
+                                            <input type="email" class="form-control" name="email" ng-model="location.email" id="email" placeholder="Enter Email">
+                                        </div>
+                                     </div>     
+                                                                    
+                                    </div><!-- /.box-body -->
+                                    
+                                                                        
+
+                                    <div class="box-footer">
+                              <button ng-click="saveLocation(location);" ng-disabled="product_form.$invalid || enableUpdate"
+                                class="btn btn-sm btn-primary"
+                                type="submit"  >Save</button> 
+                                    </div>
+                                </form>
+                            </div>

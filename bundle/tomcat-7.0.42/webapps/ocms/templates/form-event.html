@@ -1,0 +1,82 @@
+							<div class="box box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title">Location [ID: {{fevent.eventId}}]</h3>
+                                        <button type="button" class="close" ng-click="cancel();">
+                                            <i class="fa fa-times-circle-o" style="margin:10px;color:blue;"></i>
+                                        </button>                                    
+                                    </div><!-- /.box-header -->
+                                
+                                <!-- form start -->
+                                <form role="form" name="event_form">
+                                    
+                               <div class="box-body">
+ 
+                                     
+                                    <div class="col-xs-6"> 
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">Name</label>
+                                            <input type="text" class="form-control" name="eventName" ng-model="fevent.eventName" id="eventName" placeholder="Enter Event Name">
+                                        </div>
+                                    </div>    
+                                    
+                                   <div class="col-xs-6">     
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">Course Id</label>
+                                            <input type="text" class="form-control" name="courseId" ng-model="fevent.courseId" id="courseId" placeholder="Enter Course Id">
+                                        </div>
+                                   </div>   
+                                   
+                                   <div class="col-xs-6">     
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">Course Code </label>
+                                            <input type="text" class="form-control" name="courseCode" ng-model="fevent.courseCode" id="courseCode" placeholder="Enter Course">
+                                        </div>
+                                    </div>  
+                                     
+                                    <div class="col-xs-6">   
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">Location Id</label>
+                                            <input type="text" class="form-control" name="locationId" ng-model="fevent.locationId" id="locationId" placeholder="Enter Location Id">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-xs-6">      
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">Location Code</label>
+                                            <input type="text" class="form-control" name="locationCode" ng-model="fevent.locationCode" id="locationCode" placeholder="Enter Location Code">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-xs-6">      
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">Start Date</label>
+                                            <input type="text" class="form-control" name="startDate" ng-model="fevent.startDate" id="startDate" placeholder="Enter State">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-xs-6">      
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">End Date</label>
+                                            <input type="text" class="form-control" name="endDate" ng-model="fevent.endDate" id="endDate" placeholder="Enter End Date">
+                                        </div> 
+                                     </div>   
+                                      
+                                     <div class="col-xs-6">                                        
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">Status</label>
+                                            <input type="text" class="form-control" name="flag" value="1" readonly="readonly" ng-model="fevent.flag" id="flag" placeholder="Active">
+                                        </div> 
+                                     </div>
+                                      
+                                                                    
+                                    </div><!-- /.box-body -->
+                                    
+                                                                        
+
+                                    <div class="box-footer">
+                              <button ng-click="saveEvent(fevent);" ng-disabled="event_form.$invalid || enableUpdate"
+                                class="btn btn-sm btn-primary"
+                                type="submit"  >Save</button> 
+                                    </div>
+                                </form>
+                            </div>

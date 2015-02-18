@@ -1,0 +1,35 @@
+					<div class="row">
+                        
+                            <!-- general form elements -->
+                            <button type="button" class="btn btn-danger fa fa-plus" ng-click="open(vlocation);">&nbsp;Add New Location</button>
+ 
+
+                        <div class="col-md-12">
+                       	 <div class="container">
+                                    <div class="row cardContainer " >
+                                        <div class="col-sm-10 ">
+                                                <div class="panel-body">                                    
+                                                <table class="table table-striped">
+                                                <tr ng-show="locations.length==0"><td style="vertical-align:middle;"><i class="fa fa-ban fa-3x"></i>&nbsp;No data found</td></tr>
+                                                <tr ng-hide="locations.length>-1"><td style="vertical-align:middle;"><i class="fa fa-cog fa-3x fa-spin"></i>&nbsp;Loading</td></tr>
+                                                
+                                                <tr><th>Location Id</th><th>Name</th><th>Code</th><th>Zipcode</th><th></th></tr>
+                                            
+                                                <tr ng-repeat="vlocation in locations | filter:filterProduct | orderBy:'-locationId'" id="{{vlocation.locationId}}" animate-on-change='vlocation.name + vlocation.code + vlocation.duration + vlocation.locationId' ng-animate=" 'animate'">
+                                                    <td>{{vlocation.locationId}}</td><td>{{vlocation.name}}</td><td>{{vlocation.code}}</td><td>{{vlocation.zipcode}}</td>
+                                                    
+                                                    <td style="width:100px">
+                                                        <div class="btn-group">
+                                                          <button type="button" class="btn btn-default fa fa-edit" ng-click="open(vlocation);"></button>
+                                                          <button type="button" class="btn btn-danger fa fa-trash-o" ></button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                </table>  
+                                                </div> 
+                                        </div>
+                                    </div>
+                                    
+                                </div>   
+                        </div>                           
+                      </div>                     

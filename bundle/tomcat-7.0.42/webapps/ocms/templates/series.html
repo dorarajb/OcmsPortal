@@ -1,0 +1,33 @@
+					<div class="row">
+                        
+                          
+
+                        <div class="col-md-12">
+                       	 <div class="container">
+                                    <div class="row cardContainer " >
+                                        <div class="col-sm-10 ">
+                                                <div class="panel-body">                                    
+                                                <table class="table table-striped">
+                                                <tr ng-show="cseries.length==0"><td style="vertical-align:middle;"><i class="fa fa-ban fa-3x"></i>&nbsp;No data found</td></tr>
+                                                <tr ng-hide="cseries.length>-1"><td style="vertical-align:middle;"><i class="fa fa-cog fa-3x fa-spin"></i>&nbsp;Loading</td></tr>
+                                                
+                                                <tr><th>Id</th><th>Course Series Code</th><th>Location</th><th>Course</th><th>Date</th><th></th></tr>
+                                            
+                                                <tr ng-repeat="vcseries in cseries | filter:filterProduct | orderBy:'-courseSeriesId'" id="{{vlocation.courseSeriesId}}"  >
+                                                    <td>{{vcseries.courseSeriesId}}</td><td>{{vcseries.courseSeriesCode}}</td><td>{{vcseries.locationId}}</td><td>{{vcseries.courseId}}</td><td>{{vcseries.startDate}} to {{vcseries.endDate}}</td>
+                                                    
+                                                    <td style="width:100px">
+                                                        <div class="btn-group">
+                                                          <button type="button" class="btn btn-default fa fa-edit" ng-click="open();"></button>
+                                                          <button type="button" class="btn btn-danger fa fa-trash-o" ></button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                </table>  
+                                                </div> 
+                                        </div>
+                                    </div>
+                                    
+                                </div>   
+                        </div>                           
+                      </div>                     

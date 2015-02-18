@@ -1,0 +1,53 @@
+<section class="content">
+                    <div class="row">
+                        
+                        <!-- right column -->
+                        <form role="form" name="course_series_form">
+                        <div class="col-md-6">
+                            <!-- general form elements disabled -->
+                            <div class="box box-warning">
+                                <div class="box-header">
+                                    <h3 class="box-title">Locations</h3>
+                                </div><!-- /.box-header -->
+                                <div class="box-body">
+                                                                        
+                                        <!-- checkbox -->
+                                        <div class="form-group" ng-repeat="vlocation in locations">
+                                            <div class="checkbox">
+                                                <label>
+                                 <input type="checkbox" value="{{vlocation.locationId}}" name="chkLocation[]" checkbox-group ng-model="vlocation.selected"  />
+                                                    {{vlocation.name}}
+                                                </label>
+                                            </div>
+                       
+                                        </div>
+                                        
+                                     
+                                </div><!-- /.box-body {{listLocation}}-->
+                            </div><!-- /.box -->
+                            <div class="box box-warning">
+                                <div class="box-header">
+                                    <h3 class="box-title">Courses</h3>
+                                </div><!-- /.box-header -->
+                                <div class="box-body">
+                                                                       
+                                        <!-- checkbox -->
+                                        <div class="form-group" ng-repeat="vcourse in courses">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="{{vcourse.courseId}}" name="chkCourse[]" checkbox-group1 ng-model="vcourse.selected"/>
+                                                    {{vcourse.name}}
+                                                </label>
+                                            </div>
+                       
+                                        </div>
+                                        
+                                     <button ng-click="saveCourseseries();" class="btn btn-sm btn-primary"  type="submit"  >Create</button> 
+                                </div><!-- /.box-body {{listCourse}}-->
+                            </div>
+                        </div><!--/.col (right) -->
+                        </form>
+                         
+
+                    </div>   <!-- /.row -->
+                </section>

@@ -1,0 +1,35 @@
+					<div class="row">
+                        
+                            <!-- general form elements -->
+                            <button type="button" class="btn btn-danger fa fa-plus" ng-click="open(vevent);">&nbsp;Add New Event</button>
+ 
+
+                        <div class="col-md-12">
+                       	 <div class="container">
+                                    <div class="row cardContainer " >
+                                        <div class="col-sm-10 ">
+                                                <div class="panel-body">                                    
+                                                <table class="table table-striped">
+                                                <tr ng-show="events.length==0"><td style="vertical-align:middle;"><i class="fa fa-ban fa-3x"></i>&nbsp;No data found</td></tr>
+                                                <tr ng-hide="events.length>-1"><td style="vertical-align:middle;"><i class="fa fa-cog fa-3x fa-spin"></i>&nbsp;Loading</td></tr>
+                                                
+                                                <tr><th>Event Id</th><th>Name</th><th>Course Name</th><th>Location Name</th><th></th></tr>
+                                            
+                                                <tr ng-repeat="vevent in events | filter:filterProduct | orderBy:'-eventId'" id="{{vevent.eventId}}" animate-on-change='vevent.eventName + vevent.eventId' ng-animate=" 'animate'">
+                                                    <td>{{vevent.eventId}}</td><td>{{vevent.eventName}}</td><td>{{vevent.courseId}}</td><td>{{vevent.locationId}}</td>
+                                                    
+                                                    <td style="width:100px">
+                                                        <div class="btn-group">
+                                                          <button type="button" class="btn btn-default fa fa-edit" ng-click="open(vevent);"></button>
+                                                          <button type="button" class="btn btn-danger fa fa-trash-o" ></button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                </table>  
+                                                </div> 
+                                        </div>
+                                    </div>
+                                    
+                                </div>   
+                        </div>                           
+                      </div>                     
