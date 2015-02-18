@@ -32,12 +32,16 @@ courseControllers.controller('courselistCtrl', ['$scope', '$http','$modal', 'Cou
  
   }]);
 
-
+ 
 
 courseControllers.controller('courseCtrl', ['$scope', '$http','$modalInstance', 'item', 'Course', 
 											function ($scope, $http, $modalInstance, item, Course) {
  
+		
+      
+		
 		$scope.course = angular.copy(item);
+		 
 		$scope.cancel = function () {
             $modalInstance.dismiss('Close');
         };		
@@ -63,10 +67,10 @@ courseControllers.controller('courseCtrl', ['$scope', '$http','$modalInstance', 
 			}
 			else{ //// Adding a New Course
 				 
-				for(var i=0;i<2;i++){
+				 
 				Course.save({addcourse:'add-course', userid:'user-id', id:'10161', sName:'name', name:course.name, sCode:'code', code:course.code,
 						sDuration:'duration', duration:course.duration},course);	
-				}
+				 
 				var x = angular.copy(course);
 				$modalInstance.close(x);				
 			}
