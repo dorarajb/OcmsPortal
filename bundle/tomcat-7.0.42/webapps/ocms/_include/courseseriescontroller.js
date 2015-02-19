@@ -11,8 +11,8 @@ courseseriesControllers.controller('seriesCtrl', ['$scope', '$http','$modal', 'C
  
   }]);
 
-courseseriesControllers.controller('createcourseseriesCtrl', ['$scope', '$http','$modal', 'Course', 'Location', 'Courseseries',
-		  function($scope, $http, $modal, Course, Location, Courseseries) {	
+courseseriesControllers.controller('createcourseseriesCtrl', ['$scope', '$http','$modal','$location', 'Course', 'Location', 'Courseseries',
+		  function($scope, $http, $modal, $location, Course, Location, Courseseries) {	
 		    
 		 	 $scope.listLocation = [];
 			 $scope.listCourse = [];
@@ -26,6 +26,7 @@ courseseriesControllers.controller('createcourseseriesCtrl', ['$scope', '$http',
 				 
 			Courseseries.save({addcourse:'add-course-series-loop', Slocationarray:'location-list', locationarrayvalue:$scope.listLocation, Scoursearray:'course-list', coursearrayvalue:$scope.listCourse},Courseseries);		
 
+				 $location.path('/series')
 				 console.log($scope.listLocation);
 				 console.log($scope.listCourse);
 				
