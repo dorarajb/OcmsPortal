@@ -23,6 +23,7 @@ import com.liferay.portal.kernel.jsonwebservice.JSONWebService;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.User;
 import com.liferay.portal.security.ac.AccessControlled;
+import com.liferay.portal.security.auth.PrincipalThreadLocal;
 import com.liferay.portal.service.ServiceContext;
 import com.ocms.course.EventCourseCodeException;
 import com.ocms.course.EventCourseIdException;
@@ -100,7 +101,9 @@ public class EventServiceImpl extends EventServiceBaseImpl {
 		}
 	}
 	
-	public Event addEvent(long userId, String eventName,long courseId, String courseCode,long locationId, String locationCode, Date startDate, Date endDate,int flag, ServiceContext serviceContext) throws SystemException, PortalException {
+	public Event addEvent(String eventName,long courseId, String courseCode,long locationId, String locationCode, Date startDate, Date endDate,int flag, ServiceContext serviceContext) throws SystemException, PortalException {
+		
+		long userId =PrincipalThreadLocal.getUserId();
 		long groupId = serviceContext.getScopeGroupId();
 
 		User user = userPersistence.findByPrimaryKey(userId);
@@ -134,10 +137,11 @@ public class EventServiceImpl extends EventServiceBaseImpl {
 		return event;
 	}
 	
-	public Event updateEvent(long userId,long eventId, String eventName,long courseId, 
+	public Event updateEvent(long eventId, String eventName,long courseId, 
 			String courseCode,long locationId, String locationCode, Date startDate, 
 			Date endDate,int flag, ServiceContext serviceContext) throws SystemException, PortalException {
 
+		long userId =PrincipalThreadLocal.getUserId();
 		long groupId = serviceContext.getScopeGroupId();
 		User user = userPersistence.findByPrimaryKey(userId);
 		Date now = new Date();

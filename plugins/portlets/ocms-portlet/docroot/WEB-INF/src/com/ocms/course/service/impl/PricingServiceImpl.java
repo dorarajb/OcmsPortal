@@ -23,6 +23,7 @@ import com.liferay.portal.kernel.jsonwebservice.JSONWebService;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.User;
 import com.liferay.portal.security.ac.AccessControlled;
+import com.liferay.portal.security.auth.PrincipalThreadLocal;
 import com.liferay.portal.service.ServiceContext;
 import com.ocms.course.CurrencyException;
 import com.ocms.course.DepositException;
@@ -124,7 +125,9 @@ public class PricingServiceImpl extends PricingServiceBaseImpl {
 		}
 	}
 	
-	public Pricing addPricing(long userId,int deposit, int price, String currency, Date effectiveDate, int locationId,String locationCode, int courseId, String courseCode,  int packageId, ServiceContext serviceContext) throws SystemException, PortalException {
+	public Pricing addPricing(int deposit, int price, String currency, Date effectiveDate, int locationId,String locationCode, int courseId, String courseCode,  int packageId, ServiceContext serviceContext) throws SystemException, PortalException {
+		
+		long userId =PrincipalThreadLocal.getUserId();
 		long groupId = serviceContext.getScopeGroupId();
 
 		User user = userPersistence.findByPrimaryKey(userId);
@@ -159,8 +162,9 @@ public class PricingServiceImpl extends PricingServiceBaseImpl {
 		return pricing;
 	}
 	
-	public Pricing updatePricing(long userId,int deposit, int price, String currency, Date effectiveDate, int locationId, String locationCode, int courseId, String courseCode, int packageId,long pricingId, ServiceContext serviceContext) throws SystemException, PortalException {
+	public Pricing updatePricing(int deposit, int price, String currency, Date effectiveDate, int locationId, String locationCode, int courseId, String courseCode, int packageId,long pricingId, ServiceContext serviceContext) throws SystemException, PortalException {
 
+		long userId =PrincipalThreadLocal.getUserId();
 		long groupId = serviceContext.getScopeGroupId();
 		User user = userPersistence.findByPrimaryKey(userId);
 		Date now = new Date();

@@ -23,6 +23,7 @@ import com.liferay.portal.kernel.jsonwebservice.JSONWebService;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.User;
 import com.liferay.portal.security.ac.AccessControlled;
+import com.liferay.portal.security.auth.PrincipalThreadLocal;
 import com.liferay.portal.service.ServiceContext;
 import com.ocms.course.ContactAddressLine1Exception;
 import com.ocms.course.ContactAddressLine2Exception;
@@ -113,8 +114,10 @@ public class ContactServiceImpl extends ContactServiceBaseImpl {
 		}
 	}
 	
-	public Contact addContact(long userId, String contactType, String contactName, String addressLine1, String addressLine2, String city, String state, String region, String zip,
+	public Contact addContact(String contactType, String contactName, String addressLine1, String addressLine2, String city, String state, String region, String zip,
 			String phone, String fax, String email, ServiceContext serviceContext) throws SystemException, PortalException {
+		
+		long userId =PrincipalThreadLocal.getUserId();
 		long groupId = serviceContext.getScopeGroupId();
 
 		User user = userPersistence.findByPrimaryKey(userId);
@@ -151,9 +154,10 @@ public class ContactServiceImpl extends ContactServiceBaseImpl {
 		return contact;
 	}
 	
-	public Contact updateContact(long userId, long contactId, String contactType, String contactName, String addressLine1, String addressLine2, String city, String state, String region, String zip,
+	public Contact updateContact(long contactId, String contactType, String contactName, String addressLine1, String addressLine2, String city, String state, String region, String zip,
 			String phone, String fax, String email, ServiceContext serviceContext) throws SystemException, PortalException {
 
+		long userId =PrincipalThreadLocal.getUserId();
 		long groupId = serviceContext.getScopeGroupId();
 		User user = userPersistence.findByPrimaryKey(userId);
 		Date now = new Date();

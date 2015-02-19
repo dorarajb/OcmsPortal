@@ -36,9 +36,11 @@ import com.ocms.course.CourseSeriesMaxNoStudRegException;
 import com.ocms.course.CourseSeriesStartDateException;
 import com.ocms.course.CourseSeriesTypeException;
 import com.ocms.course.model.CourseSeries;
+import com.ocms.course.model.Location;
 import com.ocms.course.model.impl.CourseSeriesImpl;
 import com.ocms.course.service.CourseSeriesLocalServiceUtil;
 import com.ocms.course.service.LocationLocalServiceUtil;
+import com.ocms.course.service.LocationServiceUtil;
 import com.ocms.course.service.base.CourseSeriesServiceBaseImpl;
 
 /**
@@ -144,10 +146,11 @@ public class CourseSeriesServiceImpl extends CourseSeriesServiceBaseImpl {
 		return courseSeries;
 	}
 	
-	public CourseSeries updateCourse(long userId, long courseId, long locationId,
+	public CourseSeries updateCourse(long courseId, long locationId,
 			Date startDate, Date endDate, String type, long maxNoStudReg,
 			String publishingStatus, ServiceContext serviceContext) throws SystemException, PortalException {
-
+		
+		long userId =PrincipalThreadLocal.getUserId();
 		long groupId = serviceContext.getScopeGroupId();
 		User user = userPersistence.findByPrimaryKey(userId);
 		Date now = new Date();
@@ -220,14 +223,15 @@ public class CourseSeriesServiceImpl extends CourseSeriesServiceBaseImpl {
 	    		long seriesCount = 0;
 	    		String courseSeriesCode =  null;
 	    		if (CourseSeriesLocalServiceUtil.getCourseSeriesesCount() > 0) {
-	    			List<CourseSeries> courseSeriesTemp = CourseSeriesLocalServiceUtil.getCourseSeriesByLocationId(locationId, comparator);
+	    			List<CourseSeries> courseSeriesTemp = this.getCourseSeriesByLocationId(locationId, comparator);
 	    			if (courseSeriesTemp.size() > 0) {
 	    				seriesCount = courseSeriesTemp.get(courseSeriesTemp.size()-1).getSeriesCount();
 	    			}
-	    			courseSeriesCode = LocationLocalServiceUtil.getLocation(locationId).getCode();
+	    			Location location = LocationServiceUtil.getLocationByLocationId(locationId).get(0);
+	    			courseSeriesCode = location.getCode();
 	    		}	    		
 	    		for (long courseId : courseList) {
-	    			CourseSeriesLocalServiceUtil.addCourseSeries(
+	    			this.addCourseSeries(
 	    					userId, courseId, locationId, courseSeriesCode + " " + (seriesCount + 1),
 	    					new Date(), new Date(), "type", 100, "Do not publish", seriesCount + 1,
 	    					serviceContext);

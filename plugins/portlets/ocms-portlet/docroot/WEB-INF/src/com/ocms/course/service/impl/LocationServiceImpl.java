@@ -23,6 +23,7 @@ import com.liferay.portal.kernel.jsonwebservice.JSONWebService;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.User;
 import com.liferay.portal.security.ac.AccessControlled;
+import com.liferay.portal.security.auth.PrincipalThreadLocal;
 import com.liferay.portal.service.ServiceContext;
 import com.ocms.course.LocationAddressLine1Exception;
 import com.ocms.course.LocationAddressLine2Exception;
@@ -123,10 +124,12 @@ public class LocationServiceImpl extends LocationServiceBaseImpl {
 		}
 	}
 	
-	public Location addLocation(long userId, String name, String code, String notes,
+	public Location addLocation(String name, String code, String notes,
 			String addressLine1, String addressLine2, String city,
 			String state, String region, String country, String zip,
 			String phone, String fax, String email, ServiceContext serviceContext) throws SystemException, PortalException {
+		
+		long userId =PrincipalThreadLocal.getUserId();
 		long groupId = serviceContext.getScopeGroupId();
 
 		User user = userPersistence.findByPrimaryKey(userId);
@@ -166,11 +169,12 @@ public class LocationServiceImpl extends LocationServiceBaseImpl {
 		return location;
 	}
 	
-	public Location updateLocation(long userId, long locationId, String name, String code, String notes,
+	public Location updateLocation(long locationId, String name, String code, String notes,
 			String addressLine1, String addressLine2, String city,
 			String state, String region, String country, String zip,
 			String phone, String fax, String email, ServiceContext serviceContext) throws SystemException, PortalException {
 
+		long userId =PrincipalThreadLocal.getUserId();
 		long groupId = serviceContext.getScopeGroupId();
 		User user = userPersistence.findByPrimaryKey(userId);
 		Date now = new Date();

@@ -23,6 +23,7 @@ import com.liferay.portal.kernel.jsonwebservice.JSONWebService;
 import com.liferay.portal.kernel.util.Validator;
 import com.liferay.portal.model.User;
 import com.liferay.portal.security.ac.AccessControlled;
+import com.liferay.portal.security.auth.PrincipalThreadLocal;
 import com.liferay.portal.service.ServiceContext;
 import com.ocms.course.CoursePackageCodeException;
 import com.ocms.course.CoursePackageNameException;
@@ -81,7 +82,9 @@ public class CoursePackageServiceImpl extends CoursePackageServiceBaseImpl {
 		}
 	}
 	
-	public CoursePackage addCoursePackage(long userId, String name, String code, ServiceContext serviceContext) throws SystemException, PortalException {
+	public CoursePackage addCoursePackage(String name, String code, ServiceContext serviceContext) throws SystemException, PortalException {
+		
+		long userId =PrincipalThreadLocal.getUserId();
 		long groupId = serviceContext.getScopeGroupId();
 
 		User user = userPersistence.findByPrimaryKey(userId);
@@ -109,8 +112,9 @@ public class CoursePackageServiceImpl extends CoursePackageServiceBaseImpl {
 		return coursePackage;
 	}
 	
-	public CoursePackage updateCoursePackage(long userId, long coursePackageId, String name, String code, ServiceContext serviceContext) throws SystemException, PortalException {
+	public CoursePackage updateCoursePackage(long coursePackageId, String name, String code, ServiceContext serviceContext) throws SystemException, PortalException {
 
+		long userId =PrincipalThreadLocal.getUserId();
 		long groupId = serviceContext.getScopeGroupId();
 		User user = userPersistence.findByPrimaryKey(userId);
 		Date now = new Date();
