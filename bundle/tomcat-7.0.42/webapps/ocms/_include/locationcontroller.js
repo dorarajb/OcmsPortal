@@ -54,7 +54,7 @@ locationControllers.controller('locationCtrl', ['$scope', '$http','$modalInstanc
 			
 			if(location.locationId > 0){//// Edit the Course
 			 
-			 	Location.update({addlocation:'update-location', userid:'user-id', id:'10161', locationid:'location-id', locationvid:location.locationId, sName:'name', name:location.name, sCode:'code', code:location.code, sNotes:'notes', notes:location.notes,sAddressLine1:'address-line1', addressLine1:location.addressLine1,
+			 	Location.update({addlocation:'update-location', locationid:'location-id', locationvid:location.locationId, sName:'name', name:location.name, sCode:'code', code:location.code, sNotes:'notes', notes:location.notes,sAddressLine1:'address-line1', addressLine1:location.addressLine1,
 					sAddressLine2:'address-line2',addressLine2:location.addressLine2,sCity:'city',city:location.city,
 					sState:'state',state:location.state,sRegion:'region',region:location.region,sCountry:'country',country:location.country,
 					sZip:'zip',zip:location.zipcode,sPhone:'phone',phone:location.phone,sFax:'fax',fax:location.fax,sEmail:'email',email:location.email},location);			
@@ -65,7 +65,7 @@ locationControllers.controller('locationCtrl', ['$scope', '$http','$modalInstanc
 			}
 			else{ //// Adding a New Course
 				 
-				Location.save({addlocation:'add-location', userid:'user-id', id:'10161', sName:'name', name:location.name, sCode:'code', code:location.code,
+				Location.save({addlocation:'add-location', sName:'name', name:location.name, sCode:'code', code:location.code,
 						sNotes:'notes', notes:location.notes, sAddressLine1:'address-line1', addressLine1:location.addressLine1,
 					sAddressLine2:'address-line2',addressLine2:location.addressLine2,sCity:'city',city:location.city,
 					sState:'state',state:location.state,sRegion:'region',region:location.region,sCountry:'country',country:location.country,

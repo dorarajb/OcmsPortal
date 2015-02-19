@@ -65,7 +65,7 @@ eventControllers.controller('eventCtrl', ['$scope', '$http','$modalInstance', 'i
 			}
 			else{ //// Adding a New Course
 				 
-				Event.save({addevent:'add-event', userid:'user-id', id:'10161', sEventname:'event-name', eventname:fevent.eventName, sCourseid:'course-id', courseid:fevent.courseId, sCoursecode:'course-code', coursecode:fevent.courseCode, sLocationid:'location-id', locationid:fevent.locationId, sLocationcode:'location-code', locationcode:fevent.locationCode, sStartdate:'start-date', startdate:fevent.startDate, sEnddate:'end-date', enddate:fevent.endDate, sFlag:'flag', flag:'1'},fevent);			
+				Event.save({addevent:'add-event', sEventname:'event-name', eventname:fevent.eventName, sCourseid:'course-id', courseid:fevent.courseId, sCoursecode:'course-code', coursecode:fevent.courseCode, sLocationid:'location-id', locationid:fevent.locationId, sLocationcode:'location-code', locationcode:fevent.locationCode, sStartdate:'start-date', startdate:fevent.startDate, sEnddate:'end-date', enddate:fevent.endDate, sFlag:'flag', flag:'1'},fevent);			
 				var x = angular.copy(location);
 				$modalInstance.close(x);				
 			}
