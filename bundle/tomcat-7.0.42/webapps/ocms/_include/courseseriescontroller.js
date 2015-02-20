@@ -15,7 +15,10 @@ courseseriesControllers.controller('createcourseseriesCtrl', ['$scope', '$http',
 		  function($scope, $http, $modal, $location, Course, Location, Courseseries) {	
 		    
 		 	 $scope.listLocation = [];
+			 $scope.listLocationcode = [];
 			 $scope.listCourse = [];
+			 $scope.listCoursecode = [];
+			 
 			 
 		  
 			$scope.courses = Course.query({addcourse:'get-courses-by-group-id', userid:'group-id', id:'0'});
@@ -26,7 +29,7 @@ courseseriesControllers.controller('createcourseseriesCtrl', ['$scope', '$http',
 				 
 			Courseseries.save({addcourse:'add-course-series-loop', Slocationarray:'location-list', locationarrayvalue:$scope.listLocation, Scoursearray:'course-list', coursearrayvalue:$scope.listCourse},Courseseries);		
 
-				 $location.path('/series')
+				 $location.path('/series');
 				 console.log($scope.listLocation);
 				 console.log($scope.listCourse);
 				
@@ -49,16 +52,19 @@ courseseriesControllers.controller('createcourseseriesCtrl', ['$scope', '$http',
                     var index = scope.listLocation.indexOf(scope.vlocation.locationId);
                     // Add if checked
                     if (elem[0].checked) {
-                        if (index === -1) scope.listLocation.push(scope.vlocation.locationId);
+                        if (index === -1) {scope.listLocation.push(scope.vlocation.locationId);scope.listLocationcode.push(scope.vlocation.code); }
                     }
                     // Remove if unchecked
                     else {
-                        if (index !== -1) scope.listLocation.splice(index, 1);
+                        if (index !== -1) {scope.listLocation.splice(index, 1);scope.listLocationcode.splice(index, 1);}
                     }
                     // Sort and update DOM display
                     scope.$apply(scope.listLocation.sort(function(a, b) {
                         return a - b
                     }));
+                    scope.$apply(scope.listLocationcode.sort(function(a, b) {
+                        return a - b
+                    }));					
                 });
             }
         }
@@ -77,13 +83,16 @@ courseseriesControllers.controller('createcourseseriesCtrl', ['$scope', '$http',
                     var index = scope.listCourse.indexOf(scope.vcourse.courseId);
                     // Add if checked
                     if (elem[0].checked) {
-                        if (index === -1) scope.listCourse.push(scope.vcourse.courseId);
+                        if (index === -1) {scope.listCourse.push(scope.vcourse.courseId); scope.listCoursecode.push(scope.vcourse.code); }
                     }
                     // Remove if unchecked
                     else {
-                        if (index !== -1) scope.listCourse.splice(index, 1);
+                        if (index !== -1) {scope.listCourse.splice(index, 1);scope.listCoursecode.splice(index, 1);}
                     }
                     // Sort and update DOM display
+                    scope.$apply(scope.listCoursecode.sort(function(a, b) {
+                        return a - b
+                    }));					
                     scope.$apply(scope.listCourse.sort(function(a, b) {
                         return a - b
                     }));
