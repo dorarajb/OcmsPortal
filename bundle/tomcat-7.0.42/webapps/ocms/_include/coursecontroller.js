@@ -59,7 +59,7 @@ courseControllers.controller('courseCtrl', ['$scope', '$http','$modalInstance', 
 			if(course.courseId > 0){//// Edit the Course
 			 
 				
-				Course.update({addcourse:'update-course', userid:'user-id', id:'10161', courseid:'course-id', coursevid:course.courseId, sName:'name', name:course.name, sCode:'code', code:course.code, sDuration:'duration', duration:course.duration},course);	
+				Course.update({addcourse:'update-course', courseid:'course-id', coursevid:course.courseId, sName:'name', name:course.name, sCode:'code', code:course.code, sDuration:'duration', duration:course.duration},course);	
 				
 				var x = angular.copy(course);
 				$modalInstance.close(x);
@@ -68,7 +68,7 @@ courseControllers.controller('courseCtrl', ['$scope', '$http','$modalInstance', 
 			else{ //// Adding a New Course
 				 
 				 
-				Course.save({addcourse:'add-course', userid:'user-id', id:'10161', sName:'name', name:course.name, sCode:'code', code:course.code,
+				Course.save({addcourse:'add-course', sName:'name', name:course.name, sCode:'code', code:course.code,
 						sDuration:'duration', duration:course.duration},course);	
 				 
 				var x = angular.copy(course);
