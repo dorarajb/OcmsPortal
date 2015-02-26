@@ -45,4 +45,22 @@
 		</footer-portlet-javascript>
 		<css-class-wrapper>event-portlet</css-class-wrapper>
 	</portlet>
+	<portlet>
+		<portlet-name>email</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>
+			/js/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>email-portlet</css-class-wrapper>
+	</portlet>
+	<portlet>
+		<portlet-name>message-bus</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>
+			/js/main.js
+		</footer-portlet-javascript>
+		<css-class-wrapper>message-bus-portlet</css-class-wrapper>
+	</portlet>
 </liferay-portlet-app>

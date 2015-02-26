@@ -8,5 +8,7 @@
 		<portlet id="course-package"></portlet>
 		<portlet id="course-mgmt"></portlet>
 		<portlet id="event"></portlet>
+		<portlet id="email"></portlet>
+		<portlet id="message-bus"></portlet>
 	</category>
 </display>
