@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<beans
+    default-destroy-method="destroy"
+    default-init-method="afterPropertiesSet"
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+    <!-- Listeners -->
+    <bean id="liferay.mail_listener" class="com.ocms.activemq.BulkMailSenderListenerImpl" />
+    <!-- Destinations -->
+    <bean id="liferay.mail.sender.destination" class="com.liferay.portal.kernel.messaging.SerialDestination">
+        <property name="name" value="liferay/mail/destination" />
+    </bean>
+    <!-- Configurator -->
+    <bean id="messagingConfigurator" class="com.liferay.portal.kernel.messaging.config.PluginMessagingConfigurator">
+        <property name="messageListeners">
+            <map key-type="java.lang.String" value-type="java.util.List">
+                <entry key="liferay/mail/destination">
+                    <list value-type="com.liferay.portal.kernel.messaging.MessageListener">
+                        <ref bean="liferay.mail_listener" />
+                    </list>
+                </entry>
+            </map>
+        </property>
+        <property name="destinations">
+            <list>
+                <ref bean="liferay.mail.sender.destination"/>
+            </list>
+        </property>
+    </bean>
+</beans>
