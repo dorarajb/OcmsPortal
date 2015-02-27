@@ -7,7 +7,7 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
      http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
     <!-- Listeners -->
-    <bean id="liferay.mail_listener" class="com.ocms.activemq.BulkMailSenderListenerImpl" />
+    <bean id="liferay.mail_listener" class="com.ocms.messagebus.BulkMailSenderListenerImpl" />
     <!-- Destinations -->
     <bean id="liferay.mail.sender.destination" class="com.liferay.portal.kernel.messaging.SerialDestination">
         <property name="name" value="liferay/mail/destination" />
