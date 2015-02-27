@@ -193,7 +193,9 @@
 	<portlet>
 		<portlet-name>message-bus</portlet-name>
 		<display-name>Message Bus</display-name>
-		<portlet-class>com.ocms.activemq.MessageBusPortlet</portlet-class>
+		<portlet-class>
+			com.ocms.messagebus.MessageBusPortlet
+		</portlet-class>
 		<init-param>
 			<name>view-template</name>
 			<value>/html/messagebus/view.jsp</value>

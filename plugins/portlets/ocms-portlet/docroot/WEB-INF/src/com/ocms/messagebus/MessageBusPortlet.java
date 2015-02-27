@@ -11,7 +11,7 @@ import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.util.bridges.mvc.MVCPortlet;
 
 /**
- * Portlet implementation class ActiveMqPortlet
+ * Portlet implementation class MessageBusPortlet
  */
 public class MessageBusPortlet extends MVCPortlet {
  

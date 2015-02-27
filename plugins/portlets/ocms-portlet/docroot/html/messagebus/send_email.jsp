@@ -1,7 +1,7 @@
 <%@include file = "/html/init.jsp" %>
 
 <portlet:renderURL var="viewURL">
-    <portlet:param name="mvcPath" value="/html/email/view.jsp"></portlet:param>
+    <portlet:param name="mvcPath" value="/html/messagebus/view.jsp"></portlet:param>
 </portlet:renderURL>
 
 <portlet:actionURL name="sendEmail" var="sendEmailURL"></portlet:actionURL>
