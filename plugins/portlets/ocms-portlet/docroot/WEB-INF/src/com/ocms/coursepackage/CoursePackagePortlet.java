@@ -87,16 +87,20 @@ public class CoursePackagePortlet extends MVCPortlet {
 
 	    ServiceContext serviceContext = ServiceContextFactory.getInstance(
 	        CoursePackage.class.getName(), request);
-        String dateString = null;
+        String fromDateString = null;
+        String toDateString = null;
 	    String currency = ParamUtil.getString(request, "currency");
 	    int packageId = ParamUtil.getInteger(request, "packageId");
 	    int deposit = ParamUtil.getInteger(request, "deposit");
 	    int price = ParamUtil.getInteger(request, "price");
-	    dateString = ParamUtil.getString(request, "effectiveDate");
+	    fromDateString = ParamUtil.getString(request, "effectiveFromDate");
+	    toDateString = ParamUtil.getString(request, "effectiveToDate");
+	    int balanceDueParDays = ParamUtil.getInteger(request, "balanceDueParDays");
 	    String locationString = ParamUtil.getString(request, "locationId");
 	    String courseString = ParamUtil.getString(request, "courseId");
 	    SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-        Date effectiveDate = df.parse(dateString);
+        Date effectiveFromDate = df.parse(fromDateString);
+        Date effectiveToDate = df.parse(toDateString);
         String[] courseArray = courseString.split("-:");
         int courseId = Integer.parseInt(courseArray[0]);
         String courseCode = courseArray[1];
@@ -105,7 +109,7 @@ public class CoursePackagePortlet extends MVCPortlet {
         String locationCode = locationArray[1];
         
 	    try {
-	        PricingLocalServiceUtil.addPricing(serviceContext.getUserId(), deposit, price, currency, effectiveDate, locationId,locationCode , courseId, courseCode, packageId, serviceContext);
+	        PricingLocalServiceUtil.addPricing( deposit, price, currency, effectiveFromDate,effectiveToDate,balanceDueParDays, locationId,locationCode , courseId, courseCode, packageId, serviceContext);
 
 	        SessionMessages.add(request, "PackageDetailsAdded");
 

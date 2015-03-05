@@ -101,6 +101,32 @@ public class PricingServiceImpl extends PricingServiceBaseImpl {
 	public List<Pricing> getPricingByPrice(int price, int start, int end) throws SystemException {
 		return pricingPersistence.findByPrice(price, start, end);
 	}
+	
+	public List<Pricing> getPricingByPackageAndLocation(int packageId,int locationId) throws SystemException {
+		return pricingPersistence.findByPackageAndLocation(packageId, locationId);
+	}
+	
+	public List<Pricing> getPricingByPackageAndLocation(int packageId,int locationId, int start, int end) throws SystemException {
+		return pricingPersistence.findByPackageAndLocation(packageId, locationId, start, end);
+	}
+	
+	public List<Pricing> getPricingByPackageLocationActive(int packageId,int locationId,int active) throws SystemException {
+		return pricingPersistence.findByPackageLocationActive(packageId, locationId, active);
+	}
+	
+	public List<Pricing> getPricingByPackageLocationActive(int packageId,int locationId, int active, int start, int end) throws SystemException {
+		return pricingPersistence.findByPackageLocationActive(packageId, locationId, active, start, end);
+	}
+	
+	public List<Pricing> getPricingByPackageIdAndActive(int packageId, int active) throws SystemException {
+		return pricingPersistence.findByPackageAndActive(packageId, active);
+	}
+	
+	public List<Pricing> getPricingByPackageIdAndActive(int packageId,int active, int start, int end) throws SystemException {
+		return pricingPersistence.findByPackageAndActive(packageId,active, start, end);
+	}
+	
+	
 	protected void validate(int deposit, int price, String currency, Date effectiveDate, int pricingLocationId, int pricingCourseId, int pricingPackageId) throws PortalException {
 		if (Validator.isNull(deposit)) {
 			throw new DepositException();
@@ -125,7 +151,9 @@ public class PricingServiceImpl extends PricingServiceBaseImpl {
 		}
 	}
 	
-	public Pricing addPricing(int deposit, int price, String currency, Date effectiveDate, int locationId,String locationCode, int courseId, String courseCode,  int packageId, ServiceContext serviceContext) throws SystemException, PortalException {
+	public Pricing addPricing(int deposit, int price, String currency, Date effectiveFromDate,Date effectiveToDate,
+			int balanceDueParDate, int locationId,String locationCode, int courseId, String courseCode,
+			int packageId, ServiceContext serviceContext) throws SystemException, PortalException {
 		
 		long userId =PrincipalThreadLocal.getUserId();
 		long groupId = serviceContext.getScopeGroupId();
@@ -134,7 +162,7 @@ public class PricingServiceImpl extends PricingServiceBaseImpl {
 
 		Date now = new Date();
 
-		validate(deposit, price, currency, effectiveDate, locationId, courseId, packageId);
+		validate(deposit, price, currency, effectiveFromDate, locationId, courseId, packageId);
 
 		long pricingId = counterLocalService.increment();
 
@@ -149,7 +177,9 @@ public class PricingServiceImpl extends PricingServiceBaseImpl {
 		pricing.setDeposit(deposit);
 		pricing.setPrice(price);
 		pricing.setCurrency(currency);
-		pricing.setEffectiveDate(effectiveDate);
+		pricing.setEffectiveFromDate(effectiveFromDate);
+		pricing.setEffectiveToDate(effectiveToDate);
+		pricing.setBalanceDueParDate(balanceDueParDate);
 		pricing.setLocationId(locationId);
 		pricing.setLocationCode(locationCode);
 		pricing.setCourseId(courseId);
@@ -162,14 +192,16 @@ public class PricingServiceImpl extends PricingServiceBaseImpl {
 		return pricing;
 	}
 	
-	public Pricing updatePricing(int deposit, int price, String currency, Date effectiveDate, int locationId, String locationCode, int courseId, String courseCode, int packageId,long pricingId, ServiceContext serviceContext) throws SystemException, PortalException {
+	public Pricing updatePricing(int deposit, int price, String currency, Date effectiveFromDate, Date effectiveToDate, 
+			int balanceDueParDate, int locationId, String locationCode, int courseId, String courseCode, 
+			int packageId,long pricingId, ServiceContext serviceContext) throws SystemException, PortalException {
 
 		long userId =PrincipalThreadLocal.getUserId();
 		long groupId = serviceContext.getScopeGroupId();
 		User user = userPersistence.findByPrimaryKey(userId);
 		Date now = new Date();
 
-		validate(deposit, price, currency, effectiveDate, locationId, courseId, packageId);
+		validate(deposit, price, currency, effectiveFromDate, locationId, courseId, packageId);
 
 		List<Pricing> priceList = pricingPersistence.findByPricingId(pricingId);
 		Pricing pricing = priceList.get(0);
@@ -183,7 +215,9 @@ public class PricingServiceImpl extends PricingServiceBaseImpl {
 		pricing.setDeposit(deposit);
 		pricing.setPrice(price);
 		pricing.setCurrency(currency);
-		pricing.setEffectiveDate(effectiveDate);
+		pricing.setEffectiveFromDate(effectiveFromDate);
+		pricing.setEffectiveToDate(effectiveToDate);
+		pricing.setBalanceDueParDate(balanceDueParDate);
 		pricing.setLocationId(locationId);
 		pricing.setLocationCode(locationCode);
 		pricing.setCourseId(courseId);
@@ -200,6 +234,15 @@ public class PricingServiceImpl extends PricingServiceBaseImpl {
 	public void deletePricingByLocationId(long pricingId){
 		try {
 			pricingPersistence.removeByPricingId(pricingId);
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void deletePricingByPackageId(int packageId){
+		try {
+			pricingPersistence.removeByPackageId(packageId);
 		} catch (SystemException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

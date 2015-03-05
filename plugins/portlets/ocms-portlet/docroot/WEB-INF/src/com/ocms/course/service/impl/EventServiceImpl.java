@@ -34,6 +34,7 @@ import com.ocms.course.EventNameException;
 import com.ocms.course.EventStartDateException;
 import com.ocms.course.model.Event;
 import com.ocms.course.service.base.EventServiceBaseImpl;
+import com.ocms.fm.controller.FMEventController;
 
 /**
  * The implementation of the event remote service.
@@ -75,6 +76,26 @@ public class EventServiceImpl extends EventServiceBaseImpl {
 	
 	public List<Event> getEventByFlag(int flag) throws SystemException {
 		return eventPersistence.findByFlag(flag);
+	}
+	
+	public List<Event> getEventByFlag(int flag, int start, int end) throws SystemException {
+		return eventPersistence.findByFlag(flag, start, end);
+	}
+	
+	public List<Event> getEventByUserIdFlag(long userId,int flag) throws SystemException {
+		return eventPersistence.findByUserIdFlag(userId, flag);
+	}
+	
+	public List<Event> getEventByUserIdFlag(long userId, int flag, int start, int end) throws SystemException {
+		return eventPersistence.findByUserIdFlag(userId, flag, start, end);
+	}
+	
+	public List<Event> getEventByUserIdFlagGrouId(long userId,int flag, long groupId ) throws SystemException {
+		return eventPersistence.findByUserIdFlagGroupId(userId,flag,groupId);
+	}
+	
+	public List<Event> getEventByUserIdFlagGroupId(long userId, int flag, long groupId , int start, int end) throws SystemException {
+		return eventPersistence.findByUserIdFlagGroupId(userId,flag,groupId, start, end);
 	}
 	
 	protected void validate(String eventName,long courseId, String courseCode,long locationId, String locationCode, Date startDate, Date endDate) throws PortalException {
@@ -208,5 +229,10 @@ public class EventServiceImpl extends EventServiceBaseImpl {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public void FMAddEvent(){
+		FMEventController event = new FMEventController();
+		event.insertEvent();
 	}
 }

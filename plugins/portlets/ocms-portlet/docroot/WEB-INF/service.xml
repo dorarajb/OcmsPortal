@@ -198,9 +198,12 @@
         <column name="deposit" type="int"></column>
         <column name="price" type="int"></column>
         <column name="currency" type="String"></column>
-        <column name="effectiveDate" type="Date"></column>
+        <column name="effectiveFromDate" type="Date"></column>
         <column name="courseCode" type="String"></column>
         <column name="locationCode" type="String"></column>
+        <column name="effectiveToDate" type="Date"></column>
+        <column name="active" type="int"></column>
+        <column name="balanceDueParDate" type="int"></column>
         <finder name="GroupId" return-type="Collection">
             <finder-column name="groupId"></finder-column>
         </finder>
@@ -218,6 +221,19 @@
         </finder>
         <finder name="Price" return-type="Collection">
             <finder-column name="price"></finder-column>
+        </finder>
+        <finder name="PackageAndLocation" return-type="Collection">
+            <finder-column name="packageId"></finder-column>
+            <finder-column name="locationId"></finder-column>
+        </finder>
+        <finder name="PackageLocationActive" return-type="Collection">
+            <finder-column name="packageId"></finder-column>
+            <finder-column name="locationId"></finder-column>
+            <finder-column name="active"></finder-column>
+        </finder>
+        <finder name="PackageAndActive" return-type="Collection">
+            <finder-column name="packageId"></finder-column>
+            <finder-column name="active"></finder-column>
         </finder>
 	</entity>
 	<entity name="Event" local-service="true">
@@ -253,6 +269,147 @@
         </finder>
         <finder name="Flag" return-type="Collection">
             <finder-column name="flag"></finder-column>
+        </finder>
+        <finder name="UserIdFlag" return-type="Collection">
+            <finder-column name="userId"></finder-column>
+            <finder-column name="flag"></finder-column>
+        </finder>
+        <finder name="UserIdFlagGroupId" return-type="Collection">
+            <finder-column name="userId"></finder-column>
+            <finder-column name="flag"></finder-column>
+            <finder-column name="groupId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="TaxTypes" local-service="true">
+
+
+		<!-- PK fields -->
+
+		<column name="taxTypesId" type="long" primary="true"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="taxName" type="String"></column>
+        <finder name="GroupId" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+        </finder>
+        <finder name="TaxTypeId" return-type="Collection">
+            <finder-column name="taxTypesId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="TaxDetails" local-service="true">
+
+
+		<!-- PK fields -->
+
+		<column name="taxDetailsId" type="long" primary="true"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="country" type="String"></column>
+        <column name="taxTypeId" type="long"></column>
+        <column name="effectiveFromDate" type="Date"></column>
+        <column name="effectiveToDate" type="Date"></column>
+        <column name="active" type="int"></column>
+        <column name="taxPercent" type="int"></column>
+        <finder name="GroupId" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+        </finder>
+        <finder name="TaxDetailsId" return-type="Collection">
+            <finder-column name="taxDetailsId"></finder-column>
+        </finder>
+        <finder name="TaxTypeId" return-type="Collection">
+            <finder-column name="taxTypeId"></finder-column>
+        </finder>
+        <finder name="Active" return-type="Collection">
+            <finder-column name="active"></finder-column>
+        </finder>
+        <finder name="GroupIdActive" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+            <finder-column name="active"></finder-column>
+        </finder>
+        <finder name="TaxDetailsIdActive" return-type="Collection">
+            <finder-column name="taxDetailsId"></finder-column>
+            <finder-column name="active"></finder-column>
+        </finder>
+        <finder name="TaxTypeIdActive" return-type="Collection">
+            <finder-column name="taxTypeId"></finder-column>
+            <finder-column name="active"></finder-column>
+        </finder>
+	</entity>
+	<entity name="OffersAndDeductions" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="id" type="long" primary="true"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="code" type="String"></column>
+        <column name="description" type="String"></column>
+        <column name="amount" type="long"></column>
+        <column name="active" type="int"></column>
+        <column name="effectiveFromDate" type="Date"></column>
+        <column name="effectivetoDate" type="Date"></column>
+        <column name="type" type="String"></column>
+        <finder name="GroupId" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+        </finder>
+        <finder name="Id" return-type="Collection">
+            <finder-column name="id"></finder-column>
+        </finder>
+        <finder name="Code" return-type="Collection">
+            <finder-column name="code"></finder-column>
+        </finder>
+        <finder name="Active" return-type="Collection">
+            <finder-column name="active"></finder-column>
+        </finder>
+        <finder name="GroupIdAndActive" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+            <finder-column name="active"></finder-column>
+        </finder>
+        <finder name="CodeAndActive" return-type="Collection">
+            <finder-column name="code"></finder-column>
+            <finder-column name="active"></finder-column>
+        </finder>
+        <finder name="Type" return-type="Collection">
+            <finder-column name="type"></finder-column>
+        </finder>
+        <finder name="GroupIdTypeActive" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+            <finder-column name="type"></finder-column>
+            <finder-column name="id"></finder-column>
+        </finder>
+        <finder name="IdAndActive" return-type="Collection">
+            <finder-column name="id"></finder-column>
+            <finder-column name="active"></finder-column>
         </finder>
 	</entity>
 	<exceptions>
@@ -307,5 +464,17 @@
         <exception>EventEndDate</exception>
         <exception>EventCourseId</exception>
         <exception>EventLocationId</exception>
+        <exception>TaxTypeId</exception>
+        <exception>TaxTypeName</exception>
+        <exception>TaxDetailsTaxTypeId</exception>
+        <exception>Country</exception>
+        <exception>TaxPercent</exception>
+        <exception>TaxEffectiveFromDate</exception>
+        <exception>TaxEffectiveToDate</exception>
+        <exception>OffersAndDeductionsCode</exception>
+        <exception>OffersAndDeductionsAmount</exception>
+        <exception>OffersAndDeductionsEffectiveFromDate</exception>
+        <exception>OffersAndDeductionsEffectiveToDate</exception>
+        <exception>OffersAndDeductionsType</exception>
     </exceptions>
 </service-builder>
