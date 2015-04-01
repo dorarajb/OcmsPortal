@@ -10,5 +10,6 @@
 		<portlet id="event"></portlet>
 		<portlet id="email"></portlet>
 		<portlet id="message-bus"></portlet>
+		<portlet id="student-registration"></portlet>
 	</category>
 </display>

@@ -412,6 +412,78 @@
             <finder-column name="active"></finder-column>
         </finder>
 	</entity>
+	<entity name="StudentRegistration" local-service="true">
+
+		<!-- PK fields -->
+
+		<column name="studRegId" type="long" primary="true"></column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <column name="memo" type="String"></column>
+        <column name="studRegStatus" type="String"></column>
+        <column name="advisorOrig" type="String"></column>
+        <column name="advisorReg" type="String"></column>
+        <column name="coursePackageId" type="long"></column>
+        <column name="discountId" type="long"></column>
+        <column name="commMethod" type="String"></column>
+        <column name="notes" type="String"></column>
+        <column name="currency" type="String"></column>
+        <column name="tax" type="long"></column>
+        <column name="autoCharge" type="String"></column>
+        <column name="currencyPaid" type="String"></column>
+        <column name="exchangeRate" type="long"></column>
+        <column name="contactId" type="long"></column>
+        <finder name="GroupId" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+        </finder>
+        <finder name="StudRegId" return-type="Collection">
+            <finder-column name="studRegId"></finder-column>
+        </finder>
+	</entity>
+	<entity name="RegistrationDetails" local-service="true">
+		<column name="studRegId" type="long" primary="false"></column>
+		<column name="contactId" type="long"></column>
+		<column name="eventId" type="long"></column>
+		<column name="price" type="double"></column>
+		<column name="discount" type="double"></column>
+		<column name="fee" type="double"></column>
+		<column name="credit" type="double"></column>
+
+
+		<!-- PK fields -->
+
+		<column name="registrationDetailsId" type="long"
+			primary="true">
+		</column>
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long"></column>
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long"></column>
+		<column name="userId" type="long"></column>
+		<column name="userName" type="String"></column>
+		<column name="createDate" type="Date"></column>
+		<column name="modifiedDate" type="Date"></column>
+        <finder name="GroupId" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+        </finder>
+        <finder name="RegistrationDetailsId" return-type="Collection">
+            <finder-column name="registrationDetailsId"></finder-column>
+        </finder>
+	</entity>
 	<exceptions>
         <exception>CourseCode</exception>
         <exception>CourseName</exception>
@@ -476,5 +548,21 @@
         <exception>OffersAndDeductionsEffectiveFromDate</exception>
         <exception>OffersAndDeductionsEffectiveToDate</exception>
         <exception>OffersAndDeductionsType</exception>
+        <exception>TaxDetailsId</exception>
+        <exception>StudentRegistrationMemo</exception>
+        <exception>StudentRegistrationStatus</exception>
+        <exception>StudentRegistrationAdvisorOriginal</exception>
+        <exception>StudentRegistrationAdvisorRegistration</exception>
+        <exception>StudentRegistrationCommunicationMethod</exception>
+        <exception>StudentRegistrationNotes</exception>
+        <exception>StudentRegistrationCurrency</exception>
+        <exception>StudentRegistrationTax</exception>
+        <exception>StudentRegistrationAutoCharge</exception>
+        <exception>StudentRegistrationCurrencyPaid</exception>
+        <exception>StudentRegistrationExchangeRate</exception>
+        <exception>RegistrationDetailsPrice</exception>
+        <exception>RegistrationDetailsDiscount</exception>
+        <exception>RegistrationDetailsFee</exception>
+        <exception>RegistrationDetailsCredit</exception>
     </exceptions>
 </service-builder>

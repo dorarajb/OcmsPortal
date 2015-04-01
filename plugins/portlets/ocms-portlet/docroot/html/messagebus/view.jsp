@@ -7,5 +7,5 @@
 </portlet:renderURL>
 
 <aui:button-row cssClass="course-buttons">
-    <aui:button onClick="<%=sendEmailURL.toString()%>" value="ActiveMQ" />
+    <aui:button onClick="<%=sendEmailURL.toString()%>" value="MessageBus" />
 </aui:button-row>

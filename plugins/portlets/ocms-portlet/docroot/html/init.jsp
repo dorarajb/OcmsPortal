@@ -25,7 +25,8 @@
 <%@ page import="com.ocms.course.service.PricingLocalServiceUtil" %>
 <%@ page import="com.ocms.course.model.Event" %>
 <%@ page import="com.ocms.course.service.EventLocalServiceUtil" %>
-
+<%@ page import="com.ocms.course.model.StudentRegistration" %>
+<%@ page import="com.ocms.course.service.StudentRegistrationLocalServiceUtil" %>
 
 <portlet:defineObjects />
 <theme:defineObjects />
