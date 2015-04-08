@@ -33,6 +33,8 @@ import com.ocms.course.EventLocationIdException;
 import com.ocms.course.EventNameException;
 import com.ocms.course.EventStartDateException;
 import com.ocms.course.model.Event;
+import com.ocms.course.service.CourseServiceUtil;
+import com.ocms.course.service.LocationServiceUtil;
 import com.ocms.course.service.base.EventServiceBaseImpl;
 import com.ocms.fm.controller.FMEventController;
 
@@ -98,21 +100,15 @@ public class EventServiceImpl extends EventServiceBaseImpl {
 		return eventPersistence.findByUserIdFlagGroupId(userId,flag,groupId, start, end);
 	}
 	
-	protected void validate(String eventName,long courseId, String courseCode,long locationId, String locationCode, Date startDate, Date endDate) throws PortalException {
+	protected void validate(String eventName,long courseId,long locationId, Date startDate, Date endDate) throws PortalException {
 		if (Validator.isNull(eventName)) {
 			throw new EventNameException();
 		}
 		if (Validator.isNull(courseId)) {
 			throw new EventCourseIdException();
 		}
-		if (Validator.isNull(courseCode)) {
-			throw new EventCourseCodeException();
-		}
 		if (Validator.isNull(locationId)) {
 			throw new EventLocationIdException();
-		}
-		if (Validator.isNull(locationCode)) {
-			throw new EventLocationCodeException();
 		}
 		if (Validator.isNull(startDate)) {
 			throw new EventStartDateException();
@@ -122,8 +118,9 @@ public class EventServiceImpl extends EventServiceBaseImpl {
 		}
 	}
 	
-	public Event addEvent(String eventName,long courseId, String courseCode,long locationId, String locationCode, Date startDate, Date endDate,int flag, ServiceContext serviceContext) throws SystemException, PortalException {
+	public Event addEvent(String eventName,long courseId,long locationId, Date startDate, Date endDate,int flag, ServiceContext serviceContext) throws SystemException, PortalException {
 		
+		System.out.println("Add");
 		long userId =PrincipalThreadLocal.getUserId();
 		long groupId = serviceContext.getScopeGroupId();
 
@@ -131,7 +128,7 @@ public class EventServiceImpl extends EventServiceBaseImpl {
 
 		Date now = new Date();
 
-		validate(eventName, courseId, courseCode, locationId, locationCode, startDate, endDate);
+		validate(eventName, courseId, locationId,startDate,endDate);
 
 		long eventId = counterLocalService.increment();
 
@@ -145,9 +142,9 @@ public class EventServiceImpl extends EventServiceBaseImpl {
 		event.setModifiedDate(serviceContext.getModifiedDate(now));
 		event.setEventName(eventName);
 		event.setCourseId(courseId);
-		event.setCourseCode(courseCode);
+		event.setCourseCode(CourseServiceUtil.getCoursesByCourseId(courseId).get(0).getName());
 		event.setLocationId(locationId);
-		event.setLocationCode(locationCode);
+		event.setLocationCode(LocationServiceUtil.getLocationByLocationId(locationId).get(0).getName());
 		event.setStartDate(startDate);
 		event.setEndDate(endDate);
 		event.setFlag(flag);
@@ -159,15 +156,17 @@ public class EventServiceImpl extends EventServiceBaseImpl {
 	}
 	
 	public Event updateEvent(long eventId, String eventName,long courseId, 
-			String courseCode,long locationId, String locationCode, Date startDate, 
+			long locationId, Date startDate, 
 			Date endDate,int flag, ServiceContext serviceContext) throws SystemException, PortalException {
+		
+		System.out.println("Update");
 
 		long userId =PrincipalThreadLocal.getUserId();
 		long groupId = serviceContext.getScopeGroupId();
 		User user = userPersistence.findByPrimaryKey(userId);
 		Date now = new Date();
 
-		validate(eventName, courseId, courseCode, locationId, locationCode, startDate, endDate);
+		validate(eventName, courseId, locationId, startDate, endDate);
 
 		List<Event> eventList = eventPersistence.findByEventId(eventId);
 		Event event = eventList.get(0);
@@ -180,9 +179,9 @@ public class EventServiceImpl extends EventServiceBaseImpl {
 		event.setModifiedDate(serviceContext.getModifiedDate(now));
 		event.setEventName(eventName);
 		event.setCourseId(courseId);
-		event.setCourseCode(courseCode);
+		event.setCourseCode(CourseServiceUtil.getCoursesByCourseId(courseId).get(0).getName());
 		event.setLocationId(locationId);
-		event.setLocationCode(locationCode);
+		event.setLocationCode(LocationServiceUtil.getLocationByLocationId(locationId).get(0).getName());
 		event.setStartDate(startDate);
 		event.setEndDate(endDate);
 		event.setFlag(flag);

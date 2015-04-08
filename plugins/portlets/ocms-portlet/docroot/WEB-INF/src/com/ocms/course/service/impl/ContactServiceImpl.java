@@ -116,7 +116,7 @@ public class ContactServiceImpl extends ContactServiceBaseImpl {
 	
 	public Contact addContact(String contactType, String contactName, String addressLine1, String addressLine2, String city, String state, String region, String zip,
 			String phone, String fax, String email, ServiceContext serviceContext) throws SystemException, PortalException {
-		
+		System.out.println("Add");
 		long userId =PrincipalThreadLocal.getUserId();
 		long groupId = serviceContext.getScopeGroupId();
 
@@ -156,7 +156,7 @@ public class ContactServiceImpl extends ContactServiceBaseImpl {
 	
 	public Contact updateContact(long contactId, String contactType, String contactName, String addressLine1, String addressLine2, String city, String state, String region, String zip,
 			String phone, String fax, String email, ServiceContext serviceContext) throws SystemException, PortalException {
-
+		System.out.println("Update");
 		long userId =PrincipalThreadLocal.getUserId();
 		long groupId = serviceContext.getScopeGroupId();
 		User user = userPersistence.findByPrimaryKey(userId);

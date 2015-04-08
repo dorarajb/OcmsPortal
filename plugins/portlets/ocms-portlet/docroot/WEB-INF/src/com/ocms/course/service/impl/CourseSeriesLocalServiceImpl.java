@@ -39,10 +39,15 @@ import com.ocms.course.CourseSeriesEndDateException;
 import com.ocms.course.CourseSeriesMaxNoStudRegException;
 import com.ocms.course.CourseSeriesStartDateException;
 import com.ocms.course.CourseSeriesTypeException;
+import com.ocms.course.model.Course;
 import com.ocms.course.model.CourseSeries;
+import com.ocms.course.model.Location;
 import com.ocms.course.model.impl.CourseSeriesImpl;
 import com.ocms.course.service.CourseSeriesLocalServiceUtil;
+import com.ocms.course.service.CourseServiceUtil;
+import com.ocms.course.service.EventServiceUtil;
 import com.ocms.course.service.LocationLocalServiceUtil;
+import com.ocms.course.service.LocationServiceUtil;
 import com.ocms.course.service.base.CourseSeriesLocalServiceBaseImpl;
 
 /**
@@ -94,9 +99,32 @@ public class CourseSeriesLocalServiceImpl
 	public List<CourseSeries> getCourseSeriesByLocationId(long locationId, OrderByComparator orderByComparator) throws SystemException {
 		return courseSeriesPersistence.findByLocationId(locationId, 0, CourseSeriesLocalServiceUtil.getCourseSeriesesCount(), orderByComparator);
 	}
+	public List<CourseSeries> getCourseSeriesByFlagToListData(int flagToListData) throws SystemException {
+		return courseSeriesPersistence.findByFlagToListData(flagToListData);
+	}
 	
+	public List<CourseSeries> getCourseSeriesByFlagToListData(int flagToListData, int start, int end) throws SystemException {
+		return courseSeriesPersistence.findByFlagToListData(flagToListData, start, end);
+	}
+	public List<CourseSeries> getCourseSeriesByGroupIdAndFlagToListData(long groupId, int flagToListData) throws SystemException {
+		return courseSeriesPersistence.findByGroupIdAndFlagToListData(groupId, flagToListData);
+	}
+	public List<CourseSeries> getCourseSeriesByGroupIdAndFlagToListData(long groupId, int flagToListData, int start, int end) throws SystemException {
+		return courseSeriesPersistence.findByGroupIdAndFlagToListData(groupId, flagToListData, start, end);
+	}
 	public List<CourseSeries> getCourseSeriesByCourseSeriesCode(String courseSeriesCode) throws SystemException {
 		return courseSeriesPersistence.findByCourseSeriesCode(courseSeriesCode);
+	}
+	
+	public List<CourseSeries> getCourseSeriesByCourseSeriesCode(String courseSeriesCode, int start, int end) throws SystemException {
+		return courseSeriesPersistence.findByCourseSeriesCode(courseSeriesCode, start, end);
+	}
+	public List<CourseSeries> getCourseSeriesByCourseSeriesId(long courseSeriesId) throws SystemException {
+		return courseSeriesPersistence.findBycourseSeriesId(courseSeriesId);
+	}
+	
+	public List<CourseSeries> getCourseSeriesByCourseSeriesId(long courseSeriesId, int start, int end) throws SystemException {
+		return courseSeriesPersistence.findBycourseSeriesId(courseSeriesId, start, end);
 	}
 	
 	protected void validate(Date startDate, Date endDate, String type,
@@ -115,11 +143,11 @@ public class CourseSeriesLocalServiceImpl
 		}
 	}
 	
-	public CourseSeries addCourseSeries(long userId, long courseId, long locationId, String courseSeriesCode,
-			Date startDate, Date endDate, String type, long maxNoStudReg,
+	public CourseSeries addCourseSeries(long userId, long courseId, long locationId, String courseSeriesCode, String courseSeriesEventCode, 
+			int flagToListData, Date startDate, Date endDate, String type, long maxNoStudReg,
 			String publishingStatus, long seriesCount, ServiceContext serviceContext)
 			throws SystemException, PortalException {
-		
+
 		User user = userPersistence.findByPrimaryKey(userId);
 		long groupId = serviceContext.getScopeGroupId();
 
@@ -152,10 +180,11 @@ public class CourseSeriesLocalServiceImpl
 		return courseSeries;
 	}
 	
-	public CourseSeries updateCourse(long userId, long courseId, long locationId,
+	public CourseSeries updateCourse(long courseId, long locationId,
 			Date startDate, Date endDate, String type, long maxNoStudReg,
 			String publishingStatus, ServiceContext serviceContext) throws SystemException, PortalException {
-
+		
+		long userId =PrincipalThreadLocal.getUserId();
 		long groupId = serviceContext.getScopeGroupId();
 		User user = userPersistence.findByPrimaryKey(userId);
 		Date now = new Date();
@@ -169,6 +198,7 @@ public class CourseSeriesLocalServiceImpl
 		courseSeries.setGroupId(groupId);
 		courseSeries.setCompanyId(user.getCompanyId());
 		courseSeries.setUserName(user.getFullName());
+		courseSeries.setCreateDate(serviceContext.getCreateDate(now));
 		courseSeries.setModifiedDate(serviceContext.getModifiedDate(now));
 		courseSeries.setStartDate(startDate);
 		courseSeries.setEndDate(endDate);
@@ -193,9 +223,27 @@ public class CourseSeriesLocalServiceImpl
 		}
 	}
 	
+	public void deleteCourseSeriesByCourseSeriesIdCode(long courseSeriesId){
+		try {
+			this.deleteCourseSeriesByCourseSeriesCode(this.getCourseSeriesByCourseSeriesId(courseSeriesId).get(0).getCourseSeriesCode());
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	public void deleteCourseSeriesByGrouptId(long groupId){
 		try {
 			courseSeriesPersistence.removeByGroupId(groupId);
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void deleteCourseSeriesByCourseSeriesCode(String courseSeriescode){
+		try {
+			courseSeriesPersistence.removeByCourseSeriesCode(courseSeriescode);
 		} catch (SystemException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -212,43 +260,77 @@ public class CourseSeriesLocalServiceImpl
 	}
 	
 	public void addCourseSeriesLoop(long[] locationList, long[] courseList, ServiceContext serviceContext){
-		        
-		        long userId =PrincipalThreadLocal.getUserId();
-				OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
-				OrderByComparator comparator = orderByComparatorFactory.create(CourseSeriesImpl.TABLE_NAME, "seriesCount", false);
-				
-				System.out.println(locationList);
-				System.out.println(courseList);
-				System.out.println(serviceContext);
-				
-			    try {
-			    	
-			    	for (long locationId : locationList) {
-			    		long seriesCount = 0;
-			    		String courseSeriesCode =  null;
-			    		if (CourseSeriesLocalServiceUtil.getCourseSeriesesCount() > 0) {
-			    			List<CourseSeries> courseSeriesTemp = CourseSeriesLocalServiceUtil.getCourseSeriesByLocationId(locationId, comparator);
-			    			if (courseSeriesTemp.size() > 0) {
-			    				seriesCount = courseSeriesTemp.get(courseSeriesTemp.size()-1).getSeriesCount();
-			    			}
-			    			courseSeriesCode = LocationLocalServiceUtil.getLocation(locationId).getCode();
-			    		}	    		
-			    		for (long courseId : courseList) {
-			    			CourseSeriesLocalServiceUtil.addCourseSeries(
-			    					userId, courseId, locationId, courseSeriesCode + " " + (seriesCount + 1),
-			    					new Date(), new Date(), "type", 100, "Do not publish", seriesCount + 1,
-			    					serviceContext);
-			    		}
-			    	}
+		
+		String courseCode = null;
+		 
+		long userId =PrincipalThreadLocal.getUserId();
+		OrderByComparatorFactory orderByComparatorFactory = OrderByComparatorFactoryUtil.getOrderByComparatorFactory();
+		OrderByComparator comparator = orderByComparatorFactory.create(CourseSeriesImpl.TABLE_NAME, "seriesCount", false);
+		
+		System.out.println("LocationId:"+locationList);
+		System.out.println("CourseId:"+courseList);
+		System.out.println(serviceContext);
+		
+	    try {
+	    	
+	    	for (long locationId : locationList) {
+	    		long seriesCount = 0;
+	    		int flagToListData = 1;
+	    		String courseSeriesCode =  null;
+	    		if (CourseSeriesLocalServiceUtil.getCourseSeriesesCount() > 0) {
+	    			List<CourseSeries> courseSeriesTemp = this.getCourseSeriesByLocationId(locationId, comparator);
+	    			if (courseSeriesTemp.size() > 0) {
+	    				seriesCount = courseSeriesTemp.get(courseSeriesTemp.size()-1).getSeriesCount();
+	    			}
+	    			Location location = LocationServiceUtil.getLocationByLocationId(locationId).get(0);
+	    			courseSeriesCode = location.getCode();
+	    		}	    		
+	    		for (long courseId : courseList) {
+	    			Course course = CourseServiceUtil.getCoursesByCourseId(courseId).get(0);
+	    			courseCode = course.getCode();
+	    			this.addCourseSeries(
+	    					userId, courseId, locationId, courseSeriesCode + " " + (seriesCount + 1),
+	    					courseCode+"."+ courseSeriesCode + " " + (seriesCount + 1),flagToListData,
+	    					new Date(), new Date(), "type", 100, "Do not publish", seriesCount + 1,
+	    					serviceContext);
+	    			System.out.println("LocationId:"+locationId);
+	    			System.out.println("flagToListData:"+flagToListData);
+	    			System.out.println("Event:"+ courseCode+"."+ courseSeriesCode + " " + (seriesCount + 1));
+	    			flagToListData = 0;
+	    		}
+	    	}
 
-			        System.out.println("Success");
+	        System.out.println("Success");
 
-			    } catch (Exception e) {
-			        e.printStackTrace();
+	    } catch (Exception e) {
+	        e.printStackTrace();
 
-			    }
-			    
+	    }
+	    
+    }
+	public void updateFlagToChkEventCreation(CourseSeries courseSeries) throws SystemException, PortalException {
+		
+		courseSeries.setFlagToChkEventCreation(1);
+		courseSeriesPersistence.update(courseSeries);
+		
 	}
 	
+	public void createEvent(String courseSeriesCode, ServiceContext serviceContext){
+		
+		List<CourseSeries> courseSeriesList;
+		try {
+			courseSeriesList = this.getCourseSeriesByCourseSeriesCode(courseSeriesCode);
+			for (CourseSeries courseSeries : courseSeriesList) {
+			EventServiceUtil.addEvent( CourseServiceUtil.getCoursesByCourseId(courseSeries.getCourseId()).get(0).getName(), courseSeries.getCourseId(),
+					courseSeries.getLocationId(),
+					courseSeries.getStartDate(), courseSeries.getEndDate(), 1, serviceContext);
+			this.updateFlagToChkEventCreation(courseSeries);
+			}
+		} catch (SystemException | PortalException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}	
 	
 }

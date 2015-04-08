@@ -27,7 +27,7 @@ public void insertEvent(){
 		
 		try {
 			long userId =PrincipalThreadLocal.getUserId();
-			eventList = EventServiceUtil.getEventByUserIdFlag(userId, 1);
+			eventList = EventServiceUtil.getEventByFlag(1);
 			layoutName = "Web%20Event";
 			System.out.println("Event:"+eventList);
 		} catch (SystemException e) {
@@ -49,7 +49,7 @@ public void insertEvent(){
 				System.out.println("JSON:"+data);
 				FMEventService FMEventService = new FMEventServiceImpl();
 				FMEventService.addEvent(data, layoutName);
-				EventLocalServiceUtil.updateEventFlag(event,0);
+				//EventLocalServiceUtil.updateEventFlag(event,0);
 				
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block

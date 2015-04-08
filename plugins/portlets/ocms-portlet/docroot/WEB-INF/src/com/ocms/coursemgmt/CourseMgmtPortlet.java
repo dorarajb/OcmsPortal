@@ -206,10 +206,10 @@ public class CourseMgmtPortlet extends MVCPortlet {
 	    			courseSeriesCode = LocationLocalServiceUtil.getLocation(locationId).getCode();
 	    		}	    		
 	    		for (long courseId : courseIds) {
-	    			CourseSeriesLocalServiceUtil.addCourseSeries(
+	    			/*CourseSeriesLocalServiceUtil.addCourseSeries(
 	    					serviceContext.getUserId(), courseId, locationId, courseSeriesCode + " " + (seriesCount + 1),
 	    					new Date(), new Date(), "type", 100, "Do not publish", seriesCount + 1,
-	    					serviceContext);
+	    					serviceContext);*/
 	    		}
 	    	}
 
@@ -242,10 +242,10 @@ public class CourseMgmtPortlet extends MVCPortlet {
 	    String publishingStatus = ParamUtil.getString(request, "publishingStatus");
 	    
 	    try {
-	        CourseSeriesLocalServiceUtil.updateCourse(
+	        /*CourseSeriesLocalServiceUtil.updateCourse(
 					serviceContext.getUserId(), courseId, locationId,
 					startDate, endDate, type, maxNoStudReg, publishingStatus,
-					serviceContext);
+					serviceContext);*/
 
 	        SessionMessages.add(request, "courseSeriesUpdated");
 

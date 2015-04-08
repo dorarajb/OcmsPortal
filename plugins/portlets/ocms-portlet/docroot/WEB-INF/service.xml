@@ -95,6 +95,13 @@
         <column name="maxNoStudReg" type="long"></column>
         <column name="seriesCount" type="long"></column>
         <column name="courseSeriesCode" type="String"></column>
+        <column name="courseSeriesEventCode" type="String"></column>
+        <column name="flagToListData" type="int"></column>
+        <column name="flagToChkEventCreation" type="int"></column>
+        <column name="sMonth" type="String"></column>
+        <column name="sDay" type="int"></column>
+        <column name="eMonth" type="String"></column>
+        <column name="eDay" type="int"></column>
         <finder name="GroupId" return-type="Collection">
             <finder-column name="groupId"></finder-column>
         </finder>
@@ -109,6 +116,17 @@
         </finder>
         <finder name="CourseSeriesCode" return-type="Collection">
             <finder-column name="courseSeriesCode"></finder-column>
+        </finder>
+        <finder name="FlagToListData" return-type="Collection">
+            <finder-column name="flagToListData"></finder-column>
+        </finder>
+        <finder name="GroupIdAndFlagToListData" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+            <finder-column name="flagToListData"></finder-column>
+        </finder>
+        <finder name="locationIdAndFlagToListData" return-type="Collection">
+            <finder-column name="locationId"></finder-column>
+            <finder-column name="flagToListData"></finder-column>
         </finder>
 	</entity>
 	<entity name="Contact" local-service="true">

@@ -13,7 +13,8 @@
 
 <liferay-ui:search-container>
     <liferay-ui:search-container-results
-        results="<%=ContactLocalServiceUtil.getContactByGroupId(scopeGroupId, searchContainer.getStart(), searchContainer.getEnd())%>"
+        results="<%=ContactLocalServiceUtil.getContactByGroupId(scopeGroupId,
+        		searchContainer.getStart(), searchContainer.getEnd())%>"
         total="<%=ContactLocalServiceUtil.getContactsCount()%>" />
 
     <liferay-ui:search-container-row className="com.ocms.course.model.Contact" modelVar="contacts">
