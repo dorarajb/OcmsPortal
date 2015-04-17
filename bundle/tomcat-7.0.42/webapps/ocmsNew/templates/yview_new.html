@@ -1,0 +1,65 @@
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+  
+        <!-- Main content -->
+        <section class="content">
+
+          <!-- Default box -->
+          <div class="row">
+            <div class="col-md-6">
+               
+              <div class="box box-primary">
+                <div class="box-header">
+                  <h3 class="box-title">{{date | date:'yyyy'}}</h3>
+                    <div class="pull-right mycss">
+						<select ng-model="f1.locationId" ng-options="location.locationId as location.region for location in locations" class="custom-select" ng-change="courseSeriesEventListFn(f1)" ></select>
+						<span ng-repeat="event in courseSeriesEventList" >
+							<input type="hidden" ng-model="event" ng-init="event=courseSeriesEventDateParsing(event)">
+						</span>							
+                    </div>                  
+                </div>
+				<div class="box-body table-responsive no-padding">
+                  <table class="table table-hover">
+                    <tr>
+                      <th></th>
+                      <th ng-repeat="nocolumn in nocolumns">{{nocolumn}}</th>                       
+                    </tr>
+                    <tr ng-repeat="norow in norows">
+                      <td>{{norow}}</td>
+                      <td ng-repeat="nocolumn in nocolumns">
+							<span ng-repeat="event in courseSeriesEventList" >
+							<!--<input type="hidden" ng-model="event" ng-init="event=courseSeriesEventDateParsing(event)">-->
+								<!--<span class="Clsday" title="{{event.courseSeriesEventCode}}" ng-if="(norow == event.SMonth && nocolumn == event.SDay)||(norow == event.EMonth && nocolumn == event.EDay)||((norow == event.SMonth||norow == event.EMonth)&&(nocolumn >= event.SDay && nocolumn <= event.EDay))" ng-click="open(event);">-->
+								<span class="Clsday" title="{{event.courseSeriesEventCode}}" ng-if="(norow == event.sMonth && nocolumn == event.sDay)||(norow == event.eMonth && nocolumn == event.eDay)||((norow == event.sMonth||norow == event.eMonth)&&(nocolumn >= event.sDay && nocolumn <= event.eDay))" ng-click="open(event);">
+								 <div ng-repeat="courseSeries in courseSeriesList" ng-if="courseSeries.courseSeriesCode == event.courseSeriesCode" style="width:auto;padding:0px;background-color:{{courseSeries.color}}">&nbsp;
+								 </div>
+								</span>
+							</span>					  
+					  </td>                                                                                                           
+                    </tr>  
+                  </table>
+                </div>                
+ 
+				<div class="box-bottomc">
+                   <div style="padding:5px;"  "text-align:center;">
+                   <span ng-repeat="courseSeries in courseSeriesList">
+						<input type="hidden" ng-model="courseSeries.courseSeriesCode" name="location">
+						<input type="hidden" ng-model="courseSeries.color" ng-init="courseSeries.color=getRandomColor()">
+						
+                    
+                   <span class="label" style="background-color:{{courseSeries.color}}">&nbsp;&nbsp;&nbsp;&nbsp;</span> <span class="label myallcap">{{courseSeries.courseSeriesCode}}</span>
+                   
+                   						
+						
+					</span>
+                   </div>
+                </div>                
+              </div><!-- /.box -->
+            </div><!-- /.col (LEFT) -->          
+		  </div><!-- /.box -->
+
+		</div><!-- /.col (RIGHT) -->
+	  </div><!-- /.box -->
+
+	</section><!-- /.content -->
+  </div><!-- /.content-wrapper -->

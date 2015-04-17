@@ -1,0 +1,63 @@
+<style>
+.modal-dialog{ width:700px;}
+</style>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+      
+          <div class="row">
+          	<div class="col-xs-4">
+                <div class="input-group" style="padding:0px;"> 
+                    <button class="btn btn-primary" type="button" ng-show="courseseriesvalue.flagToChkEventCreation == 0" ng-click="createEvent(courseseriesvalue);">Create Event</button> 
+                </div>
+            </div>  
+          	<div class="col-xs-7">
+                <div class="input-group" style="margin-left:1px;"> 
+                    <b> Course Series:</b> {{courseseriesvalue.courseSeriesCode}}                  
+                </div>
+            </div>   
+          	<div class="col-xs-1">
+                <div class="input-group" style="padding:0px;">                     
+                    <button type="button" class="close" ng-click="cancel();" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+            </div>                             
+          </div>     
+              
+      </div>     
+      <div class="modal-body">
+	<!--<input type="text" class="form-control"  datepicker-popup="yyyy/MM/dd" ng-model="dt"             datepicker-append-to-body="true"/>-->
+			<table id="example1" class="tabledata table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th>Course</th>
+                        <th>Location</th>
+                        <th>Event Name</th> 
+                        <th>Start Date</th> 
+                        <th>End Date</th>                         
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="vcourseseriesdetailslist in courseseriesdetailslist | filter:filterProduct | orderBy:'+courseSeriesId'" id="{{vlocation.courseSeriesId}}">
+						<td>{{vcourseseriesdetailslist.courseId}}</td>
+						<td>{{vcourseseriesdetailslist.locationId}}</td>
+						<td>{{vcourseseriesdetailslist.courseSeriesEventCode}}</td>
+						<td>
+							<input type="text" class="form-control" name="startDate" style="width:150px;" datepicker-popup="yyyy-MM-dd"  ng-model="vcourseseriesdetailslist.startDate"    ng-change="updateCourseSeriesEventStartDate(vcourseseriesdetailslist)"   id="startDate" placeholder="Enter start date" >	
+						</td>
+						<td> 
+							<input type="text" class="form-control" name="endDate" style="width:150px;" datepicker-popup="yyyy-MM-dd"  ng-model="vcourseseriesdetailslist.endDate"     ng-change="updateCourseSeriesEventEndDate(vcourseseriesdetailslist)"   id="endDate" placeholder="Enter End Date" >
+						</td>	
+						<td style="width:50px" align="center">
+							<div class="btn-group" >
+								<i type="button" class="glyphicon glyphicon-remove-circle myhand" ng-really-message="Do you want to delete this event?" ng-really-click="deleteSeriesEvent(vcourseseriesdetailslist);"></i>
+							</div>
+						</td>
+                      </tr>                       
+                    </tbody>       
+                  </table>     
+      </div>
+
+    </div>
+  </div>
+ 

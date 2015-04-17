@@ -1,0 +1,97 @@
+     <!-- New Code -->
+    <style>
+	.box-header{height:50px !important;}
+	.box-title{ font-size:25px !important; }
+    .mylist li{ background-color:#4b4b4b; color:#cccccc; padding:10px; margin-top:10px; list-style:none; margin-left:10px;}	
+	.myselection li{ background-color:#ECECEC; color:#4B4B4B; font-weight:bold;margin-top:10px; list-style:none; padding:5px; margin-left:-40px;}
+	 .myselection ul{height: 252px; overflow: auto; margin-left:-10px;}	 
+	.mylist ul{height: 252px; overflow: auto; margin-left:-10px;}
+	 .boxcurve{background-color:#ececec;border:1px solid #707070;border-bottom-right-radius: 1em;border-bottom-left-radius: 1em;}
+	 .btn-primary {
+  background-color: #79C1C4;
+  border-color: #79C1C4;}
+    </style>
+    <!-- New Code -->
+ <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+      
+  		<!-- New Code-->
+        
+        <!-- Main content -->
+        <section class="content">
+
+          <!-- Default box -->
+          <div class="row">
+            <div class="col-md-6" > 
+               
+              <div class="box box-primary boxcurve" >
+                <div class="box-header">
+                  <h3 class="box-title">Location</h3>                                       
+                </div>
+				<div class="box-body" >
+                  	<div class="row">
+                        <div class="col-md-6 mylist">
+                          <ul>
+                            <li ng-repeat='item in locations' ng-show="item.name" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="locations" jqyoui-draggable="{index: {{$index}}, animate: false, placeholder: 'keep'}" style="z-index:999999;">{{item.name}}</li>
+                          </ul>
+                        </div>
+                        <div class="col-md-6 myselection">
+ <ul data-drop="true" ng-model='list4' jqyoui-droppable="{multiple:true}" style="background-color:#FFF;border:1px solid #8c8c8c; width:201px;height:252px;">
+                <li ng-repeat="item in list4 track by $index" ng-show="item.name" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="list4" jqyoui-draggable="{index: {{$index}},animate:true}">{{item.name}}</li>
+                <input type="text"  ng-repeat="item in list4 track by $index"  ng-model="item.name"/>
+                <li class="placeholder" ng-hide="hideMe()">Drop Your Locations Here</li>
+            </ul>                        
+                        </div>
+                    </div>
+                </div>  
+                              
+ 				 
+				                 
+              </div><!-- /.box -->
+
+               
+              <!-- /.box -->
+
+            </div><!-- /.col (LEFT) -->
+            <div class="col-md-6">
+               
+               <div class="box box-primary boxcurve" >
+                <div class="box-header">
+                  <h3 class="box-title">Courses</h3>                                       
+                </div>
+				<div class="box-body" >
+                  	<div class="row">
+                        <div class="col-md-6 mylist" >
+ <ul>
+            <li ng-repeat='item1 in courses' ng-show="item1.name" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="list2" jqyoui-draggable="{index: {{$index}}, placeholder: 'keep'}" style="z-index:999999;">{{item1.name}}</li>
+          </ul>
+                        </div>
+                        <div class="col-md-6 myselection" >
+      
+            <ul data-drop="true" ng-model='list5' jqyoui-droppable="{multiple:true}" style="background-color:#FFF; border:1px solid #8c8c8c; width:201px;height:252px;">
+                <li ng-repeat="item1 in list5 track by $index" ng-show="item1.name" data-drag="true" data-jqyoui-options="{revert: 'invalid', helper: 'clone'}" ng-model="list5" jqyoui-draggable="{index: {{$index}},animate:true}">{{item1.name}}</li>
+                <input type="text"  ng-repeat="item1 in list5 track by $index"  ng-model="item1.name"/>
+                <li class="placeholder" ng-hide="hideMe1()">Drop Your Course Here</li>
+            </ul>                            
+                        </div>
+                    </div>
+                </div>  
+				                 
+              </div><!-- /.box -->
+
+               
+               <!-- /.box -->
+
+            </div><!-- /.col (RIGHT) -->
+            
+                              <div  align="center">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                  </div>
+          </div><!-- /.box -->
+
+        </section>
+        <!-- /.content -->
+        
+        <!-- New Code-->
+        
+      </div><!-- /.content-wrapper -->

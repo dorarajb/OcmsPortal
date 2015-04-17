@@ -1,0 +1,35 @@
+					<div class="row">
+                        
+                            <!-- general form elements -->
+                            <button type="button" class="btn btn-danger fa fa-plus" ng-click="open(vcourse);">&nbsp;Add New Course</button>
+ 
+
+                        <div class="col-md-12">
+                       	 <div class="container">
+                                    <div class="row cardContainer " >
+                                        <div class="col-sm-10 table-striped">
+                                        
+                                            <div class="card" ng-repeat="vcourse in courses" animate-on-change='vcourse.code + vcourse.name + vcourse.duration' ng-animate=" 'animate'">
+                                            
+                                                <button class="btn close cardClose"  title="Delete Course" >&times;</button>
+                                                <button class="btn close cardClose" ng-click="open(vcourse);" title="Edit Course" >&Epsilon;</button>
+                                                <div class="cardHeader"><a href="#" class="white">{{vcourse.name}}  - {{vcourse.courseId}}<i class="icon-edit icon-white editIcon"></i></a></div>
+                                                <div class="cardBody">
+                                                    <div class="clearfix">
+                                                        <div class="pull-left cardBodyLeft">
+                                                            <a href="#" class="white"><img src="img/male.png" class="cardImage" /></a>
+                                                        </div>
+                                                        <div class="pull-left cardBodyRight">
+                                                            <div class="cardBodyContent">Code {{vcourse.code}}, Duration: {{vcourse.duration}}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                           
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                </div>   
+                        </div>                           
+                      </div>                     

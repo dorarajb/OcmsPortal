@@ -1,0 +1,64 @@
+<style>
+     td, th, td {
+    border: 1px #ccc solid; padding:0px; width:10px !important;
+	
+}
+
+.Clsday { list-style:none; /*background-color:#357CA5;*/  color:#FFF; cursor:pointer; }
+.clslab{list-style:none; float:left; }
+     </style>
+  
+<section class="content">
+<div class="row">
+	<div class="box-body" >
+		<div class="col-xs-3">   
+			 <div class="form-group" align="left">		
+				<label class="box-title" style="float:left;padding-right:5px;"> Location: </label>&nbsp
+				 <select ng-model="f1.locationId" ng-options="location.locationId as location.region for location in locations" class="form-control" ng-change="courseSeriesEventListFn(f1)" style="float:left; padding:0px;width:60%;height:auto; "></select>
+			</div>
+            
+		</div>	
+	</div>	
+	<div class="box-body" style=" float: left; width: 100%;">
+		<div class="col-xs-4" style="background-color:#fff">  
+			<div class="form-group" align="left">	
+			<label class="box-title"> {{date | date:'yyyy'}}</label><br>
+<table cellspacing="0" cellpadding="0" width="30%" style="font-size:8px;" class="clsapp">
+  
+   <tbody>
+    
+       <!--<span ng-repeat="event in courseSeriesEventList">
+            {{event.courseSeriesCode}}{{event.sMonth}}{{event.sDay}}{{event.eMonth}}{{event.eDay}}
+        </span>-->
+    <div style="float:left;width:100%">
+	<span ng-repeat="courseSeries in courseSeriesList">
+			<input type="hidden" ng-model="courseSeries.courseSeriesCode" name="location">
+            <input type="hidden" ng-model="courseSeries.color" ng-init="courseSeries.color=getRandomColor()">
+			<li class="clslab"><div style="float:left;width:10px;height:10px;margin:5px;background-color:{{courseSeries.color}}" >&nbsp;</div><label style="font-weight:normal;">{{courseSeries.courseSeriesCode}}</label></li>
+    </span> 
+	</div>
+	
+     <tr>
+     <td></td>
+     	<td ng-repeat="nocolumn in nocolumns" align="center">{{nocolumn}}</td>
+     </tr>
+     <tr ng-repeat="norow in norows">
+     	<td>{{norow}}</td>
+        <td ng-repeat="nocolumn in nocolumns" >       
+        <span ng-repeat="event in courseSeriesEventList" >
+            <li class="Clsday" title="{{event.courseSeriesEventCode}}{{event.startDate}}{{event.endDate}}" ng-if="(norow == event.SMonth && nocolumn == event.SDay)||(norow == event.EMonth && nocolumn == event.EDay)||((norow == event.SMonth||norow == event.EMonth)&&(nocolumn >= event.SDay && nocolumn <= event.EDay))" ng-click="open(event);">
+			 <div ng-repeat="courseSeries in courseSeriesList" ng-if="courseSeries.courseSeriesCode == event.courseSeriesCode" style="width:auto;padding:0px;background-color:{{courseSeries.color}}">&nbsp;
+			 </div>
+			</li>
+        </span>
+        </td>
+     </tr>
+
+ </tbody>
+ </table>
+ 			</div>
+            
+		</div>	
+	</div>	
+ </div>
+ </section>

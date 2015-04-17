@@ -1,0 +1,58 @@
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+  
+        <!-- Main content -->
+        <section class="content">
+
+          <!-- Default box -->
+          <div class="row">
+          	<div class="col-xs-12">
+                <div class="input-group" style="padding-bottom:10px;"> 
+				<a href="#/createcourseseries">
+                    <button class="btn btn-primary" type="submit">Create Course Series</button> </a>
+					<button type="button" class="btn btn-primary" ng-show="codeList.length>0" ng-click="createEventList();" >&nbsp;Create Events</button>
+                </div>
+            </div>    
+          </div>
+          
+          <div class="row">
+            <div class="col-xs-12">
+               
+ 			<div class="box">
+
+                <div class="box-body">                
+                  <table id="example1" class="tabledata table-bordered table-striped">
+                    <thead>
+                      <tr>
+                        <th>Sl No</th>
+                        <th>Course Series Name</th>
+                        <th>Select</th>
+                         
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr ng-repeat="vcseries in cseries | filter:filterProduct | orderBy:'-courseSeriesId'" id ={{vcseries.courseSeriesCode}} ng-switch="vcseries.flagToChkEventCreation" >
+                         <td>{{$index + 1}}</td> <td>{{vcseries.courseSeriesCode}}</td><td>
+							<div  ng-switch-when=0>
+							<input type="checkbox" value="{{vcseries.courseSeriesCode}}" name="chkSeries[]" checkbox-series ng-model="vcseries.selected" />
+							</div>
+							<div  ng-switch-when=1>
+							<input type="checkbox" value="{{vcseries.courseSeriesCode}}" name="chkSeries[]" checkbox-series ng-model="vcseries.selected" disabled />
+							</div>
+						</td>                       
+                        <td align="center"><i class="glyphicon glyphicon-edit myhand" ng-click="open(vcseries);"></i>&nbsp;&nbsp;&nbsp;&nbsp;<i class="glyphicon glyphicon-remove-circle myhand"></i></td>
+                      </tr>
+                    </tbody>
+       
+                  </table>
+                </div><!-- /.box-body -->
+              </div>
+
+            </div><!-- /.col (12) -->
+ 
+          </div><!-- /.box -->
+
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->

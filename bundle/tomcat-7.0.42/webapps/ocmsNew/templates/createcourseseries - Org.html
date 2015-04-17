@@ -1,0 +1,78 @@
+<section class="content">
+                    <div class="row">
+                        
+                        
+                        <form role="form" name="course_series_form">
+                        <!-- Left column -->
+                        <div class="col-md-6">
+                            <!-- general form elements disabled -->
+                            <div class="box box-warning">
+                                <div class="box-header">
+                                    <h3 class="box-title">Locations</h3>
+                                </div><!-- /.box-header -->
+                                <div class="box-body" style="overflow-y: auto; height:200px;">
+								
+								<!-- checkbox {{vlocation.locationId}}-->
+                                        <div class="form-group"  ng-repeat="vlocation in locations" ng-switch on=”vlocation.locationId”>
+                                            <div class="checkbox">
+                                                <label>
+												<input type="checkbox" value="{{vlocation.locationId}}" name="chkLocation[]" checkbox-group ng-model="vlocation.selected"  />
+                                                    {{vlocation.name}}
+                                                </label>
+                                            </div>
+                       
+                                        </div>
+                                     
+                                </div><!-- /.box-body {{listLocation}}-->
+                            </div><!-- /.box -->
+                            <div class="box box-warning">
+                                <div class="box-header">
+                                    <h3 class="box-title">Courses</h3>
+                                </div><!-- /.box-header -->
+                                <div class="box-body" style="overflow-y: auto; height:200px;">
+                                                                       
+                                        <!-- checkbox {{vcourse.courseId}}-->
+                                        <div class="form-group" ng-repeat="vcourse in courses">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="{{vcourse.courseId}}" name="chkCourse[]" checkbox-group1 ng-model="vcourse.selected"/>
+                                                    {{vcourse.name}}
+                                                </label>
+                                            </div>
+                       
+                                        </div>
+                                        
+                                      
+                                </div><!-- /.box-body {{listCourse}}-->
+
+                            </div>
+                                                            <div class="">
+                                <button ng-click="saveCourseseries();" class="btn btn-sm btn-primary"  type="submit"  >Create</button>
+                                </div>
+                        </div><!--/.col (Left) -->
+                        
+                        
+                        <!-- right column -->
+                         
+                        <div class="col-md-6">
+                        	
+                            <!-- general form elements disabled -->
+                            <div class="box box-warning" ng-repeat="selectedLocation in listLocationcode">
+                                <div class="box-header">
+                                    <h3 class="box-title">{{selectedLocation}} - Preview</h3>
+                                </div><!-- /.box-header -->
+                                <div class="box-body">
+                                        <!-- radio -->
+                                        <div class="form-group">
+                                            <div class="radio" ng-repeat="selectedCourse in listCoursecode">                                                 
+                                                    {{selectedLocation}} - {{selectedCourse}}                                   
+                                            </div> 
+                                        </div>                                 
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+                        </div><!--/.col (right) -->                        
+                        </form>
+                         
+
+                    </div>   <!-- /.row -->
+                </section>

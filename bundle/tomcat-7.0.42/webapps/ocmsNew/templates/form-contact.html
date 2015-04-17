@@ -1,0 +1,57 @@
+							<div class="box box-primary">
+                                <div class="box-header">
+                                    <h3 class="box-title">Contact [ID: {{contact.contactId}}]</h3>
+                                        <button type="button" class="close" ng-click="cancel();">
+                                            <i class="fa fa-times-circle-o" style="margin:10px;color:blue;"></i>
+                                        </button>                                    
+                                    </div><!-- /.box-header -->
+                                
+                                <!-- form start -->
+                                <form role="form" name="course_form">
+                                    <div class="box-body">
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">Name</label>
+                                            <input type="text" class="form-control"  name="name" ng-model="contact.contactName" id="contactName" placeholder="Enter contact Name" >
+											<input type="text" class="form-control"  name="contactType" ng-model="contact.contactType" id="contactType" value="contact" >
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">Address Line1</label>
+                                            <input type="text" class="form-control" name="addressLine1" ng-model="contact.addressLine1" id="addressLine1" placeholder="Enter Contact Address Line1">
+                                        </div>
+										<div class="form-group">
+                                            <label for="exampleInputEmail">Address Line2</label>
+                                            <input type="text" class="form-control" name="addressLine2" ng-model="contact.addressLine2" id="addressLine2" placeholder="Enter Contact Address Line2">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">City</label>
+                                            <input type="text" class="form-control" name="city" ng-model="contact.city" id="city" placeholder="Enter Contact City">
+                                        </div>
+										<div class="form-group">
+                                            <label for="exampleInputEmail">State</label>
+                                            <input type="text" class="form-control"  name="state" ng-model="contact.state" id="state" placeholder="Enter contact State" >
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">Region</label>
+                                            <input type="text" class="form-control" name="region" ng-model="contact.region" id="region" placeholder="Enter Contact Region">
+                                        </div>
+										<div class="form-group">
+                                            <label for="exampleInputEmail">ZIP</label>
+                                            <input type="text" class="form-control" name="zip" ng-model="contact.zip" id="zip" placeholder="Enter Contact ZIP">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">Phone No.</label>
+                                            <input type="text" class="form-control" name="phone" ng-model="contact.phone" id="phone" placeholder="Enter Contact Phone Number">
+                                        </div>
+										<div class="form-group">
+                                            <label for="exampleInputEmail">EMail ID</label>
+                                            <input type="text" class="form-control" name="email" ng-model="contact.email" id="email" placeholder="Enter Contact Email ID">
+                                        </div>
+                                    </div><!-- /.box-body -->
+
+                                    <div class="box-footer">
+                              <button ng-click="saveContact(contact);" ng-disabled="product_form.$invalid || enableUpdate"
+                                class="btn btn-sm btn-primary"
+                                type="submit"  >Save</button> 
+                                    </div>
+                                </form>
+                            </div>

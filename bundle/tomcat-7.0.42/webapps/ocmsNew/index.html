@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html ng-app="ocmsApp">
+  <head>
+    <meta charset="UTF-8">
+    <title>OCMS</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <!-- Bootstrap 3.3.2 -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />  
+    <!-- Theme style -->
+    <link href="dist/css/AdminLTE.css" rel="stylesheet" type="text/css" />	
+    <!-- DATA TABLES -->
+    <link href="plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" /> 
+    <!-- AdminLTE Skins. Choose a skin from the css/skins 
+         folder instead of downloading all of them to reduce the load. -->
+    <link href="dist/css/skins/_all-skins.css" rel="stylesheet" type="text/css" />
+	<!--DatePicker-->
+	<link href="css/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+	<link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+ 
+  </head>
+  <body class="skin-blue fixed">
+    <!-- Site wrapper -->
+    <div class="wrapper" >
+      
+      <header class="main-header">
+        <a href="index.html" class="logo">LOGO HERE</a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+          <!-- Sidebar toggle button-->
+		  <!--<a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>-->
+          
+           <a href="javascript:void(0);" class="logo" style="background:none; color:#79c1c4; text-transform:uppercase; text-align:left;"> Event Scheduler </a>
+                       
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+              <li class="dropdown user user-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="background-color:#79c1c4">
+                  <img src="dist/img/login_ico.png" class="user-image" alt="User Image"/>
+                  <span class="hidden-xs">USER</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <!-- User image -->
+                  <li class="user-header">
+                    <img src="dist/img/login_ico.png" class="img-circle" alt="User Image" />
+                    <p>
+                      User - Admin                      
+                    </p>
+                  </li>
+                  <!-- Menu Footer-->
+                  <li class="user-footer">
+                    <div class="pull-left">
+                      <a href="#" class="btn btn-default btn-flat">Profile</a>
+                    </div>
+                    <div class="pull-right">
+                      <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <!-- =============================================== -->
+
+      <!-- Left side column. contains the sidebar -->
+      <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">  
+          <!-- sidebar menu: : style can be found in sidebar.less -->
+          <ul class="sidebar-menu">             
+            <li>
+              <a href="#">
+                <i class="fa-course"></i> <span class="fa-course-span">Course</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-location"></i>
+                <span  class="fa-course-span">Location</span>                 
+              </a>
+            </li>
+            <li>
+              <a href="#/series">
+                <i class="fa-courseseries"></i> <span class="fa-course-span">Course Series</span>
+                </a>
+            </li>
+            <li>
+              <a href="#/calyview">
+                <i class="fa-eventscheduler"></i> <span class="fa-course-span">Event Scheduler</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-event"></i> <span class="fa-course-span">Event</span>
+              </a>
+            </li> 
+          </ul>
+        </section>
+        <!-- /.sidebar -->
+      </aside>
+
+      <!-- =============================================== -->
+
+      <!-- Content Wrapper. Contains page content -->
+	 
+		<div ng-view id="ng-view"> </div>
+               
+      <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+          <b>MadroneSoft</b>
+        </div>
+        <strong>Copyright &copy; 2014-2015 OCMS.</strong> All rights reserved.
+      </footer>
+    </div><!-- ./wrapper -->
+	
+
+	
+	<script src="js/angular.min.js"></script>
+	<!--<script src="js/ui-bootstrap-tpls-0.12.1.js"></script>	-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+	<script src="js/angular-dragdrop.min.js"></script>
+  
+	<script src="js/ui-bootstrap-tpls-0.10.0.min.js"></script>	
+	<script src="js/angular-route.min.js"></script>	
+	<script src="js/angular-animate.min.js"></script>	
+	<script src="js/angular-resource.js"></script> 	
+
+	
+	<script src="_include/app.js"></script>	
+	<script src="_include/coursecontroller.js"></script>
+	<script src="_include/locationcontroller.js"></script>
+	<script src="_include/courseseriescontroller.js"></script>
+	<script src="_include/eventcontroller.js"></script>
+	<script src="_include/contactcontroller.js"></script>	
+	<script src="_include/cviewcontroller.js"></script>
+	<script src="_include/yviewcontroller.js"></script>
+	<script src="_include/directives.js"></script>
+	<!--<script src="_include/filters.js"></script>-->
+	<script src="_include/services.js"></script>         
+	
+    <!-- jQuery 2.1.3 -->
+    <script src="plugins/jQuery/jQuery-2.1.3.min.js"></script>	
+	
+	<!-- Bootstrap 3.3.2 JS -->
+    <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <!-- DATA TABES SCRIPT -->
+    <script src="plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
+    <script src="plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>    	
+    <!-- SlimScroll 
+    <script src="plugins/slimScroll/jquery.slimScroll.min.js" type="text/javascript"></script>-->
+    <!-- FastClick 
+    <script src='plugins/fastclick/fastclick.min.js'></script>-->
+    <!-- AdminLTE App -->
+		
+   
+ 
+    <!-- <script src="dist/js/app.min.js" type="text/javascript"></script>
+	DatePicker-->
+	<!--<script src="js/date.js"></script>
+	<script src="js/jquery-ui.min.js"></script>-->
+
+
+	
+    
+<!--<script type="text/javascript">
+   (document).ready(function(){
+        $(".custom-select").each(function(){
+            $(this).wrap("<span class='select-wrapper'></span>");
+            $(this).after("<span class='holder'></span>");
+        });
+        $(".custom-select").change(function(){
+            var selectedOption = $(this).find(":selected").text();
+            $(this).next(".holder").text(selectedOption);
+        }).trigger('change');
+    })
+</script>   --> 
+    <script type="text/javascript">
+      $(function () {
+        $("#example1").dataTable();     
+      });
+    </script> 
+	
+  </body>
+</html>
