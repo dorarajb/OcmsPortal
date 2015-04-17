@@ -319,27 +319,80 @@ public class CourseSeriesLocalServiceUtil {
 				   .getCourseSeriesByLocationId(locationId, orderByComparator);
 	}
 
+	public static java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByFlagToListData(
+		int flagToListData)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getCourseSeriesByFlagToListData(flagToListData);
+	}
+
+	public static java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByFlagToListData(
+		int flagToListData, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .getCourseSeriesByFlagToListData(flagToListData, start, end);
+	}
+
+	public static java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByGroupIdAndFlagToListData(
+		long groupId, int flagToListData)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .getCourseSeriesByGroupIdAndFlagToListData(groupId,
+			flagToListData);
+	}
+
+	public static java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByGroupIdAndFlagToListData(
+		long groupId, int flagToListData, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .getCourseSeriesByGroupIdAndFlagToListData(groupId,
+			flagToListData, start, end);
+	}
+
 	public static java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByCourseSeriesCode(
 		java.lang.String courseSeriesCode)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		return getService().getCourseSeriesByCourseSeriesCode(courseSeriesCode);
 	}
 
+	public static java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByCourseSeriesCode(
+		java.lang.String courseSeriesCode, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .getCourseSeriesByCourseSeriesCode(courseSeriesCode, start,
+			end);
+	}
+
+	public static java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByCourseSeriesId(
+		long courseSeriesId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getCourseSeriesByCourseSeriesId(courseSeriesId);
+	}
+
+	public static java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByCourseSeriesId(
+		long courseSeriesId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .getCourseSeriesByCourseSeriesId(courseSeriesId, start, end);
+	}
+
 	public static com.ocms.course.model.CourseSeries addCourseSeries(
 		long userId, long courseId, long locationId,
-		java.lang.String courseSeriesCode, java.util.Date startDate,
-		java.util.Date endDate, java.lang.String type, long maxNoStudReg,
+		java.lang.String courseSeriesCode,
+		java.lang.String courseSeriesEventCode, int flagToListData,
+		java.util.Date startDate, java.util.Date endDate,
+		java.lang.String type, long maxNoStudReg,
 		java.lang.String publishingStatus, long seriesCount,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		return getService()
 				   .addCourseSeries(userId, courseId, locationId,
-			courseSeriesCode, startDate, endDate, type, maxNoStudReg,
-			publishingStatus, seriesCount, serviceContext);
+			courseSeriesCode, courseSeriesEventCode, flagToListData, startDate,
+			endDate, type, maxNoStudReg, publishingStatus, seriesCount,
+			serviceContext);
 	}
 
-	public static com.ocms.course.model.CourseSeries updateCourse(long userId,
+	public static com.ocms.course.model.CourseSeries updateCourse(
 		long courseId, long locationId, java.util.Date startDate,
 		java.util.Date endDate, java.lang.String type, long maxNoStudReg,
 		java.lang.String publishingStatus,
@@ -347,8 +400,49 @@ public class CourseSeriesLocalServiceUtil {
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		return getService()
-				   .updateCourse(userId, courseId, locationId, startDate,
-			endDate, type, maxNoStudReg, publishingStatus, serviceContext);
+				   .updateCourse(courseId, locationId, startDate, endDate,
+			type, maxNoStudReg, publishingStatus, serviceContext);
+	}
+
+	public static void deleteCourseSeriesByCourseSeriesId(long courseSeriesId) {
+		getService().deleteCourseSeriesByCourseSeriesId(courseSeriesId);
+	}
+
+	public static void deleteCourseSeriesByCourseSeriesIdCode(
+		long courseSeriesId) {
+		getService().deleteCourseSeriesByCourseSeriesIdCode(courseSeriesId);
+	}
+
+	public static void deleteCourseSeriesByGrouptId(long groupId) {
+		getService().deleteCourseSeriesByGrouptId(groupId);
+	}
+
+	public static void deleteCourseSeriesByCourseSeriesCode(
+		java.lang.String courseSeriescode) {
+		getService().deleteCourseSeriesByCourseSeriesCode(courseSeriescode);
+	}
+
+	public static void deleteAllCourseSeries() {
+		getService().deleteAllCourseSeries();
+	}
+
+	public static void addCourseSeriesLoop(long[] locationList,
+		long[] courseList,
+		com.liferay.portal.service.ServiceContext serviceContext) {
+		getService()
+			.addCourseSeriesLoop(locationList, courseList, serviceContext);
+	}
+
+	public static void updateFlagToChkEventCreation(
+		com.ocms.course.model.CourseSeries courseSeries)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		getService().updateFlagToChkEventCreation(courseSeries);
+	}
+
+	public static void createEvent(java.lang.String courseSeriesCode,
+		com.liferay.portal.service.ServiceContext serviceContext) {
+		getService().createEvent(courseSeriesCode, serviceContext);
 	}
 
 	public static void clearService() {

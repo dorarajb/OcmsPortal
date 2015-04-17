@@ -61,6 +61,13 @@
 		<field name="maxNoStudReg" type="long" />
 		<field name="seriesCount" type="long" />
 		<field name="courseSeriesCode" type="String" />
+		<field name="courseSeriesEventCode" type="String" />
+		<field name="flagToListData" type="int" />
+		<field name="flagToChkEventCreation" type="int" />
+		<field name="sMonth" type="String" />
+		<field name="sDay" type="int" />
+		<field name="eMonth" type="String" />
+		<field name="eDay" type="int" />
 	</model>
 	<model name="com.ocms.course.model.Event">
 		<field name="eventId" type="long" />
@@ -102,6 +109,22 @@
 		<field name="email" type="String" />
 		<field name="siteUrl" type="String" />
 	</model>
+	<model name="com.ocms.course.model.OffersAndDeductions">
+		<field name="id" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="code" type="String" />
+		<field name="description" type="String" />
+		<field name="amount" type="long" />
+		<field name="active" type="int" />
+		<field name="effectiveFromDate" type="Date" />
+		<field name="effectivetoDate" type="Date" />
+		<field name="type" type="String" />
+	</model>
 	<model name="com.ocms.course.model.Pricing">
 		<field name="pricingId" type="long" />
 		<field name="groupId" type="long" />
@@ -116,8 +139,75 @@
 		<field name="deposit" type="int" />
 		<field name="price" type="int" />
 		<field name="currency" type="String" />
-		<field name="effectiveDate" type="Date" />
+		<field name="effectiveFromDate" type="Date" />
 		<field name="courseCode" type="String" />
 		<field name="locationCode" type="String" />
+		<field name="effectiveToDate" type="Date" />
+		<field name="active" type="int" />
+		<field name="balanceDueParDate" type="int" />
+	</model>
+	<model name="com.ocms.course.model.RegistrationDetails">
+		<field name="studRegId" type="long" />
+		<field name="contactId" type="long" />
+		<field name="eventId" type="long" />
+		<field name="price" type="double" />
+		<field name="discount" type="double" />
+		<field name="fee" type="double" />
+		<field name="credit" type="double" />
+		<field name="registrationDetailsId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.ocms.course.model.StudentRegistration">
+		<field name="studRegId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="memo" type="String" />
+		<field name="studRegStatus" type="String" />
+		<field name="advisorOrig" type="String" />
+		<field name="advisorReg" type="String" />
+		<field name="coursePackageId" type="long" />
+		<field name="discountId" type="long" />
+		<field name="commMethod" type="String" />
+		<field name="notes" type="String" />
+		<field name="currency" type="String" />
+		<field name="tax" type="long" />
+		<field name="autoCharge" type="String" />
+		<field name="currencyPaid" type="String" />
+		<field name="exchangeRate" type="long" />
+		<field name="contactId" type="long" />
+	</model>
+	<model name="com.ocms.course.model.TaxDetails">
+		<field name="taxDetailsId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="country" type="String" />
+		<field name="taxTypeId" type="long" />
+		<field name="effectiveFromDate" type="Date" />
+		<field name="effectiveToDate" type="Date" />
+		<field name="active" type="int" />
+		<field name="taxPercent" type="int" />
+	</model>
+	<model name="com.ocms.course.model.TaxTypes">
+		<field name="taxTypesId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="taxName" type="String" />
 	</model>
 </model-hints>

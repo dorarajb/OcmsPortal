@@ -326,6 +326,18 @@ public class LocationLocalServiceUtil {
 			phone, fax, email, serviceContext);
 	}
 
+	public static void deleteLocationByLocationId(long locationId) {
+		getService().deleteLocationByLocationId(locationId);
+	}
+
+	public static void deleteLocationByGrouptId(long groupId) {
+		getService().deleteLocationByGrouptId(groupId);
+	}
+
+	public static void deleteAllLocation() {
+		getService().deleteAllLocation();
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

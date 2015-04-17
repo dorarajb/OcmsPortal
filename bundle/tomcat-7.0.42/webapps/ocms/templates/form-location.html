@@ -1,4 +1,10 @@
-							<div class="box box-primary">
+<style>
+.modal-content{ width:642px;height:623px;} 
+</style>					
+ 	
+							<div class="box box-primary" style="min-height:620px;">
+                                <!-- form start -->
+                                <form role="form" name="location_form">							
                                 <div class="box-header">
                                     <h3 class="box-title">Location [ID: {{location.locationId}}]</h3>
                                         <button type="button" class="close" ng-click="cancel();">
@@ -6,14 +12,13 @@
                                         </button>                                    
                                     </div><!-- /.box-header -->
                                 
-                                <!-- form start -->
-                                <form role="form" name="location_form">
+
                                     
                                <div class="box-body">
                                     <div class="col-xs-6">
                                         <div class="form-group">
-                                            <label for="exampleInputEmail">Code</label>
-                                            <input type="text" class="form-control"  name="code" ng-model="location.code" id="code" placeholder="Enter Location Code" >
+                                            <label for="exampleInputEmail">Short Name</label>
+                                            <input type="text" class="form-control"  name="code" ng-model="location.code" id="code" placeholder="Enter Location Short Name" >
                                         </div>
                                     </div>  
                                      
@@ -94,7 +99,7 @@
                                         </div>  
                                      </div>
                                      
-                                     <div class="col-xs-6">                                           
+                                     <div class="col-xs-12">                                           
                                         <div class="form-group">
                                             <label for="exampleInputEmail">Email</label>
                                             <input type="email" class="form-control" name="email" ng-model="location.email" id="email" placeholder="Enter Email">
@@ -105,10 +110,17 @@
                                     
                                                                         
 
-                                    <div class="box-footer">
-                              <button ng-click="saveLocation(location);" ng-disabled="product_form.$invalid || enableUpdate"
+                                    
+							<div class="box-body" style="border:0px solid red;float:left;width:100%;">
+								<div class="col-xs-12">   
+                                 <div class="form-group" align="center">	
+                                     <button ng-click="saveLocation(location);" ng-disabled="product_form.$invalid || enableUpdate"
                                 class="btn btn-sm btn-primary"
                                 type="submit"  >Save</button> 
-                                    </div>
+                                </div>
+								</div>
+                            </div>									
                                 </form>
                             </div>
+							 
+						 

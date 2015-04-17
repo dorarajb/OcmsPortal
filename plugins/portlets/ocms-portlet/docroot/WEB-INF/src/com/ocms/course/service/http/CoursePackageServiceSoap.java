@@ -14,6 +14,13 @@
 
 package com.ocms.course.service.http;
 
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+
+import com.ocms.course.service.CoursePackageServiceUtil;
+
+import java.rmi.RemoteException;
+
 /**
  * Provides the SOAP utility for the
  * {@link com.ocms.course.service.CoursePackageServiceUtil} service utility. The
@@ -55,4 +62,97 @@ package com.ocms.course.service.http;
  * @generated
  */
 public class CoursePackageServiceSoap {
+	public static com.ocms.course.model.CoursePackageSoap[] getCoursesPackagesByGroupId(
+		long groupId) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.CoursePackage> returnValue = CoursePackageServiceUtil.getCoursesPackagesByGroupId(groupId);
+
+			return com.ocms.course.model.CoursePackageSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.CoursePackageSoap[] getCoursesPackagesByGroupId(
+		long groupId, int start, int end) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.CoursePackage> returnValue = CoursePackageServiceUtil.getCoursesPackagesByGroupId(groupId,
+					start, end);
+
+			return com.ocms.course.model.CoursePackageSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.CoursePackageSoap[] getCoursesPackagesByCoursePackageId(
+		long coursePackageId) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.CoursePackage> returnValue = CoursePackageServiceUtil.getCoursesPackagesByCoursePackageId(coursePackageId);
+
+			return com.ocms.course.model.CoursePackageSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.CoursePackageSoap[] getCoursesPackagesByCoursePackageId(
+		long coursePackageId, int start, int end) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.CoursePackage> returnValue = CoursePackageServiceUtil.getCoursesPackagesByCoursePackageId(coursePackageId,
+					start, end);
+
+			return com.ocms.course.model.CoursePackageSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.CoursePackageSoap addCoursePackage(
+		java.lang.String name, java.lang.String code,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws RemoteException {
+		try {
+			com.ocms.course.model.CoursePackage returnValue = CoursePackageServiceUtil.addCoursePackage(name,
+					code, serviceContext);
+
+			return com.ocms.course.model.CoursePackageSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.CoursePackageSoap updateCoursePackage(
+		long coursePackageId, java.lang.String name, java.lang.String code,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws RemoteException {
+		try {
+			com.ocms.course.model.CoursePackage returnValue = CoursePackageServiceUtil.updateCoursePackage(coursePackageId,
+					name, code, serviceContext);
+
+			return com.ocms.course.model.CoursePackageSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	private static Log _log = LogFactoryUtil.getLog(CoursePackageServiceSoap.class);
 }

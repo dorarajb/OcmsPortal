@@ -284,4 +284,10 @@ public interface ContactLocalService extends BaseLocalService,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
+
+	public void deleteContactByContactId(long contactId);
+
+	public void deleteContactByGrouptId(long groupId);
+
+	public void deleteAllContact();
 }

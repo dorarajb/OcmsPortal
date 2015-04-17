@@ -329,6 +329,21 @@ public class CourseLocalServiceWrapper implements CourseLocalService,
 			duration, serviceContext);
 	}
 
+	@Override
+	public void deleteCourseByCourseId(long courseId) {
+		_courseLocalService.deleteCourseByCourseId(courseId);
+	}
+
+	@Override
+	public void deleteCourseByGrouptId(long groupId) {
+		_courseLocalService.deleteCourseByGrouptId(groupId);
+	}
+
+	@Override
+	public void deleteAllCourse() {
+		_courseLocalService.deleteAllCourse();
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

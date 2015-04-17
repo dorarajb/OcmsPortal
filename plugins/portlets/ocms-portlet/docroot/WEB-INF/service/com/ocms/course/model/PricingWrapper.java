@@ -62,9 +62,12 @@ public class PricingWrapper implements Pricing, ModelWrapper<Pricing> {
 		attributes.put("deposit", getDeposit());
 		attributes.put("price", getPrice());
 		attributes.put("currency", getCurrency());
-		attributes.put("effectiveDate", getEffectiveDate());
+		attributes.put("effectiveFromDate", getEffectiveFromDate());
 		attributes.put("courseCode", getCourseCode());
 		attributes.put("locationCode", getLocationCode());
+		attributes.put("effectiveToDate", getEffectiveToDate());
+		attributes.put("active", getActive());
+		attributes.put("balanceDueParDate", getBalanceDueParDate());
 
 		return attributes;
 	}
@@ -149,10 +152,10 @@ public class PricingWrapper implements Pricing, ModelWrapper<Pricing> {
 			setCurrency(currency);
 		}
 
-		Date effectiveDate = (Date)attributes.get("effectiveDate");
+		Date effectiveFromDate = (Date)attributes.get("effectiveFromDate");
 
-		if (effectiveDate != null) {
-			setEffectiveDate(effectiveDate);
+		if (effectiveFromDate != null) {
+			setEffectiveFromDate(effectiveFromDate);
 		}
 
 		String courseCode = (String)attributes.get("courseCode");
@@ -165,6 +168,24 @@ public class PricingWrapper implements Pricing, ModelWrapper<Pricing> {
 
 		if (locationCode != null) {
 			setLocationCode(locationCode);
+		}
+
+		Date effectiveToDate = (Date)attributes.get("effectiveToDate");
+
+		if (effectiveToDate != null) {
+			setEffectiveToDate(effectiveToDate);
+		}
+
+		Integer active = (Integer)attributes.get("active");
+
+		if (active != null) {
+			setActive(active);
+		}
+
+		Integer balanceDueParDate = (Integer)attributes.get("balanceDueParDate");
+
+		if (balanceDueParDate != null) {
+			setBalanceDueParDate(balanceDueParDate);
 		}
 	}
 
@@ -471,23 +492,23 @@ public class PricingWrapper implements Pricing, ModelWrapper<Pricing> {
 	}
 
 	/**
-	* Returns the effective date of this pricing.
+	* Returns the effective from date of this pricing.
 	*
-	* @return the effective date of this pricing
+	* @return the effective from date of this pricing
 	*/
 	@Override
-	public java.util.Date getEffectiveDate() {
-		return _pricing.getEffectiveDate();
+	public java.util.Date getEffectiveFromDate() {
+		return _pricing.getEffectiveFromDate();
 	}
 
 	/**
-	* Sets the effective date of this pricing.
+	* Sets the effective from date of this pricing.
 	*
-	* @param effectiveDate the effective date of this pricing
+	* @param effectiveFromDate the effective from date of this pricing
 	*/
 	@Override
-	public void setEffectiveDate(java.util.Date effectiveDate) {
-		_pricing.setEffectiveDate(effectiveDate);
+	public void setEffectiveFromDate(java.util.Date effectiveFromDate) {
+		_pricing.setEffectiveFromDate(effectiveFromDate);
 	}
 
 	/**
@@ -528,6 +549,66 @@ public class PricingWrapper implements Pricing, ModelWrapper<Pricing> {
 	@Override
 	public void setLocationCode(java.lang.String locationCode) {
 		_pricing.setLocationCode(locationCode);
+	}
+
+	/**
+	* Returns the effective to date of this pricing.
+	*
+	* @return the effective to date of this pricing
+	*/
+	@Override
+	public java.util.Date getEffectiveToDate() {
+		return _pricing.getEffectiveToDate();
+	}
+
+	/**
+	* Sets the effective to date of this pricing.
+	*
+	* @param effectiveToDate the effective to date of this pricing
+	*/
+	@Override
+	public void setEffectiveToDate(java.util.Date effectiveToDate) {
+		_pricing.setEffectiveToDate(effectiveToDate);
+	}
+
+	/**
+	* Returns the active of this pricing.
+	*
+	* @return the active of this pricing
+	*/
+	@Override
+	public int getActive() {
+		return _pricing.getActive();
+	}
+
+	/**
+	* Sets the active of this pricing.
+	*
+	* @param active the active of this pricing
+	*/
+	@Override
+	public void setActive(int active) {
+		_pricing.setActive(active);
+	}
+
+	/**
+	* Returns the balance due par date of this pricing.
+	*
+	* @return the balance due par date of this pricing
+	*/
+	@Override
+	public int getBalanceDueParDate() {
+		return _pricing.getBalanceDueParDate();
+	}
+
+	/**
+	* Sets the balance due par date of this pricing.
+	*
+	* @param balanceDueParDate the balance due par date of this pricing
+	*/
+	@Override
+	public void setBalanceDueParDate(int balanceDueParDate) {
+		_pricing.setBalanceDueParDate(balanceDueParDate);
 	}
 
 	@Override

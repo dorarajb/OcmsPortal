@@ -285,4 +285,10 @@ public interface LocationLocalService extends BaseLocalService,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
+
+	public void deleteLocationByLocationId(long locationId);
+
+	public void deleteLocationByGrouptId(long groupId);
+
+	public void deleteAllLocation();
 }

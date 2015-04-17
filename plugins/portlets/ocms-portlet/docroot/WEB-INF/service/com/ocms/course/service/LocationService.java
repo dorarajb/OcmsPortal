@@ -85,7 +85,17 @@ public interface LocationService extends BaseService, InvokableService {
 		long locationId, int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
-	public com.ocms.course.model.Location addLocation(long userId,
+	public com.ocms.course.model.Location addLocation(java.lang.String name,
+		java.lang.String code, java.lang.String notes,
+		java.lang.String addressLine1, java.lang.String addressLine2,
+		java.lang.String city, java.lang.String state, java.lang.String region,
+		java.lang.String country, java.lang.String zip, java.lang.String phone,
+		java.lang.String fax, java.lang.String email,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	public com.ocms.course.model.Location updateLocation(long locationId,
 		java.lang.String name, java.lang.String code, java.lang.String notes,
 		java.lang.String addressLine1, java.lang.String addressLine2,
 		java.lang.String city, java.lang.String state, java.lang.String region,
@@ -95,14 +105,9 @@ public interface LocationService extends BaseService, InvokableService {
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
 
-	public com.ocms.course.model.Location updateLocation(long userId,
-		long locationId, java.lang.String name, java.lang.String code,
-		java.lang.String notes, java.lang.String addressLine1,
-		java.lang.String addressLine2, java.lang.String city,
-		java.lang.String state, java.lang.String region,
-		java.lang.String country, java.lang.String zip, java.lang.String phone,
-		java.lang.String fax, java.lang.String email,
-		com.liferay.portal.service.ServiceContext serviceContext)
-		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException;
+	public void deleteLocationByLocationId(long locationId);
+
+	public void deleteLocationByGrouptId(long groupId);
+
+	public void deleteAllLocation();
 }

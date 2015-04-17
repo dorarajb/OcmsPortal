@@ -276,6 +276,20 @@ public interface EventLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
 
+	public com.ocms.course.model.Event updateEvent(long userId, long eventId,
+		java.lang.String eventName, long courseId, java.lang.String courseCode,
+		long locationId, java.lang.String locationCode,
+		java.util.Date startDate, java.util.Date endDate, int flag,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
 	public com.ocms.course.model.Event updateEventFlag(
 		com.ocms.course.model.Event event, int flag);
+
+	public void deleteEventByEventId(long eventId);
+
+	public void deleteEventByGrouptId(long groupId);
+
+	public void deleteAllEvent();
 }

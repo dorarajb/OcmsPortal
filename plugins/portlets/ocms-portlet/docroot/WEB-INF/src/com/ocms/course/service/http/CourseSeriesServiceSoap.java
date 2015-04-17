@@ -166,16 +166,169 @@ public class CourseSeriesServiceSoap {
 		}
 	}
 
+	public static com.ocms.course.model.CourseSeriesSoap[] getCourseSeriesByFlagToListData(
+		int flagToListData) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.CourseSeries> returnValue = CourseSeriesServiceUtil.getCourseSeriesByFlagToListData(flagToListData);
+
+			return com.ocms.course.model.CourseSeriesSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.CourseSeriesSoap[] getCourseSeriesByFlagToListData(
+		int flagToListData, int start, int end) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.CourseSeries> returnValue = CourseSeriesServiceUtil.getCourseSeriesByFlagToListData(flagToListData,
+					start, end);
+
+			return com.ocms.course.model.CourseSeriesSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.CourseSeriesSoap[] getCourseSeriesByGroupIdAndFlagToListData(
+		long groupId, int flagToListData) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.CourseSeries> returnValue = CourseSeriesServiceUtil.getCourseSeriesByGroupIdAndFlagToListData(groupId,
+					flagToListData);
+
+			return com.ocms.course.model.CourseSeriesSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.CourseSeriesSoap[] getCourseSeriesByGroupIdAndFlagToListData(
+		long groupId, int flagToListData, int start, int end)
+		throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.CourseSeries> returnValue = CourseSeriesServiceUtil.getCourseSeriesByGroupIdAndFlagToListData(groupId,
+					flagToListData, start, end);
+
+			return com.ocms.course.model.CourseSeriesSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.CourseSeriesSoap[] getCourseSeriesByCourseSeriesCode(
+		java.lang.String courseSeriesCode) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.CourseSeries> returnValue = CourseSeriesServiceUtil.getCourseSeriesByCourseSeriesCode(courseSeriesCode);
+
+			return com.ocms.course.model.CourseSeriesSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.CourseSeriesSoap[] getCourseSeriesByCourseSeriesCode(
+		java.lang.String courseSeriesCode, int start, int end)
+		throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.CourseSeries> returnValue = CourseSeriesServiceUtil.getCourseSeriesByCourseSeriesCode(courseSeriesCode,
+					start, end);
+
+			return com.ocms.course.model.CourseSeriesSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.CourseSeriesSoap[] getCourseSeriesByCourseSeriesId(
+		long courseSeriesId) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.CourseSeries> returnValue = CourseSeriesServiceUtil.getCourseSeriesByCourseSeriesId(courseSeriesId);
+
+			return com.ocms.course.model.CourseSeriesSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.CourseSeriesSoap[] getCourseSeriesByCourseSeriesId(
+		long courseSeriesId, int start, int end) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.CourseSeries> returnValue = CourseSeriesServiceUtil.getCourseSeriesByCourseSeriesId(courseSeriesId,
+					start, end);
+
+			return com.ocms.course.model.CourseSeriesSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.CourseSeriesSoap[] getCourseSeriesByLocationIdAndFlagToListData(
+		long locationId, int flagToListData) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.CourseSeries> returnValue = CourseSeriesServiceUtil.getCourseSeriesByLocationIdAndFlagToListData(locationId,
+					flagToListData);
+
+			return com.ocms.course.model.CourseSeriesSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.CourseSeriesSoap[] getCourseSeriesByLocationIdAndFlagToListData(
+		long locationId, int flagToListData, int start, int end)
+		throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.CourseSeries> returnValue = CourseSeriesServiceUtil.getCourseSeriesByLocationIdAndFlagToListData(locationId,
+					flagToListData, start, end);
+
+			return com.ocms.course.model.CourseSeriesSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
 	public static com.ocms.course.model.CourseSeriesSoap addCourseSeries(
 		long userId, long courseId, long locationId,
-		java.lang.String courseSeriesCode, java.util.Date startDate,
-		java.util.Date endDate, java.lang.String type, long maxNoStudReg,
+		java.lang.String courseSeriesCode,
+		java.lang.String courseSeriesEventCode, int flagToListData,
+		java.util.Date startDate, java.util.Date endDate,
+		java.lang.String type, long maxNoStudReg,
 		java.lang.String publishingStatus, long seriesCount,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws RemoteException {
 		try {
 			com.ocms.course.model.CourseSeries returnValue = CourseSeriesServiceUtil.addCourseSeries(userId,
-					courseId, locationId, courseSeriesCode, startDate, endDate,
+					courseId, locationId, courseSeriesCode,
+					courseSeriesEventCode, flagToListData, startDate, endDate,
 					type, maxNoStudReg, publishingStatus, seriesCount,
 					serviceContext);
 
@@ -189,17 +342,180 @@ public class CourseSeriesServiceSoap {
 	}
 
 	public static com.ocms.course.model.CourseSeriesSoap updateCourse(
-		long userId, long courseId, long locationId, java.util.Date startDate,
+		long courseId, long locationId, java.util.Date startDate,
 		java.util.Date endDate, java.lang.String type, long maxNoStudReg,
 		java.lang.String publishingStatus,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws RemoteException {
 		try {
-			com.ocms.course.model.CourseSeries returnValue = CourseSeriesServiceUtil.updateCourse(userId,
-					courseId, locationId, startDate, endDate, type,
-					maxNoStudReg, publishingStatus, serviceContext);
+			com.ocms.course.model.CourseSeries returnValue = CourseSeriesServiceUtil.updateCourse(courseId,
+					locationId, startDate, endDate, type, maxNoStudReg,
+					publishingStatus, serviceContext);
 
 			return com.ocms.course.model.CourseSeriesSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void deleteCourseSeriesByCourseSeriesId(long courseSeriesId)
+		throws RemoteException {
+		try {
+			CourseSeriesServiceUtil.deleteCourseSeriesByCourseSeriesId(courseSeriesId);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void deleteCourseSeriesByCourseSeriesIdCode(
+		long courseSeriesId) throws RemoteException {
+		try {
+			CourseSeriesServiceUtil.deleteCourseSeriesByCourseSeriesIdCode(courseSeriesId);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void deleteCourseSeriesByGrouptId(long groupId)
+		throws RemoteException {
+		try {
+			CourseSeriesServiceUtil.deleteCourseSeriesByGrouptId(groupId);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void deleteCourseSeriesByCourseSeriesCode(
+		java.lang.String courseSeriescode) throws RemoteException {
+		try {
+			CourseSeriesServiceUtil.deleteCourseSeriesByCourseSeriesCode(courseSeriescode);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void deleteAllCourseSeries() throws RemoteException {
+		try {
+			CourseSeriesServiceUtil.deleteAllCourseSeries();
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void deleteCourseSeriesEvent(long courseSeriesId)
+		throws RemoteException {
+		try {
+			CourseSeriesServiceUtil.deleteCourseSeriesEvent(courseSeriesId);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void addCourseSeriesLoop(long[] locationList,
+		long[] courseList,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws RemoteException {
+		try {
+			CourseSeriesServiceUtil.addCourseSeriesLoop(locationList,
+				courseList, serviceContext);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void updateCourseSeriesStartDate(long courseSeriesId,
+		java.util.Date startDate) throws RemoteException {
+		try {
+			CourseSeriesServiceUtil.updateCourseSeriesStartDate(courseSeriesId,
+				startDate);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void updateCourseSeriesEndDate(long courseSeriesId,
+		java.util.Date endDate) throws RemoteException {
+		try {
+			CourseSeriesServiceUtil.updateCourseSeriesEndDate(courseSeriesId,
+				endDate);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void updateFlagToChkEventCreation(
+		com.ocms.course.model.CourseSeriesSoap courseSeries)
+		throws RemoteException {
+		try {
+			CourseSeriesServiceUtil.updateFlagToChkEventCreation(com.ocms.course.model.impl.CourseSeriesModelImpl.toModel(
+					courseSeries));
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void updateDayAndMonthName() throws RemoteException {
+		try {
+			CourseSeriesServiceUtil.updateDayAndMonthName();
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void createEvent(java.lang.String courseSeriesCode,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws RemoteException {
+		try {
+			CourseSeriesServiceUtil.createEvent(courseSeriesCode, serviceContext);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void createEventList(java.lang.String[] codeList,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws RemoteException {
+		try {
+			CourseSeriesServiceUtil.createEventList(codeList, serviceContext);
 		}
 		catch (Exception e) {
 			_log.error(e, e);

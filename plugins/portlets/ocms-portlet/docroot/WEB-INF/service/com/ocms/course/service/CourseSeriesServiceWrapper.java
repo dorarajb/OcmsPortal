@@ -110,8 +110,86 @@ public class CourseSeriesServiceWrapper implements CourseSeriesService,
 	}
 
 	@Override
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByFlagToListData(
+		int flagToListData)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _courseSeriesService.getCourseSeriesByFlagToListData(flagToListData);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByFlagToListData(
+		int flagToListData, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _courseSeriesService.getCourseSeriesByFlagToListData(flagToListData,
+			start, end);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByGroupIdAndFlagToListData(
+		long groupId, int flagToListData)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _courseSeriesService.getCourseSeriesByGroupIdAndFlagToListData(groupId,
+			flagToListData);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByGroupIdAndFlagToListData(
+		long groupId, int flagToListData, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _courseSeriesService.getCourseSeriesByGroupIdAndFlagToListData(groupId,
+			flagToListData, start, end);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByCourseSeriesCode(
+		java.lang.String courseSeriesCode)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _courseSeriesService.getCourseSeriesByCourseSeriesCode(courseSeriesCode);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByCourseSeriesCode(
+		java.lang.String courseSeriesCode, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _courseSeriesService.getCourseSeriesByCourseSeriesCode(courseSeriesCode,
+			start, end);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByCourseSeriesId(
+		long courseSeriesId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _courseSeriesService.getCourseSeriesByCourseSeriesId(courseSeriesId);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByCourseSeriesId(
+		long courseSeriesId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _courseSeriesService.getCourseSeriesByCourseSeriesId(courseSeriesId,
+			start, end);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByLocationIdAndFlagToListData(
+		long locationId, int flagToListData)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _courseSeriesService.getCourseSeriesByLocationIdAndFlagToListData(locationId,
+			flagToListData);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByLocationIdAndFlagToListData(
+		long locationId, int flagToListData, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _courseSeriesService.getCourseSeriesByLocationIdAndFlagToListData(locationId,
+			flagToListData, start, end);
+	}
+
+	@Override
 	public com.ocms.course.model.CourseSeries addCourseSeries(long userId,
 		long courseId, long locationId, java.lang.String courseSeriesCode,
+		java.lang.String courseSeriesEventCode, int flagToListData,
 		java.util.Date startDate, java.util.Date endDate,
 		java.lang.String type, long maxNoStudReg,
 		java.lang.String publishingStatus, long seriesCount,
@@ -119,21 +197,100 @@ public class CourseSeriesServiceWrapper implements CourseSeriesService,
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		return _courseSeriesService.addCourseSeries(userId, courseId,
-			locationId, courseSeriesCode, startDate, endDate, type,
-			maxNoStudReg, publishingStatus, seriesCount, serviceContext);
+			locationId, courseSeriesCode, courseSeriesEventCode,
+			flagToListData, startDate, endDate, type, maxNoStudReg,
+			publishingStatus, seriesCount, serviceContext);
 	}
 
 	@Override
-	public com.ocms.course.model.CourseSeries updateCourse(long userId,
-		long courseId, long locationId, java.util.Date startDate,
-		java.util.Date endDate, java.lang.String type, long maxNoStudReg,
+	public com.ocms.course.model.CourseSeries updateCourse(long courseId,
+		long locationId, java.util.Date startDate, java.util.Date endDate,
+		java.lang.String type, long maxNoStudReg,
 		java.lang.String publishingStatus,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
-		return _courseSeriesService.updateCourse(userId, courseId, locationId,
+		return _courseSeriesService.updateCourse(courseId, locationId,
 			startDate, endDate, type, maxNoStudReg, publishingStatus,
 			serviceContext);
+	}
+
+	@Override
+	public void deleteCourseSeriesByCourseSeriesId(long courseSeriesId) {
+		_courseSeriesService.deleteCourseSeriesByCourseSeriesId(courseSeriesId);
+	}
+
+	@Override
+	public void deleteCourseSeriesByCourseSeriesIdCode(long courseSeriesId) {
+		_courseSeriesService.deleteCourseSeriesByCourseSeriesIdCode(courseSeriesId);
+	}
+
+	@Override
+	public void deleteCourseSeriesByGrouptId(long groupId) {
+		_courseSeriesService.deleteCourseSeriesByGrouptId(groupId);
+	}
+
+	@Override
+	public void deleteCourseSeriesByCourseSeriesCode(
+		java.lang.String courseSeriescode) {
+		_courseSeriesService.deleteCourseSeriesByCourseSeriesCode(courseSeriescode);
+	}
+
+	@Override
+	public void deleteAllCourseSeries() {
+		_courseSeriesService.deleteAllCourseSeries();
+	}
+
+	@Override
+	public void deleteCourseSeriesEvent(long courseSeriesId) {
+		_courseSeriesService.deleteCourseSeriesEvent(courseSeriesId);
+	}
+
+	@Override
+	public void addCourseSeriesLoop(long[] locationList, long[] courseList,
+		com.liferay.portal.service.ServiceContext serviceContext) {
+		_courseSeriesService.addCourseSeriesLoop(locationList, courseList,
+			serviceContext);
+	}
+
+	@Override
+	public void updateCourseSeriesStartDate(long courseSeriesId,
+		java.util.Date startDate) {
+		_courseSeriesService.updateCourseSeriesStartDate(courseSeriesId,
+			startDate);
+	}
+
+	@Override
+	public void updateCourseSeriesEndDate(long courseSeriesId,
+		java.util.Date endDate) {
+		_courseSeriesService.updateCourseSeriesEndDate(courseSeriesId, endDate);
+	}
+
+	@Override
+	public void updateFlagToChkEventCreation(
+		com.ocms.course.model.CourseSeries courseSeries)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		_courseSeriesService.updateFlagToChkEventCreation(courseSeries);
+	}
+
+	@Override
+	public void updateDayAndMonthName()
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		_courseSeriesService.updateDayAndMonthName();
+	}
+
+	@Override
+	public void createEvent(java.lang.String courseSeriesCode,
+		com.liferay.portal.service.ServiceContext serviceContext) {
+		_courseSeriesService.createEvent(courseSeriesCode, serviceContext);
+	}
+
+	@Override
+	public void createEventList(java.lang.String[] codeList,
+		com.liferay.portal.service.ServiceContext serviceContext) {
+		_courseSeriesService.createEventList(codeList, serviceContext);
 	}
 
 	/**

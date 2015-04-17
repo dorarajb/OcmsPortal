@@ -100,6 +100,7 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 	public static long EVENTID_COLUMN_BITMASK = 1L;
 	public static long FLAG_COLUMN_BITMASK = 2L;
 	public static long GROUPID_COLUMN_BITMASK = 4L;
+	public static long USERID_COLUMN_BITMASK = 8L;
 
 	/**
 	 * Converts the soap model instance into a normal model instance.
@@ -429,6 +430,14 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 
 	@Override
 	public void setUserId(long userId) {
+		_columnBitmask |= USERID_COLUMN_BITMASK;
+
+		if (!_setOriginalUserId) {
+			_setOriginalUserId = true;
+
+			_originalUserId = _userId;
+		}
+
 		_userId = userId;
 	}
 
@@ -440,6 +449,10 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 	@Override
 	public void setUserUuid(String userUuid) {
 		_userUuid = userUuid;
+	}
+
+	public long getOriginalUserId() {
+		return _originalUserId;
 	}
 
 	@JSON
@@ -641,6 +654,10 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 		eventModelImpl._originalGroupId = eventModelImpl._groupId;
 
 		eventModelImpl._setOriginalGroupId = false;
+
+		eventModelImpl._originalUserId = eventModelImpl._userId;
+
+		eventModelImpl._setOriginalUserId = false;
 
 		eventModelImpl._originalFlag = eventModelImpl._flag;
 
@@ -866,6 +883,8 @@ public class EventModelImpl extends BaseModelImpl<Event> implements EventModel {
 	private long _companyId;
 	private long _userId;
 	private String _userUuid;
+	private long _originalUserId;
+	private boolean _setOriginalUserId;
 	private String _userName;
 	private Date _createDate;
 	private Date _modifiedDate;

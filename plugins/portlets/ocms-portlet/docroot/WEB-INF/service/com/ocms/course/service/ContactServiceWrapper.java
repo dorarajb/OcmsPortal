@@ -56,6 +56,79 @@ public class ContactServiceWrapper implements ContactService,
 		return _contactService.invokeMethod(name, parameterTypes, arguments);
 	}
 
+	@Override
+	public java.util.List<com.ocms.course.model.Contact> getContactByGroupId(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _contactService.getContactByGroupId(groupId);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.Contact> getContactByGroupId(
+		long groupId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _contactService.getContactByGroupId(groupId, start, end);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.Contact> getContactByContactId(
+		long contactId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _contactService.getContactByContactId(contactId);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.Contact> getContactByContactId(
+		long contactId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _contactService.getContactByContactId(contactId, start, end);
+	}
+
+	@Override
+	public com.ocms.course.model.Contact addContact(
+		java.lang.String contactType, java.lang.String contactName,
+		java.lang.String addressLine1, java.lang.String addressLine2,
+		java.lang.String city, java.lang.String state, java.lang.String region,
+		java.lang.String zip, java.lang.String phone, java.lang.String fax,
+		java.lang.String email,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _contactService.addContact(contactType, contactName,
+			addressLine1, addressLine2, city, state, region, zip, phone, fax,
+			email, serviceContext);
+	}
+
+	@Override
+	public com.ocms.course.model.Contact updateContact(long contactId,
+		java.lang.String contactType, java.lang.String contactName,
+		java.lang.String addressLine1, java.lang.String addressLine2,
+		java.lang.String city, java.lang.String state, java.lang.String region,
+		java.lang.String zip, java.lang.String phone, java.lang.String fax,
+		java.lang.String email,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _contactService.updateContact(contactId, contactType,
+			contactName, addressLine1, addressLine2, city, state, region, zip,
+			phone, fax, email, serviceContext);
+	}
+
+	@Override
+	public void deleteContactByContactId(long contactId) {
+		_contactService.deleteContactByContactId(contactId);
+	}
+
+	@Override
+	public void deleteContactByGrouptId(long groupId) {
+		_contactService.deleteContactByGrouptId(groupId);
+	}
+
+	@Override
+	public void deleteAllContact() {
+		_contactService.deleteAllContact();
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

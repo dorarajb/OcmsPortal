@@ -14,6 +14,13 @@
 
 package com.ocms.course.service.http;
 
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+
+import com.ocms.course.service.ContactServiceUtil;
+
+import java.rmi.RemoteException;
+
 /**
  * Provides the SOAP utility for the
  * {@link com.ocms.course.service.ContactServiceUtil} service utility. The
@@ -55,4 +62,142 @@ package com.ocms.course.service.http;
  * @generated
  */
 public class ContactServiceSoap {
+	public static com.ocms.course.model.ContactSoap[] getContactByGroupId(
+		long groupId) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Contact> returnValue = ContactServiceUtil.getContactByGroupId(groupId);
+
+			return com.ocms.course.model.ContactSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.ContactSoap[] getContactByGroupId(
+		long groupId, int start, int end) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Contact> returnValue = ContactServiceUtil.getContactByGroupId(groupId,
+					start, end);
+
+			return com.ocms.course.model.ContactSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.ContactSoap[] getContactByContactId(
+		long contactId) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Contact> returnValue = ContactServiceUtil.getContactByContactId(contactId);
+
+			return com.ocms.course.model.ContactSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.ContactSoap[] getContactByContactId(
+		long contactId, int start, int end) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Contact> returnValue = ContactServiceUtil.getContactByContactId(contactId,
+					start, end);
+
+			return com.ocms.course.model.ContactSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.ContactSoap addContact(
+		java.lang.String contactType, java.lang.String contactName,
+		java.lang.String addressLine1, java.lang.String addressLine2,
+		java.lang.String city, java.lang.String state, java.lang.String region,
+		java.lang.String zip, java.lang.String phone, java.lang.String fax,
+		java.lang.String email,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws RemoteException {
+		try {
+			com.ocms.course.model.Contact returnValue = ContactServiceUtil.addContact(contactType,
+					contactName, addressLine1, addressLine2, city, state,
+					region, zip, phone, fax, email, serviceContext);
+
+			return com.ocms.course.model.ContactSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.ContactSoap updateContact(
+		long contactId, java.lang.String contactType,
+		java.lang.String contactName, java.lang.String addressLine1,
+		java.lang.String addressLine2, java.lang.String city,
+		java.lang.String state, java.lang.String region, java.lang.String zip,
+		java.lang.String phone, java.lang.String fax, java.lang.String email,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws RemoteException {
+		try {
+			com.ocms.course.model.Contact returnValue = ContactServiceUtil.updateContact(contactId,
+					contactType, contactName, addressLine1, addressLine2, city,
+					state, region, zip, phone, fax, email, serviceContext);
+
+			return com.ocms.course.model.ContactSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void deleteContactByContactId(long contactId)
+		throws RemoteException {
+		try {
+			ContactServiceUtil.deleteContactByContactId(contactId);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void deleteContactByGrouptId(long groupId)
+		throws RemoteException {
+		try {
+			ContactServiceUtil.deleteContactByGrouptId(groupId);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void deleteAllContact() throws RemoteException {
+		try {
+			ContactServiceUtil.deleteAllContact();
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	private static Log _log = LogFactoryUtil.getLog(ContactServiceSoap.class);
 }

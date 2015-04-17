@@ -79,11 +79,14 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 			{ "deposit", Types.INTEGER },
 			{ "price", Types.INTEGER },
 			{ "currency_", Types.VARCHAR },
-			{ "effectiveDate", Types.TIMESTAMP },
+			{ "effectiveFromDate", Types.TIMESTAMP },
 			{ "courseCode", Types.VARCHAR },
-			{ "locationCode", Types.VARCHAR }
+			{ "locationCode", Types.VARCHAR },
+			{ "effectiveToDate", Types.TIMESTAMP },
+			{ "active_", Types.INTEGER },
+			{ "balanceDueParDate", Types.INTEGER }
 		};
-	public static final String TABLE_SQL_CREATE = "create table CM_Pricing (pricingId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,locationId INTEGER,courseId INTEGER,packageId INTEGER,deposit INTEGER,price INTEGER,currency_ VARCHAR(75) null,effectiveDate DATE null,courseCode VARCHAR(75) null,locationCode VARCHAR(75) null)";
+	public static final String TABLE_SQL_CREATE = "create table CM_Pricing (pricingId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,locationId INTEGER,courseId INTEGER,packageId INTEGER,deposit INTEGER,price INTEGER,currency_ VARCHAR(75) null,effectiveFromDate DATE null,courseCode VARCHAR(75) null,locationCode VARCHAR(75) null,effectiveToDate DATE null,active_ INTEGER,balanceDueParDate INTEGER)";
 	public static final String TABLE_SQL_DROP = "drop table CM_Pricing";
 	public static final String ORDER_BY_JPQL = " ORDER BY pricing.pricingId ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY CM_Pricing.pricingId ASC";
@@ -99,12 +102,13 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 	public static final boolean COLUMN_BITMASK_ENABLED = GetterUtil.getBoolean(com.liferay.util.service.ServiceProps.get(
 				"value.object.column.bitmask.enabled.com.ocms.course.model.Pricing"),
 			true);
-	public static long COURSEID_COLUMN_BITMASK = 1L;
-	public static long GROUPID_COLUMN_BITMASK = 2L;
-	public static long LOCATIONID_COLUMN_BITMASK = 4L;
-	public static long PACKAGEID_COLUMN_BITMASK = 8L;
-	public static long PRICE_COLUMN_BITMASK = 16L;
-	public static long PRICINGID_COLUMN_BITMASK = 32L;
+	public static long ACTIVE_COLUMN_BITMASK = 1L;
+	public static long COURSEID_COLUMN_BITMASK = 2L;
+	public static long GROUPID_COLUMN_BITMASK = 4L;
+	public static long LOCATIONID_COLUMN_BITMASK = 8L;
+	public static long PACKAGEID_COLUMN_BITMASK = 16L;
+	public static long PRICE_COLUMN_BITMASK = 32L;
+	public static long PRICINGID_COLUMN_BITMASK = 64L;
 
 	/**
 	 * Converts the soap model instance into a normal model instance.
@@ -132,9 +136,12 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 		model.setDeposit(soapModel.getDeposit());
 		model.setPrice(soapModel.getPrice());
 		model.setCurrency(soapModel.getCurrency());
-		model.setEffectiveDate(soapModel.getEffectiveDate());
+		model.setEffectiveFromDate(soapModel.getEffectiveFromDate());
 		model.setCourseCode(soapModel.getCourseCode());
 		model.setLocationCode(soapModel.getLocationCode());
+		model.setEffectiveToDate(soapModel.getEffectiveToDate());
+		model.setActive(soapModel.getActive());
+		model.setBalanceDueParDate(soapModel.getBalanceDueParDate());
 
 		return model;
 	}
@@ -212,9 +219,12 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 		attributes.put("deposit", getDeposit());
 		attributes.put("price", getPrice());
 		attributes.put("currency", getCurrency());
-		attributes.put("effectiveDate", getEffectiveDate());
+		attributes.put("effectiveFromDate", getEffectiveFromDate());
 		attributes.put("courseCode", getCourseCode());
 		attributes.put("locationCode", getLocationCode());
+		attributes.put("effectiveToDate", getEffectiveToDate());
+		attributes.put("active", getActive());
+		attributes.put("balanceDueParDate", getBalanceDueParDate());
 
 		return attributes;
 	}
@@ -299,10 +309,10 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 			setCurrency(currency);
 		}
 
-		Date effectiveDate = (Date)attributes.get("effectiveDate");
+		Date effectiveFromDate = (Date)attributes.get("effectiveFromDate");
 
-		if (effectiveDate != null) {
-			setEffectiveDate(effectiveDate);
+		if (effectiveFromDate != null) {
+			setEffectiveFromDate(effectiveFromDate);
 		}
 
 		String courseCode = (String)attributes.get("courseCode");
@@ -315,6 +325,24 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 
 		if (locationCode != null) {
 			setLocationCode(locationCode);
+		}
+
+		Date effectiveToDate = (Date)attributes.get("effectiveToDate");
+
+		if (effectiveToDate != null) {
+			setEffectiveToDate(effectiveToDate);
+		}
+
+		Integer active = (Integer)attributes.get("active");
+
+		if (active != null) {
+			setActive(active);
+		}
+
+		Integer balanceDueParDate = (Integer)attributes.get("balanceDueParDate");
+
+		if (balanceDueParDate != null) {
+			setBalanceDueParDate(balanceDueParDate);
 		}
 	}
 
@@ -555,13 +583,13 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 
 	@JSON
 	@Override
-	public Date getEffectiveDate() {
-		return _effectiveDate;
+	public Date getEffectiveFromDate() {
+		return _effectiveFromDate;
 	}
 
 	@Override
-	public void setEffectiveDate(Date effectiveDate) {
-		_effectiveDate = effectiveDate;
+	public void setEffectiveFromDate(Date effectiveFromDate) {
+		_effectiveFromDate = effectiveFromDate;
 	}
 
 	@JSON
@@ -594,6 +622,51 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 	@Override
 	public void setLocationCode(String locationCode) {
 		_locationCode = locationCode;
+	}
+
+	@JSON
+	@Override
+	public Date getEffectiveToDate() {
+		return _effectiveToDate;
+	}
+
+	@Override
+	public void setEffectiveToDate(Date effectiveToDate) {
+		_effectiveToDate = effectiveToDate;
+	}
+
+	@JSON
+	@Override
+	public int getActive() {
+		return _active;
+	}
+
+	@Override
+	public void setActive(int active) {
+		_columnBitmask |= ACTIVE_COLUMN_BITMASK;
+
+		if (!_setOriginalActive) {
+			_setOriginalActive = true;
+
+			_originalActive = _active;
+		}
+
+		_active = active;
+	}
+
+	public int getOriginalActive() {
+		return _originalActive;
+	}
+
+	@JSON
+	@Override
+	public int getBalanceDueParDate() {
+		return _balanceDueParDate;
+	}
+
+	@Override
+	public void setBalanceDueParDate(int balanceDueParDate) {
+		_balanceDueParDate = balanceDueParDate;
 	}
 
 	public long getColumnBitmask() {
@@ -640,9 +713,12 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 		pricingImpl.setDeposit(getDeposit());
 		pricingImpl.setPrice(getPrice());
 		pricingImpl.setCurrency(getCurrency());
-		pricingImpl.setEffectiveDate(getEffectiveDate());
+		pricingImpl.setEffectiveFromDate(getEffectiveFromDate());
 		pricingImpl.setCourseCode(getCourseCode());
 		pricingImpl.setLocationCode(getLocationCode());
+		pricingImpl.setEffectiveToDate(getEffectiveToDate());
+		pricingImpl.setActive(getActive());
+		pricingImpl.setBalanceDueParDate(getBalanceDueParDate());
 
 		pricingImpl.resetOriginalValues();
 
@@ -719,6 +795,10 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 
 		pricingModelImpl._setOriginalPrice = false;
 
+		pricingModelImpl._originalActive = pricingModelImpl._active;
+
+		pricingModelImpl._setOriginalActive = false;
+
 		pricingModelImpl._columnBitmask = 0;
 	}
 
@@ -778,13 +858,13 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 			pricingCacheModel.currency = null;
 		}
 
-		Date effectiveDate = getEffectiveDate();
+		Date effectiveFromDate = getEffectiveFromDate();
 
-		if (effectiveDate != null) {
-			pricingCacheModel.effectiveDate = effectiveDate.getTime();
+		if (effectiveFromDate != null) {
+			pricingCacheModel.effectiveFromDate = effectiveFromDate.getTime();
 		}
 		else {
-			pricingCacheModel.effectiveDate = Long.MIN_VALUE;
+			pricingCacheModel.effectiveFromDate = Long.MIN_VALUE;
 		}
 
 		pricingCacheModel.courseCode = getCourseCode();
@@ -803,12 +883,25 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 			pricingCacheModel.locationCode = null;
 		}
 
+		Date effectiveToDate = getEffectiveToDate();
+
+		if (effectiveToDate != null) {
+			pricingCacheModel.effectiveToDate = effectiveToDate.getTime();
+		}
+		else {
+			pricingCacheModel.effectiveToDate = Long.MIN_VALUE;
+		}
+
+		pricingCacheModel.active = getActive();
+
+		pricingCacheModel.balanceDueParDate = getBalanceDueParDate();
+
 		return pricingCacheModel;
 	}
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(33);
+		StringBundler sb = new StringBundler(39);
 
 		sb.append("{pricingId=");
 		sb.append(getPricingId());
@@ -836,12 +929,18 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 		sb.append(getPrice());
 		sb.append(", currency=");
 		sb.append(getCurrency());
-		sb.append(", effectiveDate=");
-		sb.append(getEffectiveDate());
+		sb.append(", effectiveFromDate=");
+		sb.append(getEffectiveFromDate());
 		sb.append(", courseCode=");
 		sb.append(getCourseCode());
 		sb.append(", locationCode=");
 		sb.append(getLocationCode());
+		sb.append(", effectiveToDate=");
+		sb.append(getEffectiveToDate());
+		sb.append(", active=");
+		sb.append(getActive());
+		sb.append(", balanceDueParDate=");
+		sb.append(getBalanceDueParDate());
 		sb.append("}");
 
 		return sb.toString();
@@ -849,7 +948,7 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(52);
+		StringBundler sb = new StringBundler(61);
 
 		sb.append("<model><model-name>");
 		sb.append("com.ocms.course.model.Pricing");
@@ -908,8 +1007,8 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 		sb.append(getCurrency());
 		sb.append("]]></column-value></column>");
 		sb.append(
-			"<column><column-name>effectiveDate</column-name><column-value><![CDATA[");
-		sb.append(getEffectiveDate());
+			"<column><column-name>effectiveFromDate</column-name><column-value><![CDATA[");
+		sb.append(getEffectiveFromDate());
 		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>courseCode</column-name><column-value><![CDATA[");
@@ -918,6 +1017,18 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 		sb.append(
 			"<column><column-name>locationCode</column-name><column-value><![CDATA[");
 		sb.append(getLocationCode());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>effectiveToDate</column-name><column-value><![CDATA[");
+		sb.append(getEffectiveToDate());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>active</column-name><column-value><![CDATA[");
+		sb.append(getActive());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>balanceDueParDate</column-name><column-value><![CDATA[");
+		sb.append(getBalanceDueParDate());
 		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
@@ -955,9 +1066,14 @@ public class PricingModelImpl extends BaseModelImpl<Pricing>
 	private int _originalPrice;
 	private boolean _setOriginalPrice;
 	private String _currency;
-	private Date _effectiveDate;
+	private Date _effectiveFromDate;
 	private String _courseCode;
 	private String _locationCode;
+	private Date _effectiveToDate;
+	private int _active;
+	private int _originalActive;
+	private boolean _setOriginalActive;
+	private int _balanceDueParDate;
 	private long _columnBitmask;
 	private Pricing _escapedModel;
 }

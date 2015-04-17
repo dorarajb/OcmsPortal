@@ -44,9 +44,12 @@ public class PricingSoap implements Serializable {
 		soapModel.setDeposit(model.getDeposit());
 		soapModel.setPrice(model.getPrice());
 		soapModel.setCurrency(model.getCurrency());
-		soapModel.setEffectiveDate(model.getEffectiveDate());
+		soapModel.setEffectiveFromDate(model.getEffectiveFromDate());
 		soapModel.setCourseCode(model.getCourseCode());
 		soapModel.setLocationCode(model.getLocationCode());
+		soapModel.setEffectiveToDate(model.getEffectiveToDate());
+		soapModel.setActive(model.getActive());
+		soapModel.setBalanceDueParDate(model.getBalanceDueParDate());
 
 		return soapModel;
 	}
@@ -203,12 +206,12 @@ public class PricingSoap implements Serializable {
 		_currency = currency;
 	}
 
-	public Date getEffectiveDate() {
-		return _effectiveDate;
+	public Date getEffectiveFromDate() {
+		return _effectiveFromDate;
 	}
 
-	public void setEffectiveDate(Date effectiveDate) {
-		_effectiveDate = effectiveDate;
+	public void setEffectiveFromDate(Date effectiveFromDate) {
+		_effectiveFromDate = effectiveFromDate;
 	}
 
 	public String getCourseCode() {
@@ -227,6 +230,30 @@ public class PricingSoap implements Serializable {
 		_locationCode = locationCode;
 	}
 
+	public Date getEffectiveToDate() {
+		return _effectiveToDate;
+	}
+
+	public void setEffectiveToDate(Date effectiveToDate) {
+		_effectiveToDate = effectiveToDate;
+	}
+
+	public int getActive() {
+		return _active;
+	}
+
+	public void setActive(int active) {
+		_active = active;
+	}
+
+	public int getBalanceDueParDate() {
+		return _balanceDueParDate;
+	}
+
+	public void setBalanceDueParDate(int balanceDueParDate) {
+		_balanceDueParDate = balanceDueParDate;
+	}
+
 	private long _pricingId;
 	private long _groupId;
 	private long _companyId;
@@ -240,7 +267,10 @@ public class PricingSoap implements Serializable {
 	private int _deposit;
 	private int _price;
 	private String _currency;
-	private Date _effectiveDate;
+	private Date _effectiveFromDate;
 	private String _courseCode;
 	private String _locationCode;
+	private Date _effectiveToDate;
+	private int _active;
+	private int _balanceDueParDate;
 }

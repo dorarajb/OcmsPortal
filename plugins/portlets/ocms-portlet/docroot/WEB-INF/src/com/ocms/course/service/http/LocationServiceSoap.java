@@ -14,6 +14,13 @@
 
 package com.ocms.course.service.http;
 
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+
+import com.ocms.course.service.LocationServiceUtil;
+
+import java.rmi.RemoteException;
+
 /**
  * Provides the SOAP utility for the
  * {@link com.ocms.course.service.LocationServiceUtil} service utility. The
@@ -55,4 +62,143 @@ package com.ocms.course.service.http;
  * @generated
  */
 public class LocationServiceSoap {
+	public static com.ocms.course.model.LocationSoap[] getLocationByGroupId(
+		long groupId) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Location> returnValue = LocationServiceUtil.getLocationByGroupId(groupId);
+
+			return com.ocms.course.model.LocationSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.LocationSoap[] getLocationByGroupId(
+		long groupId, int start, int end) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Location> returnValue = LocationServiceUtil.getLocationByGroupId(groupId,
+					start, end);
+
+			return com.ocms.course.model.LocationSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.LocationSoap[] getLocationByLocationId(
+		long locationId) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Location> returnValue = LocationServiceUtil.getLocationByLocationId(locationId);
+
+			return com.ocms.course.model.LocationSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.LocationSoap[] getLocationByLocationId(
+		long locationId, int start, int end) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Location> returnValue = LocationServiceUtil.getLocationByLocationId(locationId,
+					start, end);
+
+			return com.ocms.course.model.LocationSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.LocationSoap addLocation(
+		java.lang.String name, java.lang.String code, java.lang.String notes,
+		java.lang.String addressLine1, java.lang.String addressLine2,
+		java.lang.String city, java.lang.String state, java.lang.String region,
+		java.lang.String country, java.lang.String zip, java.lang.String phone,
+		java.lang.String fax, java.lang.String email,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws RemoteException {
+		try {
+			com.ocms.course.model.Location returnValue = LocationServiceUtil.addLocation(name,
+					code, notes, addressLine1, addressLine2, city, state,
+					region, country, zip, phone, fax, email, serviceContext);
+
+			return com.ocms.course.model.LocationSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.LocationSoap updateLocation(
+		long locationId, java.lang.String name, java.lang.String code,
+		java.lang.String notes, java.lang.String addressLine1,
+		java.lang.String addressLine2, java.lang.String city,
+		java.lang.String state, java.lang.String region,
+		java.lang.String country, java.lang.String zip, java.lang.String phone,
+		java.lang.String fax, java.lang.String email,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws RemoteException {
+		try {
+			com.ocms.course.model.Location returnValue = LocationServiceUtil.updateLocation(locationId,
+					name, code, notes, addressLine1, addressLine2, city, state,
+					region, country, zip, phone, fax, email, serviceContext);
+
+			return com.ocms.course.model.LocationSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void deleteLocationByLocationId(long locationId)
+		throws RemoteException {
+		try {
+			LocationServiceUtil.deleteLocationByLocationId(locationId);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void deleteLocationByGrouptId(long groupId)
+		throws RemoteException {
+		try {
+			LocationServiceUtil.deleteLocationByGrouptId(groupId);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void deleteAllLocation() throws RemoteException {
+		try {
+			LocationServiceUtil.deleteAllLocation();
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	private static Log _log = LogFactoryUtil.getLog(LocationServiceSoap.class);
 }

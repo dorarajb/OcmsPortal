@@ -38,7 +38,7 @@ public class CourseSeriesCacheModel implements CacheModel<CourseSeries>,
 	Externalizable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(33);
+		StringBundler sb = new StringBundler(47);
 
 		sb.append("{courseSeriesId=");
 		sb.append(courseSeriesId);
@@ -72,6 +72,20 @@ public class CourseSeriesCacheModel implements CacheModel<CourseSeries>,
 		sb.append(seriesCount);
 		sb.append(", courseSeriesCode=");
 		sb.append(courseSeriesCode);
+		sb.append(", courseSeriesEventCode=");
+		sb.append(courseSeriesEventCode);
+		sb.append(", flagToListData=");
+		sb.append(flagToListData);
+		sb.append(", flagToChkEventCreation=");
+		sb.append(flagToChkEventCreation);
+		sb.append(", sMonth=");
+		sb.append(sMonth);
+		sb.append(", sDay=");
+		sb.append(sDay);
+		sb.append(", eMonth=");
+		sb.append(eMonth);
+		sb.append(", eDay=");
+		sb.append(eDay);
 		sb.append("}");
 
 		return sb.toString();
@@ -148,6 +162,34 @@ public class CourseSeriesCacheModel implements CacheModel<CourseSeries>,
 			courseSeriesImpl.setCourseSeriesCode(courseSeriesCode);
 		}
 
+		if (courseSeriesEventCode == null) {
+			courseSeriesImpl.setCourseSeriesEventCode(StringPool.BLANK);
+		}
+		else {
+			courseSeriesImpl.setCourseSeriesEventCode(courseSeriesEventCode);
+		}
+
+		courseSeriesImpl.setFlagToListData(flagToListData);
+		courseSeriesImpl.setFlagToChkEventCreation(flagToChkEventCreation);
+
+		if (sMonth == null) {
+			courseSeriesImpl.setSMonth(StringPool.BLANK);
+		}
+		else {
+			courseSeriesImpl.setSMonth(sMonth);
+		}
+
+		courseSeriesImpl.setSDay(sDay);
+
+		if (eMonth == null) {
+			courseSeriesImpl.setEMonth(StringPool.BLANK);
+		}
+		else {
+			courseSeriesImpl.setEMonth(eMonth);
+		}
+
+		courseSeriesImpl.setEDay(eDay);
+
 		courseSeriesImpl.resetOriginalValues();
 
 		return courseSeriesImpl;
@@ -171,6 +213,13 @@ public class CourseSeriesCacheModel implements CacheModel<CourseSeries>,
 		maxNoStudReg = objectInput.readLong();
 		seriesCount = objectInput.readLong();
 		courseSeriesCode = objectInput.readUTF();
+		courseSeriesEventCode = objectInput.readUTF();
+		flagToListData = objectInput.readInt();
+		flagToChkEventCreation = objectInput.readInt();
+		sMonth = objectInput.readUTF();
+		sDay = objectInput.readInt();
+		eMonth = objectInput.readUTF();
+		eDay = objectInput.readInt();
 	}
 
 	@Override
@@ -219,6 +268,34 @@ public class CourseSeriesCacheModel implements CacheModel<CourseSeries>,
 		else {
 			objectOutput.writeUTF(courseSeriesCode);
 		}
+
+		if (courseSeriesEventCode == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(courseSeriesEventCode);
+		}
+
+		objectOutput.writeInt(flagToListData);
+		objectOutput.writeInt(flagToChkEventCreation);
+
+		if (sMonth == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(sMonth);
+		}
+
+		objectOutput.writeInt(sDay);
+
+		if (eMonth == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(eMonth);
+		}
+
+		objectOutput.writeInt(eDay);
 	}
 
 	public long courseSeriesId;
@@ -237,4 +314,11 @@ public class CourseSeriesCacheModel implements CacheModel<CourseSeries>,
 	public long maxNoStudReg;
 	public long seriesCount;
 	public String courseSeriesCode;
+	public String courseSeriesEventCode;
+	public int flagToListData;
+	public int flagToChkEventCreation;
+	public String sMonth;
+	public int sDay;
+	public String eMonth;
+	public int eDay;
 }

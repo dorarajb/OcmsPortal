@@ -91,15 +91,87 @@ public class EventServiceWrapper implements EventService,
 	}
 
 	@Override
-	public com.ocms.course.model.Event addEvent(long userId,
-		java.lang.String eventName, long courseId, java.lang.String courseCode,
-		long locationId, java.lang.String locationCode,
+	public java.util.List<com.ocms.course.model.Event> getEventByFlag(
+		int flag, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _eventService.getEventByFlag(flag, start, end);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.Event> getEventByUserIdFlag(
+		long userId, int flag)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _eventService.getEventByUserIdFlag(userId, flag);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.Event> getEventByUserIdFlag(
+		long userId, int flag, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _eventService.getEventByUserIdFlag(userId, flag, start, end);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.Event> getEventByUserIdFlagGrouId(
+		long userId, int flag, long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _eventService.getEventByUserIdFlagGrouId(userId, flag, groupId);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.Event> getEventByUserIdFlagGroupId(
+		long userId, int flag, long groupId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return _eventService.getEventByUserIdFlagGroupId(userId, flag, groupId,
+			start, end);
+	}
+
+	@Override
+	public com.ocms.course.model.Event addEvent(java.lang.String eventName,
+		long courseId, long locationId, java.util.Date startDate,
+		java.util.Date endDate, int flag,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _eventService.addEvent(eventName, courseId, locationId,
+			startDate, endDate, flag, serviceContext);
+	}
+
+	@Override
+	public com.ocms.course.model.Event updateEvent(long eventId,
+		java.lang.String eventName, long courseId, long locationId,
 		java.util.Date startDate, java.util.Date endDate, int flag,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
-		return _eventService.addEvent(userId, eventName, courseId, courseCode,
-			locationId, locationCode, startDate, endDate, flag, serviceContext);
+		return _eventService.updateEvent(eventId, eventName, courseId,
+			locationId, startDate, endDate, flag, serviceContext);
+	}
+
+	@Override
+	public com.ocms.course.model.Event updateEventFlag(
+		com.ocms.course.model.Event event, int flag) {
+		return _eventService.updateEventFlag(event, flag);
+	}
+
+	@Override
+	public void deleteEventByEventId(long eventId) {
+		_eventService.deleteEventByEventId(eventId);
+	}
+
+	@Override
+	public void deleteEventByGrouptId(long groupId) {
+		_eventService.deleteEventByGrouptId(groupId);
+	}
+
+	@Override
+	public void deleteAllEvent() {
+		_eventService.deleteAllEvent();
+	}
+
+	@Override
+	public void FMAddEvent() {
+		_eventService.FMAddEvent();
 	}
 
 	/**

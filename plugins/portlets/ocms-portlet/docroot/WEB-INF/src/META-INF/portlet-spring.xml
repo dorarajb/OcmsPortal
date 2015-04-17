@@ -19,7 +19,22 @@
 	<bean id="com.ocms.course.service.LocationLocalService" class="com.ocms.course.service.impl.LocationLocalServiceImpl" />
 	<bean id="com.ocms.course.service.LocationService" class="com.ocms.course.service.impl.LocationServiceImpl" />
 	<bean id="com.ocms.course.service.persistence.LocationPersistence" class="com.ocms.course.service.persistence.LocationPersistenceImpl" parent="basePersistence" />
+	<bean id="com.ocms.course.service.OffersAndDeductionsLocalService" class="com.ocms.course.service.impl.OffersAndDeductionsLocalServiceImpl" />
+	<bean id="com.ocms.course.service.OffersAndDeductionsService" class="com.ocms.course.service.impl.OffersAndDeductionsServiceImpl" />
+	<bean id="com.ocms.course.service.persistence.OffersAndDeductionsPersistence" class="com.ocms.course.service.persistence.OffersAndDeductionsPersistenceImpl" parent="basePersistence" />
 	<bean id="com.ocms.course.service.PricingLocalService" class="com.ocms.course.service.impl.PricingLocalServiceImpl" />
 	<bean id="com.ocms.course.service.PricingService" class="com.ocms.course.service.impl.PricingServiceImpl" />
 	<bean id="com.ocms.course.service.persistence.PricingPersistence" class="com.ocms.course.service.persistence.PricingPersistenceImpl" parent="basePersistence" />
+	<bean id="com.ocms.course.service.RegistrationDetailsLocalService" class="com.ocms.course.service.impl.RegistrationDetailsLocalServiceImpl" />
+	<bean id="com.ocms.course.service.RegistrationDetailsService" class="com.ocms.course.service.impl.RegistrationDetailsServiceImpl" />
+	<bean id="com.ocms.course.service.persistence.RegistrationDetailsPersistence" class="com.ocms.course.service.persistence.RegistrationDetailsPersistenceImpl" parent="basePersistence" />
+	<bean id="com.ocms.course.service.StudentRegistrationLocalService" class="com.ocms.course.service.impl.StudentRegistrationLocalServiceImpl" />
+	<bean id="com.ocms.course.service.StudentRegistrationService" class="com.ocms.course.service.impl.StudentRegistrationServiceImpl" />
+	<bean id="com.ocms.course.service.persistence.StudentRegistrationPersistence" class="com.ocms.course.service.persistence.StudentRegistrationPersistenceImpl" parent="basePersistence" />
+	<bean id="com.ocms.course.service.TaxDetailsLocalService" class="com.ocms.course.service.impl.TaxDetailsLocalServiceImpl" />
+	<bean id="com.ocms.course.service.TaxDetailsService" class="com.ocms.course.service.impl.TaxDetailsServiceImpl" />
+	<bean id="com.ocms.course.service.persistence.TaxDetailsPersistence" class="com.ocms.course.service.persistence.TaxDetailsPersistenceImpl" parent="basePersistence" />
+	<bean id="com.ocms.course.service.TaxTypesLocalService" class="com.ocms.course.service.impl.TaxTypesLocalServiceImpl" />
+	<bean id="com.ocms.course.service.TaxTypesService" class="com.ocms.course.service.impl.TaxTypesServiceImpl" />
+	<bean id="com.ocms.course.service.persistence.TaxTypesPersistence" class="com.ocms.course.service.persistence.TaxTypesPersistenceImpl" parent="basePersistence" />
 </beans>

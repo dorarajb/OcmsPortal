@@ -100,69 +100,113 @@ public class PricingLocalServiceClpInvoker {
 
 		_methodParameterTypes15 = new String[] { "com.ocms.course.model.Pricing" };
 
-		_methodName64 = "getBeanIdentifier";
+		_methodName100 = "getBeanIdentifier";
 
-		_methodParameterTypes64 = new String[] {  };
+		_methodParameterTypes100 = new String[] {  };
 
-		_methodName65 = "setBeanIdentifier";
+		_methodName101 = "setBeanIdentifier";
 
-		_methodParameterTypes65 = new String[] { "java.lang.String" };
+		_methodParameterTypes101 = new String[] { "java.lang.String" };
 
-		_methodName70 = "getPricingByGroupId";
+		_methodName106 = "getPricingByGroupId";
 
-		_methodParameterTypes70 = new String[] { "long" };
+		_methodParameterTypes106 = new String[] { "long" };
 
-		_methodName71 = "getPricingByGroupId";
+		_methodName107 = "getPricingByGroupId";
 
-		_methodParameterTypes71 = new String[] { "long", "int", "int" };
+		_methodParameterTypes107 = new String[] { "long", "int", "int" };
 
-		_methodName72 = "getPricingByCourseId";
+		_methodName108 = "getPricingByCourseId";
 
-		_methodParameterTypes72 = new String[] { "int" };
+		_methodParameterTypes108 = new String[] { "int" };
 
-		_methodName73 = "getPricingByCourseId";
+		_methodName109 = "getPricingByCourseId";
 
-		_methodParameterTypes73 = new String[] { "int", "int", "int" };
+		_methodParameterTypes109 = new String[] { "int", "int", "int" };
 
-		_methodName74 = "getPricingByPackageId";
+		_methodName110 = "getPricingByPackageId";
 
-		_methodParameterTypes74 = new String[] { "int" };
+		_methodParameterTypes110 = new String[] { "int" };
 
-		_methodName75 = "getPricingByPackageId";
+		_methodName111 = "getPricingByPackageId";
 
-		_methodParameterTypes75 = new String[] { "int", "int", "int" };
+		_methodParameterTypes111 = new String[] { "int", "int", "int" };
 
-		_methodName76 = "getPricingByPricingId";
+		_methodName112 = "getPricingByPricingId";
 
-		_methodParameterTypes76 = new String[] { "int" };
+		_methodParameterTypes112 = new String[] { "int" };
 
-		_methodName77 = "getPricingByPricingId";
+		_methodName113 = "getPricingByPricingId";
 
-		_methodParameterTypes77 = new String[] { "int", "int", "int" };
+		_methodParameterTypes113 = new String[] { "int", "int", "int" };
 
-		_methodName78 = "getPricingByPrice";
+		_methodName114 = "getPricingByPrice";
 
-		_methodParameterTypes78 = new String[] { "int" };
+		_methodParameterTypes114 = new String[] { "int" };
 
-		_methodName79 = "getPricingByPrice";
+		_methodName115 = "getPricingByPrice";
 
-		_methodParameterTypes79 = new String[] { "int", "int", "int" };
+		_methodParameterTypes115 = new String[] { "int", "int", "int" };
 
-		_methodName81 = "addPricing";
+		_methodName116 = "getPricingByPackageAndLocation";
 
-		_methodParameterTypes81 = new String[] {
-				"long", "int", "int", "java.lang.String", "java.util.Date",
-				"int", "java.lang.String", "int", "java.lang.String", "int",
+		_methodParameterTypes116 = new String[] { "int", "int" };
+
+		_methodName117 = "getPricingByPackageAndLocation";
+
+		_methodParameterTypes117 = new String[] { "int", "int", "int", "int" };
+
+		_methodName118 = "getPricingByPackageLocationActive";
+
+		_methodParameterTypes118 = new String[] { "int", "int", "int" };
+
+		_methodName119 = "getPricingByPackageLocationActive";
+
+		_methodParameterTypes119 = new String[] {
+				"int", "int", "int", "int", "int"
+			};
+
+		_methodName120 = "getPricingByPackageIdAndActive";
+
+		_methodParameterTypes120 = new String[] { "int", "int" };
+
+		_methodName121 = "getPricingByPackageIdAndActive";
+
+		_methodParameterTypes121 = new String[] { "int", "int", "int", "int" };
+
+		_methodName123 = "addPricing";
+
+		_methodParameterTypes123 = new String[] {
+				"int", "int", "java.lang.String", "java.util.Date",
+				"java.util.Date", "int", "int", "java.lang.String", "int",
+				"java.lang.String", "int",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName82 = "updatePricing";
+		_methodName124 = "updatePricing";
 
-		_methodParameterTypes82 = new String[] {
-				"long", "int", "int", "java.lang.String", "java.util.Date",
-				"int", "java.lang.String", "int", "java.lang.String", "int",
-				"long", "com.liferay.portal.service.ServiceContext"
+		_methodParameterTypes124 = new String[] {
+				"int", "int", "java.lang.String", "java.util.Date", "int",
+				"java.util.Date", "int", "java.lang.String", "int",
+				"java.lang.String", "int", "long",
+				"com.liferay.portal.service.ServiceContext"
 			};
+
+		_methodName125 = "deletePricingByLocationId";
+
+		_methodParameterTypes125 = new String[] { "long" };
+
+		_methodName126 = "deletePricingByPackageId";
+
+		_methodParameterTypes126 = new String[] { "int" };
+
+		_methodName127 = "deletePricingByGrouptId";
+
+		_methodParameterTypes127 = new String[] { "long" };
+
+		_methodName128 = "deleteAllPricing";
+
+		_methodParameterTypes128 = new String[] {  };
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -254,105 +298,179 @@ public class PricingLocalServiceClpInvoker {
 			return PricingLocalServiceUtil.updatePricing((com.ocms.course.model.Pricing)arguments[0]);
 		}
 
-		if (_methodName64.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes64, parameterTypes)) {
+		if (_methodName100.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes100, parameterTypes)) {
 			return PricingLocalServiceUtil.getBeanIdentifier();
 		}
 
-		if (_methodName65.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes65, parameterTypes)) {
+		if (_methodName101.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes101, parameterTypes)) {
 			PricingLocalServiceUtil.setBeanIdentifier((java.lang.String)arguments[0]);
 
 			return null;
 		}
 
-		if (_methodName70.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes70, parameterTypes)) {
+		if (_methodName106.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes106, parameterTypes)) {
 			return PricingLocalServiceUtil.getPricingByGroupId(((Long)arguments[0]).longValue());
 		}
 
-		if (_methodName71.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes71, parameterTypes)) {
+		if (_methodName107.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes107, parameterTypes)) {
 			return PricingLocalServiceUtil.getPricingByGroupId(((Long)arguments[0]).longValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName72.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes72, parameterTypes)) {
+		if (_methodName108.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes108, parameterTypes)) {
 			return PricingLocalServiceUtil.getPricingByCourseId(((Integer)arguments[0]).intValue());
 		}
 
-		if (_methodName73.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes73, parameterTypes)) {
+		if (_methodName109.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes109, parameterTypes)) {
 			return PricingLocalServiceUtil.getPricingByCourseId(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName74.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes74, parameterTypes)) {
+		if (_methodName110.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes110, parameterTypes)) {
 			return PricingLocalServiceUtil.getPricingByPackageId(((Integer)arguments[0]).intValue());
 		}
 
-		if (_methodName75.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes75, parameterTypes)) {
+		if (_methodName111.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes111, parameterTypes)) {
 			return PricingLocalServiceUtil.getPricingByPackageId(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName76.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes76, parameterTypes)) {
+		if (_methodName112.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes112, parameterTypes)) {
 			return PricingLocalServiceUtil.getPricingByPricingId(((Integer)arguments[0]).intValue());
 		}
 
-		if (_methodName77.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes77, parameterTypes)) {
+		if (_methodName113.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes113, parameterTypes)) {
 			return PricingLocalServiceUtil.getPricingByPricingId(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName78.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes78, parameterTypes)) {
+		if (_methodName114.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes114, parameterTypes)) {
 			return PricingLocalServiceUtil.getPricingByPrice(((Integer)arguments[0]).intValue());
 		}
 
-		if (_methodName79.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes79, parameterTypes)) {
+		if (_methodName115.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes115, parameterTypes)) {
 			return PricingLocalServiceUtil.getPricingByPrice(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue());
 		}
 
-		if (_methodName81.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes81, parameterTypes)) {
-			return PricingLocalServiceUtil.addPricing(((Long)arguments[0]).longValue(),
-				((Integer)arguments[1]).intValue(),
-				((Integer)arguments[2]).intValue(),
-				(java.lang.String)arguments[3], (java.util.Date)arguments[4],
-				((Integer)arguments[5]).intValue(),
-				(java.lang.String)arguments[6],
-				((Integer)arguments[7]).intValue(),
-				(java.lang.String)arguments[8],
-				((Integer)arguments[9]).intValue(),
-				(com.liferay.portal.service.ServiceContext)arguments[10]);
+		if (_methodName116.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes116, parameterTypes)) {
+			return PricingLocalServiceUtil.getPricingByPackageAndLocation(((Integer)arguments[0]).intValue(),
+				((Integer)arguments[1]).intValue());
 		}
 
-		if (_methodName82.equals(name) &&
-				Arrays.deepEquals(_methodParameterTypes82, parameterTypes)) {
-			return PricingLocalServiceUtil.updatePricing(((Long)arguments[0]).longValue(),
+		if (_methodName117.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes117, parameterTypes)) {
+			return PricingLocalServiceUtil.getPricingByPackageAndLocation(((Integer)arguments[0]).intValue(),
 				((Integer)arguments[1]).intValue(),
 				((Integer)arguments[2]).intValue(),
-				(java.lang.String)arguments[3], (java.util.Date)arguments[4],
+				((Integer)arguments[3]).intValue());
+		}
+
+		if (_methodName118.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes118, parameterTypes)) {
+			return PricingLocalServiceUtil.getPricingByPackageLocationActive(((Integer)arguments[0]).intValue(),
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue());
+		}
+
+		if (_methodName119.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes119, parameterTypes)) {
+			return PricingLocalServiceUtil.getPricingByPackageLocationActive(((Integer)arguments[0]).intValue(),
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue(),
+				((Integer)arguments[3]).intValue(),
+				((Integer)arguments[4]).intValue());
+		}
+
+		if (_methodName120.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes120, parameterTypes)) {
+			return PricingLocalServiceUtil.getPricingByPackageIdAndActive(((Integer)arguments[0]).intValue(),
+				((Integer)arguments[1]).intValue());
+		}
+
+		if (_methodName121.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes121, parameterTypes)) {
+			return PricingLocalServiceUtil.getPricingByPackageIdAndActive(((Integer)arguments[0]).intValue(),
+				((Integer)arguments[1]).intValue(),
+				((Integer)arguments[2]).intValue(),
+				((Integer)arguments[3]).intValue());
+		}
+
+		if (_methodName123.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes123, parameterTypes)) {
+			return PricingLocalServiceUtil.addPricing(((Integer)arguments[0]).intValue(),
+				((Integer)arguments[1]).intValue(),
+				(java.lang.String)arguments[2], (java.util.Date)arguments[3],
+				(java.util.Date)arguments[4],
 				((Integer)arguments[5]).intValue(),
-				(java.lang.String)arguments[6],
-				((Integer)arguments[7]).intValue(),
-				(java.lang.String)arguments[8],
-				((Integer)arguments[9]).intValue(),
-				((Long)arguments[10]).longValue(),
+				((Integer)arguments[6]).intValue(),
+				(java.lang.String)arguments[7],
+				((Integer)arguments[8]).intValue(),
+				(java.lang.String)arguments[9],
+				((Integer)arguments[10]).intValue(),
 				(com.liferay.portal.service.ServiceContext)arguments[11]);
+		}
+
+		if (_methodName124.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes124, parameterTypes)) {
+			return PricingLocalServiceUtil.updatePricing(((Integer)arguments[0]).intValue(),
+				((Integer)arguments[1]).intValue(),
+				(java.lang.String)arguments[2], (java.util.Date)arguments[3],
+				((Integer)arguments[4]).intValue(),
+				(java.util.Date)arguments[5],
+				((Integer)arguments[6]).intValue(),
+				(java.lang.String)arguments[7],
+				((Integer)arguments[8]).intValue(),
+				(java.lang.String)arguments[9],
+				((Integer)arguments[10]).intValue(),
+				((Long)arguments[11]).longValue(),
+				(com.liferay.portal.service.ServiceContext)arguments[12]);
+		}
+
+		if (_methodName125.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes125, parameterTypes)) {
+			PricingLocalServiceUtil.deletePricingByLocationId(((Long)arguments[0]).longValue());
+
+			return null;
+		}
+
+		if (_methodName126.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes126, parameterTypes)) {
+			PricingLocalServiceUtil.deletePricingByPackageId(((Integer)arguments[0]).intValue());
+
+			return null;
+		}
+
+		if (_methodName127.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes127, parameterTypes)) {
+			PricingLocalServiceUtil.deletePricingByGrouptId(((Long)arguments[0]).longValue());
+
+			return null;
+		}
+
+		if (_methodName128.equals(name) &&
+				Arrays.deepEquals(_methodParameterTypes128, parameterTypes)) {
+			PricingLocalServiceUtil.deleteAllPricing();
+
+			return null;
 		}
 
 		throw new UnsupportedOperationException();
@@ -390,32 +508,52 @@ public class PricingLocalServiceClpInvoker {
 	private String[] _methodParameterTypes14;
 	private String _methodName15;
 	private String[] _methodParameterTypes15;
-	private String _methodName64;
-	private String[] _methodParameterTypes64;
-	private String _methodName65;
-	private String[] _methodParameterTypes65;
-	private String _methodName70;
-	private String[] _methodParameterTypes70;
-	private String _methodName71;
-	private String[] _methodParameterTypes71;
-	private String _methodName72;
-	private String[] _methodParameterTypes72;
-	private String _methodName73;
-	private String[] _methodParameterTypes73;
-	private String _methodName74;
-	private String[] _methodParameterTypes74;
-	private String _methodName75;
-	private String[] _methodParameterTypes75;
-	private String _methodName76;
-	private String[] _methodParameterTypes76;
-	private String _methodName77;
-	private String[] _methodParameterTypes77;
-	private String _methodName78;
-	private String[] _methodParameterTypes78;
-	private String _methodName79;
-	private String[] _methodParameterTypes79;
-	private String _methodName81;
-	private String[] _methodParameterTypes81;
-	private String _methodName82;
-	private String[] _methodParameterTypes82;
+	private String _methodName100;
+	private String[] _methodParameterTypes100;
+	private String _methodName101;
+	private String[] _methodParameterTypes101;
+	private String _methodName106;
+	private String[] _methodParameterTypes106;
+	private String _methodName107;
+	private String[] _methodParameterTypes107;
+	private String _methodName108;
+	private String[] _methodParameterTypes108;
+	private String _methodName109;
+	private String[] _methodParameterTypes109;
+	private String _methodName110;
+	private String[] _methodParameterTypes110;
+	private String _methodName111;
+	private String[] _methodParameterTypes111;
+	private String _methodName112;
+	private String[] _methodParameterTypes112;
+	private String _methodName113;
+	private String[] _methodParameterTypes113;
+	private String _methodName114;
+	private String[] _methodParameterTypes114;
+	private String _methodName115;
+	private String[] _methodParameterTypes115;
+	private String _methodName116;
+	private String[] _methodParameterTypes116;
+	private String _methodName117;
+	private String[] _methodParameterTypes117;
+	private String _methodName118;
+	private String[] _methodParameterTypes118;
+	private String _methodName119;
+	private String[] _methodParameterTypes119;
+	private String _methodName120;
+	private String[] _methodParameterTypes120;
+	private String _methodName121;
+	private String[] _methodParameterTypes121;
+	private String _methodName123;
+	private String[] _methodParameterTypes123;
+	private String _methodName124;
+	private String[] _methodParameterTypes124;
+	private String _methodName125;
+	private String[] _methodParameterTypes125;
+	private String _methodName126;
+	private String[] _methodParameterTypes126;
+	private String _methodName127;
+	private String[] _methodParameterTypes127;
+	private String _methodName128;
+	private String[] _methodParameterTypes128;
 }

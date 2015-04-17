@@ -148,21 +148,63 @@ public class PricingLocalServiceClp implements PricingLocalService {
 
 		_methodParameterTypes28 = new String[] { "int", "int", "int" };
 
-		_methodName29 = "addPricing";
+		_methodName29 = "getPricingByPackageAndLocation";
 
-		_methodParameterTypes29 = new String[] {
-				"long", "int", "int", "java.lang.String", "java.util.Date",
-				"int", "java.lang.String", "int", "java.lang.String", "int",
+		_methodParameterTypes29 = new String[] { "int", "int" };
+
+		_methodName30 = "getPricingByPackageAndLocation";
+
+		_methodParameterTypes30 = new String[] { "int", "int", "int", "int" };
+
+		_methodName31 = "getPricingByPackageLocationActive";
+
+		_methodParameterTypes31 = new String[] { "int", "int", "int" };
+
+		_methodName32 = "getPricingByPackageLocationActive";
+
+		_methodParameterTypes32 = new String[] { "int", "int", "int", "int", "int" };
+
+		_methodName33 = "getPricingByPackageIdAndActive";
+
+		_methodParameterTypes33 = new String[] { "int", "int" };
+
+		_methodName34 = "getPricingByPackageIdAndActive";
+
+		_methodParameterTypes34 = new String[] { "int", "int", "int", "int" };
+
+		_methodName35 = "addPricing";
+
+		_methodParameterTypes35 = new String[] {
+				"int", "int", "java.lang.String", "java.util.Date",
+				"java.util.Date", "int", "int", "java.lang.String", "int",
+				"java.lang.String", "int",
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName30 = "updatePricing";
+		_methodName36 = "updatePricing";
 
-		_methodParameterTypes30 = new String[] {
-				"long", "int", "int", "java.lang.String", "java.util.Date",
-				"int", "java.lang.String", "int", "java.lang.String", "int",
-				"long", "com.liferay.portal.service.ServiceContext"
+		_methodParameterTypes36 = new String[] {
+				"int", "int", "java.lang.String", "java.util.Date", "int",
+				"java.util.Date", "int", "java.lang.String", "int",
+				"java.lang.String", "int", "long",
+				"com.liferay.portal.service.ServiceContext"
 			};
+
+		_methodName37 = "deletePricingByLocationId";
+
+		_methodParameterTypes37 = new String[] { "long" };
+
+		_methodName38 = "deletePricingByPackageId";
+
+		_methodParameterTypes38 = new String[] { "int" };
+
+		_methodName39 = "deletePricingByGrouptId";
+
+		_methodParameterTypes39 = new String[] { "long" };
+
+		_methodName40 = "deleteAllPricing";
+
+		_methodParameterTypes40 = new String[] {  };
 	}
 
 	@Override
@@ -1005,9 +1047,189 @@ public class PricingLocalServiceClp implements PricingLocalService {
 	}
 
 	@Override
-	public com.ocms.course.model.Pricing addPricing(long userId, int deposit,
-		int price, java.lang.String currency, java.util.Date effectiveDate,
-		int locationId, java.lang.String locationCode, int courseId,
+	public java.util.List<com.ocms.course.model.Pricing> getPricingByPackageAndLocation(
+		int packageId, int locationId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName29,
+					_methodParameterTypes29,
+					new Object[] { packageId, locationId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<com.ocms.course.model.Pricing>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.Pricing> getPricingByPackageAndLocation(
+		int packageId, int locationId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName30,
+					_methodParameterTypes30,
+					new Object[] { packageId, locationId, start, end });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<com.ocms.course.model.Pricing>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.Pricing> getPricingByPackageLocationActive(
+		int packageId, int locationId, int active)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName31,
+					_methodParameterTypes31,
+					new Object[] { packageId, locationId, active });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<com.ocms.course.model.Pricing>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.Pricing> getPricingByPackageLocationActive(
+		int packageId, int locationId, int active, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName32,
+					_methodParameterTypes32,
+					new Object[] { packageId, locationId, active, start, end });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<com.ocms.course.model.Pricing>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.Pricing> getPricingByPackageIdAndActive(
+		int packageId, int active)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName33,
+					_methodParameterTypes33, new Object[] { packageId, active });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<com.ocms.course.model.Pricing>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public java.util.List<com.ocms.course.model.Pricing> getPricingByPackageIdAndActive(
+		int packageId, int active, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableLocalService.invokeMethod(_methodName34,
+					_methodParameterTypes34,
+					new Object[] { packageId, active, start, end });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (java.util.List<com.ocms.course.model.Pricing>)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public com.ocms.course.model.Pricing addPricing(int deposit, int price,
+		java.lang.String currency, java.util.Date effectiveFromDate,
+		java.util.Date effectiveToDate, int balanceDueParDate, int locationId,
+		java.lang.String locationCode, int courseId,
 		java.lang.String courseCode, int packageId,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
@@ -1015,18 +1237,20 @@ public class PricingLocalServiceClp implements PricingLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName29,
-					_methodParameterTypes29,
+			returnObj = _invokableLocalService.invokeMethod(_methodName35,
+					_methodParameterTypes35,
 					new Object[] {
-						userId,
-						
-					deposit,
+						deposit,
 						
 					price,
 						
 					ClpSerializer.translateInput(currency),
 						
-					ClpSerializer.translateInput(effectiveDate),
+					ClpSerializer.translateInput(effectiveFromDate),
+						
+					ClpSerializer.translateInput(effectiveToDate),
+						
+					balanceDueParDate,
 						
 					locationId,
 						
@@ -1065,9 +1289,9 @@ public class PricingLocalServiceClp implements PricingLocalService {
 	}
 
 	@Override
-	public com.ocms.course.model.Pricing updatePricing(long userId,
-		int deposit, int price, java.lang.String currency,
-		java.util.Date effectiveDate, int locationId,
+	public com.ocms.course.model.Pricing updatePricing(int deposit, int price,
+		java.lang.String currency, java.util.Date effectiveFromDate,
+		int balanceDueParDate, java.util.Date effectiveToDate, int locationId,
 		java.lang.String locationCode, int courseId,
 		java.lang.String courseCode, int packageId, long pricingId,
 		com.liferay.portal.service.ServiceContext serviceContext)
@@ -1076,18 +1300,20 @@ public class PricingLocalServiceClp implements PricingLocalService {
 		Object returnObj = null;
 
 		try {
-			returnObj = _invokableLocalService.invokeMethod(_methodName30,
-					_methodParameterTypes30,
+			returnObj = _invokableLocalService.invokeMethod(_methodName36,
+					_methodParameterTypes36,
 					new Object[] {
-						userId,
-						
-					deposit,
+						deposit,
 						
 					price,
 						
 					ClpSerializer.translateInput(currency),
 						
-					ClpSerializer.translateInput(effectiveDate),
+					ClpSerializer.translateInput(effectiveFromDate),
+						
+					balanceDueParDate,
+						
+					ClpSerializer.translateInput(effectiveToDate),
 						
 					locationId,
 						
@@ -1125,6 +1351,82 @@ public class PricingLocalServiceClp implements PricingLocalService {
 		}
 
 		return (com.ocms.course.model.Pricing)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public void deletePricingByLocationId(long pricingId) {
+		try {
+			_invokableLocalService.invokeMethod(_methodName37,
+				_methodParameterTypes37, new Object[] { pricingId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+	}
+
+	@Override
+	public void deletePricingByPackageId(int packageId) {
+		try {
+			_invokableLocalService.invokeMethod(_methodName38,
+				_methodParameterTypes38, new Object[] { packageId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+	}
+
+	@Override
+	public void deletePricingByGrouptId(long groupId) {
+		try {
+			_invokableLocalService.invokeMethod(_methodName39,
+				_methodParameterTypes39, new Object[] { groupId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+	}
+
+	@Override
+	public void deleteAllPricing() {
+		try {
+			_invokableLocalService.invokeMethod(_methodName40,
+				_methodParameterTypes40, new Object[] {  });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
 	}
 
 	private InvokableLocalService _invokableLocalService;
@@ -1188,4 +1490,24 @@ public class PricingLocalServiceClp implements PricingLocalService {
 	private String[] _methodParameterTypes29;
 	private String _methodName30;
 	private String[] _methodParameterTypes30;
+	private String _methodName31;
+	private String[] _methodParameterTypes31;
+	private String _methodName32;
+	private String[] _methodParameterTypes32;
+	private String _methodName33;
+	private String[] _methodParameterTypes33;
+	private String _methodName34;
+	private String[] _methodParameterTypes34;
+	private String _methodName35;
+	private String[] _methodParameterTypes35;
+	private String _methodName36;
+	private String[] _methodParameterTypes36;
+	private String _methodName37;
+	private String[] _methodParameterTypes37;
+	private String _methodName38;
+	private String[] _methodParameterTypes38;
+	private String _methodName39;
+	private String[] _methodParameterTypes39;
+	private String _methodName40;
+	private String[] _methodParameterTypes40;
 }

@@ -51,6 +51,16 @@ public class LocationServiceClp implements LocationService {
 		_methodName7 = "addLocation";
 
 		_methodParameterTypes7 = new String[] {
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"java.lang.String", "java.lang.String", "java.lang.String",
+				"java.lang.String", "com.liferay.portal.service.ServiceContext"
+			};
+
+		_methodName8 = "updateLocation";
+
+		_methodParameterTypes8 = new String[] {
 				"long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.lang.String", "java.lang.String",
@@ -59,16 +69,17 @@ public class LocationServiceClp implements LocationService {
 				"com.liferay.portal.service.ServiceContext"
 			};
 
-		_methodName8 = "updateLocation";
+		_methodName9 = "deleteLocationByLocationId";
 
-		_methodParameterTypes8 = new String[] {
-				"long", "long", "java.lang.String", "java.lang.String",
-				"java.lang.String", "java.lang.String", "java.lang.String",
-				"java.lang.String", "java.lang.String", "java.lang.String",
-				"java.lang.String", "java.lang.String", "java.lang.String",
-				"java.lang.String", "java.lang.String",
-				"com.liferay.portal.service.ServiceContext"
-			};
+		_methodParameterTypes9 = new String[] { "long" };
+
+		_methodName10 = "deleteLocationByGrouptId";
+
+		_methodParameterTypes10 = new String[] { "long" };
+
+		_methodName11 = "deleteAllLocation";
+
+		_methodParameterTypes11 = new String[] {  };
 	}
 
 	@Override
@@ -239,8 +250,8 @@ public class LocationServiceClp implements LocationService {
 	}
 
 	@Override
-	public com.ocms.course.model.Location addLocation(long userId,
-		java.lang.String name, java.lang.String code, java.lang.String notes,
+	public com.ocms.course.model.Location addLocation(java.lang.String name,
+		java.lang.String code, java.lang.String notes,
 		java.lang.String addressLine1, java.lang.String addressLine2,
 		java.lang.String city, java.lang.String state, java.lang.String region,
 		java.lang.String country, java.lang.String zip, java.lang.String phone,
@@ -254,7 +265,75 @@ public class LocationServiceClp implements LocationService {
 			returnObj = _invokableService.invokeMethod(_methodName7,
 					_methodParameterTypes7,
 					new Object[] {
-						userId,
+						ClpSerializer.translateInput(name),
+						
+					ClpSerializer.translateInput(code),
+						
+					ClpSerializer.translateInput(notes),
+						
+					ClpSerializer.translateInput(addressLine1),
+						
+					ClpSerializer.translateInput(addressLine2),
+						
+					ClpSerializer.translateInput(city),
+						
+					ClpSerializer.translateInput(state),
+						
+					ClpSerializer.translateInput(region),
+						
+					ClpSerializer.translateInput(country),
+						
+					ClpSerializer.translateInput(zip),
+						
+					ClpSerializer.translateInput(phone),
+						
+					ClpSerializer.translateInput(fax),
+						
+					ClpSerializer.translateInput(email),
+						
+					ClpSerializer.translateInput(serviceContext)
+					});
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
+				throw (com.liferay.portal.kernel.exception.PortalException)t;
+			}
+
+			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+				throw (com.liferay.portal.kernel.exception.SystemException)t;
+			}
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+
+		return (com.ocms.course.model.Location)ClpSerializer.translateOutput(returnObj);
+	}
+
+	@Override
+	public com.ocms.course.model.Location updateLocation(long locationId,
+		java.lang.String name, java.lang.String code, java.lang.String notes,
+		java.lang.String addressLine1, java.lang.String addressLine2,
+		java.lang.String city, java.lang.String state, java.lang.String region,
+		java.lang.String country, java.lang.String zip, java.lang.String phone,
+		java.lang.String fax, java.lang.String email,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		Object returnObj = null;
+
+		try {
+			returnObj = _invokableService.invokeMethod(_methodName8,
+					_methodParameterTypes8,
+					new Object[] {
+						locationId,
 						
 					ClpSerializer.translateInput(name),
 						
@@ -309,65 +388,13 @@ public class LocationServiceClp implements LocationService {
 	}
 
 	@Override
-	public com.ocms.course.model.Location updateLocation(long userId,
-		long locationId, java.lang.String name, java.lang.String code,
-		java.lang.String notes, java.lang.String addressLine1,
-		java.lang.String addressLine2, java.lang.String city,
-		java.lang.String state, java.lang.String region,
-		java.lang.String country, java.lang.String zip, java.lang.String phone,
-		java.lang.String fax, java.lang.String email,
-		com.liferay.portal.service.ServiceContext serviceContext)
-		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException {
-		Object returnObj = null;
-
+	public void deleteLocationByLocationId(long locationId) {
 		try {
-			returnObj = _invokableService.invokeMethod(_methodName8,
-					_methodParameterTypes8,
-					new Object[] {
-						userId,
-						
-					locationId,
-						
-					ClpSerializer.translateInput(name),
-						
-					ClpSerializer.translateInput(code),
-						
-					ClpSerializer.translateInput(notes),
-						
-					ClpSerializer.translateInput(addressLine1),
-						
-					ClpSerializer.translateInput(addressLine2),
-						
-					ClpSerializer.translateInput(city),
-						
-					ClpSerializer.translateInput(state),
-						
-					ClpSerializer.translateInput(region),
-						
-					ClpSerializer.translateInput(country),
-						
-					ClpSerializer.translateInput(zip),
-						
-					ClpSerializer.translateInput(phone),
-						
-					ClpSerializer.translateInput(fax),
-						
-					ClpSerializer.translateInput(email),
-						
-					ClpSerializer.translateInput(serviceContext)
-					});
+			_invokableService.invokeMethod(_methodName9,
+				_methodParameterTypes9, new Object[] { locationId });
 		}
 		catch (Throwable t) {
 			t = ClpSerializer.translateThrowable(t);
-
-			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
-				throw (com.liferay.portal.kernel.exception.PortalException)t;
-			}
-
-			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
-				throw (com.liferay.portal.kernel.exception.SystemException)t;
-			}
 
 			if (t instanceof RuntimeException) {
 				throw (RuntimeException)t;
@@ -377,8 +404,44 @@ public class LocationServiceClp implements LocationService {
 					" is not a valid exception");
 			}
 		}
+	}
 
-		return (com.ocms.course.model.Location)ClpSerializer.translateOutput(returnObj);
+	@Override
+	public void deleteLocationByGrouptId(long groupId) {
+		try {
+			_invokableService.invokeMethod(_methodName10,
+				_methodParameterTypes10, new Object[] { groupId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+	}
+
+	@Override
+	public void deleteAllLocation() {
+		try {
+			_invokableService.invokeMethod(_methodName11,
+				_methodParameterTypes11, new Object[] {  });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
 	}
 
 	private InvokableService _invokableService;
@@ -398,4 +461,10 @@ public class LocationServiceClp implements LocationService {
 	private String[] _methodParameterTypes7;
 	private String _methodName8;
 	private String[] _methodParameterTypes8;
+	private String _methodName9;
+	private String[] _methodParameterTypes9;
+	private String _methodName10;
+	private String[] _methodParameterTypes10;
+	private String _methodName11;
+	private String[] _methodParameterTypes11;
 }

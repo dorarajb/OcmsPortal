@@ -66,6 +66,13 @@ public class CourseSeriesWrapper implements CourseSeries,
 		attributes.put("maxNoStudReg", getMaxNoStudReg());
 		attributes.put("seriesCount", getSeriesCount());
 		attributes.put("courseSeriesCode", getCourseSeriesCode());
+		attributes.put("courseSeriesEventCode", getCourseSeriesEventCode());
+		attributes.put("flagToListData", getFlagToListData());
+		attributes.put("flagToChkEventCreation", getFlagToChkEventCreation());
+		attributes.put("sMonth", getSMonth());
+		attributes.put("sDay", getSDay());
+		attributes.put("eMonth", getEMonth());
+		attributes.put("eDay", getEDay());
 
 		return attributes;
 	}
@@ -166,6 +173,50 @@ public class CourseSeriesWrapper implements CourseSeries,
 
 		if (courseSeriesCode != null) {
 			setCourseSeriesCode(courseSeriesCode);
+		}
+
+		String courseSeriesEventCode = (String)attributes.get(
+				"courseSeriesEventCode");
+
+		if (courseSeriesEventCode != null) {
+			setCourseSeriesEventCode(courseSeriesEventCode);
+		}
+
+		Integer flagToListData = (Integer)attributes.get("flagToListData");
+
+		if (flagToListData != null) {
+			setFlagToListData(flagToListData);
+		}
+
+		Integer flagToChkEventCreation = (Integer)attributes.get(
+				"flagToChkEventCreation");
+
+		if (flagToChkEventCreation != null) {
+			setFlagToChkEventCreation(flagToChkEventCreation);
+		}
+
+		String sMonth = (String)attributes.get("sMonth");
+
+		if (sMonth != null) {
+			setSMonth(sMonth);
+		}
+
+		Integer sDay = (Integer)attributes.get("sDay");
+
+		if (sDay != null) {
+			setSDay(sDay);
+		}
+
+		String eMonth = (String)attributes.get("eMonth");
+
+		if (eMonth != null) {
+			setEMonth(eMonth);
+		}
+
+		Integer eDay = (Integer)attributes.get("eDay");
+
+		if (eDay != null) {
+			setEDay(eDay);
 		}
 	}
 
@@ -529,6 +580,146 @@ public class CourseSeriesWrapper implements CourseSeries,
 	@Override
 	public void setCourseSeriesCode(java.lang.String courseSeriesCode) {
 		_courseSeries.setCourseSeriesCode(courseSeriesCode);
+	}
+
+	/**
+	* Returns the course series event code of this course series.
+	*
+	* @return the course series event code of this course series
+	*/
+	@Override
+	public java.lang.String getCourseSeriesEventCode() {
+		return _courseSeries.getCourseSeriesEventCode();
+	}
+
+	/**
+	* Sets the course series event code of this course series.
+	*
+	* @param courseSeriesEventCode the course series event code of this course series
+	*/
+	@Override
+	public void setCourseSeriesEventCode(java.lang.String courseSeriesEventCode) {
+		_courseSeries.setCourseSeriesEventCode(courseSeriesEventCode);
+	}
+
+	/**
+	* Returns the flag to list data of this course series.
+	*
+	* @return the flag to list data of this course series
+	*/
+	@Override
+	public int getFlagToListData() {
+		return _courseSeries.getFlagToListData();
+	}
+
+	/**
+	* Sets the flag to list data of this course series.
+	*
+	* @param flagToListData the flag to list data of this course series
+	*/
+	@Override
+	public void setFlagToListData(int flagToListData) {
+		_courseSeries.setFlagToListData(flagToListData);
+	}
+
+	/**
+	* Returns the flag to chk event creation of this course series.
+	*
+	* @return the flag to chk event creation of this course series
+	*/
+	@Override
+	public int getFlagToChkEventCreation() {
+		return _courseSeries.getFlagToChkEventCreation();
+	}
+
+	/**
+	* Sets the flag to chk event creation of this course series.
+	*
+	* @param flagToChkEventCreation the flag to chk event creation of this course series
+	*/
+	@Override
+	public void setFlagToChkEventCreation(int flagToChkEventCreation) {
+		_courseSeries.setFlagToChkEventCreation(flagToChkEventCreation);
+	}
+
+	/**
+	* Returns the s month of this course series.
+	*
+	* @return the s month of this course series
+	*/
+	@Override
+	public java.lang.String getSMonth() {
+		return _courseSeries.getSMonth();
+	}
+
+	/**
+	* Sets the s month of this course series.
+	*
+	* @param sMonth the s month of this course series
+	*/
+	@Override
+	public void setSMonth(java.lang.String sMonth) {
+		_courseSeries.setSMonth(sMonth);
+	}
+
+	/**
+	* Returns the s day of this course series.
+	*
+	* @return the s day of this course series
+	*/
+	@Override
+	public int getSDay() {
+		return _courseSeries.getSDay();
+	}
+
+	/**
+	* Sets the s day of this course series.
+	*
+	* @param sDay the s day of this course series
+	*/
+	@Override
+	public void setSDay(int sDay) {
+		_courseSeries.setSDay(sDay);
+	}
+
+	/**
+	* Returns the e month of this course series.
+	*
+	* @return the e month of this course series
+	*/
+	@Override
+	public java.lang.String getEMonth() {
+		return _courseSeries.getEMonth();
+	}
+
+	/**
+	* Sets the e month of this course series.
+	*
+	* @param eMonth the e month of this course series
+	*/
+	@Override
+	public void setEMonth(java.lang.String eMonth) {
+		_courseSeries.setEMonth(eMonth);
+	}
+
+	/**
+	* Returns the e day of this course series.
+	*
+	* @return the e day of this course series
+	*/
+	@Override
+	public int getEDay() {
+		return _courseSeries.getEDay();
+	}
+
+	/**
+	* Sets the e day of this course series.
+	*
+	* @param eDay the e day of this course series
+	*/
+	@Override
+	public void setEDay(int eDay) {
+		_courseSeries.setEDay(eDay);
 	}
 
 	@Override

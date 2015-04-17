@@ -1062,6 +1062,565 @@ public class PricingUtil {
 	}
 
 	/**
+	* Returns all the pricings where packageId = &#63; and locationId = &#63;.
+	*
+	* @param packageId the package ID
+	* @param locationId the location ID
+	* @return the matching pricings
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.ocms.course.model.Pricing> findByPackageAndLocation(
+		int packageId, int locationId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findByPackageAndLocation(packageId, locationId);
+	}
+
+	/**
+	* Returns a range of all the pricings where packageId = &#63; and locationId = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.ocms.course.model.impl.PricingModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param packageId the package ID
+	* @param locationId the location ID
+	* @param start the lower bound of the range of pricings
+	* @param end the upper bound of the range of pricings (not inclusive)
+	* @return the range of matching pricings
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.ocms.course.model.Pricing> findByPackageAndLocation(
+		int packageId, int locationId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByPackageAndLocation(packageId, locationId, start, end);
+	}
+
+	/**
+	* Returns an ordered range of all the pricings where packageId = &#63; and locationId = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.ocms.course.model.impl.PricingModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param packageId the package ID
+	* @param locationId the location ID
+	* @param start the lower bound of the range of pricings
+	* @param end the upper bound of the range of pricings (not inclusive)
+	* @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	* @return the ordered range of matching pricings
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.ocms.course.model.Pricing> findByPackageAndLocation(
+		int packageId, int locationId, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByPackageAndLocation(packageId, locationId, start, end,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the first pricing in the ordered set where packageId = &#63; and locationId = &#63;.
+	*
+	* @param packageId the package ID
+	* @param locationId the location ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching pricing
+	* @throws com.ocms.course.NoSuchPricingException if a matching pricing could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.Pricing findByPackageAndLocation_First(
+		int packageId, int locationId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.ocms.course.NoSuchPricingException {
+		return getPersistence()
+				   .findByPackageAndLocation_First(packageId, locationId,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the first pricing in the ordered set where packageId = &#63; and locationId = &#63;.
+	*
+	* @param packageId the package ID
+	* @param locationId the location ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching pricing, or <code>null</code> if a matching pricing could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.Pricing fetchByPackageAndLocation_First(
+		int packageId, int locationId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchByPackageAndLocation_First(packageId, locationId,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the last pricing in the ordered set where packageId = &#63; and locationId = &#63;.
+	*
+	* @param packageId the package ID
+	* @param locationId the location ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching pricing
+	* @throws com.ocms.course.NoSuchPricingException if a matching pricing could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.Pricing findByPackageAndLocation_Last(
+		int packageId, int locationId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.ocms.course.NoSuchPricingException {
+		return getPersistence()
+				   .findByPackageAndLocation_Last(packageId, locationId,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the last pricing in the ordered set where packageId = &#63; and locationId = &#63;.
+	*
+	* @param packageId the package ID
+	* @param locationId the location ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching pricing, or <code>null</code> if a matching pricing could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.Pricing fetchByPackageAndLocation_Last(
+		int packageId, int locationId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchByPackageAndLocation_Last(packageId, locationId,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the pricings before and after the current pricing in the ordered set where packageId = &#63; and locationId = &#63;.
+	*
+	* @param pricingId the primary key of the current pricing
+	* @param packageId the package ID
+	* @param locationId the location ID
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the previous, current, and next pricing
+	* @throws com.ocms.course.NoSuchPricingException if a pricing with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.Pricing[] findByPackageAndLocation_PrevAndNext(
+		long pricingId, int packageId, int locationId,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.ocms.course.NoSuchPricingException {
+		return getPersistence()
+				   .findByPackageAndLocation_PrevAndNext(pricingId, packageId,
+			locationId, orderByComparator);
+	}
+
+	/**
+	* Removes all the pricings where packageId = &#63; and locationId = &#63; from the database.
+	*
+	* @param packageId the package ID
+	* @param locationId the location ID
+	* @throws SystemException if a system exception occurred
+	*/
+	public static void removeByPackageAndLocation(int packageId, int locationId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		getPersistence().removeByPackageAndLocation(packageId, locationId);
+	}
+
+	/**
+	* Returns the number of pricings where packageId = &#63; and locationId = &#63;.
+	*
+	* @param packageId the package ID
+	* @param locationId the location ID
+	* @return the number of matching pricings
+	* @throws SystemException if a system exception occurred
+	*/
+	public static int countByPackageAndLocation(int packageId, int locationId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().countByPackageAndLocation(packageId, locationId);
+	}
+
+	/**
+	* Returns all the pricings where packageId = &#63; and locationId = &#63; and active = &#63;.
+	*
+	* @param packageId the package ID
+	* @param locationId the location ID
+	* @param active the active
+	* @return the matching pricings
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.ocms.course.model.Pricing> findByPackageLocationActive(
+		int packageId, int locationId, int active)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByPackageLocationActive(packageId, locationId, active);
+	}
+
+	/**
+	* Returns a range of all the pricings where packageId = &#63; and locationId = &#63; and active = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.ocms.course.model.impl.PricingModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param packageId the package ID
+	* @param locationId the location ID
+	* @param active the active
+	* @param start the lower bound of the range of pricings
+	* @param end the upper bound of the range of pricings (not inclusive)
+	* @return the range of matching pricings
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.ocms.course.model.Pricing> findByPackageLocationActive(
+		int packageId, int locationId, int active, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByPackageLocationActive(packageId, locationId, active,
+			start, end);
+	}
+
+	/**
+	* Returns an ordered range of all the pricings where packageId = &#63; and locationId = &#63; and active = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.ocms.course.model.impl.PricingModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param packageId the package ID
+	* @param locationId the location ID
+	* @param active the active
+	* @param start the lower bound of the range of pricings
+	* @param end the upper bound of the range of pricings (not inclusive)
+	* @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	* @return the ordered range of matching pricings
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.ocms.course.model.Pricing> findByPackageLocationActive(
+		int packageId, int locationId, int active, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByPackageLocationActive(packageId, locationId, active,
+			start, end, orderByComparator);
+	}
+
+	/**
+	* Returns the first pricing in the ordered set where packageId = &#63; and locationId = &#63; and active = &#63;.
+	*
+	* @param packageId the package ID
+	* @param locationId the location ID
+	* @param active the active
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching pricing
+	* @throws com.ocms.course.NoSuchPricingException if a matching pricing could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.Pricing findByPackageLocationActive_First(
+		int packageId, int locationId, int active,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.ocms.course.NoSuchPricingException {
+		return getPersistence()
+				   .findByPackageLocationActive_First(packageId, locationId,
+			active, orderByComparator);
+	}
+
+	/**
+	* Returns the first pricing in the ordered set where packageId = &#63; and locationId = &#63; and active = &#63;.
+	*
+	* @param packageId the package ID
+	* @param locationId the location ID
+	* @param active the active
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching pricing, or <code>null</code> if a matching pricing could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.Pricing fetchByPackageLocationActive_First(
+		int packageId, int locationId, int active,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchByPackageLocationActive_First(packageId, locationId,
+			active, orderByComparator);
+	}
+
+	/**
+	* Returns the last pricing in the ordered set where packageId = &#63; and locationId = &#63; and active = &#63;.
+	*
+	* @param packageId the package ID
+	* @param locationId the location ID
+	* @param active the active
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching pricing
+	* @throws com.ocms.course.NoSuchPricingException if a matching pricing could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.Pricing findByPackageLocationActive_Last(
+		int packageId, int locationId, int active,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.ocms.course.NoSuchPricingException {
+		return getPersistence()
+				   .findByPackageLocationActive_Last(packageId, locationId,
+			active, orderByComparator);
+	}
+
+	/**
+	* Returns the last pricing in the ordered set where packageId = &#63; and locationId = &#63; and active = &#63;.
+	*
+	* @param packageId the package ID
+	* @param locationId the location ID
+	* @param active the active
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching pricing, or <code>null</code> if a matching pricing could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.Pricing fetchByPackageLocationActive_Last(
+		int packageId, int locationId, int active,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchByPackageLocationActive_Last(packageId, locationId,
+			active, orderByComparator);
+	}
+
+	/**
+	* Returns the pricings before and after the current pricing in the ordered set where packageId = &#63; and locationId = &#63; and active = &#63;.
+	*
+	* @param pricingId the primary key of the current pricing
+	* @param packageId the package ID
+	* @param locationId the location ID
+	* @param active the active
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the previous, current, and next pricing
+	* @throws com.ocms.course.NoSuchPricingException if a pricing with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.Pricing[] findByPackageLocationActive_PrevAndNext(
+		long pricingId, int packageId, int locationId, int active,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.ocms.course.NoSuchPricingException {
+		return getPersistence()
+				   .findByPackageLocationActive_PrevAndNext(pricingId,
+			packageId, locationId, active, orderByComparator);
+	}
+
+	/**
+	* Removes all the pricings where packageId = &#63; and locationId = &#63; and active = &#63; from the database.
+	*
+	* @param packageId the package ID
+	* @param locationId the location ID
+	* @param active the active
+	* @throws SystemException if a system exception occurred
+	*/
+	public static void removeByPackageLocationActive(int packageId,
+		int locationId, int active)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		getPersistence()
+			.removeByPackageLocationActive(packageId, locationId, active);
+	}
+
+	/**
+	* Returns the number of pricings where packageId = &#63; and locationId = &#63; and active = &#63;.
+	*
+	* @param packageId the package ID
+	* @param locationId the location ID
+	* @param active the active
+	* @return the number of matching pricings
+	* @throws SystemException if a system exception occurred
+	*/
+	public static int countByPackageLocationActive(int packageId,
+		int locationId, int active)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .countByPackageLocationActive(packageId, locationId, active);
+	}
+
+	/**
+	* Returns all the pricings where packageId = &#63; and active = &#63;.
+	*
+	* @param packageId the package ID
+	* @param active the active
+	* @return the matching pricings
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.ocms.course.model.Pricing> findByPackageAndActive(
+		int packageId, int active)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findByPackageAndActive(packageId, active);
+	}
+
+	/**
+	* Returns a range of all the pricings where packageId = &#63; and active = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.ocms.course.model.impl.PricingModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param packageId the package ID
+	* @param active the active
+	* @param start the lower bound of the range of pricings
+	* @param end the upper bound of the range of pricings (not inclusive)
+	* @return the range of matching pricings
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.ocms.course.model.Pricing> findByPackageAndActive(
+		int packageId, int active, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByPackageAndActive(packageId, active, start, end);
+	}
+
+	/**
+	* Returns an ordered range of all the pricings where packageId = &#63; and active = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.ocms.course.model.impl.PricingModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param packageId the package ID
+	* @param active the active
+	* @param start the lower bound of the range of pricings
+	* @param end the upper bound of the range of pricings (not inclusive)
+	* @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	* @return the ordered range of matching pricings
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.ocms.course.model.Pricing> findByPackageAndActive(
+		int packageId, int active, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByPackageAndActive(packageId, active, start, end,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the first pricing in the ordered set where packageId = &#63; and active = &#63;.
+	*
+	* @param packageId the package ID
+	* @param active the active
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching pricing
+	* @throws com.ocms.course.NoSuchPricingException if a matching pricing could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.Pricing findByPackageAndActive_First(
+		int packageId, int active,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.ocms.course.NoSuchPricingException {
+		return getPersistence()
+				   .findByPackageAndActive_First(packageId, active,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the first pricing in the ordered set where packageId = &#63; and active = &#63;.
+	*
+	* @param packageId the package ID
+	* @param active the active
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching pricing, or <code>null</code> if a matching pricing could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.Pricing fetchByPackageAndActive_First(
+		int packageId, int active,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchByPackageAndActive_First(packageId, active,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the last pricing in the ordered set where packageId = &#63; and active = &#63;.
+	*
+	* @param packageId the package ID
+	* @param active the active
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching pricing
+	* @throws com.ocms.course.NoSuchPricingException if a matching pricing could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.Pricing findByPackageAndActive_Last(
+		int packageId, int active,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.ocms.course.NoSuchPricingException {
+		return getPersistence()
+				   .findByPackageAndActive_Last(packageId, active,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the last pricing in the ordered set where packageId = &#63; and active = &#63;.
+	*
+	* @param packageId the package ID
+	* @param active the active
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching pricing, or <code>null</code> if a matching pricing could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.Pricing fetchByPackageAndActive_Last(
+		int packageId, int active,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchByPackageAndActive_Last(packageId, active,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the pricings before and after the current pricing in the ordered set where packageId = &#63; and active = &#63;.
+	*
+	* @param pricingId the primary key of the current pricing
+	* @param packageId the package ID
+	* @param active the active
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the previous, current, and next pricing
+	* @throws com.ocms.course.NoSuchPricingException if a pricing with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.Pricing[] findByPackageAndActive_PrevAndNext(
+		long pricingId, int packageId, int active,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.ocms.course.NoSuchPricingException {
+		return getPersistence()
+				   .findByPackageAndActive_PrevAndNext(pricingId, packageId,
+			active, orderByComparator);
+	}
+
+	/**
+	* Removes all the pricings where packageId = &#63; and active = &#63; from the database.
+	*
+	* @param packageId the package ID
+	* @param active the active
+	* @throws SystemException if a system exception occurred
+	*/
+	public static void removeByPackageAndActive(int packageId, int active)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		getPersistence().removeByPackageAndActive(packageId, active);
+	}
+
+	/**
+	* Returns the number of pricings where packageId = &#63; and active = &#63;.
+	*
+	* @param packageId the package ID
+	* @param active the active
+	* @return the number of matching pricings
+	* @throws SystemException if a system exception occurred
+	*/
+	public static int countByPackageAndActive(int packageId, int active)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().countByPackageAndActive(packageId, active);
+	}
+
+	/**
 	* Caches the pricing in the entity cache if it is enabled.
 	*
 	* @param pricing the pricing

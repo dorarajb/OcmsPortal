@@ -316,6 +316,18 @@ public class CourseLocalServiceUtil {
 			serviceContext);
 	}
 
+	public static void deleteCourseByCourseId(long courseId) {
+		getService().deleteCourseByCourseId(courseId);
+	}
+
+	public static void deleteCourseByGrouptId(long groupId) {
+		getService().deleteCourseByGrouptId(groupId);
+	}
+
+	public static void deleteAllCourse() {
+		getService().deleteAllCourse();
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

@@ -81,9 +81,16 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 			{ "publishingStatus", Types.VARCHAR },
 			{ "maxNoStudReg", Types.BIGINT },
 			{ "seriesCount", Types.BIGINT },
-			{ "courseSeriesCode", Types.VARCHAR }
+			{ "courseSeriesCode", Types.VARCHAR },
+			{ "courseSeriesEventCode", Types.VARCHAR },
+			{ "flagToListData", Types.INTEGER },
+			{ "flagToChkEventCreation", Types.INTEGER },
+			{ "sMonth", Types.VARCHAR },
+			{ "sDay", Types.INTEGER },
+			{ "eMonth", Types.VARCHAR },
+			{ "eDay", Types.INTEGER }
 		};
-	public static final String TABLE_SQL_CREATE = "create table CM_CourseSeries (courseSeriesId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,courseId LONG,locationId LONG,type_ VARCHAR(75) null,startDate DATE null,endDate DATE null,publishingStatus VARCHAR(75) null,maxNoStudReg LONG,seriesCount LONG,courseSeriesCode VARCHAR(75) null)";
+	public static final String TABLE_SQL_CREATE = "create table CM_CourseSeries (courseSeriesId LONG not null primary key,groupId LONG,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,courseId LONG,locationId LONG,type_ VARCHAR(75) null,startDate DATE null,endDate DATE null,publishingStatus VARCHAR(75) null,maxNoStudReg LONG,seriesCount LONG,courseSeriesCode VARCHAR(75) null,courseSeriesEventCode VARCHAR(75) null,flagToListData INTEGER,flagToChkEventCreation INTEGER,sMonth VARCHAR(75) null,sDay INTEGER,eMonth VARCHAR(75) null,eDay INTEGER)";
 	public static final String TABLE_SQL_DROP = "drop table CM_CourseSeries";
 	public static final String ORDER_BY_JPQL = " ORDER BY courseSeries.courseSeriesId ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY CM_CourseSeries.courseSeriesId ASC";
@@ -102,8 +109,9 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 	public static long COURSEID_COLUMN_BITMASK = 1L;
 	public static long COURSESERIESCODE_COLUMN_BITMASK = 2L;
 	public static long COURSESERIESID_COLUMN_BITMASK = 4L;
-	public static long GROUPID_COLUMN_BITMASK = 8L;
-	public static long LOCATIONID_COLUMN_BITMASK = 16L;
+	public static long FLAGTOLISTDATA_COLUMN_BITMASK = 8L;
+	public static long GROUPID_COLUMN_BITMASK = 16L;
+	public static long LOCATIONID_COLUMN_BITMASK = 32L;
 
 	/**
 	 * Converts the soap model instance into a normal model instance.
@@ -134,6 +142,13 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 		model.setMaxNoStudReg(soapModel.getMaxNoStudReg());
 		model.setSeriesCount(soapModel.getSeriesCount());
 		model.setCourseSeriesCode(soapModel.getCourseSeriesCode());
+		model.setCourseSeriesEventCode(soapModel.getCourseSeriesEventCode());
+		model.setFlagToListData(soapModel.getFlagToListData());
+		model.setFlagToChkEventCreation(soapModel.getFlagToChkEventCreation());
+		model.setSMonth(soapModel.getSMonth());
+		model.setSDay(soapModel.getSDay());
+		model.setEMonth(soapModel.getEMonth());
+		model.setEDay(soapModel.getEDay());
 
 		return model;
 	}
@@ -214,6 +229,13 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 		attributes.put("maxNoStudReg", getMaxNoStudReg());
 		attributes.put("seriesCount", getSeriesCount());
 		attributes.put("courseSeriesCode", getCourseSeriesCode());
+		attributes.put("courseSeriesEventCode", getCourseSeriesEventCode());
+		attributes.put("flagToListData", getFlagToListData());
+		attributes.put("flagToChkEventCreation", getFlagToChkEventCreation());
+		attributes.put("sMonth", getSMonth());
+		attributes.put("sDay", getSDay());
+		attributes.put("eMonth", getEMonth());
+		attributes.put("eDay", getEDay());
 
 		return attributes;
 	}
@@ -314,6 +336,50 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 
 		if (courseSeriesCode != null) {
 			setCourseSeriesCode(courseSeriesCode);
+		}
+
+		String courseSeriesEventCode = (String)attributes.get(
+				"courseSeriesEventCode");
+
+		if (courseSeriesEventCode != null) {
+			setCourseSeriesEventCode(courseSeriesEventCode);
+		}
+
+		Integer flagToListData = (Integer)attributes.get("flagToListData");
+
+		if (flagToListData != null) {
+			setFlagToListData(flagToListData);
+		}
+
+		Integer flagToChkEventCreation = (Integer)attributes.get(
+				"flagToChkEventCreation");
+
+		if (flagToChkEventCreation != null) {
+			setFlagToChkEventCreation(flagToChkEventCreation);
+		}
+
+		String sMonth = (String)attributes.get("sMonth");
+
+		if (sMonth != null) {
+			setSMonth(sMonth);
+		}
+
+		Integer sDay = (Integer)attributes.get("sDay");
+
+		if (sDay != null) {
+			setSDay(sDay);
+		}
+
+		String eMonth = (String)attributes.get("eMonth");
+
+		if (eMonth != null) {
+			setEMonth(eMonth);
+		}
+
+		Integer eDay = (Integer)attributes.get("eDay");
+
+		if (eDay != null) {
+			setEDay(eDay);
 		}
 	}
 
@@ -581,6 +647,110 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 		return GetterUtil.getString(_originalCourseSeriesCode);
 	}
 
+	@JSON
+	@Override
+	public String getCourseSeriesEventCode() {
+		if (_courseSeriesEventCode == null) {
+			return StringPool.BLANK;
+		}
+		else {
+			return _courseSeriesEventCode;
+		}
+	}
+
+	@Override
+	public void setCourseSeriesEventCode(String courseSeriesEventCode) {
+		_courseSeriesEventCode = courseSeriesEventCode;
+	}
+
+	@JSON
+	@Override
+	public int getFlagToListData() {
+		return _flagToListData;
+	}
+
+	@Override
+	public void setFlagToListData(int flagToListData) {
+		_columnBitmask |= FLAGTOLISTDATA_COLUMN_BITMASK;
+
+		if (!_setOriginalFlagToListData) {
+			_setOriginalFlagToListData = true;
+
+			_originalFlagToListData = _flagToListData;
+		}
+
+		_flagToListData = flagToListData;
+	}
+
+	public int getOriginalFlagToListData() {
+		return _originalFlagToListData;
+	}
+
+	@JSON
+	@Override
+	public int getFlagToChkEventCreation() {
+		return _flagToChkEventCreation;
+	}
+
+	@Override
+	public void setFlagToChkEventCreation(int flagToChkEventCreation) {
+		_flagToChkEventCreation = flagToChkEventCreation;
+	}
+
+	@JSON
+	@Override
+	public String getSMonth() {
+		if (_sMonth == null) {
+			return StringPool.BLANK;
+		}
+		else {
+			return _sMonth;
+		}
+	}
+
+	@Override
+	public void setSMonth(String sMonth) {
+		_sMonth = sMonth;
+	}
+
+	@JSON
+	@Override
+	public int getSDay() {
+		return _sDay;
+	}
+
+	@Override
+	public void setSDay(int sDay) {
+		_sDay = sDay;
+	}
+
+	@JSON
+	@Override
+	public String getEMonth() {
+		if (_eMonth == null) {
+			return StringPool.BLANK;
+		}
+		else {
+			return _eMonth;
+		}
+	}
+
+	@Override
+	public void setEMonth(String eMonth) {
+		_eMonth = eMonth;
+	}
+
+	@JSON
+	@Override
+	public int getEDay() {
+		return _eDay;
+	}
+
+	@Override
+	public void setEDay(int eDay) {
+		_eDay = eDay;
+	}
+
 	public long getColumnBitmask() {
 		return _columnBitmask;
 	}
@@ -628,6 +798,13 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 		courseSeriesImpl.setMaxNoStudReg(getMaxNoStudReg());
 		courseSeriesImpl.setSeriesCount(getSeriesCount());
 		courseSeriesImpl.setCourseSeriesCode(getCourseSeriesCode());
+		courseSeriesImpl.setCourseSeriesEventCode(getCourseSeriesEventCode());
+		courseSeriesImpl.setFlagToListData(getFlagToListData());
+		courseSeriesImpl.setFlagToChkEventCreation(getFlagToChkEventCreation());
+		courseSeriesImpl.setSMonth(getSMonth());
+		courseSeriesImpl.setSDay(getSDay());
+		courseSeriesImpl.setEMonth(getEMonth());
+		courseSeriesImpl.setEDay(getEDay());
 
 		courseSeriesImpl.resetOriginalValues();
 
@@ -697,6 +874,10 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 		courseSeriesModelImpl._setOriginalLocationId = false;
 
 		courseSeriesModelImpl._originalCourseSeriesCode = courseSeriesModelImpl._courseSeriesCode;
+
+		courseSeriesModelImpl._originalFlagToListData = courseSeriesModelImpl._flagToListData;
+
+		courseSeriesModelImpl._setOriginalFlagToListData = false;
 
 		courseSeriesModelImpl._columnBitmask = 0;
 	}
@@ -789,12 +970,45 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 			courseSeriesCacheModel.courseSeriesCode = null;
 		}
 
+		courseSeriesCacheModel.courseSeriesEventCode = getCourseSeriesEventCode();
+
+		String courseSeriesEventCode = courseSeriesCacheModel.courseSeriesEventCode;
+
+		if ((courseSeriesEventCode != null) &&
+				(courseSeriesEventCode.length() == 0)) {
+			courseSeriesCacheModel.courseSeriesEventCode = null;
+		}
+
+		courseSeriesCacheModel.flagToListData = getFlagToListData();
+
+		courseSeriesCacheModel.flagToChkEventCreation = getFlagToChkEventCreation();
+
+		courseSeriesCacheModel.sMonth = getSMonth();
+
+		String sMonth = courseSeriesCacheModel.sMonth;
+
+		if ((sMonth != null) && (sMonth.length() == 0)) {
+			courseSeriesCacheModel.sMonth = null;
+		}
+
+		courseSeriesCacheModel.sDay = getSDay();
+
+		courseSeriesCacheModel.eMonth = getEMonth();
+
+		String eMonth = courseSeriesCacheModel.eMonth;
+
+		if ((eMonth != null) && (eMonth.length() == 0)) {
+			courseSeriesCacheModel.eMonth = null;
+		}
+
+		courseSeriesCacheModel.eDay = getEDay();
+
 		return courseSeriesCacheModel;
 	}
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(33);
+		StringBundler sb = new StringBundler(47);
 
 		sb.append("{courseSeriesId=");
 		sb.append(getCourseSeriesId());
@@ -828,6 +1042,20 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 		sb.append(getSeriesCount());
 		sb.append(", courseSeriesCode=");
 		sb.append(getCourseSeriesCode());
+		sb.append(", courseSeriesEventCode=");
+		sb.append(getCourseSeriesEventCode());
+		sb.append(", flagToListData=");
+		sb.append(getFlagToListData());
+		sb.append(", flagToChkEventCreation=");
+		sb.append(getFlagToChkEventCreation());
+		sb.append(", sMonth=");
+		sb.append(getSMonth());
+		sb.append(", sDay=");
+		sb.append(getSDay());
+		sb.append(", eMonth=");
+		sb.append(getEMonth());
+		sb.append(", eDay=");
+		sb.append(getEDay());
 		sb.append("}");
 
 		return sb.toString();
@@ -835,7 +1063,7 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(52);
+		StringBundler sb = new StringBundler(73);
 
 		sb.append("<model><model-name>");
 		sb.append("com.ocms.course.model.CourseSeries");
@@ -905,6 +1133,34 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 			"<column><column-name>courseSeriesCode</column-name><column-value><![CDATA[");
 		sb.append(getCourseSeriesCode());
 		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>courseSeriesEventCode</column-name><column-value><![CDATA[");
+		sb.append(getCourseSeriesEventCode());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>flagToListData</column-name><column-value><![CDATA[");
+		sb.append(getFlagToListData());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>flagToChkEventCreation</column-name><column-value><![CDATA[");
+		sb.append(getFlagToChkEventCreation());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>sMonth</column-name><column-value><![CDATA[");
+		sb.append(getSMonth());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>sDay</column-name><column-value><![CDATA[");
+		sb.append(getSDay());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>eMonth</column-name><column-value><![CDATA[");
+		sb.append(getEMonth());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>eDay</column-name><column-value><![CDATA[");
+		sb.append(getEDay());
+		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -941,6 +1197,15 @@ public class CourseSeriesModelImpl extends BaseModelImpl<CourseSeries>
 	private long _seriesCount;
 	private String _courseSeriesCode;
 	private String _originalCourseSeriesCode;
+	private String _courseSeriesEventCode;
+	private int _flagToListData;
+	private int _originalFlagToListData;
+	private boolean _setOriginalFlagToListData;
+	private int _flagToChkEventCreation;
+	private String _sMonth;
+	private int _sDay;
+	private String _eMonth;
+	private int _eDay;
 	private long _columnBitmask;
 	private CourseSeries _escapedModel;
 }

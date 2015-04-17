@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_CM_PricingService" provider="java:RPC" style="rpc" use="encoded">
+		<arrayMapping xmlns:ns="urn:http.service.course.ocms.com" xmlns:cmp-ns="http://model.course.ocms.com" qname="ns:ArrayOf_tns2_PricingSoap" type="java:com.ocms.course.model.PricingSoap[]" innerType="cmp-ns:PricingSoap" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<arrayMapping xmlns:ns="urn:http.service.course.ocms.com" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_anyType" type="java:java.lang.Object[]" innerType="cmp-ns:anyType" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<arrayMapping xmlns:ns="urn:http.service.course.ocms.com" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_long" type="java:long[]" innerType="cmp-ns:long" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<arrayMapping xmlns:ns="urn:http.service.course.ocms.com" xmlns:cmp-ns="http://www.w3.org/2001/XMLSchema" qname="ns:ArrayOf_xsd_string" type="java:java.lang.String[]" innerType="cmp-ns:string" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></arrayMapping>
+		<typeMapping xmlns:ns="http://model.course.ocms.com" qname="ns:PricingSoap" type="java:com.ocms.course.model.PricingSoap" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<typeMapping xmlns:ns="http://model.portal.liferay.com" qname="ns:PortletPreferencesIds" type="java:com.liferay.portal.model.PortletPreferencesIds" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<typeMapping xmlns:ns="http://service.portal.liferay.com" qname="ns:ServiceContext" type="java:com.liferay.portal.service.ServiceContext" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<typeMapping xmlns:ns="http://theme.portal.liferay.com" qname="ns:PortletDisplay" type="java:com.liferay.portal.theme.PortletDisplay" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<typeMapping xmlns:ns="http://theme.portal.liferay.com" qname="ns:ThemeDisplay" type="java:com.liferay.portal.theme.ThemeDisplay" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<typeMapping xmlns:ns="http://util.kernel.portal.liferay.com" qname="ns:StringBundler" type="java:com.liferay.portal.kernel.util.StringBundler" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<typeMapping xmlns:ns="http://xml.apache.org/xml-soap" qname="ns:mapItem" type="java:org.apache.xml.xml_soap.MapItem" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"></typeMapping>
+		<operation xmlns:operNS="urn:http.service.course.ocms.com" xmlns:rtns="http://model.course.ocms.com" name="addPricing" qname="operNS:addPricing" returnQName="addPricingReturn" returnType="rtns:PricingSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="deposit" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="price" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="currency" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="effectiveFromDate" type="tns:dateTime"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="effectiveToDate" type="tns:dateTime"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="balanceDueParDate" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="locationId" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="locationCode" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="courseId" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="courseCode" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="packageId" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://service.portal.liferay.com" qname="serviceContext" type="tns:ServiceContext"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.course.ocms.com" name="deleteAllPricing" qname="operNS:deleteAllPricing" soapAction=""> </operation>
+		<operation xmlns:operNS="urn:http.service.course.ocms.com" name="deletePricingByGrouptId" qname="operNS:deletePricingByGrouptId" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.course.ocms.com" name="deletePricingByLocationId" qname="operNS:deletePricingByLocationId" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pricingId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.course.ocms.com" name="deletePricingByPackageId" qname="operNS:deletePricingByPackageId" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="packageId" type="tns:int"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.course.ocms.com" xmlns:rtns="urn:http.service.course.ocms.com" xmlns:tns2="http://model.course.ocms.com" name="getPricingByCourseId" qname="operNS:getPricingByCourseId" returnQName="getPricingByCourseIdReturn" returnType="rtns:ArrayOf_tns2_PricingSoap" returnItemType="tns2:PricingSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="courseId" type="tns:int"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.course.ocms.com" xmlns:rtns="urn:http.service.course.ocms.com" xmlns:tns2="http://model.course.ocms.com" name="getPricingByCourseId" qname="operNS:getPricingByCourseId" returnQName="getPricingByCourseIdReturn" returnType="rtns:ArrayOf_tns2_PricingSoap" returnItemType="tns2:PricingSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="courseId" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="start" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="end" type="tns:int"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.course.ocms.com" xmlns:rtns="urn:http.service.course.ocms.com" xmlns:tns2="http://model.course.ocms.com" name="getPricingByGroupId" qname="operNS:getPricingByGroupId" returnQName="getPricingByGroupIdReturn" returnType="rtns:ArrayOf_tns2_PricingSoap" returnItemType="tns2:PricingSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.course.ocms.com" xmlns:rtns="urn:http.service.course.ocms.com" xmlns:tns2="http://model.course.ocms.com" name="getPricingByGroupId" qname="operNS:getPricingByGroupId" returnQName="getPricingByGroupIdReturn" returnType="rtns:ArrayOf_tns2_PricingSoap" returnItemType="tns2:PricingSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="groupId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="start" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="end" type="tns:int"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.course.ocms.com" xmlns:rtns="urn:http.service.course.ocms.com" xmlns:tns2="http://model.course.ocms.com" name="getPricingByPackageAndLocation" qname="operNS:getPricingByPackageAndLocation" returnQName="getPricingByPackageAndLocationReturn" returnType="rtns:ArrayOf_tns2_PricingSoap" returnItemType="tns2:PricingSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="packageId" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="locationId" type="tns:int"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.course.ocms.com" xmlns:rtns="urn:http.service.course.ocms.com" xmlns:tns2="http://model.course.ocms.com" name="getPricingByPackageAndLocation" qname="operNS:getPricingByPackageAndLocation" returnQName="getPricingByPackageAndLocationReturn" returnType="rtns:ArrayOf_tns2_PricingSoap" returnItemType="tns2:PricingSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="packageId" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="locationId" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="start" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="end" type="tns:int"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.course.ocms.com" xmlns:rtns="urn:http.service.course.ocms.com" xmlns:tns2="http://model.course.ocms.com" name="getPricingByPackageIdAndActive" qname="operNS:getPricingByPackageIdAndActive" returnQName="getPricingByPackageIdAndActiveReturn" returnType="rtns:ArrayOf_tns2_PricingSoap" returnItemType="tns2:PricingSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="packageId" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="active" type="tns:int"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.course.ocms.com" xmlns:rtns="urn:http.service.course.ocms.com" xmlns:tns2="http://model.course.ocms.com" name="getPricingByPackageIdAndActive" qname="operNS:getPricingByPackageIdAndActive" returnQName="getPricingByPackageIdAndActiveReturn" returnType="rtns:ArrayOf_tns2_PricingSoap" returnItemType="tns2:PricingSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="packageId" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="active" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="start" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="end" type="tns:int"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.course.ocms.com" xmlns:rtns="urn:http.service.course.ocms.com" xmlns:tns2="http://model.course.ocms.com" name="getPricingByPackageId" qname="operNS:getPricingByPackageId" returnQName="getPricingByPackageIdReturn" returnType="rtns:ArrayOf_tns2_PricingSoap" returnItemType="tns2:PricingSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="packageId" type="tns:int"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.course.ocms.com" xmlns:rtns="urn:http.service.course.ocms.com" xmlns:tns2="http://model.course.ocms.com" name="getPricingByPackageId" qname="operNS:getPricingByPackageId" returnQName="getPricingByPackageIdReturn" returnType="rtns:ArrayOf_tns2_PricingSoap" returnItemType="tns2:PricingSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="packageId" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="start" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="end" type="tns:int"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.course.ocms.com" xmlns:rtns="urn:http.service.course.ocms.com" xmlns:tns2="http://model.course.ocms.com" name="getPricingByPackageLocationActive" qname="operNS:getPricingByPackageLocationActive" returnQName="getPricingByPackageLocationActiveReturn" returnType="rtns:ArrayOf_tns2_PricingSoap" returnItemType="tns2:PricingSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="packageId" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="locationId" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="active" type="tns:int"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.course.ocms.com" xmlns:rtns="urn:http.service.course.ocms.com" xmlns:tns2="http://model.course.ocms.com" name="getPricingByPackageLocationActive" qname="operNS:getPricingByPackageLocationActive" returnQName="getPricingByPackageLocationActiveReturn" returnType="rtns:ArrayOf_tns2_PricingSoap" returnItemType="tns2:PricingSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="packageId" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="locationId" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="active" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="start" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="end" type="tns:int"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.course.ocms.com" xmlns:rtns="urn:http.service.course.ocms.com" xmlns:tns2="http://model.course.ocms.com" name="getPricingByPrice" qname="operNS:getPricingByPrice" returnQName="getPricingByPriceReturn" returnType="rtns:ArrayOf_tns2_PricingSoap" returnItemType="tns2:PricingSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="price" type="tns:int"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.course.ocms.com" xmlns:rtns="urn:http.service.course.ocms.com" xmlns:tns2="http://model.course.ocms.com" name="getPricingByPrice" qname="operNS:getPricingByPrice" returnQName="getPricingByPriceReturn" returnType="rtns:ArrayOf_tns2_PricingSoap" returnItemType="tns2:PricingSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="price" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="start" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="end" type="tns:int"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.course.ocms.com" xmlns:rtns="urn:http.service.course.ocms.com" xmlns:tns2="http://model.course.ocms.com" name="getPricingByPricingId" qname="operNS:getPricingByPricingId" returnQName="getPricingByPricingIdReturn" returnType="rtns:ArrayOf_tns2_PricingSoap" returnItemType="tns2:PricingSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pricingId" type="tns:int"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.course.ocms.com" xmlns:rtns="urn:http.service.course.ocms.com" xmlns:tns2="http://model.course.ocms.com" name="getPricingByPricingId" qname="operNS:getPricingByPricingId" returnQName="getPricingByPricingIdReturn" returnType="rtns:ArrayOf_tns2_PricingSoap" returnItemType="tns2:PricingSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pricingId" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="start" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="end" type="tns:int"></parameter>
+		</operation>
+		<operation xmlns:operNS="urn:http.service.course.ocms.com" xmlns:rtns="http://model.course.ocms.com" name="updatePricing" qname="operNS:updatePricing" returnQName="updatePricingReturn" returnType="rtns:PricingSoap" soapAction="">
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="deposit" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="price" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="currency" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="effectiveFromDate" type="tns:dateTime"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="effectiveToDate" type="tns:dateTime"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="balanceDueParDate" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="locationId" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="locationCode" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="courseId" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="courseCode" type="tns:string"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="packageId" type="tns:int"></parameter>
+			<parameter xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pricingId" type="tns:long"></parameter>
+			<parameter xmlns:tns="http://service.portal.liferay.com" qname="serviceContext" type="tns:ServiceContext"></parameter>
+		</operation>
+		<parameter name="allowedMethods" value="addPricing deleteAllPricing deletePricingByGrouptId deletePricingByLocationId deletePricingByPackageId getPricingByCourseId getPricingByGroupId getPricingByPackageAndLocation getPricingByPackageId getPricingByPackageIdAndActive getPricingByPackageLocationActive getPricingByPrice getPricingByPricingId updatePricing" />
+		<parameter name="className" value="com.ocms.course.service.http.PricingServiceSoap" />
+		<parameter name="schemaUnqualified" value="http://model.course.ocms.com,http://model.portal.liferay.com,http://service.portal.liferay.com,http://theme.portal.liferay.com,http://util.kernel.portal.liferay.com,http://xml.apache.org/xml-soap,urn:http.service.course.ocms.com" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="PricingServiceSoap" />
+		<parameter name="wsdlServiceElement" value="PricingServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_CM_PricingService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.course.ocms.com" />
+	</service>
+</deployment>

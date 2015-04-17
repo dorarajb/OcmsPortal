@@ -1388,6 +1388,1103 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 	}
 
 	private static final String _FINDER_COLUMN_FLAG_FLAG_2 = "event.flag = ?";
+	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_USERIDFLAG =
+		new FinderPath(EventModelImpl.ENTITY_CACHE_ENABLED,
+			EventModelImpl.FINDER_CACHE_ENABLED, EventImpl.class,
+			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByUserIdFlag",
+			new String[] {
+				Long.class.getName(), Integer.class.getName(),
+				
+			Integer.class.getName(), Integer.class.getName(),
+				OrderByComparator.class.getName()
+			});
+	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_USERIDFLAG =
+		new FinderPath(EventModelImpl.ENTITY_CACHE_ENABLED,
+			EventModelImpl.FINDER_CACHE_ENABLED, EventImpl.class,
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "findByUserIdFlag",
+			new String[] { Long.class.getName(), Integer.class.getName() },
+			EventModelImpl.USERID_COLUMN_BITMASK |
+			EventModelImpl.FLAG_COLUMN_BITMASK);
+	public static final FinderPath FINDER_PATH_COUNT_BY_USERIDFLAG = new FinderPath(EventModelImpl.ENTITY_CACHE_ENABLED,
+			EventModelImpl.FINDER_CACHE_ENABLED, Long.class,
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION, "countByUserIdFlag",
+			new String[] { Long.class.getName(), Integer.class.getName() });
+
+	/**
+	 * Returns all the events where userId = &#63; and flag = &#63;.
+	 *
+	 * @param userId the user ID
+	 * @param flag the flag
+	 * @return the matching events
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<Event> findByUserIdFlag(long userId, int flag)
+		throws SystemException {
+		return findByUserIdFlag(userId, flag, QueryUtil.ALL_POS,
+			QueryUtil.ALL_POS, null);
+	}
+
+	/**
+	 * Returns a range of all the events where userId = &#63; and flag = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.ocms.course.model.impl.EventModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param userId the user ID
+	 * @param flag the flag
+	 * @param start the lower bound of the range of events
+	 * @param end the upper bound of the range of events (not inclusive)
+	 * @return the range of matching events
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<Event> findByUserIdFlag(long userId, int flag, int start,
+		int end) throws SystemException {
+		return findByUserIdFlag(userId, flag, start, end, null);
+	}
+
+	/**
+	 * Returns an ordered range of all the events where userId = &#63; and flag = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.ocms.course.model.impl.EventModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param userId the user ID
+	 * @param flag the flag
+	 * @param start the lower bound of the range of events
+	 * @param end the upper bound of the range of events (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @return the ordered range of matching events
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<Event> findByUserIdFlag(long userId, int flag, int start,
+		int end, OrderByComparator orderByComparator) throws SystemException {
+		boolean pagination = true;
+		FinderPath finderPath = null;
+		Object[] finderArgs = null;
+
+		if ((start == QueryUtil.ALL_POS) && (end == QueryUtil.ALL_POS) &&
+				(orderByComparator == null)) {
+			pagination = false;
+			finderPath = FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_USERIDFLAG;
+			finderArgs = new Object[] { userId, flag };
+		}
+		else {
+			finderPath = FINDER_PATH_WITH_PAGINATION_FIND_BY_USERIDFLAG;
+			finderArgs = new Object[] {
+					userId, flag,
+					
+					start, end, orderByComparator
+				};
+		}
+
+		List<Event> list = (List<Event>)FinderCacheUtil.getResult(finderPath,
+				finderArgs, this);
+
+		if ((list != null) && !list.isEmpty()) {
+			for (Event event : list) {
+				if ((userId != event.getUserId()) || (flag != event.getFlag())) {
+					list = null;
+
+					break;
+				}
+			}
+		}
+
+		if (list == null) {
+			StringBundler query = null;
+
+			if (orderByComparator != null) {
+				query = new StringBundler(4 +
+						(orderByComparator.getOrderByFields().length * 3));
+			}
+			else {
+				query = new StringBundler(4);
+			}
+
+			query.append(_SQL_SELECT_EVENT_WHERE);
+
+			query.append(_FINDER_COLUMN_USERIDFLAG_USERID_2);
+
+			query.append(_FINDER_COLUMN_USERIDFLAG_FLAG_2);
+
+			if (orderByComparator != null) {
+				appendOrderByComparator(query, _ORDER_BY_ENTITY_ALIAS,
+					orderByComparator);
+			}
+			else
+			 if (pagination) {
+				query.append(EventModelImpl.ORDER_BY_JPQL);
+			}
+
+			String sql = query.toString();
+
+			Session session = null;
+
+			try {
+				session = openSession();
+
+				Query q = session.createQuery(sql);
+
+				QueryPos qPos = QueryPos.getInstance(q);
+
+				qPos.add(userId);
+
+				qPos.add(flag);
+
+				if (!pagination) {
+					list = (List<Event>)QueryUtil.list(q, getDialect(), start,
+							end, false);
+
+					Collections.sort(list);
+
+					list = new UnmodifiableList<Event>(list);
+				}
+				else {
+					list = (List<Event>)QueryUtil.list(q, getDialect(), start,
+							end);
+				}
+
+				cacheResult(list);
+
+				FinderCacheUtil.putResult(finderPath, finderArgs, list);
+			}
+			catch (Exception e) {
+				FinderCacheUtil.removeResult(finderPath, finderArgs);
+
+				throw processException(e);
+			}
+			finally {
+				closeSession(session);
+			}
+		}
+
+		return list;
+	}
+
+	/**
+	 * Returns the first event in the ordered set where userId = &#63; and flag = &#63;.
+	 *
+	 * @param userId the user ID
+	 * @param flag the flag
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching event
+	 * @throws com.ocms.course.NoSuchEventException if a matching event could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Event findByUserIdFlag_First(long userId, int flag,
+		OrderByComparator orderByComparator)
+		throws NoSuchEventException, SystemException {
+		Event event = fetchByUserIdFlag_First(userId, flag, orderByComparator);
+
+		if (event != null) {
+			return event;
+		}
+
+		StringBundler msg = new StringBundler(6);
+
+		msg.append(_NO_SUCH_ENTITY_WITH_KEY);
+
+		msg.append("userId=");
+		msg.append(userId);
+
+		msg.append(", flag=");
+		msg.append(flag);
+
+		msg.append(StringPool.CLOSE_CURLY_BRACE);
+
+		throw new NoSuchEventException(msg.toString());
+	}
+
+	/**
+	 * Returns the first event in the ordered set where userId = &#63; and flag = &#63;.
+	 *
+	 * @param userId the user ID
+	 * @param flag the flag
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching event, or <code>null</code> if a matching event could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Event fetchByUserIdFlag_First(long userId, int flag,
+		OrderByComparator orderByComparator) throws SystemException {
+		List<Event> list = findByUserIdFlag(userId, flag, 0, 1,
+				orderByComparator);
+
+		if (!list.isEmpty()) {
+			return list.get(0);
+		}
+
+		return null;
+	}
+
+	/**
+	 * Returns the last event in the ordered set where userId = &#63; and flag = &#63;.
+	 *
+	 * @param userId the user ID
+	 * @param flag the flag
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching event
+	 * @throws com.ocms.course.NoSuchEventException if a matching event could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Event findByUserIdFlag_Last(long userId, int flag,
+		OrderByComparator orderByComparator)
+		throws NoSuchEventException, SystemException {
+		Event event = fetchByUserIdFlag_Last(userId, flag, orderByComparator);
+
+		if (event != null) {
+			return event;
+		}
+
+		StringBundler msg = new StringBundler(6);
+
+		msg.append(_NO_SUCH_ENTITY_WITH_KEY);
+
+		msg.append("userId=");
+		msg.append(userId);
+
+		msg.append(", flag=");
+		msg.append(flag);
+
+		msg.append(StringPool.CLOSE_CURLY_BRACE);
+
+		throw new NoSuchEventException(msg.toString());
+	}
+
+	/**
+	 * Returns the last event in the ordered set where userId = &#63; and flag = &#63;.
+	 *
+	 * @param userId the user ID
+	 * @param flag the flag
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching event, or <code>null</code> if a matching event could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Event fetchByUserIdFlag_Last(long userId, int flag,
+		OrderByComparator orderByComparator) throws SystemException {
+		int count = countByUserIdFlag(userId, flag);
+
+		if (count == 0) {
+			return null;
+		}
+
+		List<Event> list = findByUserIdFlag(userId, flag, count - 1, count,
+				orderByComparator);
+
+		if (!list.isEmpty()) {
+			return list.get(0);
+		}
+
+		return null;
+	}
+
+	/**
+	 * Returns the events before and after the current event in the ordered set where userId = &#63; and flag = &#63;.
+	 *
+	 * @param eventId the primary key of the current event
+	 * @param userId the user ID
+	 * @param flag the flag
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the previous, current, and next event
+	 * @throws com.ocms.course.NoSuchEventException if a event with the primary key could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Event[] findByUserIdFlag_PrevAndNext(long eventId, long userId,
+		int flag, OrderByComparator orderByComparator)
+		throws NoSuchEventException, SystemException {
+		Event event = findByPrimaryKey(eventId);
+
+		Session session = null;
+
+		try {
+			session = openSession();
+
+			Event[] array = new EventImpl[3];
+
+			array[0] = getByUserIdFlag_PrevAndNext(session, event, userId,
+					flag, orderByComparator, true);
+
+			array[1] = event;
+
+			array[2] = getByUserIdFlag_PrevAndNext(session, event, userId,
+					flag, orderByComparator, false);
+
+			return array;
+		}
+		catch (Exception e) {
+			throw processException(e);
+		}
+		finally {
+			closeSession(session);
+		}
+	}
+
+	protected Event getByUserIdFlag_PrevAndNext(Session session, Event event,
+		long userId, int flag, OrderByComparator orderByComparator,
+		boolean previous) {
+		StringBundler query = null;
+
+		if (orderByComparator != null) {
+			query = new StringBundler(6 +
+					(orderByComparator.getOrderByFields().length * 6));
+		}
+		else {
+			query = new StringBundler(3);
+		}
+
+		query.append(_SQL_SELECT_EVENT_WHERE);
+
+		query.append(_FINDER_COLUMN_USERIDFLAG_USERID_2);
+
+		query.append(_FINDER_COLUMN_USERIDFLAG_FLAG_2);
+
+		if (orderByComparator != null) {
+			String[] orderByConditionFields = orderByComparator.getOrderByConditionFields();
+
+			if (orderByConditionFields.length > 0) {
+				query.append(WHERE_AND);
+			}
+
+			for (int i = 0; i < orderByConditionFields.length; i++) {
+				query.append(_ORDER_BY_ENTITY_ALIAS);
+				query.append(orderByConditionFields[i]);
+
+				if ((i + 1) < orderByConditionFields.length) {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(WHERE_GREATER_THAN_HAS_NEXT);
+					}
+					else {
+						query.append(WHERE_LESSER_THAN_HAS_NEXT);
+					}
+				}
+				else {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(WHERE_GREATER_THAN);
+					}
+					else {
+						query.append(WHERE_LESSER_THAN);
+					}
+				}
+			}
+
+			query.append(ORDER_BY_CLAUSE);
+
+			String[] orderByFields = orderByComparator.getOrderByFields();
+
+			for (int i = 0; i < orderByFields.length; i++) {
+				query.append(_ORDER_BY_ENTITY_ALIAS);
+				query.append(orderByFields[i]);
+
+				if ((i + 1) < orderByFields.length) {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(ORDER_BY_ASC_HAS_NEXT);
+					}
+					else {
+						query.append(ORDER_BY_DESC_HAS_NEXT);
+					}
+				}
+				else {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(ORDER_BY_ASC);
+					}
+					else {
+						query.append(ORDER_BY_DESC);
+					}
+				}
+			}
+		}
+		else {
+			query.append(EventModelImpl.ORDER_BY_JPQL);
+		}
+
+		String sql = query.toString();
+
+		Query q = session.createQuery(sql);
+
+		q.setFirstResult(0);
+		q.setMaxResults(2);
+
+		QueryPos qPos = QueryPos.getInstance(q);
+
+		qPos.add(userId);
+
+		qPos.add(flag);
+
+		if (orderByComparator != null) {
+			Object[] values = orderByComparator.getOrderByConditionValues(event);
+
+			for (Object value : values) {
+				qPos.add(value);
+			}
+		}
+
+		List<Event> list = q.list();
+
+		if (list.size() == 2) {
+			return list.get(1);
+		}
+		else {
+			return null;
+		}
+	}
+
+	/**
+	 * Removes all the events where userId = &#63; and flag = &#63; from the database.
+	 *
+	 * @param userId the user ID
+	 * @param flag the flag
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public void removeByUserIdFlag(long userId, int flag)
+		throws SystemException {
+		for (Event event : findByUserIdFlag(userId, flag, QueryUtil.ALL_POS,
+				QueryUtil.ALL_POS, null)) {
+			remove(event);
+		}
+	}
+
+	/**
+	 * Returns the number of events where userId = &#63; and flag = &#63;.
+	 *
+	 * @param userId the user ID
+	 * @param flag the flag
+	 * @return the number of matching events
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public int countByUserIdFlag(long userId, int flag)
+		throws SystemException {
+		FinderPath finderPath = FINDER_PATH_COUNT_BY_USERIDFLAG;
+
+		Object[] finderArgs = new Object[] { userId, flag };
+
+		Long count = (Long)FinderCacheUtil.getResult(finderPath, finderArgs,
+				this);
+
+		if (count == null) {
+			StringBundler query = new StringBundler(3);
+
+			query.append(_SQL_COUNT_EVENT_WHERE);
+
+			query.append(_FINDER_COLUMN_USERIDFLAG_USERID_2);
+
+			query.append(_FINDER_COLUMN_USERIDFLAG_FLAG_2);
+
+			String sql = query.toString();
+
+			Session session = null;
+
+			try {
+				session = openSession();
+
+				Query q = session.createQuery(sql);
+
+				QueryPos qPos = QueryPos.getInstance(q);
+
+				qPos.add(userId);
+
+				qPos.add(flag);
+
+				count = (Long)q.uniqueResult();
+
+				FinderCacheUtil.putResult(finderPath, finderArgs, count);
+			}
+			catch (Exception e) {
+				FinderCacheUtil.removeResult(finderPath, finderArgs);
+
+				throw processException(e);
+			}
+			finally {
+				closeSession(session);
+			}
+		}
+
+		return count.intValue();
+	}
+
+	private static final String _FINDER_COLUMN_USERIDFLAG_USERID_2 = "event.userId = ? AND ";
+	private static final String _FINDER_COLUMN_USERIDFLAG_FLAG_2 = "event.flag = ?";
+	public static final FinderPath FINDER_PATH_WITH_PAGINATION_FIND_BY_USERIDFLAGGROUPID =
+		new FinderPath(EventModelImpl.ENTITY_CACHE_ENABLED,
+			EventModelImpl.FINDER_CACHE_ENABLED, EventImpl.class,
+			FINDER_CLASS_NAME_LIST_WITH_PAGINATION, "findByUserIdFlagGroupId",
+			new String[] {
+				Long.class.getName(), Integer.class.getName(),
+				Long.class.getName(),
+				
+			Integer.class.getName(), Integer.class.getName(),
+				OrderByComparator.class.getName()
+			});
+	public static final FinderPath FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_USERIDFLAGGROUPID =
+		new FinderPath(EventModelImpl.ENTITY_CACHE_ENABLED,
+			EventModelImpl.FINDER_CACHE_ENABLED, EventImpl.class,
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION,
+			"findByUserIdFlagGroupId",
+			new String[] {
+				Long.class.getName(), Integer.class.getName(),
+				Long.class.getName()
+			},
+			EventModelImpl.USERID_COLUMN_BITMASK |
+			EventModelImpl.FLAG_COLUMN_BITMASK |
+			EventModelImpl.GROUPID_COLUMN_BITMASK);
+	public static final FinderPath FINDER_PATH_COUNT_BY_USERIDFLAGGROUPID = new FinderPath(EventModelImpl.ENTITY_CACHE_ENABLED,
+			EventModelImpl.FINDER_CACHE_ENABLED, Long.class,
+			FINDER_CLASS_NAME_LIST_WITHOUT_PAGINATION,
+			"countByUserIdFlagGroupId",
+			new String[] {
+				Long.class.getName(), Integer.class.getName(),
+				Long.class.getName()
+			});
+
+	/**
+	 * Returns all the events where userId = &#63; and flag = &#63; and groupId = &#63;.
+	 *
+	 * @param userId the user ID
+	 * @param flag the flag
+	 * @param groupId the group ID
+	 * @return the matching events
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<Event> findByUserIdFlagGroupId(long userId, int flag,
+		long groupId) throws SystemException {
+		return findByUserIdFlagGroupId(userId, flag, groupId,
+			QueryUtil.ALL_POS, QueryUtil.ALL_POS, null);
+	}
+
+	/**
+	 * Returns a range of all the events where userId = &#63; and flag = &#63; and groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.ocms.course.model.impl.EventModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param userId the user ID
+	 * @param flag the flag
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of events
+	 * @param end the upper bound of the range of events (not inclusive)
+	 * @return the range of matching events
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<Event> findByUserIdFlagGroupId(long userId, int flag,
+		long groupId, int start, int end) throws SystemException {
+		return findByUserIdFlagGroupId(userId, flag, groupId, start, end, null);
+	}
+
+	/**
+	 * Returns an ordered range of all the events where userId = &#63; and flag = &#63; and groupId = &#63;.
+	 *
+	 * <p>
+	 * Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.ocms.course.model.impl.EventModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	 * </p>
+	 *
+	 * @param userId the user ID
+	 * @param flag the flag
+	 * @param groupId the group ID
+	 * @param start the lower bound of the range of events
+	 * @param end the upper bound of the range of events (not inclusive)
+	 * @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	 * @return the ordered range of matching events
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public List<Event> findByUserIdFlagGroupId(long userId, int flag,
+		long groupId, int start, int end, OrderByComparator orderByComparator)
+		throws SystemException {
+		boolean pagination = true;
+		FinderPath finderPath = null;
+		Object[] finderArgs = null;
+
+		if ((start == QueryUtil.ALL_POS) && (end == QueryUtil.ALL_POS) &&
+				(orderByComparator == null)) {
+			pagination = false;
+			finderPath = FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_USERIDFLAGGROUPID;
+			finderArgs = new Object[] { userId, flag, groupId };
+		}
+		else {
+			finderPath = FINDER_PATH_WITH_PAGINATION_FIND_BY_USERIDFLAGGROUPID;
+			finderArgs = new Object[] {
+					userId, flag, groupId,
+					
+					start, end, orderByComparator
+				};
+		}
+
+		List<Event> list = (List<Event>)FinderCacheUtil.getResult(finderPath,
+				finderArgs, this);
+
+		if ((list != null) && !list.isEmpty()) {
+			for (Event event : list) {
+				if ((userId != event.getUserId()) || (flag != event.getFlag()) ||
+						(groupId != event.getGroupId())) {
+					list = null;
+
+					break;
+				}
+			}
+		}
+
+		if (list == null) {
+			StringBundler query = null;
+
+			if (orderByComparator != null) {
+				query = new StringBundler(5 +
+						(orderByComparator.getOrderByFields().length * 3));
+			}
+			else {
+				query = new StringBundler(5);
+			}
+
+			query.append(_SQL_SELECT_EVENT_WHERE);
+
+			query.append(_FINDER_COLUMN_USERIDFLAGGROUPID_USERID_2);
+
+			query.append(_FINDER_COLUMN_USERIDFLAGGROUPID_FLAG_2);
+
+			query.append(_FINDER_COLUMN_USERIDFLAGGROUPID_GROUPID_2);
+
+			if (orderByComparator != null) {
+				appendOrderByComparator(query, _ORDER_BY_ENTITY_ALIAS,
+					orderByComparator);
+			}
+			else
+			 if (pagination) {
+				query.append(EventModelImpl.ORDER_BY_JPQL);
+			}
+
+			String sql = query.toString();
+
+			Session session = null;
+
+			try {
+				session = openSession();
+
+				Query q = session.createQuery(sql);
+
+				QueryPos qPos = QueryPos.getInstance(q);
+
+				qPos.add(userId);
+
+				qPos.add(flag);
+
+				qPos.add(groupId);
+
+				if (!pagination) {
+					list = (List<Event>)QueryUtil.list(q, getDialect(), start,
+							end, false);
+
+					Collections.sort(list);
+
+					list = new UnmodifiableList<Event>(list);
+				}
+				else {
+					list = (List<Event>)QueryUtil.list(q, getDialect(), start,
+							end);
+				}
+
+				cacheResult(list);
+
+				FinderCacheUtil.putResult(finderPath, finderArgs, list);
+			}
+			catch (Exception e) {
+				FinderCacheUtil.removeResult(finderPath, finderArgs);
+
+				throw processException(e);
+			}
+			finally {
+				closeSession(session);
+			}
+		}
+
+		return list;
+	}
+
+	/**
+	 * Returns the first event in the ordered set where userId = &#63; and flag = &#63; and groupId = &#63;.
+	 *
+	 * @param userId the user ID
+	 * @param flag the flag
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching event
+	 * @throws com.ocms.course.NoSuchEventException if a matching event could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Event findByUserIdFlagGroupId_First(long userId, int flag,
+		long groupId, OrderByComparator orderByComparator)
+		throws NoSuchEventException, SystemException {
+		Event event = fetchByUserIdFlagGroupId_First(userId, flag, groupId,
+				orderByComparator);
+
+		if (event != null) {
+			return event;
+		}
+
+		StringBundler msg = new StringBundler(8);
+
+		msg.append(_NO_SUCH_ENTITY_WITH_KEY);
+
+		msg.append("userId=");
+		msg.append(userId);
+
+		msg.append(", flag=");
+		msg.append(flag);
+
+		msg.append(", groupId=");
+		msg.append(groupId);
+
+		msg.append(StringPool.CLOSE_CURLY_BRACE);
+
+		throw new NoSuchEventException(msg.toString());
+	}
+
+	/**
+	 * Returns the first event in the ordered set where userId = &#63; and flag = &#63; and groupId = &#63;.
+	 *
+	 * @param userId the user ID
+	 * @param flag the flag
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the first matching event, or <code>null</code> if a matching event could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Event fetchByUserIdFlagGroupId_First(long userId, int flag,
+		long groupId, OrderByComparator orderByComparator)
+		throws SystemException {
+		List<Event> list = findByUserIdFlagGroupId(userId, flag, groupId, 0, 1,
+				orderByComparator);
+
+		if (!list.isEmpty()) {
+			return list.get(0);
+		}
+
+		return null;
+	}
+
+	/**
+	 * Returns the last event in the ordered set where userId = &#63; and flag = &#63; and groupId = &#63;.
+	 *
+	 * @param userId the user ID
+	 * @param flag the flag
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching event
+	 * @throws com.ocms.course.NoSuchEventException if a matching event could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Event findByUserIdFlagGroupId_Last(long userId, int flag,
+		long groupId, OrderByComparator orderByComparator)
+		throws NoSuchEventException, SystemException {
+		Event event = fetchByUserIdFlagGroupId_Last(userId, flag, groupId,
+				orderByComparator);
+
+		if (event != null) {
+			return event;
+		}
+
+		StringBundler msg = new StringBundler(8);
+
+		msg.append(_NO_SUCH_ENTITY_WITH_KEY);
+
+		msg.append("userId=");
+		msg.append(userId);
+
+		msg.append(", flag=");
+		msg.append(flag);
+
+		msg.append(", groupId=");
+		msg.append(groupId);
+
+		msg.append(StringPool.CLOSE_CURLY_BRACE);
+
+		throw new NoSuchEventException(msg.toString());
+	}
+
+	/**
+	 * Returns the last event in the ordered set where userId = &#63; and flag = &#63; and groupId = &#63;.
+	 *
+	 * @param userId the user ID
+	 * @param flag the flag
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the last matching event, or <code>null</code> if a matching event could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Event fetchByUserIdFlagGroupId_Last(long userId, int flag,
+		long groupId, OrderByComparator orderByComparator)
+		throws SystemException {
+		int count = countByUserIdFlagGroupId(userId, flag, groupId);
+
+		if (count == 0) {
+			return null;
+		}
+
+		List<Event> list = findByUserIdFlagGroupId(userId, flag, groupId,
+				count - 1, count, orderByComparator);
+
+		if (!list.isEmpty()) {
+			return list.get(0);
+		}
+
+		return null;
+	}
+
+	/**
+	 * Returns the events before and after the current event in the ordered set where userId = &#63; and flag = &#63; and groupId = &#63;.
+	 *
+	 * @param eventId the primary key of the current event
+	 * @param userId the user ID
+	 * @param flag the flag
+	 * @param groupId the group ID
+	 * @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	 * @return the previous, current, and next event
+	 * @throws com.ocms.course.NoSuchEventException if a event with the primary key could not be found
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public Event[] findByUserIdFlagGroupId_PrevAndNext(long eventId,
+		long userId, int flag, long groupId, OrderByComparator orderByComparator)
+		throws NoSuchEventException, SystemException {
+		Event event = findByPrimaryKey(eventId);
+
+		Session session = null;
+
+		try {
+			session = openSession();
+
+			Event[] array = new EventImpl[3];
+
+			array[0] = getByUserIdFlagGroupId_PrevAndNext(session, event,
+					userId, flag, groupId, orderByComparator, true);
+
+			array[1] = event;
+
+			array[2] = getByUserIdFlagGroupId_PrevAndNext(session, event,
+					userId, flag, groupId, orderByComparator, false);
+
+			return array;
+		}
+		catch (Exception e) {
+			throw processException(e);
+		}
+		finally {
+			closeSession(session);
+		}
+	}
+
+	protected Event getByUserIdFlagGroupId_PrevAndNext(Session session,
+		Event event, long userId, int flag, long groupId,
+		OrderByComparator orderByComparator, boolean previous) {
+		StringBundler query = null;
+
+		if (orderByComparator != null) {
+			query = new StringBundler(6 +
+					(orderByComparator.getOrderByFields().length * 6));
+		}
+		else {
+			query = new StringBundler(3);
+		}
+
+		query.append(_SQL_SELECT_EVENT_WHERE);
+
+		query.append(_FINDER_COLUMN_USERIDFLAGGROUPID_USERID_2);
+
+		query.append(_FINDER_COLUMN_USERIDFLAGGROUPID_FLAG_2);
+
+		query.append(_FINDER_COLUMN_USERIDFLAGGROUPID_GROUPID_2);
+
+		if (orderByComparator != null) {
+			String[] orderByConditionFields = orderByComparator.getOrderByConditionFields();
+
+			if (orderByConditionFields.length > 0) {
+				query.append(WHERE_AND);
+			}
+
+			for (int i = 0; i < orderByConditionFields.length; i++) {
+				query.append(_ORDER_BY_ENTITY_ALIAS);
+				query.append(orderByConditionFields[i]);
+
+				if ((i + 1) < orderByConditionFields.length) {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(WHERE_GREATER_THAN_HAS_NEXT);
+					}
+					else {
+						query.append(WHERE_LESSER_THAN_HAS_NEXT);
+					}
+				}
+				else {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(WHERE_GREATER_THAN);
+					}
+					else {
+						query.append(WHERE_LESSER_THAN);
+					}
+				}
+			}
+
+			query.append(ORDER_BY_CLAUSE);
+
+			String[] orderByFields = orderByComparator.getOrderByFields();
+
+			for (int i = 0; i < orderByFields.length; i++) {
+				query.append(_ORDER_BY_ENTITY_ALIAS);
+				query.append(orderByFields[i]);
+
+				if ((i + 1) < orderByFields.length) {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(ORDER_BY_ASC_HAS_NEXT);
+					}
+					else {
+						query.append(ORDER_BY_DESC_HAS_NEXT);
+					}
+				}
+				else {
+					if (orderByComparator.isAscending() ^ previous) {
+						query.append(ORDER_BY_ASC);
+					}
+					else {
+						query.append(ORDER_BY_DESC);
+					}
+				}
+			}
+		}
+		else {
+			query.append(EventModelImpl.ORDER_BY_JPQL);
+		}
+
+		String sql = query.toString();
+
+		Query q = session.createQuery(sql);
+
+		q.setFirstResult(0);
+		q.setMaxResults(2);
+
+		QueryPos qPos = QueryPos.getInstance(q);
+
+		qPos.add(userId);
+
+		qPos.add(flag);
+
+		qPos.add(groupId);
+
+		if (orderByComparator != null) {
+			Object[] values = orderByComparator.getOrderByConditionValues(event);
+
+			for (Object value : values) {
+				qPos.add(value);
+			}
+		}
+
+		List<Event> list = q.list();
+
+		if (list.size() == 2) {
+			return list.get(1);
+		}
+		else {
+			return null;
+		}
+	}
+
+	/**
+	 * Removes all the events where userId = &#63; and flag = &#63; and groupId = &#63; from the database.
+	 *
+	 * @param userId the user ID
+	 * @param flag the flag
+	 * @param groupId the group ID
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public void removeByUserIdFlagGroupId(long userId, int flag, long groupId)
+		throws SystemException {
+		for (Event event : findByUserIdFlagGroupId(userId, flag, groupId,
+				QueryUtil.ALL_POS, QueryUtil.ALL_POS, null)) {
+			remove(event);
+		}
+	}
+
+	/**
+	 * Returns the number of events where userId = &#63; and flag = &#63; and groupId = &#63;.
+	 *
+	 * @param userId the user ID
+	 * @param flag the flag
+	 * @param groupId the group ID
+	 * @return the number of matching events
+	 * @throws SystemException if a system exception occurred
+	 */
+	@Override
+	public int countByUserIdFlagGroupId(long userId, int flag, long groupId)
+		throws SystemException {
+		FinderPath finderPath = FINDER_PATH_COUNT_BY_USERIDFLAGGROUPID;
+
+		Object[] finderArgs = new Object[] { userId, flag, groupId };
+
+		Long count = (Long)FinderCacheUtil.getResult(finderPath, finderArgs,
+				this);
+
+		if (count == null) {
+			StringBundler query = new StringBundler(4);
+
+			query.append(_SQL_COUNT_EVENT_WHERE);
+
+			query.append(_FINDER_COLUMN_USERIDFLAGGROUPID_USERID_2);
+
+			query.append(_FINDER_COLUMN_USERIDFLAGGROUPID_FLAG_2);
+
+			query.append(_FINDER_COLUMN_USERIDFLAGGROUPID_GROUPID_2);
+
+			String sql = query.toString();
+
+			Session session = null;
+
+			try {
+				session = openSession();
+
+				Query q = session.createQuery(sql);
+
+				QueryPos qPos = QueryPos.getInstance(q);
+
+				qPos.add(userId);
+
+				qPos.add(flag);
+
+				qPos.add(groupId);
+
+				count = (Long)q.uniqueResult();
+
+				FinderCacheUtil.putResult(finderPath, finderArgs, count);
+			}
+			catch (Exception e) {
+				FinderCacheUtil.removeResult(finderPath, finderArgs);
+
+				throw processException(e);
+			}
+			finally {
+				closeSession(session);
+			}
+		}
+
+		return count.intValue();
+	}
+
+	private static final String _FINDER_COLUMN_USERIDFLAGGROUPID_USERID_2 = "event.userId = ? AND ";
+	private static final String _FINDER_COLUMN_USERIDFLAGGROUPID_FLAG_2 = "event.flag = ? AND ";
+	private static final String _FINDER_COLUMN_USERIDFLAGGROUPID_GROUPID_2 = "event.groupId = ?";
 
 	public EventPersistenceImpl() {
 		setModelClass(Event.class);
@@ -1652,6 +2749,52 @@ public class EventPersistenceImpl extends BasePersistenceImpl<Event>
 
 				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_FLAG, args);
 				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_FLAG,
+					args);
+			}
+
+			if ((eventModelImpl.getColumnBitmask() &
+					FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_USERIDFLAG.getColumnBitmask()) != 0) {
+				Object[] args = new Object[] {
+						eventModelImpl.getOriginalUserId(),
+						eventModelImpl.getOriginalFlag()
+					};
+
+				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_USERIDFLAG,
+					args);
+				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_USERIDFLAG,
+					args);
+
+				args = new Object[] {
+						eventModelImpl.getUserId(), eventModelImpl.getFlag()
+					};
+
+				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_USERIDFLAG,
+					args);
+				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_USERIDFLAG,
+					args);
+			}
+
+			if ((eventModelImpl.getColumnBitmask() &
+					FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_USERIDFLAGGROUPID.getColumnBitmask()) != 0) {
+				Object[] args = new Object[] {
+						eventModelImpl.getOriginalUserId(),
+						eventModelImpl.getOriginalFlag(),
+						eventModelImpl.getOriginalGroupId()
+					};
+
+				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_USERIDFLAGGROUPID,
+					args);
+				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_USERIDFLAGGROUPID,
+					args);
+
+				args = new Object[] {
+						eventModelImpl.getUserId(), eventModelImpl.getFlag(),
+						eventModelImpl.getGroupId()
+					};
+
+				FinderCacheUtil.removeResult(FINDER_PATH_COUNT_BY_USERIDFLAGGROUPID,
+					args);
+				FinderCacheUtil.removeResult(FINDER_PATH_WITHOUT_PAGINATION_FIND_BY_USERIDFLAGGROUPID,
 					args);
 			}
 		}

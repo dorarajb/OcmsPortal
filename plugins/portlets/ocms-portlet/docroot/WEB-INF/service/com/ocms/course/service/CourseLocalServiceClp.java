@@ -137,6 +137,18 @@ public class CourseLocalServiceClp implements CourseLocalService {
 				"long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "com.liferay.portal.service.ServiceContext"
 			};
+
+		_methodName25 = "deleteCourseByCourseId";
+
+		_methodParameterTypes25 = new String[] { "long" };
+
+		_methodName26 = "deleteCourseByGrouptId";
+
+		_methodParameterTypes26 = new String[] { "long" };
+
+		_methodName27 = "deleteAllCourse";
+
+		_methodParameterTypes27 = new String[] {  };
 	}
 
 	@Override
@@ -898,6 +910,63 @@ public class CourseLocalServiceClp implements CourseLocalService {
 		return (com.ocms.course.model.Course)ClpSerializer.translateOutput(returnObj);
 	}
 
+	@Override
+	public void deleteCourseByCourseId(long courseId) {
+		try {
+			_invokableLocalService.invokeMethod(_methodName25,
+				_methodParameterTypes25, new Object[] { courseId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+	}
+
+	@Override
+	public void deleteCourseByGrouptId(long groupId) {
+		try {
+			_invokableLocalService.invokeMethod(_methodName26,
+				_methodParameterTypes26, new Object[] { groupId });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+	}
+
+	@Override
+	public void deleteAllCourse() {
+		try {
+			_invokableLocalService.invokeMethod(_methodName27,
+				_methodParameterTypes27, new Object[] {  });
+		}
+		catch (Throwable t) {
+			t = ClpSerializer.translateThrowable(t);
+
+			if (t instanceof RuntimeException) {
+				throw (RuntimeException)t;
+			}
+			else {
+				throw new RuntimeException(t.getClass().getName() +
+					" is not a valid exception");
+			}
+		}
+	}
+
 	private InvokableLocalService _invokableLocalService;
 	private String _methodName0;
 	private String[] _methodParameterTypes0;
@@ -947,4 +1016,10 @@ public class CourseLocalServiceClp implements CourseLocalService {
 	private String[] _methodParameterTypes23;
 	private String _methodName24;
 	private String[] _methodParameterTypes24;
+	private String _methodName25;
+	private String[] _methodParameterTypes25;
+	private String _methodName26;
+	private String[] _methodParameterTypes26;
+	private String _methodName27;
+	private String[] _methodParameterTypes27;
 }

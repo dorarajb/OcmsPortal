@@ -277,4 +277,10 @@ public interface CourseLocalService extends BaseLocalService,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
+
+	public void deleteCourseByCourseId(long courseId);
+
+	public void deleteCourseByGrouptId(long groupId);
+
+	public void deleteAllCourse();
 }

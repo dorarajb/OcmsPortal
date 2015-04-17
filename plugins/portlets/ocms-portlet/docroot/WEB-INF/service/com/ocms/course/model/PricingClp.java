@@ -87,9 +87,12 @@ public class PricingClp extends BaseModelImpl<Pricing> implements Pricing {
 		attributes.put("deposit", getDeposit());
 		attributes.put("price", getPrice());
 		attributes.put("currency", getCurrency());
-		attributes.put("effectiveDate", getEffectiveDate());
+		attributes.put("effectiveFromDate", getEffectiveFromDate());
 		attributes.put("courseCode", getCourseCode());
 		attributes.put("locationCode", getLocationCode());
+		attributes.put("effectiveToDate", getEffectiveToDate());
+		attributes.put("active", getActive());
+		attributes.put("balanceDueParDate", getBalanceDueParDate());
 
 		return attributes;
 	}
@@ -174,10 +177,10 @@ public class PricingClp extends BaseModelImpl<Pricing> implements Pricing {
 			setCurrency(currency);
 		}
 
-		Date effectiveDate = (Date)attributes.get("effectiveDate");
+		Date effectiveFromDate = (Date)attributes.get("effectiveFromDate");
 
-		if (effectiveDate != null) {
-			setEffectiveDate(effectiveDate);
+		if (effectiveFromDate != null) {
+			setEffectiveFromDate(effectiveFromDate);
 		}
 
 		String courseCode = (String)attributes.get("courseCode");
@@ -190,6 +193,24 @@ public class PricingClp extends BaseModelImpl<Pricing> implements Pricing {
 
 		if (locationCode != null) {
 			setLocationCode(locationCode);
+		}
+
+		Date effectiveToDate = (Date)attributes.get("effectiveToDate");
+
+		if (effectiveToDate != null) {
+			setEffectiveToDate(effectiveToDate);
+		}
+
+		Integer active = (Integer)attributes.get("active");
+
+		if (active != null) {
+			setActive(active);
+		}
+
+		Integer balanceDueParDate = (Integer)attributes.get("balanceDueParDate");
+
+		if (balanceDueParDate != null) {
+			setBalanceDueParDate(balanceDueParDate);
 		}
 	}
 
@@ -503,21 +524,22 @@ public class PricingClp extends BaseModelImpl<Pricing> implements Pricing {
 	}
 
 	@Override
-	public Date getEffectiveDate() {
-		return _effectiveDate;
+	public Date getEffectiveFromDate() {
+		return _effectiveFromDate;
 	}
 
 	@Override
-	public void setEffectiveDate(Date effectiveDate) {
-		_effectiveDate = effectiveDate;
+	public void setEffectiveFromDate(Date effectiveFromDate) {
+		_effectiveFromDate = effectiveFromDate;
 
 		if (_pricingRemoteModel != null) {
 			try {
 				Class<?> clazz = _pricingRemoteModel.getClass();
 
-				Method method = clazz.getMethod("setEffectiveDate", Date.class);
+				Method method = clazz.getMethod("setEffectiveFromDate",
+						Date.class);
 
-				method.invoke(_pricingRemoteModel, effectiveDate);
+				method.invoke(_pricingRemoteModel, effectiveFromDate);
 			}
 			catch (Exception e) {
 				throw new UnsupportedOperationException(e);
@@ -564,6 +586,76 @@ public class PricingClp extends BaseModelImpl<Pricing> implements Pricing {
 				Method method = clazz.getMethod("setLocationCode", String.class);
 
 				method.invoke(_pricingRemoteModel, locationCode);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public Date getEffectiveToDate() {
+		return _effectiveToDate;
+	}
+
+	@Override
+	public void setEffectiveToDate(Date effectiveToDate) {
+		_effectiveToDate = effectiveToDate;
+
+		if (_pricingRemoteModel != null) {
+			try {
+				Class<?> clazz = _pricingRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setEffectiveToDate", Date.class);
+
+				method.invoke(_pricingRemoteModel, effectiveToDate);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public int getActive() {
+		return _active;
+	}
+
+	@Override
+	public void setActive(int active) {
+		_active = active;
+
+		if (_pricingRemoteModel != null) {
+			try {
+				Class<?> clazz = _pricingRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setActive", int.class);
+
+				method.invoke(_pricingRemoteModel, active);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public int getBalanceDueParDate() {
+		return _balanceDueParDate;
+	}
+
+	@Override
+	public void setBalanceDueParDate(int balanceDueParDate) {
+		_balanceDueParDate = balanceDueParDate;
+
+		if (_pricingRemoteModel != null) {
+			try {
+				Class<?> clazz = _pricingRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setBalanceDueParDate",
+						int.class);
+
+				method.invoke(_pricingRemoteModel, balanceDueParDate);
 			}
 			catch (Exception e) {
 				throw new UnsupportedOperationException(e);
@@ -653,9 +745,12 @@ public class PricingClp extends BaseModelImpl<Pricing> implements Pricing {
 		clone.setDeposit(getDeposit());
 		clone.setPrice(getPrice());
 		clone.setCurrency(getCurrency());
-		clone.setEffectiveDate(getEffectiveDate());
+		clone.setEffectiveFromDate(getEffectiveFromDate());
 		clone.setCourseCode(getCourseCode());
 		clone.setLocationCode(getLocationCode());
+		clone.setEffectiveToDate(getEffectiveToDate());
+		clone.setActive(getActive());
+		clone.setBalanceDueParDate(getBalanceDueParDate());
 
 		return clone;
 	}
@@ -704,7 +799,7 @@ public class PricingClp extends BaseModelImpl<Pricing> implements Pricing {
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(33);
+		StringBundler sb = new StringBundler(39);
 
 		sb.append("{pricingId=");
 		sb.append(getPricingId());
@@ -732,12 +827,18 @@ public class PricingClp extends BaseModelImpl<Pricing> implements Pricing {
 		sb.append(getPrice());
 		sb.append(", currency=");
 		sb.append(getCurrency());
-		sb.append(", effectiveDate=");
-		sb.append(getEffectiveDate());
+		sb.append(", effectiveFromDate=");
+		sb.append(getEffectiveFromDate());
 		sb.append(", courseCode=");
 		sb.append(getCourseCode());
 		sb.append(", locationCode=");
 		sb.append(getLocationCode());
+		sb.append(", effectiveToDate=");
+		sb.append(getEffectiveToDate());
+		sb.append(", active=");
+		sb.append(getActive());
+		sb.append(", balanceDueParDate=");
+		sb.append(getBalanceDueParDate());
 		sb.append("}");
 
 		return sb.toString();
@@ -745,7 +846,7 @@ public class PricingClp extends BaseModelImpl<Pricing> implements Pricing {
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(52);
+		StringBundler sb = new StringBundler(61);
 
 		sb.append("<model><model-name>");
 		sb.append("com.ocms.course.model.Pricing");
@@ -804,8 +905,8 @@ public class PricingClp extends BaseModelImpl<Pricing> implements Pricing {
 		sb.append(getCurrency());
 		sb.append("]]></column-value></column>");
 		sb.append(
-			"<column><column-name>effectiveDate</column-name><column-value><![CDATA[");
-		sb.append(getEffectiveDate());
+			"<column><column-name>effectiveFromDate</column-name><column-value><![CDATA[");
+		sb.append(getEffectiveFromDate());
 		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>courseCode</column-name><column-value><![CDATA[");
@@ -814,6 +915,18 @@ public class PricingClp extends BaseModelImpl<Pricing> implements Pricing {
 		sb.append(
 			"<column><column-name>locationCode</column-name><column-value><![CDATA[");
 		sb.append(getLocationCode());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>effectiveToDate</column-name><column-value><![CDATA[");
+		sb.append(getEffectiveToDate());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>active</column-name><column-value><![CDATA[");
+		sb.append(getActive());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>balanceDueParDate</column-name><column-value><![CDATA[");
+		sb.append(getBalanceDueParDate());
 		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
@@ -835,8 +948,11 @@ public class PricingClp extends BaseModelImpl<Pricing> implements Pricing {
 	private int _deposit;
 	private int _price;
 	private String _currency;
-	private Date _effectiveDate;
+	private Date _effectiveFromDate;
 	private String _courseCode;
 	private String _locationCode;
+	private Date _effectiveToDate;
+	private int _active;
+	private int _balanceDueParDate;
 	private BaseModel<?> _pricingRemoteModel;
 }

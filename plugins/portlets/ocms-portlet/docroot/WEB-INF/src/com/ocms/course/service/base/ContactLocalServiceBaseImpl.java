@@ -37,8 +37,14 @@ import com.ocms.course.service.persistence.ContactPersistence;
 import com.ocms.course.service.persistence.CoursePackagePersistence;
 import com.ocms.course.service.persistence.CoursePersistence;
 import com.ocms.course.service.persistence.CourseSeriesPersistence;
+import com.ocms.course.service.persistence.EventPersistence;
 import com.ocms.course.service.persistence.LocationPersistence;
+import com.ocms.course.service.persistence.OffersAndDeductionsPersistence;
 import com.ocms.course.service.persistence.PricingPersistence;
+import com.ocms.course.service.persistence.RegistrationDetailsPersistence;
+import com.ocms.course.service.persistence.StudentRegistrationPersistence;
+import com.ocms.course.service.persistence.TaxDetailsPersistence;
+import com.ocms.course.service.persistence.TaxTypesPersistence;
 
 import java.io.Serializable;
 
@@ -505,6 +511,62 @@ public abstract class ContactLocalServiceBaseImpl extends BaseLocalServiceImpl
 	}
 
 	/**
+	 * Returns the event local service.
+	 *
+	 * @return the event local service
+	 */
+	public com.ocms.course.service.EventLocalService getEventLocalService() {
+		return eventLocalService;
+	}
+
+	/**
+	 * Sets the event local service.
+	 *
+	 * @param eventLocalService the event local service
+	 */
+	public void setEventLocalService(
+		com.ocms.course.service.EventLocalService eventLocalService) {
+		this.eventLocalService = eventLocalService;
+	}
+
+	/**
+	 * Returns the event remote service.
+	 *
+	 * @return the event remote service
+	 */
+	public com.ocms.course.service.EventService getEventService() {
+		return eventService;
+	}
+
+	/**
+	 * Sets the event remote service.
+	 *
+	 * @param eventService the event remote service
+	 */
+	public void setEventService(
+		com.ocms.course.service.EventService eventService) {
+		this.eventService = eventService;
+	}
+
+	/**
+	 * Returns the event persistence.
+	 *
+	 * @return the event persistence
+	 */
+	public EventPersistence getEventPersistence() {
+		return eventPersistence;
+	}
+
+	/**
+	 * Sets the event persistence.
+	 *
+	 * @param eventPersistence the event persistence
+	 */
+	public void setEventPersistence(EventPersistence eventPersistence) {
+		this.eventPersistence = eventPersistence;
+	}
+
+	/**
 	 * Returns the location local service.
 	 *
 	 * @return the location local service
@@ -561,6 +623,63 @@ public abstract class ContactLocalServiceBaseImpl extends BaseLocalServiceImpl
 	}
 
 	/**
+	 * Returns the offers and deductions local service.
+	 *
+	 * @return the offers and deductions local service
+	 */
+	public com.ocms.course.service.OffersAndDeductionsLocalService getOffersAndDeductionsLocalService() {
+		return offersAndDeductionsLocalService;
+	}
+
+	/**
+	 * Sets the offers and deductions local service.
+	 *
+	 * @param offersAndDeductionsLocalService the offers and deductions local service
+	 */
+	public void setOffersAndDeductionsLocalService(
+		com.ocms.course.service.OffersAndDeductionsLocalService offersAndDeductionsLocalService) {
+		this.offersAndDeductionsLocalService = offersAndDeductionsLocalService;
+	}
+
+	/**
+	 * Returns the offers and deductions remote service.
+	 *
+	 * @return the offers and deductions remote service
+	 */
+	public com.ocms.course.service.OffersAndDeductionsService getOffersAndDeductionsService() {
+		return offersAndDeductionsService;
+	}
+
+	/**
+	 * Sets the offers and deductions remote service.
+	 *
+	 * @param offersAndDeductionsService the offers and deductions remote service
+	 */
+	public void setOffersAndDeductionsService(
+		com.ocms.course.service.OffersAndDeductionsService offersAndDeductionsService) {
+		this.offersAndDeductionsService = offersAndDeductionsService;
+	}
+
+	/**
+	 * Returns the offers and deductions persistence.
+	 *
+	 * @return the offers and deductions persistence
+	 */
+	public OffersAndDeductionsPersistence getOffersAndDeductionsPersistence() {
+		return offersAndDeductionsPersistence;
+	}
+
+	/**
+	 * Sets the offers and deductions persistence.
+	 *
+	 * @param offersAndDeductionsPersistence the offers and deductions persistence
+	 */
+	public void setOffersAndDeductionsPersistence(
+		OffersAndDeductionsPersistence offersAndDeductionsPersistence) {
+		this.offersAndDeductionsPersistence = offersAndDeductionsPersistence;
+	}
+
+	/**
 	 * Returns the pricing local service.
 	 *
 	 * @return the pricing local service
@@ -614,6 +733,233 @@ public abstract class ContactLocalServiceBaseImpl extends BaseLocalServiceImpl
 	 */
 	public void setPricingPersistence(PricingPersistence pricingPersistence) {
 		this.pricingPersistence = pricingPersistence;
+	}
+
+	/**
+	 * Returns the registration details local service.
+	 *
+	 * @return the registration details local service
+	 */
+	public com.ocms.course.service.RegistrationDetailsLocalService getRegistrationDetailsLocalService() {
+		return registrationDetailsLocalService;
+	}
+
+	/**
+	 * Sets the registration details local service.
+	 *
+	 * @param registrationDetailsLocalService the registration details local service
+	 */
+	public void setRegistrationDetailsLocalService(
+		com.ocms.course.service.RegistrationDetailsLocalService registrationDetailsLocalService) {
+		this.registrationDetailsLocalService = registrationDetailsLocalService;
+	}
+
+	/**
+	 * Returns the registration details remote service.
+	 *
+	 * @return the registration details remote service
+	 */
+	public com.ocms.course.service.RegistrationDetailsService getRegistrationDetailsService() {
+		return registrationDetailsService;
+	}
+
+	/**
+	 * Sets the registration details remote service.
+	 *
+	 * @param registrationDetailsService the registration details remote service
+	 */
+	public void setRegistrationDetailsService(
+		com.ocms.course.service.RegistrationDetailsService registrationDetailsService) {
+		this.registrationDetailsService = registrationDetailsService;
+	}
+
+	/**
+	 * Returns the registration details persistence.
+	 *
+	 * @return the registration details persistence
+	 */
+	public RegistrationDetailsPersistence getRegistrationDetailsPersistence() {
+		return registrationDetailsPersistence;
+	}
+
+	/**
+	 * Sets the registration details persistence.
+	 *
+	 * @param registrationDetailsPersistence the registration details persistence
+	 */
+	public void setRegistrationDetailsPersistence(
+		RegistrationDetailsPersistence registrationDetailsPersistence) {
+		this.registrationDetailsPersistence = registrationDetailsPersistence;
+	}
+
+	/**
+	 * Returns the student registration local service.
+	 *
+	 * @return the student registration local service
+	 */
+	public com.ocms.course.service.StudentRegistrationLocalService getStudentRegistrationLocalService() {
+		return studentRegistrationLocalService;
+	}
+
+	/**
+	 * Sets the student registration local service.
+	 *
+	 * @param studentRegistrationLocalService the student registration local service
+	 */
+	public void setStudentRegistrationLocalService(
+		com.ocms.course.service.StudentRegistrationLocalService studentRegistrationLocalService) {
+		this.studentRegistrationLocalService = studentRegistrationLocalService;
+	}
+
+	/**
+	 * Returns the student registration remote service.
+	 *
+	 * @return the student registration remote service
+	 */
+	public com.ocms.course.service.StudentRegistrationService getStudentRegistrationService() {
+		return studentRegistrationService;
+	}
+
+	/**
+	 * Sets the student registration remote service.
+	 *
+	 * @param studentRegistrationService the student registration remote service
+	 */
+	public void setStudentRegistrationService(
+		com.ocms.course.service.StudentRegistrationService studentRegistrationService) {
+		this.studentRegistrationService = studentRegistrationService;
+	}
+
+	/**
+	 * Returns the student registration persistence.
+	 *
+	 * @return the student registration persistence
+	 */
+	public StudentRegistrationPersistence getStudentRegistrationPersistence() {
+		return studentRegistrationPersistence;
+	}
+
+	/**
+	 * Sets the student registration persistence.
+	 *
+	 * @param studentRegistrationPersistence the student registration persistence
+	 */
+	public void setStudentRegistrationPersistence(
+		StudentRegistrationPersistence studentRegistrationPersistence) {
+		this.studentRegistrationPersistence = studentRegistrationPersistence;
+	}
+
+	/**
+	 * Returns the tax details local service.
+	 *
+	 * @return the tax details local service
+	 */
+	public com.ocms.course.service.TaxDetailsLocalService getTaxDetailsLocalService() {
+		return taxDetailsLocalService;
+	}
+
+	/**
+	 * Sets the tax details local service.
+	 *
+	 * @param taxDetailsLocalService the tax details local service
+	 */
+	public void setTaxDetailsLocalService(
+		com.ocms.course.service.TaxDetailsLocalService taxDetailsLocalService) {
+		this.taxDetailsLocalService = taxDetailsLocalService;
+	}
+
+	/**
+	 * Returns the tax details remote service.
+	 *
+	 * @return the tax details remote service
+	 */
+	public com.ocms.course.service.TaxDetailsService getTaxDetailsService() {
+		return taxDetailsService;
+	}
+
+	/**
+	 * Sets the tax details remote service.
+	 *
+	 * @param taxDetailsService the tax details remote service
+	 */
+	public void setTaxDetailsService(
+		com.ocms.course.service.TaxDetailsService taxDetailsService) {
+		this.taxDetailsService = taxDetailsService;
+	}
+
+	/**
+	 * Returns the tax details persistence.
+	 *
+	 * @return the tax details persistence
+	 */
+	public TaxDetailsPersistence getTaxDetailsPersistence() {
+		return taxDetailsPersistence;
+	}
+
+	/**
+	 * Sets the tax details persistence.
+	 *
+	 * @param taxDetailsPersistence the tax details persistence
+	 */
+	public void setTaxDetailsPersistence(
+		TaxDetailsPersistence taxDetailsPersistence) {
+		this.taxDetailsPersistence = taxDetailsPersistence;
+	}
+
+	/**
+	 * Returns the tax types local service.
+	 *
+	 * @return the tax types local service
+	 */
+	public com.ocms.course.service.TaxTypesLocalService getTaxTypesLocalService() {
+		return taxTypesLocalService;
+	}
+
+	/**
+	 * Sets the tax types local service.
+	 *
+	 * @param taxTypesLocalService the tax types local service
+	 */
+	public void setTaxTypesLocalService(
+		com.ocms.course.service.TaxTypesLocalService taxTypesLocalService) {
+		this.taxTypesLocalService = taxTypesLocalService;
+	}
+
+	/**
+	 * Returns the tax types remote service.
+	 *
+	 * @return the tax types remote service
+	 */
+	public com.ocms.course.service.TaxTypesService getTaxTypesService() {
+		return taxTypesService;
+	}
+
+	/**
+	 * Sets the tax types remote service.
+	 *
+	 * @param taxTypesService the tax types remote service
+	 */
+	public void setTaxTypesService(
+		com.ocms.course.service.TaxTypesService taxTypesService) {
+		this.taxTypesService = taxTypesService;
+	}
+
+	/**
+	 * Returns the tax types persistence.
+	 *
+	 * @return the tax types persistence
+	 */
+	public TaxTypesPersistence getTaxTypesPersistence() {
+		return taxTypesPersistence;
+	}
+
+	/**
+	 * Sets the tax types persistence.
+	 *
+	 * @param taxTypesPersistence the tax types persistence
+	 */
+	public void setTaxTypesPersistence(TaxTypesPersistence taxTypesPersistence) {
+		this.taxTypesPersistence = taxTypesPersistence;
 	}
 
 	/**
@@ -816,18 +1162,54 @@ public abstract class ContactLocalServiceBaseImpl extends BaseLocalServiceImpl
 	protected com.ocms.course.service.CourseSeriesService courseSeriesService;
 	@BeanReference(type = CourseSeriesPersistence.class)
 	protected CourseSeriesPersistence courseSeriesPersistence;
+	@BeanReference(type = com.ocms.course.service.EventLocalService.class)
+	protected com.ocms.course.service.EventLocalService eventLocalService;
+	@BeanReference(type = com.ocms.course.service.EventService.class)
+	protected com.ocms.course.service.EventService eventService;
+	@BeanReference(type = EventPersistence.class)
+	protected EventPersistence eventPersistence;
 	@BeanReference(type = com.ocms.course.service.LocationLocalService.class)
 	protected com.ocms.course.service.LocationLocalService locationLocalService;
 	@BeanReference(type = com.ocms.course.service.LocationService.class)
 	protected com.ocms.course.service.LocationService locationService;
 	@BeanReference(type = LocationPersistence.class)
 	protected LocationPersistence locationPersistence;
+	@BeanReference(type = com.ocms.course.service.OffersAndDeductionsLocalService.class)
+	protected com.ocms.course.service.OffersAndDeductionsLocalService offersAndDeductionsLocalService;
+	@BeanReference(type = com.ocms.course.service.OffersAndDeductionsService.class)
+	protected com.ocms.course.service.OffersAndDeductionsService offersAndDeductionsService;
+	@BeanReference(type = OffersAndDeductionsPersistence.class)
+	protected OffersAndDeductionsPersistence offersAndDeductionsPersistence;
 	@BeanReference(type = com.ocms.course.service.PricingLocalService.class)
 	protected com.ocms.course.service.PricingLocalService pricingLocalService;
 	@BeanReference(type = com.ocms.course.service.PricingService.class)
 	protected com.ocms.course.service.PricingService pricingService;
 	@BeanReference(type = PricingPersistence.class)
 	protected PricingPersistence pricingPersistence;
+	@BeanReference(type = com.ocms.course.service.RegistrationDetailsLocalService.class)
+	protected com.ocms.course.service.RegistrationDetailsLocalService registrationDetailsLocalService;
+	@BeanReference(type = com.ocms.course.service.RegistrationDetailsService.class)
+	protected com.ocms.course.service.RegistrationDetailsService registrationDetailsService;
+	@BeanReference(type = RegistrationDetailsPersistence.class)
+	protected RegistrationDetailsPersistence registrationDetailsPersistence;
+	@BeanReference(type = com.ocms.course.service.StudentRegistrationLocalService.class)
+	protected com.ocms.course.service.StudentRegistrationLocalService studentRegistrationLocalService;
+	@BeanReference(type = com.ocms.course.service.StudentRegistrationService.class)
+	protected com.ocms.course.service.StudentRegistrationService studentRegistrationService;
+	@BeanReference(type = StudentRegistrationPersistence.class)
+	protected StudentRegistrationPersistence studentRegistrationPersistence;
+	@BeanReference(type = com.ocms.course.service.TaxDetailsLocalService.class)
+	protected com.ocms.course.service.TaxDetailsLocalService taxDetailsLocalService;
+	@BeanReference(type = com.ocms.course.service.TaxDetailsService.class)
+	protected com.ocms.course.service.TaxDetailsService taxDetailsService;
+	@BeanReference(type = TaxDetailsPersistence.class)
+	protected TaxDetailsPersistence taxDetailsPersistence;
+	@BeanReference(type = com.ocms.course.service.TaxTypesLocalService.class)
+	protected com.ocms.course.service.TaxTypesLocalService taxTypesLocalService;
+	@BeanReference(type = com.ocms.course.service.TaxTypesService.class)
+	protected com.ocms.course.service.TaxTypesService taxTypesService;
+	@BeanReference(type = TaxTypesPersistence.class)
+	protected TaxTypesPersistence taxTypesPersistence;
 	@BeanReference(type = com.liferay.counter.service.CounterLocalService.class)
 	protected com.liferay.counter.service.CounterLocalService counterLocalService;
 	@BeanReference(type = com.liferay.portal.service.ResourceLocalService.class)

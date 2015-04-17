@@ -63,6 +63,50 @@ public class CoursePackageServiceUtil {
 		return getService().invokeMethod(name, parameterTypes, arguments);
 	}
 
+	public static java.util.List<com.ocms.course.model.CoursePackage> getCoursesPackagesByGroupId(
+		long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getCoursesPackagesByGroupId(groupId);
+	}
+
+	public static java.util.List<com.ocms.course.model.CoursePackage> getCoursesPackagesByGroupId(
+		long groupId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getCoursesPackagesByGroupId(groupId, start, end);
+	}
+
+	public static java.util.List<com.ocms.course.model.CoursePackage> getCoursesPackagesByCoursePackageId(
+		long coursePackageId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getCoursesPackagesByCoursePackageId(coursePackageId);
+	}
+
+	public static java.util.List<com.ocms.course.model.CoursePackage> getCoursesPackagesByCoursePackageId(
+		long coursePackageId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .getCoursesPackagesByCoursePackageId(coursePackageId, start,
+			end);
+	}
+
+	public static com.ocms.course.model.CoursePackage addCoursePackage(
+		java.lang.String name, java.lang.String code,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().addCoursePackage(name, code, serviceContext);
+	}
+
+	public static com.ocms.course.model.CoursePackage updateCoursePackage(
+		long coursePackageId, java.lang.String name, java.lang.String code,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .updateCoursePackage(coursePackageId, name, code,
+			serviceContext);
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

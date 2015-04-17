@@ -92,16 +92,79 @@ public class EventServiceUtil {
 		return getService().getEventByFlag(flag);
 	}
 
-	public static com.ocms.course.model.Event addEvent(long userId,
-		java.lang.String eventName, long courseId, java.lang.String courseCode,
-		long locationId, java.lang.String locationCode,
+	public static java.util.List<com.ocms.course.model.Event> getEventByFlag(
+		int flag, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getEventByFlag(flag, start, end);
+	}
+
+	public static java.util.List<com.ocms.course.model.Event> getEventByUserIdFlag(
+		long userId, int flag)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getEventByUserIdFlag(userId, flag);
+	}
+
+	public static java.util.List<com.ocms.course.model.Event> getEventByUserIdFlag(
+		long userId, int flag, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getEventByUserIdFlag(userId, flag, start, end);
+	}
+
+	public static java.util.List<com.ocms.course.model.Event> getEventByUserIdFlagGrouId(
+		long userId, int flag, long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getEventByUserIdFlagGrouId(userId, flag, groupId);
+	}
+
+	public static java.util.List<com.ocms.course.model.Event> getEventByUserIdFlagGroupId(
+		long userId, int flag, long groupId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .getEventByUserIdFlagGroupId(userId, flag, groupId, start,
+			end);
+	}
+
+	public static com.ocms.course.model.Event addEvent(
+		java.lang.String eventName, long courseId, long locationId,
 		java.util.Date startDate, java.util.Date endDate, int flag,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		return getService()
-				   .addEvent(userId, eventName, courseId, courseCode,
-			locationId, locationCode, startDate, endDate, flag, serviceContext);
+				   .addEvent(eventName, courseId, locationId, startDate,
+			endDate, flag, serviceContext);
+	}
+
+	public static com.ocms.course.model.Event updateEvent(long eventId,
+		java.lang.String eventName, long courseId, long locationId,
+		java.util.Date startDate, java.util.Date endDate, int flag,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .updateEvent(eventId, eventName, courseId, locationId,
+			startDate, endDate, flag, serviceContext);
+	}
+
+	public static com.ocms.course.model.Event updateEventFlag(
+		com.ocms.course.model.Event event, int flag) {
+		return getService().updateEventFlag(event, flag);
+	}
+
+	public static void deleteEventByEventId(long eventId) {
+		getService().deleteEventByEventId(eventId);
+	}
+
+	public static void deleteEventByGrouptId(long groupId) {
+		getService().deleteEventByGrouptId(groupId);
+	}
+
+	public static void deleteAllEvent() {
+		getService().deleteAllEvent();
+	}
+
+	public static void FMAddEvent() {
+		getService().FMAddEvent();
 	}
 
 	public static void clearService() {

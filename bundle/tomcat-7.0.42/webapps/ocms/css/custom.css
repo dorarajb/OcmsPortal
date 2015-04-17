@@ -7,7 +7,9 @@
 .modal-content {
   border-radius: 0;
 }
-
+.modal-content-cs {
+  border-radius: 10;
+}
 .table-striped>tbody>tr.change-up>td {
     color: white;
     background-color: green;

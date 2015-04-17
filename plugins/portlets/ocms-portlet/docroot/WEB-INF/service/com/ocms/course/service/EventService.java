@@ -89,11 +89,53 @@ public interface EventService extends BaseService, InvokableService {
 	public java.util.List<com.ocms.course.model.Event> getEventByFlag(int flag)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
-	public com.ocms.course.model.Event addEvent(long userId,
-		java.lang.String eventName, long courseId, java.lang.String courseCode,
-		long locationId, java.lang.String locationCode,
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.Event> getEventByFlag(
+		int flag, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.Event> getEventByUserIdFlag(
+		long userId, int flag)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.Event> getEventByUserIdFlag(
+		long userId, int flag, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.Event> getEventByUserIdFlagGrouId(
+		long userId, int flag, long groupId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.Event> getEventByUserIdFlagGroupId(
+		long userId, int flag, long groupId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public com.ocms.course.model.Event addEvent(java.lang.String eventName,
+		long courseId, long locationId, java.util.Date startDate,
+		java.util.Date endDate, int flag,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	public com.ocms.course.model.Event updateEvent(long eventId,
+		java.lang.String eventName, long courseId, long locationId,
 		java.util.Date startDate, java.util.Date endDate, int flag,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
+
+	public com.ocms.course.model.Event updateEventFlag(
+		com.ocms.course.model.Event event, int flag);
+
+	public void deleteEventByEventId(long eventId);
+
+	public void deleteEventByGrouptId(long groupId);
+
+	public void deleteAllEvent();
+
+	public void FMAddEvent();
 }

@@ -327,9 +327,37 @@ public class EventLocalServiceWrapper implements EventLocalService,
 	}
 
 	@Override
+	public com.ocms.course.model.Event updateEvent(long userId, long eventId,
+		java.lang.String eventName, long courseId, java.lang.String courseCode,
+		long locationId, java.lang.String locationCode,
+		java.util.Date startDate, java.util.Date endDate, int flag,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _eventLocalService.updateEvent(userId, eventId, eventName,
+			courseId, courseCode, locationId, locationCode, startDate, endDate,
+			flag, serviceContext);
+	}
+
+	@Override
 	public com.ocms.course.model.Event updateEventFlag(
 		com.ocms.course.model.Event event, int flag) {
 		return _eventLocalService.updateEventFlag(event, flag);
+	}
+
+	@Override
+	public void deleteEventByEventId(long eventId) {
+		_eventLocalService.deleteEventByEventId(eventId);
+	}
+
+	@Override
+	public void deleteEventByGrouptId(long groupId) {
+		_eventLocalService.deleteEventByGrouptId(groupId);
+	}
+
+	@Override
+	public void deleteAllEvent() {
+		_eventLocalService.deleteAllEvent();
 	}
 
 	/**

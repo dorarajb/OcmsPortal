@@ -89,17 +89,22 @@ public interface CourseService extends BaseService, InvokableService {
 		long courseId, int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
-	public com.ocms.course.model.Course addCourse(long userId,
+	public com.ocms.course.model.Course addCourse(java.lang.String name,
+		java.lang.String code, java.lang.String duration,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	public com.ocms.course.model.Course updateCourse(long courseId,
 		java.lang.String name, java.lang.String code,
 		java.lang.String duration,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
 
-	public com.ocms.course.model.Course updateCourse(long userId,
-		long courseId, java.lang.String name, java.lang.String code,
-		java.lang.String duration,
-		com.liferay.portal.service.ServiceContext serviceContext)
-		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException;
+	public void deleteCourseByCourseId(long courseId);
+
+	public void deleteCourseByGrouptId(long groupId);
+
+	public void deleteAllCourse();
 }

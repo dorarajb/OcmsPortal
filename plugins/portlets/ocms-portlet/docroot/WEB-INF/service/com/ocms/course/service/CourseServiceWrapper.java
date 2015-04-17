@@ -91,25 +91,38 @@ public class CourseServiceWrapper implements CourseService,
 	}
 
 	@Override
-	public com.ocms.course.model.Course addCourse(long userId,
+	public com.ocms.course.model.Course addCourse(java.lang.String name,
+		java.lang.String code, java.lang.String duration,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _courseService.addCourse(name, code, duration, serviceContext);
+	}
+
+	@Override
+	public com.ocms.course.model.Course updateCourse(long courseId,
 		java.lang.String name, java.lang.String code,
 		java.lang.String duration,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
-		return _courseService.addCourse(userId, name, code, duration,
+		return _courseService.updateCourse(courseId, name, code, duration,
 			serviceContext);
 	}
 
 	@Override
-	public com.ocms.course.model.Course updateCourse(long userId,
-		long courseId, java.lang.String name, java.lang.String code,
-		java.lang.String duration,
-		com.liferay.portal.service.ServiceContext serviceContext)
-		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException {
-		return _courseService.updateCourse(userId, courseId, name, code,
-			duration, serviceContext);
+	public void deleteCourseByCourseId(long courseId) {
+		_courseService.deleteCourseByCourseId(courseId);
+	}
+
+	@Override
+	public void deleteCourseByGrouptId(long groupId) {
+		_courseService.deleteCourseByGrouptId(groupId);
+	}
+
+	@Override
+	public void deleteAllCourse() {
+		_courseService.deleteAllCourse();
 	}
 
 	/**

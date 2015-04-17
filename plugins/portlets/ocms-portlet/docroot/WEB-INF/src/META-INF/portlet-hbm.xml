@@ -8,7 +8,12 @@
 	<import class="com.ocms.course.model.CourseSeries" />
 	<import class="com.ocms.course.model.Event" />
 	<import class="com.ocms.course.model.Location" />
+	<import class="com.ocms.course.model.OffersAndDeductions" />
 	<import class="com.ocms.course.model.Pricing" />
+	<import class="com.ocms.course.model.RegistrationDetails" />
+	<import class="com.ocms.course.model.StudentRegistration" />
+	<import class="com.ocms.course.model.TaxDetails" />
+	<import class="com.ocms.course.model.TaxTypes" />
 	<class name="com.ocms.course.model.impl.ContactImpl" table="CM_Contact">
 		<cache usage="read-write" />
 		<id name="contactId" type="long">
@@ -81,6 +86,13 @@
 		<property name="maxNoStudReg" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="seriesCount" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="courseSeriesCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="courseSeriesEventCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="flagToListData" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="flagToChkEventCreation" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="sMonth" access="com.liferay.portal.dao.orm.hibernate.CamelCasePropertyAccessor" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sDay" access="com.liferay.portal.dao.orm.hibernate.CamelCasePropertyAccessor" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="eMonth" access="com.liferay.portal.dao.orm.hibernate.CamelCasePropertyAccessor" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="eDay" access="com.liferay.portal.dao.orm.hibernate.CamelCasePropertyAccessor" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
 	</class>
 	<class name="com.ocms.course.model.impl.EventImpl" table="CM_Event">
 		<cache usage="read-write" />
@@ -128,6 +140,25 @@
 		<property name="email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="siteUrl" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
+	<class name="com.ocms.course.model.impl.OffersAndDeductionsImpl" table="CM_OffersAndDeductions">
+		<cache usage="read-write" />
+		<id name="id" column="id_" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="code" type="com.liferay.portal.dao.orm.hibernate.StringType" column="code_" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="amount" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="active" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="active_" />
+		<property name="effectiveFromDate" type="org.hibernate.type.TimestampType" />
+		<property name="effectivetoDate" type="org.hibernate.type.TimestampType" />
+		<property name="type" type="com.liferay.portal.dao.orm.hibernate.StringType" column="type_" />
+	</class>
 	<class name="com.ocms.course.model.impl.PricingImpl" table="CM_Pricing">
 		<cache usage="read-write" />
 		<id name="pricingId" type="long">
@@ -145,8 +176,87 @@
 		<property name="deposit" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
 		<property name="price" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
 		<property name="currency" type="com.liferay.portal.dao.orm.hibernate.StringType" column="currency_" />
-		<property name="effectiveDate" type="org.hibernate.type.TimestampType" />
+		<property name="effectiveFromDate" type="org.hibernate.type.TimestampType" />
 		<property name="courseCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="locationCode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="effectiveToDate" type="org.hibernate.type.TimestampType" />
+		<property name="active" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="active_" />
+		<property name="balanceDueParDate" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.ocms.course.model.impl.RegistrationDetailsImpl" table="CM_RegistrationDetails">
+		<cache usage="read-write" />
+		<id name="registrationDetailsId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="studRegId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="contactId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="eventId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="price" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="discount" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="fee" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="credit" type="com.liferay.portal.dao.orm.hibernate.DoubleType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.ocms.course.model.impl.StudentRegistrationImpl" table="CM_StudentRegistration">
+		<cache usage="read-write" />
+		<id name="studRegId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="memo" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="studRegStatus" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="advisorOrig" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="advisorReg" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="coursePackageId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="discountId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="commMethod" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="notes" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="currency" type="com.liferay.portal.dao.orm.hibernate.StringType" column="currency_" />
+		<property name="tax" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="autoCharge" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="currencyPaid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="exchangeRate" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="contactId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.ocms.course.model.impl.TaxDetailsImpl" table="CM_TaxDetails">
+		<cache usage="read-write" />
+		<id name="taxDetailsId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="country" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="taxTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="effectiveFromDate" type="org.hibernate.type.TimestampType" />
+		<property name="effectiveToDate" type="org.hibernate.type.TimestampType" />
+		<property name="active" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="active_" />
+		<property name="taxPercent" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.ocms.course.model.impl.TaxTypesImpl" table="CM_TaxTypes">
+		<cache usage="read-write" />
+		<id name="taxTypesId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="taxName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
 </hibernate-mapping>

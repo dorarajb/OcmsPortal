@@ -37,7 +37,7 @@ import java.util.Date;
 public class PricingCacheModel implements CacheModel<Pricing>, Externalizable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(33);
+		StringBundler sb = new StringBundler(39);
 
 		sb.append("{pricingId=");
 		sb.append(pricingId);
@@ -65,12 +65,18 @@ public class PricingCacheModel implements CacheModel<Pricing>, Externalizable {
 		sb.append(price);
 		sb.append(", currency=");
 		sb.append(currency);
-		sb.append(", effectiveDate=");
-		sb.append(effectiveDate);
+		sb.append(", effectiveFromDate=");
+		sb.append(effectiveFromDate);
 		sb.append(", courseCode=");
 		sb.append(courseCode);
 		sb.append(", locationCode=");
 		sb.append(locationCode);
+		sb.append(", effectiveToDate=");
+		sb.append(effectiveToDate);
+		sb.append(", active=");
+		sb.append(active);
+		sb.append(", balanceDueParDate=");
+		sb.append(balanceDueParDate);
 		sb.append("}");
 
 		return sb.toString();
@@ -119,11 +125,11 @@ public class PricingCacheModel implements CacheModel<Pricing>, Externalizable {
 			pricingImpl.setCurrency(currency);
 		}
 
-		if (effectiveDate == Long.MIN_VALUE) {
-			pricingImpl.setEffectiveDate(null);
+		if (effectiveFromDate == Long.MIN_VALUE) {
+			pricingImpl.setEffectiveFromDate(null);
 		}
 		else {
-			pricingImpl.setEffectiveDate(new Date(effectiveDate));
+			pricingImpl.setEffectiveFromDate(new Date(effectiveFromDate));
 		}
 
 		if (courseCode == null) {
@@ -139,6 +145,16 @@ public class PricingCacheModel implements CacheModel<Pricing>, Externalizable {
 		else {
 			pricingImpl.setLocationCode(locationCode);
 		}
+
+		if (effectiveToDate == Long.MIN_VALUE) {
+			pricingImpl.setEffectiveToDate(null);
+		}
+		else {
+			pricingImpl.setEffectiveToDate(new Date(effectiveToDate));
+		}
+
+		pricingImpl.setActive(active);
+		pricingImpl.setBalanceDueParDate(balanceDueParDate);
 
 		pricingImpl.resetOriginalValues();
 
@@ -160,9 +176,12 @@ public class PricingCacheModel implements CacheModel<Pricing>, Externalizable {
 		deposit = objectInput.readInt();
 		price = objectInput.readInt();
 		currency = objectInput.readUTF();
-		effectiveDate = objectInput.readLong();
+		effectiveFromDate = objectInput.readLong();
 		courseCode = objectInput.readUTF();
 		locationCode = objectInput.readUTF();
+		effectiveToDate = objectInput.readLong();
+		active = objectInput.readInt();
+		balanceDueParDate = objectInput.readInt();
 	}
 
 	@Override
@@ -195,7 +214,7 @@ public class PricingCacheModel implements CacheModel<Pricing>, Externalizable {
 			objectOutput.writeUTF(currency);
 		}
 
-		objectOutput.writeLong(effectiveDate);
+		objectOutput.writeLong(effectiveFromDate);
 
 		if (courseCode == null) {
 			objectOutput.writeUTF(StringPool.BLANK);
@@ -210,6 +229,10 @@ public class PricingCacheModel implements CacheModel<Pricing>, Externalizable {
 		else {
 			objectOutput.writeUTF(locationCode);
 		}
+
+		objectOutput.writeLong(effectiveToDate);
+		objectOutput.writeInt(active);
+		objectOutput.writeInt(balanceDueParDate);
 	}
 
 	public long pricingId;
@@ -225,7 +248,10 @@ public class PricingCacheModel implements CacheModel<Pricing>, Externalizable {
 	public int deposit;
 	public int price;
 	public String currency;
-	public long effectiveDate;
+	public long effectiveFromDate;
 	public String courseCode;
 	public String locationCode;
+	public long effectiveToDate;
+	public int active;
+	public int balanceDueParDate;
 }

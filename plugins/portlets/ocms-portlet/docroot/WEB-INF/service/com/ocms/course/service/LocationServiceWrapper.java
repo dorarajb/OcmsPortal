@@ -85,7 +85,22 @@ public class LocationServiceWrapper implements LocationService,
 	}
 
 	@Override
-	public com.ocms.course.model.Location addLocation(long userId,
+	public com.ocms.course.model.Location addLocation(java.lang.String name,
+		java.lang.String code, java.lang.String notes,
+		java.lang.String addressLine1, java.lang.String addressLine2,
+		java.lang.String city, java.lang.String state, java.lang.String region,
+		java.lang.String country, java.lang.String zip, java.lang.String phone,
+		java.lang.String fax, java.lang.String email,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return _locationService.addLocation(name, code, notes, addressLine1,
+			addressLine2, city, state, region, country, zip, phone, fax, email,
+			serviceContext);
+	}
+
+	@Override
+	public com.ocms.course.model.Location updateLocation(long locationId,
 		java.lang.String name, java.lang.String code, java.lang.String notes,
 		java.lang.String addressLine1, java.lang.String addressLine2,
 		java.lang.String city, java.lang.String state, java.lang.String region,
@@ -94,25 +109,24 @@ public class LocationServiceWrapper implements LocationService,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
-		return _locationService.addLocation(userId, name, code, notes,
+		return _locationService.updateLocation(locationId, name, code, notes,
 			addressLine1, addressLine2, city, state, region, country, zip,
 			phone, fax, email, serviceContext);
 	}
 
 	@Override
-	public com.ocms.course.model.Location updateLocation(long userId,
-		long locationId, java.lang.String name, java.lang.String code,
-		java.lang.String notes, java.lang.String addressLine1,
-		java.lang.String addressLine2, java.lang.String city,
-		java.lang.String state, java.lang.String region,
-		java.lang.String country, java.lang.String zip, java.lang.String phone,
-		java.lang.String fax, java.lang.String email,
-		com.liferay.portal.service.ServiceContext serviceContext)
-		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException {
-		return _locationService.updateLocation(userId, locationId, name, code,
-			notes, addressLine1, addressLine2, city, state, region, country,
-			zip, phone, fax, email, serviceContext);
+	public void deleteLocationByLocationId(long locationId) {
+		_locationService.deleteLocationByLocationId(locationId);
+	}
+
+	@Override
+	public void deleteLocationByGrouptId(long groupId) {
+		_locationService.deleteLocationByGrouptId(groupId);
+	}
+
+	@Override
+	public void deleteAllLocation() {
+		_locationService.deleteAllLocation();
 	}
 
 	/**

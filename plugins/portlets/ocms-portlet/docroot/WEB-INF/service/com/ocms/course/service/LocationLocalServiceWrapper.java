@@ -342,6 +342,21 @@ public class LocationLocalServiceWrapper implements LocationLocalService,
 			country, zip, phone, fax, email, serviceContext);
 	}
 
+	@Override
+	public void deleteLocationByLocationId(long locationId) {
+		_locationLocalService.deleteLocationByLocationId(locationId);
+	}
+
+	@Override
+	public void deleteLocationByGrouptId(long groupId) {
+		_locationLocalService.deleteLocationByGrouptId(groupId);
+	}
+
+	@Override
+	public void deleteAllLocation() {
+		_locationLocalService.deleteAllLocation();
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

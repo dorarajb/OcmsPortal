@@ -14,6 +14,13 @@
 
 package com.ocms.course.service.http;
 
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+
+import com.ocms.course.service.CourseServiceUtil;
+
+import java.rmi.RemoteException;
+
 /**
  * Provides the SOAP utility for the
  * {@link com.ocms.course.service.CourseServiceUtil} service utility. The
@@ -55,4 +62,147 @@ package com.ocms.course.service.http;
  * @generated
  */
 public class CourseServiceSoap {
+	public static java.lang.String getCourse() throws RemoteException {
+		try {
+			java.lang.String returnValue = CourseServiceUtil.getCourse();
+
+			return returnValue;
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.CourseSoap[] getCoursesByGroupId(
+		long groupId) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Course> returnValue = CourseServiceUtil.getCoursesByGroupId(groupId);
+
+			return com.ocms.course.model.CourseSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.CourseSoap[] getCoursesByGroupId(
+		long groupId, int start, int end) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Course> returnValue = CourseServiceUtil.getCoursesByGroupId(groupId,
+					start, end);
+
+			return com.ocms.course.model.CourseSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.CourseSoap[] getCoursesByCourseId(
+		long courseId) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Course> returnValue = CourseServiceUtil.getCoursesByCourseId(courseId);
+
+			return com.ocms.course.model.CourseSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.CourseSoap[] getCoursesByCourseId(
+		long courseId, int start, int end) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Course> returnValue = CourseServiceUtil.getCoursesByCourseId(courseId,
+					start, end);
+
+			return com.ocms.course.model.CourseSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.CourseSoap addCourse(
+		java.lang.String name, java.lang.String code,
+		java.lang.String duration,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws RemoteException {
+		try {
+			com.ocms.course.model.Course returnValue = CourseServiceUtil.addCourse(name,
+					code, duration, serviceContext);
+
+			return com.ocms.course.model.CourseSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.CourseSoap updateCourse(long courseId,
+		java.lang.String name, java.lang.String code,
+		java.lang.String duration,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws RemoteException {
+		try {
+			com.ocms.course.model.Course returnValue = CourseServiceUtil.updateCourse(courseId,
+					name, code, duration, serviceContext);
+
+			return com.ocms.course.model.CourseSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void deleteCourseByCourseId(long courseId)
+		throws RemoteException {
+		try {
+			CourseServiceUtil.deleteCourseByCourseId(courseId);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void deleteCourseByGrouptId(long groupId)
+		throws RemoteException {
+		try {
+			CourseServiceUtil.deleteCourseByGrouptId(groupId);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void deleteAllCourse() throws RemoteException {
+		try {
+			CourseServiceUtil.deleteAllCourse();
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	private static Log _log = LogFactoryUtil.getLog(CourseServiceSoap.class);
 }

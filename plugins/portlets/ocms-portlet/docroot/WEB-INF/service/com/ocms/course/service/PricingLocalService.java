@@ -294,20 +294,59 @@ public interface PricingLocalService extends BaseLocalService,
 		int price, int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
-	public com.ocms.course.model.Pricing addPricing(long userId, int deposit,
-		int price, java.lang.String currency, java.util.Date effectiveDate,
-		int locationId, java.lang.String locationCode, int courseId,
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.Pricing> getPricingByPackageAndLocation(
+		int packageId, int locationId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.Pricing> getPricingByPackageAndLocation(
+		int packageId, int locationId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.Pricing> getPricingByPackageLocationActive(
+		int packageId, int locationId, int active)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.Pricing> getPricingByPackageLocationActive(
+		int packageId, int locationId, int active, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.Pricing> getPricingByPackageIdAndActive(
+		int packageId, int active)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.Pricing> getPricingByPackageIdAndActive(
+		int packageId, int active, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	public com.ocms.course.model.Pricing addPricing(int deposit, int price,
+		java.lang.String currency, java.util.Date effectiveFromDate,
+		java.util.Date effectiveToDate, int balanceDueParDate, int locationId,
+		java.lang.String locationCode, int courseId,
 		java.lang.String courseCode, int packageId,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
 
-	public com.ocms.course.model.Pricing updatePricing(long userId,
-		int deposit, int price, java.lang.String currency,
-		java.util.Date effectiveDate, int locationId,
+	public com.ocms.course.model.Pricing updatePricing(int deposit, int price,
+		java.lang.String currency, java.util.Date effectiveFromDate,
+		int balanceDueParDate, java.util.Date effectiveToDate, int locationId,
 		java.lang.String locationCode, int courseId,
 		java.lang.String courseCode, int packageId, long pricingId,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
+
+	public void deletePricingByLocationId(long pricingId);
+
+	public void deletePricingByPackageId(int packageId);
+
+	public void deletePricingByGrouptId(long groupId);
+
+	public void deleteAllPricing();
 }

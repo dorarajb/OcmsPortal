@@ -330,32 +330,91 @@ public class PricingLocalServiceUtil {
 		return getService().getPricingByPrice(price, start, end);
 	}
 
-	public static com.ocms.course.model.Pricing addPricing(long userId,
-		int deposit, int price, java.lang.String currency,
-		java.util.Date effectiveDate, int locationId,
+	public static java.util.List<com.ocms.course.model.Pricing> getPricingByPackageAndLocation(
+		int packageId, int locationId)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getPricingByPackageAndLocation(packageId, locationId);
+	}
+
+	public static java.util.List<com.ocms.course.model.Pricing> getPricingByPackageAndLocation(
+		int packageId, int locationId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .getPricingByPackageAndLocation(packageId, locationId,
+			start, end);
+	}
+
+	public static java.util.List<com.ocms.course.model.Pricing> getPricingByPackageLocationActive(
+		int packageId, int locationId, int active)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .getPricingByPackageLocationActive(packageId, locationId,
+			active);
+	}
+
+	public static java.util.List<com.ocms.course.model.Pricing> getPricingByPackageLocationActive(
+		int packageId, int locationId, int active, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .getPricingByPackageLocationActive(packageId, locationId,
+			active, start, end);
+	}
+
+	public static java.util.List<com.ocms.course.model.Pricing> getPricingByPackageIdAndActive(
+		int packageId, int active)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService().getPricingByPackageIdAndActive(packageId, active);
+	}
+
+	public static java.util.List<com.ocms.course.model.Pricing> getPricingByPackageIdAndActive(
+		int packageId, int active, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getService()
+				   .getPricingByPackageIdAndActive(packageId, active, start, end);
+	}
+
+	public static com.ocms.course.model.Pricing addPricing(int deposit,
+		int price, java.lang.String currency, java.util.Date effectiveFromDate,
+		java.util.Date effectiveToDate, int balanceDueParDate, int locationId,
 		java.lang.String locationCode, int courseId,
 		java.lang.String courseCode, int packageId,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		return getService()
-				   .addPricing(userId, deposit, price, currency, effectiveDate,
-			locationId, locationCode, courseId, courseCode, packageId,
-			serviceContext);
+				   .addPricing(deposit, price, currency, effectiveFromDate,
+			effectiveToDate, balanceDueParDate, locationId, locationCode,
+			courseId, courseCode, packageId, serviceContext);
 	}
 
-	public static com.ocms.course.model.Pricing updatePricing(long userId,
-		int deposit, int price, java.lang.String currency,
-		java.util.Date effectiveDate, int locationId,
+	public static com.ocms.course.model.Pricing updatePricing(int deposit,
+		int price, java.lang.String currency, java.util.Date effectiveFromDate,
+		int balanceDueParDate, java.util.Date effectiveToDate, int locationId,
 		java.lang.String locationCode, int courseId,
 		java.lang.String courseCode, int packageId, long pricingId,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		return getService()
-				   .updatePricing(userId, deposit, price, currency,
-			effectiveDate, locationId, locationCode, courseId, courseCode,
-			packageId, pricingId, serviceContext);
+				   .updatePricing(deposit, price, currency, effectiveFromDate,
+			balanceDueParDate, effectiveToDate, locationId, locationCode,
+			courseId, courseCode, packageId, pricingId, serviceContext);
+	}
+
+	public static void deletePricingByLocationId(long pricingId) {
+		getService().deletePricingByLocationId(pricingId);
+	}
+
+	public static void deletePricingByPackageId(int packageId) {
+		getService().deletePricingByPackageId(packageId);
+	}
+
+	public static void deletePricingByGrouptId(long groupId) {
+		getService().deletePricingByGrouptId(groupId);
+	}
+
+	public static void deleteAllPricing() {
+		getService().deleteAllPricing();
 	}
 
 	public static void clearService() {

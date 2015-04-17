@@ -14,6 +14,13 @@
 
 package com.ocms.course.service.http;
 
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+
+import com.ocms.course.service.PricingServiceUtil;
+
+import java.rmi.RemoteException;
+
 /**
  * Provides the SOAP utility for the
  * {@link com.ocms.course.service.PricingServiceUtil} service utility. The
@@ -55,4 +62,334 @@ package com.ocms.course.service.http;
  * @generated
  */
 public class PricingServiceSoap {
+	public static com.ocms.course.model.PricingSoap[] getPricingByGroupId(
+		long groupId) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Pricing> returnValue = PricingServiceUtil.getPricingByGroupId(groupId);
+
+			return com.ocms.course.model.PricingSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.PricingSoap[] getPricingByGroupId(
+		long groupId, int start, int end) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Pricing> returnValue = PricingServiceUtil.getPricingByGroupId(groupId,
+					start, end);
+
+			return com.ocms.course.model.PricingSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.PricingSoap[] getPricingByCourseId(
+		int courseId) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Pricing> returnValue = PricingServiceUtil.getPricingByCourseId(courseId);
+
+			return com.ocms.course.model.PricingSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.PricingSoap[] getPricingByCourseId(
+		int courseId, int start, int end) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Pricing> returnValue = PricingServiceUtil.getPricingByCourseId(courseId,
+					start, end);
+
+			return com.ocms.course.model.PricingSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.PricingSoap[] getPricingByPackageId(
+		int packageId) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Pricing> returnValue = PricingServiceUtil.getPricingByPackageId(packageId);
+
+			return com.ocms.course.model.PricingSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.PricingSoap[] getPricingByPackageId(
+		int packageId, int start, int end) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Pricing> returnValue = PricingServiceUtil.getPricingByPackageId(packageId,
+					start, end);
+
+			return com.ocms.course.model.PricingSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.PricingSoap[] getPricingByPricingId(
+		int pricingId) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Pricing> returnValue = PricingServiceUtil.getPricingByPricingId(pricingId);
+
+			return com.ocms.course.model.PricingSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.PricingSoap[] getPricingByPricingId(
+		int pricingId, int start, int end) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Pricing> returnValue = PricingServiceUtil.getPricingByPricingId(pricingId,
+					start, end);
+
+			return com.ocms.course.model.PricingSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.PricingSoap[] getPricingByPrice(
+		int price) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Pricing> returnValue = PricingServiceUtil.getPricingByPrice(price);
+
+			return com.ocms.course.model.PricingSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.PricingSoap[] getPricingByPrice(
+		int price, int start, int end) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Pricing> returnValue = PricingServiceUtil.getPricingByPrice(price,
+					start, end);
+
+			return com.ocms.course.model.PricingSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.PricingSoap[] getPricingByPackageAndLocation(
+		int packageId, int locationId) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Pricing> returnValue = PricingServiceUtil.getPricingByPackageAndLocation(packageId,
+					locationId);
+
+			return com.ocms.course.model.PricingSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.PricingSoap[] getPricingByPackageAndLocation(
+		int packageId, int locationId, int start, int end)
+		throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Pricing> returnValue = PricingServiceUtil.getPricingByPackageAndLocation(packageId,
+					locationId, start, end);
+
+			return com.ocms.course.model.PricingSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.PricingSoap[] getPricingByPackageLocationActive(
+		int packageId, int locationId, int active) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Pricing> returnValue = PricingServiceUtil.getPricingByPackageLocationActive(packageId,
+					locationId, active);
+
+			return com.ocms.course.model.PricingSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.PricingSoap[] getPricingByPackageLocationActive(
+		int packageId, int locationId, int active, int start, int end)
+		throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Pricing> returnValue = PricingServiceUtil.getPricingByPackageLocationActive(packageId,
+					locationId, active, start, end);
+
+			return com.ocms.course.model.PricingSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.PricingSoap[] getPricingByPackageIdAndActive(
+		int packageId, int active) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Pricing> returnValue = PricingServiceUtil.getPricingByPackageIdAndActive(packageId,
+					active);
+
+			return com.ocms.course.model.PricingSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.PricingSoap[] getPricingByPackageIdAndActive(
+		int packageId, int active, int start, int end)
+		throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Pricing> returnValue = PricingServiceUtil.getPricingByPackageIdAndActive(packageId,
+					active, start, end);
+
+			return com.ocms.course.model.PricingSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.PricingSoap addPricing(int deposit,
+		int price, java.lang.String currency, java.util.Date effectiveFromDate,
+		java.util.Date effectiveToDate, int balanceDueParDate, int locationId,
+		java.lang.String locationCode, int courseId,
+		java.lang.String courseCode, int packageId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws RemoteException {
+		try {
+			com.ocms.course.model.Pricing returnValue = PricingServiceUtil.addPricing(deposit,
+					price, currency, effectiveFromDate, effectiveToDate,
+					balanceDueParDate, locationId, locationCode, courseId,
+					courseCode, packageId, serviceContext);
+
+			return com.ocms.course.model.PricingSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.PricingSoap updatePricing(int deposit,
+		int price, java.lang.String currency, java.util.Date effectiveFromDate,
+		java.util.Date effectiveToDate, int balanceDueParDate, int locationId,
+		java.lang.String locationCode, int courseId,
+		java.lang.String courseCode, int packageId, long pricingId,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws RemoteException {
+		try {
+			com.ocms.course.model.Pricing returnValue = PricingServiceUtil.updatePricing(deposit,
+					price, currency, effectiveFromDate, effectiveToDate,
+					balanceDueParDate, locationId, locationCode, courseId,
+					courseCode, packageId, pricingId, serviceContext);
+
+			return com.ocms.course.model.PricingSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void deletePricingByLocationId(long pricingId)
+		throws RemoteException {
+		try {
+			PricingServiceUtil.deletePricingByLocationId(pricingId);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void deletePricingByPackageId(int packageId)
+		throws RemoteException {
+		try {
+			PricingServiceUtil.deletePricingByPackageId(packageId);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void deletePricingByGrouptId(long groupId)
+		throws RemoteException {
+		try {
+			PricingServiceUtil.deletePricingByGrouptId(groupId);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void deleteAllPricing() throws RemoteException {
+		try {
+			PricingServiceUtil.deleteAllPricing();
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	private static Log _log = LogFactoryUtil.getLog(PricingServiceSoap.class);
 }

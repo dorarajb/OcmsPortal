@@ -134,18 +134,174 @@ public class EventServiceSoap {
 		}
 	}
 
-	public static com.ocms.course.model.EventSoap addEvent(long userId,
-		java.lang.String eventName, long courseId, java.lang.String courseCode,
-		long locationId, java.lang.String locationCode,
+	public static com.ocms.course.model.EventSoap[] getEventByFlag(int flag,
+		int start, int end) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Event> returnValue = EventServiceUtil.getEventByFlag(flag,
+					start, end);
+
+			return com.ocms.course.model.EventSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.EventSoap[] getEventByUserIdFlag(
+		long userId, int flag) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Event> returnValue = EventServiceUtil.getEventByUserIdFlag(userId,
+					flag);
+
+			return com.ocms.course.model.EventSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.EventSoap[] getEventByUserIdFlag(
+		long userId, int flag, int start, int end) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Event> returnValue = EventServiceUtil.getEventByUserIdFlag(userId,
+					flag, start, end);
+
+			return com.ocms.course.model.EventSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.EventSoap[] getEventByUserIdFlagGrouId(
+		long userId, int flag, long groupId) throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Event> returnValue = EventServiceUtil.getEventByUserIdFlagGrouId(userId,
+					flag, groupId);
+
+			return com.ocms.course.model.EventSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.EventSoap[] getEventByUserIdFlagGroupId(
+		long userId, int flag, long groupId, int start, int end)
+		throws RemoteException {
+		try {
+			java.util.List<com.ocms.course.model.Event> returnValue = EventServiceUtil.getEventByUserIdFlagGroupId(userId,
+					flag, groupId, start, end);
+
+			return com.ocms.course.model.EventSoap.toSoapModels(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.EventSoap addEvent(
+		java.lang.String eventName, long courseId, long locationId,
 		java.util.Date startDate, java.util.Date endDate, int flag,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws RemoteException {
 		try {
-			com.ocms.course.model.Event returnValue = EventServiceUtil.addEvent(userId,
-					eventName, courseId, courseCode, locationId, locationCode,
-					startDate, endDate, flag, serviceContext);
+			com.ocms.course.model.Event returnValue = EventServiceUtil.addEvent(eventName,
+					courseId, locationId, startDate, endDate, flag,
+					serviceContext);
 
 			return com.ocms.course.model.EventSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.EventSoap updateEvent(long eventId,
+		java.lang.String eventName, long courseId, long locationId,
+		java.util.Date startDate, java.util.Date endDate, int flag,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws RemoteException {
+		try {
+			com.ocms.course.model.Event returnValue = EventServiceUtil.updateEvent(eventId,
+					eventName, courseId, locationId, startDate, endDate, flag,
+					serviceContext);
+
+			return com.ocms.course.model.EventSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static com.ocms.course.model.EventSoap updateEventFlag(
+		com.ocms.course.model.EventSoap event, int flag)
+		throws RemoteException {
+		try {
+			com.ocms.course.model.Event returnValue = EventServiceUtil.updateEventFlag(com.ocms.course.model.impl.EventModelImpl.toModel(
+						event), flag);
+
+			return com.ocms.course.model.EventSoap.toSoapModel(returnValue);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void deleteEventByEventId(long eventId)
+		throws RemoteException {
+		try {
+			EventServiceUtil.deleteEventByEventId(eventId);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void deleteEventByGrouptId(long groupId)
+		throws RemoteException {
+		try {
+			EventServiceUtil.deleteEventByGrouptId(groupId);
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void deleteAllEvent() throws RemoteException {
+		try {
+			EventServiceUtil.deleteAllEvent();
+		}
+		catch (Exception e) {
+			_log.error(e, e);
+
+			throw new RemoteException(e.getMessage());
+		}
+	}
+
+	public static void FMAddEvent() throws RemoteException {
+		try {
+			EventServiceUtil.FMAddEvent();
 		}
 		catch (Exception e) {
 			_log.error(e, e);

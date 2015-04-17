@@ -11,18 +11,17 @@
                                     <h3 class="box-title">Locations</h3>
                                 </div><!-- /.box-header -->
                                 <div class="box-body" style="overflow-y: auto; height:200px;">
-                                                                        
-                                        <!-- checkbox {{vlocation.locationId}}-->
-                                        <div class="form-group"  ng-repeat="vlocation in locations">
+								
+								<!-- checkbox {{vlocation.locationId}}-->
+                                        <div class="form-group"  ng-repeat="vlocation in locations" ng-switch on=”vlocation.locationId”>
                                             <div class="checkbox">
                                                 <label>
-                                 <input type="checkbox" value="{{vlocation.locationId}}" name="chkLocation[]" checkbox-group ng-model="vlocation.selected"  />
+												<input type="checkbox" value="{{vlocation.locationId}}" name="chkLocation[]" checkbox-group ng-model="vlocation.selected"  />
                                                     {{vlocation.name}}
                                                 </label>
                                             </div>
                        
                                         </div>
-                                        
                                      
                                 </div><!-- /.box-body {{listLocation}}-->
                             </div><!-- /.box -->
@@ -54,13 +53,13 @@
                         
                         
                         <!-- right column -->
-                        <h3 class="box-title">Course Series Preview</h3>
+                         
                         <div class="col-md-6">
                         	
                             <!-- general form elements disabled -->
                             <div class="box box-warning" ng-repeat="selectedLocation in listLocationcode">
                                 <div class="box-header">
-                                    <h3 class="box-title">{{selectedLocation}}</h3>
+                                    <h3 class="box-title">{{selectedLocation}} - Preview</h3>
                                 </div><!-- /.box-header -->
                                 <div class="box-body">
                                         <!-- radio -->

@@ -318,6 +318,107 @@ public interface CourseSeriesModel extends BaseModel<CourseSeries>, GroupedModel
 	 */
 	public void setCourseSeriesCode(String courseSeriesCode);
 
+	/**
+	 * Returns the course series event code of this course series.
+	 *
+	 * @return the course series event code of this course series
+	 */
+	@AutoEscape
+	public String getCourseSeriesEventCode();
+
+	/**
+	 * Sets the course series event code of this course series.
+	 *
+	 * @param courseSeriesEventCode the course series event code of this course series
+	 */
+	public void setCourseSeriesEventCode(String courseSeriesEventCode);
+
+	/**
+	 * Returns the flag to list data of this course series.
+	 *
+	 * @return the flag to list data of this course series
+	 */
+	public int getFlagToListData();
+
+	/**
+	 * Sets the flag to list data of this course series.
+	 *
+	 * @param flagToListData the flag to list data of this course series
+	 */
+	public void setFlagToListData(int flagToListData);
+
+	/**
+	 * Returns the flag to chk event creation of this course series.
+	 *
+	 * @return the flag to chk event creation of this course series
+	 */
+	public int getFlagToChkEventCreation();
+
+	/**
+	 * Sets the flag to chk event creation of this course series.
+	 *
+	 * @param flagToChkEventCreation the flag to chk event creation of this course series
+	 */
+	public void setFlagToChkEventCreation(int flagToChkEventCreation);
+
+	/**
+	 * Returns the s month of this course series.
+	 *
+	 * @return the s month of this course series
+	 */
+	@AutoEscape
+	public String getSMonth();
+
+	/**
+	 * Sets the s month of this course series.
+	 *
+	 * @param sMonth the s month of this course series
+	 */
+	public void setSMonth(String sMonth);
+
+	/**
+	 * Returns the s day of this course series.
+	 *
+	 * @return the s day of this course series
+	 */
+	public int getSDay();
+
+	/**
+	 * Sets the s day of this course series.
+	 *
+	 * @param sDay the s day of this course series
+	 */
+	public void setSDay(int sDay);
+
+	/**
+	 * Returns the e month of this course series.
+	 *
+	 * @return the e month of this course series
+	 */
+	@AutoEscape
+	public String getEMonth();
+
+	/**
+	 * Sets the e month of this course series.
+	 *
+	 * @param eMonth the e month of this course series
+	 */
+	public void setEMonth(String eMonth);
+
+	/**
+	 * Returns the e day of this course series.
+	 *
+	 * @return the e day of this course series
+	 */
+	public int getEDay();
+
+	/**
+	 * Sets the e day of this course series.
+	 *
+	 * @param eDay the e day of this course series
+	 */
+	public void setEDay(int eDay);
+
 	@Override
 	public boolean isNew();
 

@@ -1,0 +1,54 @@
+<!-- general form elements --> 
+<style>
+.modal-content{ width:642px;}
+</style>
+<section class="content">
+<div class="row">
+	<div class="box-body" >
+		<div class="col-xs-5">   
+			 <div class="form-group" align="left">	
+			 <button type="button" class="btn btn-success fa fa-plus" ng-show="courseseriesvalue.flagToChkEventCreation == 0" ng-click="createEvent(courseseriesvalue);" >&nbsp;Create Events</button> 
+			</div>            
+		</div>
+		<div class="col-xs-5">   
+			 <div class="form-group" align="left">	
+		<label class="box-title" style="font-weight:normal;font-size:16px;"><b> Course Series:</b> {{courseseriesvalue.courseSeriesCode}} </label>
+			</div>            
+		</div>	
+		<div class="col-xs-2">   
+			 <div class="form-group" align="right">	
+		<button type="button" class="close" ng-click="cancel();">
+        <i class="fa fa-times-circle-o" style="color:blue;"></i>
+		</button> 
+			</div>            
+		</div>			
+	</div>	
+ 
+ 	
+	                      
+	<table class="table table-striped">
+		<tr ng-show="courseseriesdetailslist.length==0"><td style="vertical-align:middle;"><i class="fa fa-ban fa-3x"></i>&nbsp;No data found</td></tr>
+		<tr ng-hide="courseseriesdetailslist.length>-1"><td style="vertical-align:middle;"><i class="fa fa-cog fa-3x fa-spin"></i>&nbsp;Loading</td></tr>
+
+		<tr><th>Course</th> <th>Location</th><th>Event Name</th><th>Start Date</th><th>End Date</th><th></th></tr>
+
+		<tr ng-repeat="vcourseseriesdetailslist in courseseriesdetailslist | filter:filterProduct | orderBy:'+courseSeriesId'" id="{{vlocation.courseSeriesId}}">
+			<td>{{vcourseseriesdetailslist.courseId}}</td>
+			<td>{{vcourseseriesdetailslist.locationId}}</td>
+			<td>{{vcourseseriesdetailslist.courseSeriesEventCode}}</td>
+			<td>
+				<input type="date" class="form-control" style="width:150px;" name="startDate" ng-model="vcourseseriesdetailslist.startDate" ng-change="updateCourseSeriesEventStartDate(vcourseseriesdetailslist)" id="startDate" placeholder="Enter start date">
+			</td>
+			<!--<input type="text" style="width:150px;" name="startDate" ng-model="vcourseseriesdetailslist.startDate" ng-change="updateCourseSeriesEventStartDate(vcourseseriesdetailslist)" value="{{vcourseseriesdetailslist.startDate | date: 'yyyy-MM-dd'}}" custom-datepicker id="startDate" placeholder="Enter start date">-->
+			<td> 
+				<input type="date" class="form-control" name="startDate"  style="width:150px;" ng-model="vcourseseriesdetailslist.endDate"     ng-change="updateCourseSeriesEventEndDate(vcourseseriesdetailslist)"  id="endDate" placeholder="Enter End Date" >
+			</td>	
+			<td style="width:50px">
+				<div class="btn-group">
+					<button type="button" class="btn btn-danger fa fa-trash-o"  ng-really-message="Do you want to delete this event?" ng-really-click="deleteSeriesEvent(vcourseseriesdetailslist);"></button>
+				</div>
+			</td>
+		</tr>
+	</table> 
+</div>
+</section>

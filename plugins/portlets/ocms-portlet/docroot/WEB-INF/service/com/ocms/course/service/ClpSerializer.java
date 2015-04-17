@@ -31,7 +31,12 @@ import com.ocms.course.model.CoursePackageClp;
 import com.ocms.course.model.CourseSeriesClp;
 import com.ocms.course.model.EventClp;
 import com.ocms.course.model.LocationClp;
+import com.ocms.course.model.OffersAndDeductionsClp;
 import com.ocms.course.model.PricingClp;
+import com.ocms.course.model.RegistrationDetailsClp;
+import com.ocms.course.model.StudentRegistrationClp;
+import com.ocms.course.model.TaxDetailsClp;
+import com.ocms.course.model.TaxTypesClp;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -132,8 +137,28 @@ public class ClpSerializer {
 			return translateInputLocation(oldModel);
 		}
 
+		if (oldModelClassName.equals(OffersAndDeductionsClp.class.getName())) {
+			return translateInputOffersAndDeductions(oldModel);
+		}
+
 		if (oldModelClassName.equals(PricingClp.class.getName())) {
 			return translateInputPricing(oldModel);
+		}
+
+		if (oldModelClassName.equals(RegistrationDetailsClp.class.getName())) {
+			return translateInputRegistrationDetails(oldModel);
+		}
+
+		if (oldModelClassName.equals(StudentRegistrationClp.class.getName())) {
+			return translateInputStudentRegistration(oldModel);
+		}
+
+		if (oldModelClassName.equals(TaxDetailsClp.class.getName())) {
+			return translateInputTaxDetails(oldModel);
+		}
+
+		if (oldModelClassName.equals(TaxTypesClp.class.getName())) {
+			return translateInputTaxTypes(oldModel);
 		}
 
 		return oldModel;
@@ -211,10 +236,63 @@ public class ClpSerializer {
 		return newModel;
 	}
 
+	public static Object translateInputOffersAndDeductions(
+		BaseModel<?> oldModel) {
+		OffersAndDeductionsClp oldClpModel = (OffersAndDeductionsClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getOffersAndDeductionsRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
 	public static Object translateInputPricing(BaseModel<?> oldModel) {
 		PricingClp oldClpModel = (PricingClp)oldModel;
 
 		BaseModel<?> newModel = oldClpModel.getPricingRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputRegistrationDetails(
+		BaseModel<?> oldModel) {
+		RegistrationDetailsClp oldClpModel = (RegistrationDetailsClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getRegistrationDetailsRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputStudentRegistration(
+		BaseModel<?> oldModel) {
+		StudentRegistrationClp oldClpModel = (StudentRegistrationClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getStudentRegistrationRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputTaxDetails(BaseModel<?> oldModel) {
+		TaxDetailsClp oldClpModel = (TaxDetailsClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getTaxDetailsRemoteModel();
+
+		newModel.setModelAttributes(oldClpModel.getModelAttributes());
+
+		return newModel;
+	}
+
+	public static Object translateInputTaxTypes(BaseModel<?> oldModel) {
+		TaxTypesClp oldClpModel = (TaxTypesClp)oldModel;
+
+		BaseModel<?> newModel = oldClpModel.getTaxTypesRemoteModel();
 
 		newModel.setModelAttributes(oldClpModel.getModelAttributes());
 
@@ -264,8 +342,32 @@ public class ClpSerializer {
 			return translateOutputLocation(oldModel);
 		}
 
+		if (oldModelClassName.equals(
+					"com.ocms.course.model.impl.OffersAndDeductionsImpl")) {
+			return translateOutputOffersAndDeductions(oldModel);
+		}
+
 		if (oldModelClassName.equals("com.ocms.course.model.impl.PricingImpl")) {
 			return translateOutputPricing(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"com.ocms.course.model.impl.RegistrationDetailsImpl")) {
+			return translateOutputRegistrationDetails(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"com.ocms.course.model.impl.StudentRegistrationImpl")) {
+			return translateOutputStudentRegistration(oldModel);
+		}
+
+		if (oldModelClassName.equals(
+					"com.ocms.course.model.impl.TaxDetailsImpl")) {
+			return translateOutputTaxDetails(oldModel);
+		}
+
+		if (oldModelClassName.equals("com.ocms.course.model.impl.TaxTypesImpl")) {
+			return translateOutputTaxTypes(oldModel);
 		}
 
 		return oldModel;
@@ -390,6 +492,10 @@ public class ClpSerializer {
 
 		if (className.equals("com.ocms.course.ContactZipException")) {
 			return new com.ocms.course.ContactZipException();
+		}
+
+		if (className.equals("com.ocms.course.CountryException")) {
+			return new com.ocms.course.CountryException();
 		}
 
 		if (className.equals("com.ocms.course.CourseCodeException")) {
@@ -530,6 +636,29 @@ public class ClpSerializer {
 			return new com.ocms.course.LocationZipException();
 		}
 
+		if (className.equals(
+					"com.ocms.course.OffersAndDeductionsAmountException")) {
+			return new com.ocms.course.OffersAndDeductionsAmountException();
+		}
+
+		if (className.equals("com.ocms.course.OffersAndDeductionsCodeException")) {
+			return new com.ocms.course.OffersAndDeductionsCodeException();
+		}
+
+		if (className.equals(
+					"com.ocms.course.OffersAndDeductionsEffectiveFromDateException")) {
+			return new com.ocms.course.OffersAndDeductionsEffectiveFromDateException();
+		}
+
+		if (className.equals(
+					"com.ocms.course.OffersAndDeductionsEffectiveToDateException")) {
+			return new com.ocms.course.OffersAndDeductionsEffectiveToDateException();
+		}
+
+		if (className.equals("com.ocms.course.OffersAndDeductionsTypeException")) {
+			return new com.ocms.course.OffersAndDeductionsTypeException();
+		}
+
 		if (className.equals("com.ocms.course.PriceException")) {
 			return new com.ocms.course.PriceException();
 		}
@@ -544,6 +673,106 @@ public class ClpSerializer {
 
 		if (className.equals("com.ocms.course.PricingPackageIdException")) {
 			return new com.ocms.course.PricingPackageIdException();
+		}
+
+		if (className.equals(
+					"com.ocms.course.RegistrationDetailsCreditException")) {
+			return new com.ocms.course.RegistrationDetailsCreditException();
+		}
+
+		if (className.equals(
+					"com.ocms.course.RegistrationDetailsDiscountException")) {
+			return new com.ocms.course.RegistrationDetailsDiscountException();
+		}
+
+		if (className.equals("com.ocms.course.RegistrationDetailsFeeException")) {
+			return new com.ocms.course.RegistrationDetailsFeeException();
+		}
+
+		if (className.equals(
+					"com.ocms.course.RegistrationDetailsPriceException")) {
+			return new com.ocms.course.RegistrationDetailsPriceException();
+		}
+
+		if (className.equals(
+					"com.ocms.course.StudentRegistrationAdvisorOriginalException")) {
+			return new com.ocms.course.StudentRegistrationAdvisorOriginalException();
+		}
+
+		if (className.equals(
+					"com.ocms.course.StudentRegistrationAdvisorRegistrationException")) {
+			return new com.ocms.course.StudentRegistrationAdvisorRegistrationException();
+		}
+
+		if (className.equals(
+					"com.ocms.course.StudentRegistrationAutoChargeException")) {
+			return new com.ocms.course.StudentRegistrationAutoChargeException();
+		}
+
+		if (className.equals(
+					"com.ocms.course.StudentRegistrationCommunicationMethodException")) {
+			return new com.ocms.course.StudentRegistrationCommunicationMethodException();
+		}
+
+		if (className.equals(
+					"com.ocms.course.StudentRegistrationCurrencyException")) {
+			return new com.ocms.course.StudentRegistrationCurrencyException();
+		}
+
+		if (className.equals(
+					"com.ocms.course.StudentRegistrationCurrencyPaidException")) {
+			return new com.ocms.course.StudentRegistrationCurrencyPaidException();
+		}
+
+		if (className.equals(
+					"com.ocms.course.StudentRegistrationExchangeRateException")) {
+			return new com.ocms.course.StudentRegistrationExchangeRateException();
+		}
+
+		if (className.equals("com.ocms.course.StudentRegistrationMemoException")) {
+			return new com.ocms.course.StudentRegistrationMemoException();
+		}
+
+		if (className.equals(
+					"com.ocms.course.StudentRegistrationNotesException")) {
+			return new com.ocms.course.StudentRegistrationNotesException();
+		}
+
+		if (className.equals(
+					"com.ocms.course.StudentRegistrationStatusException")) {
+			return new com.ocms.course.StudentRegistrationStatusException();
+		}
+
+		if (className.equals("com.ocms.course.StudentRegistrationTaxException")) {
+			return new com.ocms.course.StudentRegistrationTaxException();
+		}
+
+		if (className.equals("com.ocms.course.TaxDetailsIdException")) {
+			return new com.ocms.course.TaxDetailsIdException();
+		}
+
+		if (className.equals("com.ocms.course.TaxDetailsTaxTypeIdException")) {
+			return new com.ocms.course.TaxDetailsTaxTypeIdException();
+		}
+
+		if (className.equals("com.ocms.course.TaxEffectiveFromDateException")) {
+			return new com.ocms.course.TaxEffectiveFromDateException();
+		}
+
+		if (className.equals("com.ocms.course.TaxEffectiveToDateException")) {
+			return new com.ocms.course.TaxEffectiveToDateException();
+		}
+
+		if (className.equals("com.ocms.course.TaxPercentException")) {
+			return new com.ocms.course.TaxPercentException();
+		}
+
+		if (className.equals("com.ocms.course.TaxTypeIdException")) {
+			return new com.ocms.course.TaxTypeIdException();
+		}
+
+		if (className.equals("com.ocms.course.TaxTypeNameException")) {
+			return new com.ocms.course.TaxTypeNameException();
 		}
 
 		if (className.equals("com.ocms.course.NoSuchContactException")) {
@@ -570,8 +799,31 @@ public class ClpSerializer {
 			return new com.ocms.course.NoSuchLocationException();
 		}
 
+		if (className.equals(
+					"com.ocms.course.NoSuchOffersAndDeductionsException")) {
+			return new com.ocms.course.NoSuchOffersAndDeductionsException();
+		}
+
 		if (className.equals("com.ocms.course.NoSuchPricingException")) {
 			return new com.ocms.course.NoSuchPricingException();
+		}
+
+		if (className.equals(
+					"com.ocms.course.NoSuchRegistrationDetailsException")) {
+			return new com.ocms.course.NoSuchRegistrationDetailsException();
+		}
+
+		if (className.equals(
+					"com.ocms.course.NoSuchStudentRegistrationException")) {
+			return new com.ocms.course.NoSuchStudentRegistrationException();
+		}
+
+		if (className.equals("com.ocms.course.NoSuchTaxDetailsException")) {
+			return new com.ocms.course.NoSuchTaxDetailsException();
+		}
+
+		if (className.equals("com.ocms.course.NoSuchTaxTypesException")) {
+			return new com.ocms.course.NoSuchTaxTypesException();
 		}
 
 		return throwable;
@@ -637,12 +889,65 @@ public class ClpSerializer {
 		return newModel;
 	}
 
+	public static Object translateOutputOffersAndDeductions(
+		BaseModel<?> oldModel) {
+		OffersAndDeductionsClp newModel = new OffersAndDeductionsClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setOffersAndDeductionsRemoteModel(oldModel);
+
+		return newModel;
+	}
+
 	public static Object translateOutputPricing(BaseModel<?> oldModel) {
 		PricingClp newModel = new PricingClp();
 
 		newModel.setModelAttributes(oldModel.getModelAttributes());
 
 		newModel.setPricingRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputRegistrationDetails(
+		BaseModel<?> oldModel) {
+		RegistrationDetailsClp newModel = new RegistrationDetailsClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setRegistrationDetailsRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputStudentRegistration(
+		BaseModel<?> oldModel) {
+		StudentRegistrationClp newModel = new StudentRegistrationClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setStudentRegistrationRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputTaxDetails(BaseModel<?> oldModel) {
+		TaxDetailsClp newModel = new TaxDetailsClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setTaxDetailsRemoteModel(oldModel);
+
+		return newModel;
+	}
+
+	public static Object translateOutputTaxTypes(BaseModel<?> oldModel) {
+		TaxTypesClp newModel = new TaxTypesClp();
+
+		newModel.setModelAttributes(oldModel.getModelAttributes());
+
+		newModel.setTaxTypesRemoteModel(oldModel);
 
 		return newModel;
 	}

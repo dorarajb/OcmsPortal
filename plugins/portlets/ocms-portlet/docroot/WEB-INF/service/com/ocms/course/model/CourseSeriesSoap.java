@@ -47,6 +47,13 @@ public class CourseSeriesSoap implements Serializable {
 		soapModel.setMaxNoStudReg(model.getMaxNoStudReg());
 		soapModel.setSeriesCount(model.getSeriesCount());
 		soapModel.setCourseSeriesCode(model.getCourseSeriesCode());
+		soapModel.setCourseSeriesEventCode(model.getCourseSeriesEventCode());
+		soapModel.setFlagToListData(model.getFlagToListData());
+		soapModel.setFlagToChkEventCreation(model.getFlagToChkEventCreation());
+		soapModel.setSMonth(model.getSMonth());
+		soapModel.setSDay(model.getSDay());
+		soapModel.setEMonth(model.getEMonth());
+		soapModel.setEDay(model.getEDay());
 
 		return soapModel;
 	}
@@ -227,6 +234,62 @@ public class CourseSeriesSoap implements Serializable {
 		_courseSeriesCode = courseSeriesCode;
 	}
 
+	public String getCourseSeriesEventCode() {
+		return _courseSeriesEventCode;
+	}
+
+	public void setCourseSeriesEventCode(String courseSeriesEventCode) {
+		_courseSeriesEventCode = courseSeriesEventCode;
+	}
+
+	public int getFlagToListData() {
+		return _flagToListData;
+	}
+
+	public void setFlagToListData(int flagToListData) {
+		_flagToListData = flagToListData;
+	}
+
+	public int getFlagToChkEventCreation() {
+		return _flagToChkEventCreation;
+	}
+
+	public void setFlagToChkEventCreation(int flagToChkEventCreation) {
+		_flagToChkEventCreation = flagToChkEventCreation;
+	}
+
+	public String getSMonth() {
+		return _sMonth;
+	}
+
+	public void setSMonth(String sMonth) {
+		_sMonth = sMonth;
+	}
+
+	public int getSDay() {
+		return _sDay;
+	}
+
+	public void setSDay(int sDay) {
+		_sDay = sDay;
+	}
+
+	public String getEMonth() {
+		return _eMonth;
+	}
+
+	public void setEMonth(String eMonth) {
+		_eMonth = eMonth;
+	}
+
+	public int getEDay() {
+		return _eDay;
+	}
+
+	public void setEDay(int eDay) {
+		_eDay = eDay;
+	}
+
 	private long _courseSeriesId;
 	private long _groupId;
 	private long _companyId;
@@ -243,4 +306,11 @@ public class CourseSeriesSoap implements Serializable {
 	private long _maxNoStudReg;
 	private long _seriesCount;
 	private String _courseSeriesCode;
+	private String _courseSeriesEventCode;
+	private int _flagToListData;
+	private int _flagToChkEventCreation;
+	private String _sMonth;
+	private int _sDay;
+	private String _eMonth;
+	private int _eDay;
 }

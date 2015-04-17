@@ -275,18 +275,18 @@ public interface PricingModel extends BaseModel<Pricing>, GroupedModel {
 	public void setCurrency(String currency);
 
 	/**
-	 * Returns the effective date of this pricing.
+	 * Returns the effective from date of this pricing.
 	 *
-	 * @return the effective date of this pricing
+	 * @return the effective from date of this pricing
 	 */
-	public Date getEffectiveDate();
+	public Date getEffectiveFromDate();
 
 	/**
-	 * Sets the effective date of this pricing.
+	 * Sets the effective from date of this pricing.
 	 *
-	 * @param effectiveDate the effective date of this pricing
+	 * @param effectiveFromDate the effective from date of this pricing
 	 */
-	public void setEffectiveDate(Date effectiveDate);
+	public void setEffectiveFromDate(Date effectiveFromDate);
 
 	/**
 	 * Returns the course code of this pricing.
@@ -317,6 +317,48 @@ public interface PricingModel extends BaseModel<Pricing>, GroupedModel {
 	 * @param locationCode the location code of this pricing
 	 */
 	public void setLocationCode(String locationCode);
+
+	/**
+	 * Returns the effective to date of this pricing.
+	 *
+	 * @return the effective to date of this pricing
+	 */
+	public Date getEffectiveToDate();
+
+	/**
+	 * Sets the effective to date of this pricing.
+	 *
+	 * @param effectiveToDate the effective to date of this pricing
+	 */
+	public void setEffectiveToDate(Date effectiveToDate);
+
+	/**
+	 * Returns the active of this pricing.
+	 *
+	 * @return the active of this pricing
+	 */
+	public int getActive();
+
+	/**
+	 * Sets the active of this pricing.
+	 *
+	 * @param active the active of this pricing
+	 */
+	public void setActive(int active);
+
+	/**
+	 * Returns the balance due par date of this pricing.
+	 *
+	 * @return the balance due par date of this pricing
+	 */
+	public int getBalanceDueParDate();
+
+	/**
+	 * Sets the balance due par date of this pricing.
+	 *
+	 * @param balanceDueParDate the balance due par date of this pricing
+	 */
+	public void setBalanceDueParDate(int balanceDueParDate);
 
 	@Override
 	public boolean isNew();

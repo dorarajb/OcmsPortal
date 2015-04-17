@@ -320,6 +320,19 @@ public class CoursePackageLocalServiceUtil {
 			serviceContext);
 	}
 
+	public static void deleteCoursePackageByCoursePackageId(
+		long coursePackageId) {
+		getService().deleteCoursePackageByCoursePackageId(coursePackageId);
+	}
+
+	public static void deleteCoursePackageByGrouptId(long groupId) {
+		getService().deleteCoursePackageByGrouptId(groupId);
+	}
+
+	public static void deleteAllCoursePackage() {
+		getService().deleteAllCoursePackage();
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

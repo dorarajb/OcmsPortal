@@ -92,25 +92,35 @@ public class CourseServiceUtil {
 		return getService().getCoursesByCourseId(courseId, start, end);
 	}
 
-	public static com.ocms.course.model.Course addCourse(long userId,
+	public static com.ocms.course.model.Course addCourse(
+		java.lang.String name, java.lang.String code,
+		java.lang.String duration,
+		com.liferay.portal.service.ServiceContext serviceContext)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getService().addCourse(name, code, duration, serviceContext);
+	}
+
+	public static com.ocms.course.model.Course updateCourse(long courseId,
 		java.lang.String name, java.lang.String code,
 		java.lang.String duration,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		return getService()
-				   .addCourse(userId, name, code, duration, serviceContext);
+				   .updateCourse(courseId, name, code, duration, serviceContext);
 	}
 
-	public static com.ocms.course.model.Course updateCourse(long userId,
-		long courseId, java.lang.String name, java.lang.String code,
-		java.lang.String duration,
-		com.liferay.portal.service.ServiceContext serviceContext)
-		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException {
-		return getService()
-				   .updateCourse(userId, courseId, name, code, duration,
-			serviceContext);
+	public static void deleteCourseByCourseId(long courseId) {
+		getService().deleteCourseByCourseId(courseId);
+	}
+
+	public static void deleteCourseByGrouptId(long groupId) {
+		getService().deleteCourseByGrouptId(groupId);
+	}
+
+	public static void deleteAllCourse() {
+		getService().deleteAllCourse();
 	}
 
 	public static void clearService() {

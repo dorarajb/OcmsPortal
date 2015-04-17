@@ -325,6 +325,18 @@ public class ContactLocalServiceUtil {
 			email, serviceContext);
 	}
 
+	public static void deleteContactByContactId(long contactId) {
+		getService().deleteContactByContactId(contactId);
+	}
+
+	public static void deleteContactByGrouptId(long groupId) {
+		getService().deleteContactByGrouptId(groupId);
+	}
+
+	public static void deleteAllContact() {
+		getService().deleteAllContact();
+	}
+
 	public static void clearService() {
 		_service = null;
 	}

@@ -918,6 +918,548 @@ public class CourseSeriesUtil {
 	}
 
 	/**
+	* Returns all the course serieses where flagToListData = &#63;.
+	*
+	* @param flagToListData the flag to list data
+	* @return the matching course serieses
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.ocms.course.model.CourseSeries> findByFlagToListData(
+		int flagToListData)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findByFlagToListData(flagToListData);
+	}
+
+	/**
+	* Returns a range of all the course serieses where flagToListData = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.ocms.course.model.impl.CourseSeriesModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param flagToListData the flag to list data
+	* @param start the lower bound of the range of course serieses
+	* @param end the upper bound of the range of course serieses (not inclusive)
+	* @return the range of matching course serieses
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.ocms.course.model.CourseSeries> findByFlagToListData(
+		int flagToListData, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().findByFlagToListData(flagToListData, start, end);
+	}
+
+	/**
+	* Returns an ordered range of all the course serieses where flagToListData = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.ocms.course.model.impl.CourseSeriesModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param flagToListData the flag to list data
+	* @param start the lower bound of the range of course serieses
+	* @param end the upper bound of the range of course serieses (not inclusive)
+	* @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	* @return the ordered range of matching course serieses
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.ocms.course.model.CourseSeries> findByFlagToListData(
+		int flagToListData, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByFlagToListData(flagToListData, start, end,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the first course series in the ordered set where flagToListData = &#63;.
+	*
+	* @param flagToListData the flag to list data
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching course series
+	* @throws com.ocms.course.NoSuchCourseSeriesException if a matching course series could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.CourseSeries findByFlagToListData_First(
+		int flagToListData,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.ocms.course.NoSuchCourseSeriesException {
+		return getPersistence()
+				   .findByFlagToListData_First(flagToListData, orderByComparator);
+	}
+
+	/**
+	* Returns the first course series in the ordered set where flagToListData = &#63;.
+	*
+	* @param flagToListData the flag to list data
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching course series, or <code>null</code> if a matching course series could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.CourseSeries fetchByFlagToListData_First(
+		int flagToListData,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchByFlagToListData_First(flagToListData,
+			orderByComparator);
+	}
+
+	/**
+	* Returns the last course series in the ordered set where flagToListData = &#63;.
+	*
+	* @param flagToListData the flag to list data
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching course series
+	* @throws com.ocms.course.NoSuchCourseSeriesException if a matching course series could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.CourseSeries findByFlagToListData_Last(
+		int flagToListData,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.ocms.course.NoSuchCourseSeriesException {
+		return getPersistence()
+				   .findByFlagToListData_Last(flagToListData, orderByComparator);
+	}
+
+	/**
+	* Returns the last course series in the ordered set where flagToListData = &#63;.
+	*
+	* @param flagToListData the flag to list data
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching course series, or <code>null</code> if a matching course series could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.CourseSeries fetchByFlagToListData_Last(
+		int flagToListData,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchByFlagToListData_Last(flagToListData, orderByComparator);
+	}
+
+	/**
+	* Returns the course serieses before and after the current course series in the ordered set where flagToListData = &#63;.
+	*
+	* @param courseSeriesId the primary key of the current course series
+	* @param flagToListData the flag to list data
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the previous, current, and next course series
+	* @throws com.ocms.course.NoSuchCourseSeriesException if a course series with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.CourseSeries[] findByFlagToListData_PrevAndNext(
+		long courseSeriesId, int flagToListData,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.ocms.course.NoSuchCourseSeriesException {
+		return getPersistence()
+				   .findByFlagToListData_PrevAndNext(courseSeriesId,
+			flagToListData, orderByComparator);
+	}
+
+	/**
+	* Removes all the course serieses where flagToListData = &#63; from the database.
+	*
+	* @param flagToListData the flag to list data
+	* @throws SystemException if a system exception occurred
+	*/
+	public static void removeByFlagToListData(int flagToListData)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		getPersistence().removeByFlagToListData(flagToListData);
+	}
+
+	/**
+	* Returns the number of course serieses where flagToListData = &#63;.
+	*
+	* @param flagToListData the flag to list data
+	* @return the number of matching course serieses
+	* @throws SystemException if a system exception occurred
+	*/
+	public static int countByFlagToListData(int flagToListData)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence().countByFlagToListData(flagToListData);
+	}
+
+	/**
+	* Returns all the course serieses where groupId = &#63; and flagToListData = &#63;.
+	*
+	* @param groupId the group ID
+	* @param flagToListData the flag to list data
+	* @return the matching course serieses
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.ocms.course.model.CourseSeries> findByGroupIdAndFlagToListData(
+		long groupId, int flagToListData)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByGroupIdAndFlagToListData(groupId, flagToListData);
+	}
+
+	/**
+	* Returns a range of all the course serieses where groupId = &#63; and flagToListData = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.ocms.course.model.impl.CourseSeriesModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param groupId the group ID
+	* @param flagToListData the flag to list data
+	* @param start the lower bound of the range of course serieses
+	* @param end the upper bound of the range of course serieses (not inclusive)
+	* @return the range of matching course serieses
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.ocms.course.model.CourseSeries> findByGroupIdAndFlagToListData(
+		long groupId, int flagToListData, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByGroupIdAndFlagToListData(groupId, flagToListData,
+			start, end);
+	}
+
+	/**
+	* Returns an ordered range of all the course serieses where groupId = &#63; and flagToListData = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.ocms.course.model.impl.CourseSeriesModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param groupId the group ID
+	* @param flagToListData the flag to list data
+	* @param start the lower bound of the range of course serieses
+	* @param end the upper bound of the range of course serieses (not inclusive)
+	* @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	* @return the ordered range of matching course serieses
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.ocms.course.model.CourseSeries> findByGroupIdAndFlagToListData(
+		long groupId, int flagToListData, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findByGroupIdAndFlagToListData(groupId, flagToListData,
+			start, end, orderByComparator);
+	}
+
+	/**
+	* Returns the first course series in the ordered set where groupId = &#63; and flagToListData = &#63;.
+	*
+	* @param groupId the group ID
+	* @param flagToListData the flag to list data
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching course series
+	* @throws com.ocms.course.NoSuchCourseSeriesException if a matching course series could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.CourseSeries findByGroupIdAndFlagToListData_First(
+		long groupId, int flagToListData,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.ocms.course.NoSuchCourseSeriesException {
+		return getPersistence()
+				   .findByGroupIdAndFlagToListData_First(groupId,
+			flagToListData, orderByComparator);
+	}
+
+	/**
+	* Returns the first course series in the ordered set where groupId = &#63; and flagToListData = &#63;.
+	*
+	* @param groupId the group ID
+	* @param flagToListData the flag to list data
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching course series, or <code>null</code> if a matching course series could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.CourseSeries fetchByGroupIdAndFlagToListData_First(
+		long groupId, int flagToListData,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchByGroupIdAndFlagToListData_First(groupId,
+			flagToListData, orderByComparator);
+	}
+
+	/**
+	* Returns the last course series in the ordered set where groupId = &#63; and flagToListData = &#63;.
+	*
+	* @param groupId the group ID
+	* @param flagToListData the flag to list data
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching course series
+	* @throws com.ocms.course.NoSuchCourseSeriesException if a matching course series could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.CourseSeries findByGroupIdAndFlagToListData_Last(
+		long groupId, int flagToListData,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.ocms.course.NoSuchCourseSeriesException {
+		return getPersistence()
+				   .findByGroupIdAndFlagToListData_Last(groupId,
+			flagToListData, orderByComparator);
+	}
+
+	/**
+	* Returns the last course series in the ordered set where groupId = &#63; and flagToListData = &#63;.
+	*
+	* @param groupId the group ID
+	* @param flagToListData the flag to list data
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching course series, or <code>null</code> if a matching course series could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.CourseSeries fetchByGroupIdAndFlagToListData_Last(
+		long groupId, int flagToListData,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchByGroupIdAndFlagToListData_Last(groupId,
+			flagToListData, orderByComparator);
+	}
+
+	/**
+	* Returns the course serieses before and after the current course series in the ordered set where groupId = &#63; and flagToListData = &#63;.
+	*
+	* @param courseSeriesId the primary key of the current course series
+	* @param groupId the group ID
+	* @param flagToListData the flag to list data
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the previous, current, and next course series
+	* @throws com.ocms.course.NoSuchCourseSeriesException if a course series with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.CourseSeries[] findByGroupIdAndFlagToListData_PrevAndNext(
+		long courseSeriesId, long groupId, int flagToListData,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.ocms.course.NoSuchCourseSeriesException {
+		return getPersistence()
+				   .findByGroupIdAndFlagToListData_PrevAndNext(courseSeriesId,
+			groupId, flagToListData, orderByComparator);
+	}
+
+	/**
+	* Removes all the course serieses where groupId = &#63; and flagToListData = &#63; from the database.
+	*
+	* @param groupId the group ID
+	* @param flagToListData the flag to list data
+	* @throws SystemException if a system exception occurred
+	*/
+	public static void removeByGroupIdAndFlagToListData(long groupId,
+		int flagToListData)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		getPersistence()
+			.removeByGroupIdAndFlagToListData(groupId, flagToListData);
+	}
+
+	/**
+	* Returns the number of course serieses where groupId = &#63; and flagToListData = &#63;.
+	*
+	* @param groupId the group ID
+	* @param flagToListData the flag to list data
+	* @return the number of matching course serieses
+	* @throws SystemException if a system exception occurred
+	*/
+	public static int countByGroupIdAndFlagToListData(long groupId,
+		int flagToListData)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .countByGroupIdAndFlagToListData(groupId, flagToListData);
+	}
+
+	/**
+	* Returns all the course serieses where locationId = &#63; and flagToListData = &#63;.
+	*
+	* @param locationId the location ID
+	* @param flagToListData the flag to list data
+	* @return the matching course serieses
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.ocms.course.model.CourseSeries> findBylocationIdAndFlagToListData(
+		long locationId, int flagToListData)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findBylocationIdAndFlagToListData(locationId, flagToListData);
+	}
+
+	/**
+	* Returns a range of all the course serieses where locationId = &#63; and flagToListData = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.ocms.course.model.impl.CourseSeriesModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param locationId the location ID
+	* @param flagToListData the flag to list data
+	* @param start the lower bound of the range of course serieses
+	* @param end the upper bound of the range of course serieses (not inclusive)
+	* @return the range of matching course serieses
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.ocms.course.model.CourseSeries> findBylocationIdAndFlagToListData(
+		long locationId, int flagToListData, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findBylocationIdAndFlagToListData(locationId,
+			flagToListData, start, end);
+	}
+
+	/**
+	* Returns an ordered range of all the course serieses where locationId = &#63; and flagToListData = &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set. If <code>orderByComparator</code> is specified, then the query will include the given ORDER BY logic. If <code>orderByComparator</code> is absent and pagination is required (<code>start</code> and <code>end</code> are not {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS}), then the query will include the default ORDER BY logic from {@link com.ocms.course.model.impl.CourseSeriesModelImpl}. If both <code>orderByComparator</code> and pagination are absent, for performance reasons, the query will not have an ORDER BY clause and the returned result set will be sorted on by the primary key in an ascending order.
+	* </p>
+	*
+	* @param locationId the location ID
+	* @param flagToListData the flag to list data
+	* @param start the lower bound of the range of course serieses
+	* @param end the upper bound of the range of course serieses (not inclusive)
+	* @param orderByComparator the comparator to order the results by (optionally <code>null</code>)
+	* @return the ordered range of matching course serieses
+	* @throws SystemException if a system exception occurred
+	*/
+	public static java.util.List<com.ocms.course.model.CourseSeries> findBylocationIdAndFlagToListData(
+		long locationId, int flagToListData, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .findBylocationIdAndFlagToListData(locationId,
+			flagToListData, start, end, orderByComparator);
+	}
+
+	/**
+	* Returns the first course series in the ordered set where locationId = &#63; and flagToListData = &#63;.
+	*
+	* @param locationId the location ID
+	* @param flagToListData the flag to list data
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching course series
+	* @throws com.ocms.course.NoSuchCourseSeriesException if a matching course series could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.CourseSeries findBylocationIdAndFlagToListData_First(
+		long locationId, int flagToListData,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.ocms.course.NoSuchCourseSeriesException {
+		return getPersistence()
+				   .findBylocationIdAndFlagToListData_First(locationId,
+			flagToListData, orderByComparator);
+	}
+
+	/**
+	* Returns the first course series in the ordered set where locationId = &#63; and flagToListData = &#63;.
+	*
+	* @param locationId the location ID
+	* @param flagToListData the flag to list data
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the first matching course series, or <code>null</code> if a matching course series could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.CourseSeries fetchBylocationIdAndFlagToListData_First(
+		long locationId, int flagToListData,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchBylocationIdAndFlagToListData_First(locationId,
+			flagToListData, orderByComparator);
+	}
+
+	/**
+	* Returns the last course series in the ordered set where locationId = &#63; and flagToListData = &#63;.
+	*
+	* @param locationId the location ID
+	* @param flagToListData the flag to list data
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching course series
+	* @throws com.ocms.course.NoSuchCourseSeriesException if a matching course series could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.CourseSeries findBylocationIdAndFlagToListData_Last(
+		long locationId, int flagToListData,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.ocms.course.NoSuchCourseSeriesException {
+		return getPersistence()
+				   .findBylocationIdAndFlagToListData_Last(locationId,
+			flagToListData, orderByComparator);
+	}
+
+	/**
+	* Returns the last course series in the ordered set where locationId = &#63; and flagToListData = &#63;.
+	*
+	* @param locationId the location ID
+	* @param flagToListData the flag to list data
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the last matching course series, or <code>null</code> if a matching course series could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.CourseSeries fetchBylocationIdAndFlagToListData_Last(
+		long locationId, int flagToListData,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .fetchBylocationIdAndFlagToListData_Last(locationId,
+			flagToListData, orderByComparator);
+	}
+
+	/**
+	* Returns the course serieses before and after the current course series in the ordered set where locationId = &#63; and flagToListData = &#63;.
+	*
+	* @param courseSeriesId the primary key of the current course series
+	* @param locationId the location ID
+	* @param flagToListData the flag to list data
+	* @param orderByComparator the comparator to order the set by (optionally <code>null</code>)
+	* @return the previous, current, and next course series
+	* @throws com.ocms.course.NoSuchCourseSeriesException if a course series with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public static com.ocms.course.model.CourseSeries[] findBylocationIdAndFlagToListData_PrevAndNext(
+		long courseSeriesId, long locationId, int flagToListData,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException,
+			com.ocms.course.NoSuchCourseSeriesException {
+		return getPersistence()
+				   .findBylocationIdAndFlagToListData_PrevAndNext(courseSeriesId,
+			locationId, flagToListData, orderByComparator);
+	}
+
+	/**
+	* Removes all the course serieses where locationId = &#63; and flagToListData = &#63; from the database.
+	*
+	* @param locationId the location ID
+	* @param flagToListData the flag to list data
+	* @throws SystemException if a system exception occurred
+	*/
+	public static void removeBylocationIdAndFlagToListData(long locationId,
+		int flagToListData)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		getPersistence()
+			.removeBylocationIdAndFlagToListData(locationId, flagToListData);
+	}
+
+	/**
+	* Returns the number of course serieses where locationId = &#63; and flagToListData = &#63;.
+	*
+	* @param locationId the location ID
+	* @param flagToListData the flag to list data
+	* @return the number of matching course serieses
+	* @throws SystemException if a system exception occurred
+	*/
+	public static int countBylocationIdAndFlagToListData(long locationId,
+		int flagToListData)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getPersistence()
+				   .countBylocationIdAndFlagToListData(locationId,
+			flagToListData);
+	}
+
+	/**
 	* Caches the course series in the entity cache if it is enabled.
 	*
 	* @param courseSeries the course series

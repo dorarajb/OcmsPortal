@@ -4,15 +4,18 @@
 
 var eventControllers = angular.module('eventControllers', []);
 
-eventControllers.controller('eventlistCtrl', ['$scope', '$http','$modal', 'Event',
-		  function($scope, $http, $modal, Event) {	
+eventControllers.controller('eventlistCtrl', ['$scope', '$filter','$http','$window','$modal', 'Event', 'Course', 'Location',
+		  function($scope, $filter, $http, $window, $modal, Event, Course, Location) {	
 		    
 			var events;
-		  	//$scope.courses = Course.query(); // Get list of courses			
-			//$scope.courses = Course.query({id:'courses',mdclass:'pari'});
-			//$scope.courses = Course.query({id:'pari'}); get-courses-by-group-id/group-id/0
 			$scope.events = Event.query({addevent:'get-event-by-group-id', userid:'group-id', id:'0'});
-		 
+			
+			var deleteEvent;
+		    $scope.deleteEvent = function (vevent) {
+		    Event.delete({addevent:'delete-event-by-event-id', userid:'event-id', id:vevent.eventId});
+			$window.location.reload();
+			};
+		    
 			
 			/*Open the Course Form*/			
 			$scope.open = function (p,size) {	
@@ -34,10 +37,15 @@ eventControllers.controller('eventlistCtrl', ['$scope', '$http','$modal', 'Event
 
 
 
-eventControllers.controller('eventCtrl', ['$scope', '$http','$modalInstance', 'item', 'Event', 
-											function ($scope, $http, $modalInstance, item, Event) {
- 
+eventControllers.controller('eventCtrl', ['$scope','$filter', '$http','$window','$modalInstance', 'item', 'Event', 'Course', 'Location',
+											function ($scope, $filter, $http, $window, $modalInstance, item, Event, Course, Location) {
+        var courses;
+		$scope.courses = Course.query({addcourse:'get-courses-by-group-id', userid:'group-id', id:'0'});
+		var locations
+		$scope.locations = Location.query({addlocation:'get-location-by-group-id', userid:'group-id', id:'0'});
+		
 		$scope.fevent = angular.copy(item);
+		//fevent.endDate = $filter('date')(date[ fevent.endDate, "dd/MM/yyyy"]);
 		$scope.cancel = function () {
             $modalInstance.dismiss('Close');
         };		
@@ -50,24 +58,29 @@ eventControllers.controller('eventCtrl', ['$scope', '$http','$modalInstance', 'i
 		 
 		
 		$scope.saveEvent = function (fevent) {			
-		 fevent.uid = $scope.uid;
+		fevent.uid = $scope.uid;
+		    
+			
+			fevent.startDate = $filter('date')( fevent.startDate, "yyyy-MM-dd");
+			//fevent.startDateAsDate = new Date(fevent.startDate);
+			fevent.endDate = $filter('date')( fevent.endDate, "yyyy-MM-dd");
+			//fevent.endDateAsDate = new Date(fevent.endDate);
+			$scope.fevent = fevent;
 			
 			if(fevent.eventId > 0){//// Edit the Course
 			 
-	/*		 	Event.update({addevent:'update-location', userid:'user-id', id:'10161', locationid:'location-id', locationvid:location.locationId, sName:'name', name:location.name, sCode:'code', code:location.code, sNotes:'notes', notes:location.notes,sAddressLine1:'address-line1', addressLine1:location.addressLine1,
-					sAddressLine2:'address-line2',addressLine2:location.addressLine2,sCity:'city',city:location.city,
-					sState:'state',state:location.state,sRegion:'region',region:location.region,sCountry:'country',country:location.country,
-					sZip:'zip',zip:location.zipcode,sPhone:'phone',phone:location.phone,sFax:'fax',fax:location.fax,sEmail:'email',email:location.email},location);			
-				
-				var x = angular.copy(fevent);*/
+				Event.update({addevent:'update-event', eventid:'event-id', eventvid:fevent.eventId, sEventname:'event-name', eventname:fevent.eventName, sCourseid:'course-id', courseid:fevent.courseId, sCoursecode:'course-code', coursecode:fevent.courseCode, sLocationid:'location-id', locationid:fevent.locationId, sLocationcode:'location-code', locationcode:fevent.locationCode, sStartdate:'start-date', startdate:fevent.startDate, sEnddate:'end-date', enddate:fevent.endDate, sFlag:'flag', flag:'1'},fevent);
+				var x = angular.copy(location);
 				$modalInstance.close(x);
+                $window.location.reload();	
 				
 			}
 			else{ //// Adding a New Course
 				 
-				Event.save({addevent:'add-event', sEventname:'event-name', eventname:fevent.eventName, sCourseid:'course-id', courseid:fevent.courseId, sCoursecode:'course-code', coursecode:fevent.courseCode, sLocationid:'location-id', locationid:fevent.locationId, sLocationcode:'location-code', locationcode:fevent.locationCode, sStartdate:'start-date', startdate:fevent.startDate, sEnddate:'end-date', enddate:fevent.endDate, sFlag:'flag', flag:'1'},fevent);			
+				Event.save({addevent:'add-event', sEventname:'event-name', eventname:fevent.eventName, sCourseid:'course-id', courseid:fevent.courseId, sLocationid:'location-id', locationid:fevent.locationId, sStartdate:'start-date', startdate:fevent.startDate, sEnddate:'end-date', enddate:fevent.endDate, sFlag:'flag', flag:'1'},fevent);			
 				var x = angular.copy(location);
-				$modalInstance.close(x);				
+				$modalInstance.close(x);
+                $window.location.reload();				
 			}
 			
 		};

@@ -91,6 +91,13 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 		attributes.put("maxNoStudReg", getMaxNoStudReg());
 		attributes.put("seriesCount", getSeriesCount());
 		attributes.put("courseSeriesCode", getCourseSeriesCode());
+		attributes.put("courseSeriesEventCode", getCourseSeriesEventCode());
+		attributes.put("flagToListData", getFlagToListData());
+		attributes.put("flagToChkEventCreation", getFlagToChkEventCreation());
+		attributes.put("sMonth", getSMonth());
+		attributes.put("sDay", getSDay());
+		attributes.put("eMonth", getEMonth());
+		attributes.put("eDay", getEDay());
 
 		return attributes;
 	}
@@ -191,6 +198,50 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 
 		if (courseSeriesCode != null) {
 			setCourseSeriesCode(courseSeriesCode);
+		}
+
+		String courseSeriesEventCode = (String)attributes.get(
+				"courseSeriesEventCode");
+
+		if (courseSeriesEventCode != null) {
+			setCourseSeriesEventCode(courseSeriesEventCode);
+		}
+
+		Integer flagToListData = (Integer)attributes.get("flagToListData");
+
+		if (flagToListData != null) {
+			setFlagToListData(flagToListData);
+		}
+
+		Integer flagToChkEventCreation = (Integer)attributes.get(
+				"flagToChkEventCreation");
+
+		if (flagToChkEventCreation != null) {
+			setFlagToChkEventCreation(flagToChkEventCreation);
+		}
+
+		String sMonth = (String)attributes.get("sMonth");
+
+		if (sMonth != null) {
+			setSMonth(sMonth);
+		}
+
+		Integer sDay = (Integer)attributes.get("sDay");
+
+		if (sDay != null) {
+			setSDay(sDay);
+		}
+
+		String eMonth = (String)attributes.get("eMonth");
+
+		if (eMonth != null) {
+			setEMonth(eMonth);
+		}
+
+		Integer eDay = (Integer)attributes.get("eDay");
+
+		if (eDay != null) {
+			setEDay(eDay);
 		}
 	}
 
@@ -574,6 +625,169 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 		}
 	}
 
+	@Override
+	public String getCourseSeriesEventCode() {
+		return _courseSeriesEventCode;
+	}
+
+	@Override
+	public void setCourseSeriesEventCode(String courseSeriesEventCode) {
+		_courseSeriesEventCode = courseSeriesEventCode;
+
+		if (_courseSeriesRemoteModel != null) {
+			try {
+				Class<?> clazz = _courseSeriesRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setCourseSeriesEventCode",
+						String.class);
+
+				method.invoke(_courseSeriesRemoteModel, courseSeriesEventCode);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public int getFlagToListData() {
+		return _flagToListData;
+	}
+
+	@Override
+	public void setFlagToListData(int flagToListData) {
+		_flagToListData = flagToListData;
+
+		if (_courseSeriesRemoteModel != null) {
+			try {
+				Class<?> clazz = _courseSeriesRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setFlagToListData", int.class);
+
+				method.invoke(_courseSeriesRemoteModel, flagToListData);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public int getFlagToChkEventCreation() {
+		return _flagToChkEventCreation;
+	}
+
+	@Override
+	public void setFlagToChkEventCreation(int flagToChkEventCreation) {
+		_flagToChkEventCreation = flagToChkEventCreation;
+
+		if (_courseSeriesRemoteModel != null) {
+			try {
+				Class<?> clazz = _courseSeriesRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setFlagToChkEventCreation",
+						int.class);
+
+				method.invoke(_courseSeriesRemoteModel, flagToChkEventCreation);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public String getSMonth() {
+		return _sMonth;
+	}
+
+	@Override
+	public void setSMonth(String sMonth) {
+		_sMonth = sMonth;
+
+		if (_courseSeriesRemoteModel != null) {
+			try {
+				Class<?> clazz = _courseSeriesRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setSMonth", String.class);
+
+				method.invoke(_courseSeriesRemoteModel, sMonth);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public int getSDay() {
+		return _sDay;
+	}
+
+	@Override
+	public void setSDay(int sDay) {
+		_sDay = sDay;
+
+		if (_courseSeriesRemoteModel != null) {
+			try {
+				Class<?> clazz = _courseSeriesRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setSDay", int.class);
+
+				method.invoke(_courseSeriesRemoteModel, sDay);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public String getEMonth() {
+		return _eMonth;
+	}
+
+	@Override
+	public void setEMonth(String eMonth) {
+		_eMonth = eMonth;
+
+		if (_courseSeriesRemoteModel != null) {
+			try {
+				Class<?> clazz = _courseSeriesRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setEMonth", String.class);
+
+				method.invoke(_courseSeriesRemoteModel, eMonth);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
+	public int getEDay() {
+		return _eDay;
+	}
+
+	@Override
+	public void setEDay(int eDay) {
+		_eDay = eDay;
+
+		if (_courseSeriesRemoteModel != null) {
+			try {
+				Class<?> clazz = _courseSeriesRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setEDay", int.class);
+
+				method.invoke(_courseSeriesRemoteModel, eDay);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
 	public BaseModel<?> getCourseSeriesRemoteModel() {
 		return _courseSeriesRemoteModel;
 	}
@@ -659,6 +873,13 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 		clone.setMaxNoStudReg(getMaxNoStudReg());
 		clone.setSeriesCount(getSeriesCount());
 		clone.setCourseSeriesCode(getCourseSeriesCode());
+		clone.setCourseSeriesEventCode(getCourseSeriesEventCode());
+		clone.setFlagToListData(getFlagToListData());
+		clone.setFlagToChkEventCreation(getFlagToChkEventCreation());
+		clone.setSMonth(getSMonth());
+		clone.setSDay(getSDay());
+		clone.setEMonth(getEMonth());
+		clone.setEDay(getEDay());
 
 		return clone;
 	}
@@ -707,7 +928,7 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(33);
+		StringBundler sb = new StringBundler(47);
 
 		sb.append("{courseSeriesId=");
 		sb.append(getCourseSeriesId());
@@ -741,6 +962,20 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 		sb.append(getSeriesCount());
 		sb.append(", courseSeriesCode=");
 		sb.append(getCourseSeriesCode());
+		sb.append(", courseSeriesEventCode=");
+		sb.append(getCourseSeriesEventCode());
+		sb.append(", flagToListData=");
+		sb.append(getFlagToListData());
+		sb.append(", flagToChkEventCreation=");
+		sb.append(getFlagToChkEventCreation());
+		sb.append(", sMonth=");
+		sb.append(getSMonth());
+		sb.append(", sDay=");
+		sb.append(getSDay());
+		sb.append(", eMonth=");
+		sb.append(getEMonth());
+		sb.append(", eDay=");
+		sb.append(getEDay());
 		sb.append("}");
 
 		return sb.toString();
@@ -748,7 +983,7 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(52);
+		StringBundler sb = new StringBundler(73);
 
 		sb.append("<model><model-name>");
 		sb.append("com.ocms.course.model.CourseSeries");
@@ -818,6 +1053,34 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 			"<column><column-name>courseSeriesCode</column-name><column-value><![CDATA[");
 		sb.append(getCourseSeriesCode());
 		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>courseSeriesEventCode</column-name><column-value><![CDATA[");
+		sb.append(getCourseSeriesEventCode());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>flagToListData</column-name><column-value><![CDATA[");
+		sb.append(getFlagToListData());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>flagToChkEventCreation</column-name><column-value><![CDATA[");
+		sb.append(getFlagToChkEventCreation());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>sMonth</column-name><column-value><![CDATA[");
+		sb.append(getSMonth());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>sDay</column-name><column-value><![CDATA[");
+		sb.append(getSDay());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>eMonth</column-name><column-value><![CDATA[");
+		sb.append(getEMonth());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>eDay</column-name><column-value><![CDATA[");
+		sb.append(getEDay());
+		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -841,5 +1104,12 @@ public class CourseSeriesClp extends BaseModelImpl<CourseSeries>
 	private long _maxNoStudReg;
 	private long _seriesCount;
 	private String _courseSeriesCode;
+	private String _courseSeriesEventCode;
+	private int _flagToListData;
+	private int _flagToChkEventCreation;
+	private String _sMonth;
+	private int _sDay;
+	private String _eMonth;
+	private int _eDay;
 	private BaseModel<?> _courseSeriesRemoteModel;
 }

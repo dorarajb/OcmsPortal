@@ -30,8 +30,18 @@ import com.ocms.course.service.EventLocalServiceUtil;
 import com.ocms.course.service.EventServiceUtil;
 import com.ocms.course.service.LocationLocalServiceUtil;
 import com.ocms.course.service.LocationServiceUtil;
+import com.ocms.course.service.OffersAndDeductionsLocalServiceUtil;
+import com.ocms.course.service.OffersAndDeductionsServiceUtil;
 import com.ocms.course.service.PricingLocalServiceUtil;
 import com.ocms.course.service.PricingServiceUtil;
+import com.ocms.course.service.RegistrationDetailsLocalServiceUtil;
+import com.ocms.course.service.RegistrationDetailsServiceUtil;
+import com.ocms.course.service.StudentRegistrationLocalServiceUtil;
+import com.ocms.course.service.StudentRegistrationServiceUtil;
+import com.ocms.course.service.TaxDetailsLocalServiceUtil;
+import com.ocms.course.service.TaxDetailsServiceUtil;
+import com.ocms.course.service.TaxTypesLocalServiceUtil;
+import com.ocms.course.service.TaxTypesServiceUtil;
 
 /**
  * @author doraraj
@@ -66,9 +76,24 @@ public class ClpMessageListener extends BaseMessageListener {
 			LocationLocalServiceUtil.clearService();
 
 			LocationServiceUtil.clearService();
+			OffersAndDeductionsLocalServiceUtil.clearService();
+
+			OffersAndDeductionsServiceUtil.clearService();
 			PricingLocalServiceUtil.clearService();
 
 			PricingServiceUtil.clearService();
+			RegistrationDetailsLocalServiceUtil.clearService();
+
+			RegistrationDetailsServiceUtil.clearService();
+			StudentRegistrationLocalServiceUtil.clearService();
+
+			StudentRegistrationServiceUtil.clearService();
+			TaxDetailsLocalServiceUtil.clearService();
+
+			TaxDetailsServiceUtil.clearService();
+			TaxTypesLocalServiceUtil.clearService();
+
+			TaxTypesServiceUtil.clearService();
 		}
 	}
 }

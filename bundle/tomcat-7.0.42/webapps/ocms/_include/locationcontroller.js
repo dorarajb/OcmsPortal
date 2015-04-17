@@ -4,14 +4,20 @@
 
 var locationControllers = angular.module('locationControllers', []);
 
-locationControllers.controller('locationlistCtrl', ['$scope', '$http','$modal', 'Location',
-		  function($scope, $http, $modal, Location) {	
+locationControllers.controller('locationlistCtrl', ['$scope', '$http', '$window','$modal', 'Location',
+		  function($scope, $http, $window, $modal, Location) {	
 		    
 			var locations;
 		  	//$scope.courses = Course.query(); // Get list of courses			
 			//$scope.courses = Course.query({id:'courses',mdclass:'pari'});
 			//$scope.courses = Course.query({id:'pari'}); get-courses-by-group-id/group-id/0
 			$scope.locations = Location.query({addlocation:'get-location-by-group-id', userid:'group-id', id:'0'});
+			
+			var deleteLocation;
+		   $scope.deleteLocation = function (vlocation) {
+		   Location.delete({addlocation:'delete-location-by-location-id', userid:'location-id', id:vlocation.locationId});
+		   $window.location.reload();
+			};
 		 
 			
 			/*Open the Course Form*/			
@@ -34,8 +40,8 @@ locationControllers.controller('locationlistCtrl', ['$scope', '$http','$modal', 
 
 
 
-locationControllers.controller('locationCtrl', ['$scope', '$http','$modalInstance', 'item', 'Location', 
-											function ($scope, $http, $modalInstance, item, Location) {
+locationControllers.controller('locationCtrl', ['$scope', '$http', '$window','$modalInstance', 'item', 'Location', 
+											function ($scope, $http, $window, $modalInstance, item, Location) {
  
 		$scope.location = angular.copy(item);
 		$scope.cancel = function () {
@@ -61,6 +67,7 @@ locationControllers.controller('locationCtrl', ['$scope', '$http','$modalInstanc
 				
 				var x = angular.copy(location);
 				$modalInstance.close(x);
+				 $window.location.reload();
 				
 			}
 			else{ //// Adding a New Course
@@ -71,7 +78,8 @@ locationControllers.controller('locationCtrl', ['$scope', '$http','$modalInstanc
 					sState:'state',state:location.state,sRegion:'region',region:location.region,sCountry:'country',country:location.country,
 					sZip:'zip',zip:location.zipcode,sPhone:'phone',phone:location.phone,sFax:'fax',fax:location.fax,sEmail:'email',email:location.email},location);			
 				var x = angular.copy(location);
-				$modalInstance.close(x);				
+				$modalInstance.close(x);
+                $window.location.reload();				
 			}
 			
 		};

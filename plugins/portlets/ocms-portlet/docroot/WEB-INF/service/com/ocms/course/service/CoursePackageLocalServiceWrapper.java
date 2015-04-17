@@ -339,6 +339,21 @@ public class CoursePackageLocalServiceWrapper
 			coursePackageId, name, code, serviceContext);
 	}
 
+	@Override
+	public void deleteCoursePackageByCoursePackageId(long coursePackageId) {
+		_coursePackageLocalService.deleteCoursePackageByCoursePackageId(coursePackageId);
+	}
+
+	@Override
+	public void deleteCoursePackageByGrouptId(long groupId) {
+		_coursePackageLocalService.deleteCoursePackageByGrouptId(groupId);
+	}
+
+	@Override
+	public void deleteAllCoursePackage() {
+		_coursePackageLocalService.deleteAllCoursePackage();
+	}
+
 	/**
 	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
 	 */

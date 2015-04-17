@@ -1,4 +1,10 @@
-							<div class="box box-primary">
+<style>
+.modal-content{  height:350px;} 
+</style>	
+ 	
+							<div class="box box-primary" style="min-height:350px;">
+                                <!-- form start -->
+                                <form role="form" name="course_form">							
                                 <div class="box-header">
                                     <h3 class="box-title">Course [ID: {{course.courseId}}]</h3>
                                         <button type="button" class="close" ng-click="cancel();">
@@ -6,27 +12,32 @@
                                         </button>                                    
                                     </div><!-- /.box-header -->
                                 
-                                <!-- form start -->
-                                <form role="form" name="course_form">
+
                                     <div class="box-body">
                                         <div class="form-group">
-                                            <label for="exampleInputEmail">Code</label>
-                                            <input type="text" class="form-control"  name="code" ng-model="course.code" id="code" placeholder="Enter Course Code" >
+                                            <label for="exampleInputEmail">Short Name</label>
+                                            <input type="text" class="form-control"  name="code" ng-model="course.code" id="code" placeholder="Enter Course Short Name" >
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail">Name</label>
                                             <input type="text" class="form-control" name="name" ng-model="course.name" id="name" placeholder="Enter Course Name">
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputEmail">Duration</label>
+                                            <label for="exampleInputEmail">Duration(in days)</label>
                                             <input type="text" class="form-control" name="duration" ng-model="course.duration" id="duration" placeholder="Enter Course Duration">
                                         </div>
                                     </div><!-- /.box-body -->
 
-                                    <div class="box-footer">
-                              <button ng-click="saveCourse(course);" ng-disabled="product_form.$invalid || enableUpdate"
+                         
+							<div class="box-body" >
+								<div class="col-xs-12">   
+                                 <div class="form-group" align="center">	
+                                         <button ng-click="saveCourse(course);" ng-disabled="product_form.$invalid || enableUpdate"
                                 class="btn btn-sm btn-primary"
                                 type="submit"  >Save</button> 
-                                    </div>
+                                </div>
+								</div>
+                            </div>										
                                 </form>
                             </div>
+			 

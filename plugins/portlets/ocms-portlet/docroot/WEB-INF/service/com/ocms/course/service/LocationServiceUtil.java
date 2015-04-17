@@ -87,7 +87,7 @@ public class LocationServiceUtil {
 		return getService().getLocationByLocationId(locationId, start, end);
 	}
 
-	public static com.ocms.course.model.Location addLocation(long userId,
+	public static com.ocms.course.model.Location addLocation(
 		java.lang.String name, java.lang.String code, java.lang.String notes,
 		java.lang.String addressLine1, java.lang.String addressLine2,
 		java.lang.String city, java.lang.String state, java.lang.String region,
@@ -97,12 +97,11 @@ public class LocationServiceUtil {
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		return getService()
-				   .addLocation(userId, name, code, notes, addressLine1,
-			addressLine2, city, state, region, country, zip, phone, fax, email,
-			serviceContext);
+				   .addLocation(name, code, notes, addressLine1, addressLine2,
+			city, state, region, country, zip, phone, fax, email, serviceContext);
 	}
 
-	public static com.ocms.course.model.Location updateLocation(long userId,
+	public static com.ocms.course.model.Location updateLocation(
 		long locationId, java.lang.String name, java.lang.String code,
 		java.lang.String notes, java.lang.String addressLine1,
 		java.lang.String addressLine2, java.lang.String city,
@@ -113,9 +112,21 @@ public class LocationServiceUtil {
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		return getService()
-				   .updateLocation(userId, locationId, name, code, notes,
-			addressLine1, addressLine2, city, state, region, country, zip,
-			phone, fax, email, serviceContext);
+				   .updateLocation(locationId, name, code, notes, addressLine1,
+			addressLine2, city, state, region, country, zip, phone, fax, email,
+			serviceContext);
+	}
+
+	public static void deleteLocationByLocationId(long locationId) {
+		getService().deleteLocationByLocationId(locationId);
+	}
+
+	public static void deleteLocationByGrouptId(long groupId) {
+		getService().deleteLocationByGrouptId(groupId);
+	}
+
+	public static void deleteAllLocation() {
+		getService().deleteAllLocation();
 	}
 
 	public static void clearService() {

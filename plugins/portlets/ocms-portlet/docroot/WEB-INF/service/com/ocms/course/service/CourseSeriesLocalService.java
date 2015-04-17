@@ -286,12 +286,48 @@ public interface CourseSeriesLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByFlagToListData(
+		int flagToListData)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByFlagToListData(
+		int flagToListData, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByGroupIdAndFlagToListData(
+		long groupId, int flagToListData)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByGroupIdAndFlagToListData(
+		long groupId, int flagToListData, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByCourseSeriesCode(
 		java.lang.String courseSeriesCode)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByCourseSeriesCode(
+		java.lang.String courseSeriesCode, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByCourseSeriesId(
+		long courseSeriesId)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public java.util.List<com.ocms.course.model.CourseSeries> getCourseSeriesByCourseSeriesId(
+		long courseSeriesId, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
 	public com.ocms.course.model.CourseSeries addCourseSeries(long userId,
 		long courseId, long locationId, java.lang.String courseSeriesCode,
+		java.lang.String courseSeriesEventCode, int flagToListData,
 		java.util.Date startDate, java.util.Date endDate,
 		java.lang.String type, long maxNoStudReg,
 		java.lang.String publishingStatus, long seriesCount,
@@ -299,11 +335,33 @@ public interface CourseSeriesLocalService extends BaseLocalService,
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
 
-	public com.ocms.course.model.CourseSeries updateCourse(long userId,
-		long courseId, long locationId, java.util.Date startDate,
-		java.util.Date endDate, java.lang.String type, long maxNoStudReg,
+	public com.ocms.course.model.CourseSeries updateCourse(long courseId,
+		long locationId, java.util.Date startDate, java.util.Date endDate,
+		java.lang.String type, long maxNoStudReg,
 		java.lang.String publishingStatus,
 		com.liferay.portal.service.ServiceContext serviceContext)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException;
+
+	public void deleteCourseSeriesByCourseSeriesId(long courseSeriesId);
+
+	public void deleteCourseSeriesByCourseSeriesIdCode(long courseSeriesId);
+
+	public void deleteCourseSeriesByGrouptId(long groupId);
+
+	public void deleteCourseSeriesByCourseSeriesCode(
+		java.lang.String courseSeriescode);
+
+	public void deleteAllCourseSeries();
+
+	public void addCourseSeriesLoop(long[] locationList, long[] courseList,
+		com.liferay.portal.service.ServiceContext serviceContext);
+
+	public void updateFlagToChkEventCreation(
+		com.ocms.course.model.CourseSeries courseSeries)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	public void createEvent(java.lang.String courseSeriesCode,
+		com.liferay.portal.service.ServiceContext serviceContext);
 }

@@ -114,6 +114,17 @@
 			<basic name="maxNoStudReg" />
 			<basic name="seriesCount" />
 			<basic name="courseSeriesCode" />
+			<basic name="courseSeriesEventCode" />
+			<basic name="flagToListData" />
+			<basic name="flagToChkEventCreation" />
+			<basic name="sMonth" />
+			<basic name="sDay" />
+			<basic name="eMonth" />
+			<basic name="eDay" />
+			<transient name="EDay" />
+			<transient name="EMonth" />
+			<transient name="SDay" />
+			<transient name="SMonth" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />
@@ -188,6 +199,44 @@
 			<transient name="userUuid" />
 		</attributes>
 	</mapped-superclass>
+	<mapped-superclass class="com.ocms.course.model.impl.OffersAndDeductionsModelImpl">
+		<attributes>
+			<id name="id">
+				<column name="ID_" />
+			</id>
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="code">
+				<column name="CODE_" />
+			</basic>
+			<basic name="description" />
+			<basic name="amount" />
+			<basic name="active">
+				<column name="ACTIVE_" />
+			</basic>
+			<basic name="effectiveFromDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="effectivetoDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="type">
+				<column name="TYPE_" />
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
 	<mapped-superclass class="com.ocms.course.model.impl.PricingModelImpl">
 		<attributes>
 			<id name="pricingId" />
@@ -209,11 +258,130 @@
 			<basic name="currency">
 				<column name="CURRENCY_" />
 			</basic>
-			<basic name="effectiveDate">
+			<basic name="effectiveFromDate">
 				<temporal>TIMESTAMP</temporal>
 			</basic>
 			<basic name="courseCode" />
 			<basic name="locationCode" />
+			<basic name="effectiveToDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="active">
+				<column name="ACTIVE_" />
+			</basic>
+			<basic name="balanceDueParDate" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ocms.course.model.impl.RegistrationDetailsModelImpl">
+		<attributes>
+			<id name="registrationDetailsId" />
+			<basic name="studRegId" />
+			<basic name="contactId" />
+			<basic name="eventId" />
+			<basic name="price" />
+			<basic name="discount" />
+			<basic name="fee" />
+			<basic name="credit" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ocms.course.model.impl.StudentRegistrationModelImpl">
+		<attributes>
+			<id name="studRegId" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="memo" />
+			<basic name="studRegStatus" />
+			<basic name="advisorOrig" />
+			<basic name="advisorReg" />
+			<basic name="coursePackageId" />
+			<basic name="discountId" />
+			<basic name="commMethod" />
+			<basic name="notes" />
+			<basic name="currency">
+				<column name="CURRENCY_" />
+			</basic>
+			<basic name="tax" />
+			<basic name="autoCharge" />
+			<basic name="currencyPaid" />
+			<basic name="exchangeRate" />
+			<basic name="contactId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ocms.course.model.impl.TaxDetailsModelImpl">
+		<attributes>
+			<id name="taxDetailsId" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="country" />
+			<basic name="taxTypeId" />
+			<basic name="effectiveFromDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="effectiveToDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="active">
+				<column name="ACTIVE_" />
+			</basic>
+			<basic name="taxPercent" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.ocms.course.model.impl.TaxTypesModelImpl">
+		<attributes>
+			<id name="taxTypesId" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="taxName" />
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />
@@ -244,8 +412,28 @@
 		<table name="CM_Location" />
 		<attributes />
 	</entity>
+	<entity class="com.ocms.course.model.impl.OffersAndDeductionsImpl" name="OffersAndDeductions">
+		<table name="CM_OffersAndDeductions" />
+		<attributes />
+	</entity>
 	<entity class="com.ocms.course.model.impl.PricingImpl" name="Pricing">
 		<table name="CM_Pricing" />
+		<attributes />
+	</entity>
+	<entity class="com.ocms.course.model.impl.RegistrationDetailsImpl" name="RegistrationDetails">
+		<table name="CM_RegistrationDetails" />
+		<attributes />
+	</entity>
+	<entity class="com.ocms.course.model.impl.StudentRegistrationImpl" name="StudentRegistration">
+		<table name="CM_StudentRegistration" />
+		<attributes />
+	</entity>
+	<entity class="com.ocms.course.model.impl.TaxDetailsImpl" name="TaxDetails">
+		<table name="CM_TaxDetails" />
+		<attributes />
+	</entity>
+	<entity class="com.ocms.course.model.impl.TaxTypesImpl" name="TaxTypes">
+		<table name="CM_TaxTypes" />
 		<attributes />
 	</entity>
 </entity-mappings>

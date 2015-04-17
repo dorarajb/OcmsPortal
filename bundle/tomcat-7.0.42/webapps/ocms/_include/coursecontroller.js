@@ -4,14 +4,20 @@
 
 var courseControllers = angular.module('courseControllers', []);
 
-courseControllers.controller('courselistCtrl', ['$scope', '$http','$modal', 'Course',
-		  function($scope, $http, $modal, Course) {	
+courseControllers.controller('courselistCtrl', ['$scope', '$http', '$window', '$modal', 'Course',
+		  function($scope, $http,$window, $modal, Course) {	
 		    
 			var courses;
 		  	//$scope.courses = Course.query(); // Get list of courses			
 			//$scope.courses = Course.query({id:'courses',mdclass:'pari'});
 			//$scope.courses = Course.query({id:'pari'}); get-courses-by-group-id/group-id/0
 			$scope.courses = Course.query({addcourse:'get-courses-by-group-id', userid:'group-id', id:'0'});
+			
+			var deleteCourse;
+		    $scope.deleteCourse = function (vcourse) {
+		    Course.delete({addcourse:'delete-course-by-course-id', userid:'course-id', id:vcourse.courseId});
+		    $window.location.reload();
+			};
 		 
 			
 			/*Open the Course Form*/			
@@ -34,13 +40,16 @@ courseControllers.controller('courselistCtrl', ['$scope', '$http','$modal', 'Cou
 
  
 
-courseControllers.controller('courseCtrl', ['$scope', '$http','$modalInstance', 'item', 'Course', 
-											function ($scope, $http, $modalInstance, item, Course) {
+courseControllers.controller('courseCtrl', ['$scope', '$http', '$window', '$modalInstance', 'item', 'Course', 
+											function ($scope, $http,$window ,$modalInstance, item, Course) {
  
 		
       
 		
 		$scope.course = angular.copy(item);
+		console.log($scope.course);
+		console.log(item);
+		
 		 
 		$scope.cancel = function () {
             $modalInstance.dismiss('Close');
@@ -49,7 +58,7 @@ courseControllers.controller('courseCtrl', ['$scope', '$http','$modalInstance', 
 		
         var original = item;
         $scope.isClean = function() {
-            return angular.equals(original, $scope.course);
+        return angular.equals(original, $scope.course);
         }		
 		 
 		
@@ -63,6 +72,7 @@ courseControllers.controller('courseCtrl', ['$scope', '$http','$modalInstance', 
 				
 				var x = angular.copy(course);
 				$modalInstance.close(x);
+				$window.location.reload();
 				
 			}
 			else{ //// Adding a New Course
@@ -72,7 +82,8 @@ courseControllers.controller('courseCtrl', ['$scope', '$http','$modalInstance', 
 						sDuration:'duration', duration:course.duration},course);	
 				 
 				var x = angular.copy(course);
-				$modalInstance.close(x);				
+				$modalInstance.close(x);
+				$window.location.reload();
 			}
 			
 		};
